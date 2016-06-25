@@ -2,13 +2,12 @@
 ---
 ## &#10112; Improve Search
 ---
-### Google Rich Snippets
+### Google Rich Cards and Rich Snippets
+![Google Rich Cards view of BestBuy's product page](img/google_rich_cards_bestbuy.png)<!-- .element: style="max-height: 65vh; border: none; box-shadow: none;" -->
+
 ---
 ## &#10113; Implicit Data Integration
 ---
 ## &#10114; Enhance Data Quality
-
-Note:
-* One of the biggest challenges we had in capturing clinical research data was the inconsistencies descriptive data fields as free text. Lab-specific lingos and short-hands.
 ---
 ### SNOMED-CT
