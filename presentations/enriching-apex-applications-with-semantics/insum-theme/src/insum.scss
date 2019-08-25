@@ -1,0 +1,217 @@
+/**
+ * White theme for reveal.js. This is the opposite of the 'black' theme.
+ *
+ * By Hakim El Hattab, http://hakim.se
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+
+// Include fontawesome
+@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css);
+
+// Company colours
+$insumGrey: #58595B; //  rgb(88, 89, 91)
+$insumGreen: #8DC63F; // rgb(141, 198, 63)
+
+// Override theme settings (see ../template/settings.scss)
+$backgroundColor: #fff;
+
+$mainColor: $insumGrey;
+$headingColor: $insumGreen;
+
+$mainFontSize: 38px;
+$mainFont: 'Titillium Web', Arial, Helvetica, sans-serif;
+$headingFont: $mainFont;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: uppercase;
+$headingFontWeight: 600;
+$linkColor: #2a76dd;
+$linkColorHover: lighten( $linkColor, 15% );
+$selectionBackgroundColor: lighten( $linkColor, 25% );
+
+$heading1Size: 2.5em;
+$heading2Size: 1.6em;
+$heading3Size: 1.3em;
+$heading4Size: 1.0em;
+
+section.has-dark-background {
+	&, h1, h2, h3, h4, h5, h6 {
+		color: #fff;
+	}
+}
+
+$footerHeight: 55px;
+
+$navigationColor: darken($insumGreen, 20%);
+$navigationColorHover: darken($insumGreen, 10%);
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
+
+// Additional class-----------------------------
+.reveal .controls {
+  // bottom: 10px;
+  height: 50px;
+  right: 0;
+  bottom: 0;
+  width: 50px;
+}
+
+.reveal .controls button {
+  transform: scale(0.4);
+}
+
+.reveal .controls .navigate-up, .reveal .controls .navigate-up.enabled {
+  border-bottom-color: $navigationColor;
+  top: -10px;
+  left: 10px;
+}
+
+.reveal .controls .navigate-down, .reveal .controls .navigate-down.enabled {
+  border-top-color: $navigationColor;
+  top: 20px;
+  left: 10px;
+}
+
+.reveal .controls .navigate-left, .reveal .controls .navigate-left.enabled {
+  border-right-color: $navigationColor;
+  top: 10px;
+  left: -10px;
+}
+
+.reveal .controls .navigate-right, .reveal .controls .navigate-right.enabled {
+  border-left-color: $navigationColor;
+  top: 10px;
+  left: 20px;
+}
+
+.reveal .controls .navigate-up:hover, .reveal .controls .navigate-up.enabled:hover {
+  border-bottom-color: $navigationColorHover;
+}
+
+.reveal .controls .navigate-down:hover, .reveal .controls .navigate-down.enabled:hover {
+  border-top-color: $navigationColorHover;
+}
+
+.reveal .controls .navigate-left:hover, .reveal .controls .navigate-left.enabled:hover {
+  border-right-color: $navigationColorHover;
+}
+
+.reveal .controls .navigate-right:hover, .reveal .controls .navigate-right.enabled:hover {
+  border-left-color: $navigationColorHover;
+}
+
+.reveal > .slides,
+.reveal > .slides > section {
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+}
+
+.reveal > .slides > section > * {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.reveal > .slides > section > header {
+  height: 0.8em;
+  padding: 0.1em;
+  margin: 0;
+}
+
+.reveal > .slides > section.cover-slide > header {
+  height: 1.5em;
+}
+
+.reveal > .slides > section > header img.banner-logo {
+  max-height: 100%;
+  width: auto;;
+  float: right;;
+  border: 0;
+  margin: 0;
+  box-shadow: none;
+  background: none;
+  display: block;
+}
+
+.reveal > .slides > section > header img.banner-logo::after {
+  clear: both;
+}
+
+.reveal > .slides > section .fa {
+  line-height: 1.25em;
+}
+
+.reveal > .slides > section blockquote {
+  background-color: $insumGreen;
+  opacity: 0.75;
+  width: auto;
+  font-style: none;
+  margin: 0;
+  padding: 2rem;
+  color: white;
+  text-shadow: 0.01rem 0.05rem $insumGrey;
+}
+
+.reveal > .slides > section pre {
+  box-shadow: none;
+}
+
+.reveal > .slides > section pre > code {
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.reveal > .slides > section iframe {
+  padding: 0;
+}
+
+.reveal > .slides > section > div.cover-pre-footer {
+  height: 3em;
+  padding: 0.5rem 2rem;
+  margin: 0;
+  bottom: $footerHeight;
+  position: absolute;;
+  text-align: left;
+}
+
+.reveal > .slides > section > div.cover-pre-footer img {
+  box-shadow: none;
+  border: none;
+  max-height: 100%;
+  width: auto;
+}
+
+.reveal > .slides > section > footer {
+  background-color: $insumGreen;
+  width: 100%;
+  height: $footerHeight;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-top: 0.5rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.reveal .slide-number {
+  bottom: 17px;
+  right: 55px;
+  background: none;
+  text-shadow: 0.01rem 0.05rem $insumGrey;
+  font-size: 0.9rem;
+}
+
+.reveal .progress span {
+  background: darken($insumGrey, 5%) none repeat scroll 0 0;
+}
+// ---------------------------------------------

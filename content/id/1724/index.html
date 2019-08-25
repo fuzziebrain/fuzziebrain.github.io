@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>APEX and XE - A Match for Data Science | Thinking Anew</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="APEX and ORE in Action  I wrote, quite a while ago, on how Oracle Application Express (APEX) developers could integrate R functionality/code in their applications. This was done primarily through Node">
+<meta name="keywords" content="orclapex,rstats,ore,data,science,analytics,research,rdm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="APEX and XE - A Match for Data Science">
+<meta property="og:url" content="https://fuzziebrain.com/content/id/1724/index.html">
+<meta property="og:site_name" content="Thinking Anew">
+<meta property="og:description" content="APEX and ORE in Action  I wrote, quite a while ago, on how Oracle Application Express (APEX) developers could integrate R functionality/code in their applications. This was done primarily through Node">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1724/using-r-with-orclapex.png">
+<meta property="og:updated_time" content="2019-08-25T05:11:33.958Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="APEX and XE - A Match for Data Science">
+<meta name="twitter:description" content="APEX and ORE in Action  I wrote, quite a while ago, on how Oracle Application Express (APEX) developers could integrate R functionality/code in their applications. This was done primarily through Node">
+<meta name="twitter:image" content="https://fuzziebrain.com/content/id/1724/using-r-with-orclapex.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Thinking Anew" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link href="//fonts.googleapis.com/css?family=Roboto+Condensed|Roboto" rel="stylesheet" type="text/css">
+  <link href="//stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE=" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-10103110-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+</head>
+</html>
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/categories/reviews/">Reviews</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <img src="/img/flames.png">
+  <h1 class="blog-title">Thinking Anew</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-apex-and-xe-a-match-for-data-science" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      APEX and XE - A Match for Data Science
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/content/id/1724/" class="article-date"><time datetime="2018-11-10T22:01:16.000Z" itemprop="datePublished">2018-11-10</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/technology/">Technology</a> / <a class="article-category-link" href="/categories/technology/programming/">Programming</a> / <a class="article-category-link" href="/categories/technology/programming/oracle-application-express/">Oracle Application Express</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/content/id/1724/using-r-with-orclapex.png" width="1280" height="720" title="APEX and ORE in Action"><span class="caption">APEX and ORE in Action</span>
+
+<p>I <a href="https://insum.ca/oracle-apex-statistics-r-u-serious/" target="_blank" rel="noopener">wrote</a>, quite a while ago, on how <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express</a> (APEX) developers could integrate <a href="https://www.r-project.org" target="_blank" rel="noopener">R</a> functionality/code in their applications. This was done primarily through <a href="https://nodejs.org" target="_blank" rel="noopener">Node.js</a> packages and exposed as RESTful Web Services. Not the ideal solution, but useful for people wanting to integrate R statistical calculations and complex charting, but could not afford the hefty price tag for an Oracle Database Enterprice Edition license, plus the <a href="https://www.oracle.com/technetwork/database/options/advanced-analytics/overview/index.html" target="_blank" rel="noopener">Oracle Advanced Analytics</a> database option.</p>
+<p>The revolutionary 18c release of the <a href="https://oracle.com/xe" target="_blank" rel="noopener">Oracle Database Express Edition</a> (XE) significantly changed the Data Analytics playing field. The no-cost platform has resource caps (2 CPU, 2 GB RAM and 12 GB data storage). It’s not going to help perform complex <a href="https://wikipedia.org/wiki/Genome-wide_association_study" target="_blank" rel="noopener">GWAS</a> (Genome-wide Association Study), but should suffice for many smaller research projects, statistical reporting and creating useful prediction models.</p>
+<p>Unfortunately, the XE website has only a single line that says anything about this cool feature of the database:</p>
+<blockquote>
+<p>If you prefer R programming, Oracle Database supports that too.</p>
+</blockquote>
+<p>How do we get started?</p>
+<a id="more"></a>
+
+<h2 id="A-Docker-Project-for-ORE"><a href="#A-Docker-Project-for-ORE" class="headerlink" title="A Docker Project for ORE"></a>A Docker Project for ORE</h2><p>The <a href="https://docs.oracle.com/cd/E83411_01/" target="_blank" rel="noopener">Oracle R Enterprise (ORE) Documentation</a> provides quite a lot of information on what’s involved and how to setup a ORE environment. However, looking at what’s installed in XE, it looks like the server components have already been installed (see <code>$(ORACLE_HOME/R)</code>). And if you attempted a silent ORE server install, the script complains about how a later version has already been installed and would not proceed.</p>
+<p>I took it upon myself to waddle through the mud and figure out what’s involved to get ORE going on my workstation. The end result was a suite of scripts and <a href="https://docs.docker.com/engine/reference/builder/" target="_blank" rel="noopener">Dockerfile</a> for creating an ORE server and client for running R. These have been published in this public <a href="https://github.com/fuzziebrain/docker-oracle-ore" target="_blank" rel="noopener">Github repository</a>. </p>
+<p><strong>NOTE</strong> that this environment is meant for an explorer to bash quickly through the undergrowth, and head right into some interesting R and APEX coding. The <a href="https://github.com/fuzziebrain/docker-oracle-ore/blob/master/README.md" target="_blank" rel="noopener">instructions</a> and simplicity of running <a href="https://www.docker.com" target="_blank" rel="noopener">Docker</a> containers should provide you a clear path forward.</p>
+<h2 id="APEX-and-ORE"><a href="#APEX-and-ORE" class="headerlink" title="APEX and ORE"></a>APEX and ORE</h2><p>I’m an APEX developer, so including the environment to create great apps is a must! In this Docker environment, you will find APEX 18.2 and ORDS 18.3 pre-installed, configured and running. The banner image in this post is an actual screenshot of a running APEX app with ORE integration. Both charts are produced by R functions <a href="https://www.rdocumentation.org/packages/graphics/versions/3.3.0/topics/plot" target="_blank" rel="noopener">plot</a> and <a href="https://cran.r-project.org/web/packages/ggplot2/" target="_blank" rel="noopener">ggplot2</a> using <a href="https://www.gapminder.org" target="_blank" rel="noopener">Gapminder</a> <a href="https://github.com/swcarpentry/r-novice-gapminder/blob/gh-pages/data/gapminder-FiveYearData.csv" target="_blank" rel="noopener">data</a> imported into the database.</p>
+<h3 id="1-Create-the-Table-GAPMINDER"><a href="#1-Create-the-Table-GAPMINDER" class="headerlink" title="1. Create the Table GAPMINDER"></a>1. Create the Table <code>GAPMINDER</code></h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> gapminder(</span><br><span class="line">  row_id <span class="built_in">number</span> <span class="keyword">generated</span> <span class="keyword">by</span> <span class="keyword">default</span> <span class="keyword">as</span> <span class="keyword">identity</span></span><br><span class="line">  , country varchar2(<span class="number">100</span>)</span><br><span class="line">  , <span class="keyword">year</span> <span class="built_in">number</span></span><br><span class="line">  , pop <span class="built_in">number</span> </span><br><span class="line">  , continent varchar2(<span class="number">100</span>)</span><br><span class="line">  , lifeExp <span class="built_in">number</span></span><br><span class="line">  , gdpPercap <span class="built_in">number</span></span><br><span class="line">)</span><br><span class="line">/</span><br><span class="line"></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> gapminder</span><br><span class="line"><span class="keyword">add</span> <span class="keyword">constraint</span> gapminder_pk</span><br><span class="line">primary <span class="keyword">key</span> (row_id)</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-Create-the-scripts-PLOTDEMO-and-GGPLOTDEMO"><a href="#2-Create-the-scripts-PLOTDEMO-and-GGPLOTDEMO" class="headerlink" title="2. Create the scripts PLOTDEMO and GGPLOTDEMO"></a>2. Create the scripts <code>PLOTDEMO</code> and <code>GGPLOTDEMO</code></h3><p>We have an option of using R or SQL APIs to create scripts for embedded execution. The following uses the SQL API <code>sys.rqScriptCreate</code>. In order to create scripts, the database user must have the <code>RQADMIN</code> role. Be wary of who you assigned this to, as R scripts allow access to the database server and there are inherent security risks involved.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">begin</span><br><span class="line">  -- Demo using core R function plot</span><br><span class="line">  sys.rqScriptCreate(</span><br><span class="line">    v_name =&gt; &apos;PLOTDEMO&apos;</span><br><span class="line">    , v_script =&gt; q&apos;[</span><br><span class="line">function(data, title) &#123;</span><br><span class="line">  plot(data, main=title, type=&quot;o&quot;, col=&quot;blue&quot;)</span><br><span class="line">&#125;</span><br><span class="line">    ]&apos;</span><br><span class="line">    , v_global =&gt; false</span><br><span class="line">    , v_overwrite =&gt; true</span><br><span class="line">  );</span><br><span class="line"></span><br><span class="line">  -- Demo using a third-party library ggplot2</span><br><span class="line">  sys.rqScriptCreate(</span><br><span class="line">    v_name =&gt; &apos;GGPLOTDEMO&apos;</span><br><span class="line">    , v_script =&gt; q&apos;[</span><br><span class="line">function(mdata) &#123;</span><br><span class="line">  library(ggplot2)</span><br><span class="line"></span><br><span class="line">  gplot &lt;- ggplot(</span><br><span class="line">    mdata</span><br><span class="line">    , aes(</span><br><span class="line">        x = GDPPERCAP</span><br><span class="line">        , y = LIFEEXP</span><br><span class="line">        , color = CONTINENT</span><br><span class="line">    )</span><br><span class="line">  ) + geom_point()</span><br><span class="line">  plot(gplot)</span><br><span class="line">&#125;</span><br><span class="line">    ]&apos;</span><br><span class="line">    , v_global =&gt; false</span><br><span class="line">    , v_overwrite =&gt; true</span><br><span class="line">  );</span><br><span class="line">end;</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-Grant-Rights"><a href="#3-Grant-Rights" class="headerlink" title="3. Grant Rights"></a>3. Grant Rights</h3><p><a href="https://twitter.com/brendantierney" target="_blank" rel="noopener">BrendanTierney</a> wrote an excellent <a href="https://www.oralytics.com/2016/08/how-to-get-ore-to-work-with-apex.html" target="_blank" rel="noopener">blog post</a> on the new security model that ORE uses and what is needed to grant the appropriate privileges to allow embedded R scripts to run in APEX. The parsing schema does not require the rights to run these scripts, and in fact, the script will not run in APEX, even if the parsing schema created the script. The grants should be made to the user <code>APEX_PUBLIC_USER</code> instead.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">begin </span><br><span class="line">  rqGrant(&apos;PLOTDEMO&apos;, &apos;rqscript&apos;, &apos;APEX_PUBLIC_USER&apos;);</span><br><span class="line">  rqGrant(&apos;GGPLOTDEMO&apos;, &apos;rqscript&apos;, &apos;APEX_PUBLIC_USER&apos;);</span><br><span class="line">end;</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+
+<p>Alternatively, with security in mind, you may also compile the scripts as “public”. Do this by setting the <code>sys.rqScriptCreate</code> argument <code>v_global</code> to <code>true</code>.</p>
+<h3 id="4-Applying-the-Scripts-in-APEX"><a href="#4-Applying-the-Scripts-in-APEX" class="headerlink" title="4. Applying the Scripts in APEX"></a>4. Applying the Scripts in APEX</h3><p>For displaying both charts, a Display Image Page Item was used. With some <a href="https://www.oralytics.com/2016/07/creating-ggplot2-graphics-using-sql.html" target="_blank" rel="noopener">guidance</a>, here’s how I have them set up.</p>
+<ol>
+<li>Set the “Based On” setting to <code>BLOB Column returned by SQL statement</code>.</li>
+<li>For the “SQL Statement”, something like these should work.</li>
+</ol>
+<h4 id="Using-R-plot"><a href="#Using-R-plot" class="headerlink" title="Using R plot"></a>Using R <code>plot</code></h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">with data as (</span><br><span class="line">  <span class="keyword">select</span> <span class="keyword">year</span> <span class="keyword">as</span> <span class="string">"Year"</span>, lifeexp <span class="keyword">as</span> <span class="string">"Life Expectancy"</span></span><br><span class="line">  <span class="keyword">from</span> gapminder</span><br><span class="line">  <span class="keyword">where</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">    <span class="keyword">and</span> <span class="keyword">lower</span>(country) = <span class="string">'singapore'</span></span><br><span class="line">  <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">year</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">select</span> image</span><br><span class="line"><span class="keyword">from</span> <span class="keyword">table</span>(</span><br><span class="line">  rqTableEval(</span><br><span class="line">    <span class="keyword">cursor</span>(<span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">data</span>)</span><br><span class="line">    , <span class="keyword">cursor</span>(</span><br><span class="line">        <span class="keyword">select</span> <span class="string">'Life Expectancy in Singapore'</span> <span class="keyword">as</span> <span class="string">"title"</span> </span><br><span class="line">        <span class="keyword">from</span> dual</span><br><span class="line">    )</span><br><span class="line">    , <span class="string">'PNG'</span></span><br><span class="line">    , <span class="string">'DEMO.PLOTDEMO'</span></span><br><span class="line">  )</span><br><span class="line">)</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Using-ggplot"><a href="#Using-ggplot" class="headerlink" title="Using ggplot"></a>Using <code>ggplot</code></h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">with data as (</span><br><span class="line">  <span class="keyword">select</span> gdppercap, lifeexp, continent</span><br><span class="line">  <span class="keyword">from</span> gapminder</span><br><span class="line">  <span class="keyword">where</span> <span class="number">1</span> = <span class="number">1</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">select</span> image</span><br><span class="line"><span class="keyword">from</span> <span class="keyword">table</span>(</span><br><span class="line">  rqTableEval(</span><br><span class="line">    <span class="keyword">cursor</span>(<span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">data</span>)</span><br><span class="line">    , <span class="literal">null</span></span><br><span class="line">    , <span class="string">'PNG'</span></span><br><span class="line">    , <span class="string">'DEMO.GGPLOTDEMO'</span></span><br><span class="line">  )</span><br><span class="line">)</span><br><span class="line"><span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>In both queries, using the <code>rqTableEval</code> funcction, data is retrieved from the database and passed into the scripts’ function parameters as a <a href="https://www.rdocumentation.org/packages/base/versions/3.3.0/topics/data.frame" target="_blank" rel="noopener"><code>data.frame</code></a>. R developers can then use the data and run various operations, returning the results as a <code>data.frame</code>, (PNG) image or XML.</p>
+<p>Also, when referencing scripts, include the schema name that created the script. Without it, only references to public scripts are valid.</p>
+<blockquote>
+<p>Brendan is a well-known presenter and writer on all Data Analytics and Machine Learning with Oracle tools. Be sure to <a href="https://twitter.com/brendantierney" target="_blank" rel="noopener">follow him</a>, <a href="https://www.oralytics.com/" target="_blank" rel="noopener">read his work</a> and maybe buy his books if this is something you wish to pursue further. He’s been doing this for quite a while and evidently, I saved a lot of time by looking up his blog in this mini project.</p>
+</blockquote>
+<h2 id="Besides-Docker"><a href="#Besides-Docker" class="headerlink" title="Besides Docker"></a>Besides Docker</h2><p>The Docker environment I have put together isn’t production ready. To set this up without Docker and have it running in your environment, take a look at the <code>Dockerfile</code> and relevant shell scripts to figure out what is involved. The following is a summary of activities that need to happen on the server-side.</p>
+<ul>
+<li>Install a compatible R environment including dependencies for building and install R packages (see <a href="https://github.com/fuzziebrain/docker-oracle-ore/blob/master/server/Dockerfile" target="_blank" rel="noopener"><code>Dockerfile</code></a>).</li>
+<li>Install R packages listed in <a href="https://github.com/fuzziebrain/docker-oracle-ore/blob/master/server/scripts/enableORE.sh" target="_blank" rel="noopener"><code>enableORE.sh</code></a>.</li>
+<li>Run the SQL script <code>$ORACLE_HOME/R/server/rqcfg.sql</code> against the target PDB (see <a href="https://github.com/fuzziebrain/docker-oracle-ore/blob/master/server/scripts/enableORE.sh" target="_blank" rel="noopener"><code>enableORE.sh</code></a>).</li>
+</ul>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>APEX is an outstanding tool for <strong>rapidly</strong> building <strong>modern</strong> day web applications at <strong>minimal costs and resources</strong>. Combine this with the <strong>power of R</strong>, it should be a no-brainer for anyone choosing a development environment for <a href="https://www2.le.ac.uk/services/research-data/rdm/what-is-rdm" target="_blank" rel="noopener">Research Data Management</a>.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://fuzziebrain.com/content/id/1724/" data-id="cjzql7lgb00jkd32nwyhj7jwf" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/analytics/">analytics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data/">data</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/orclapex/">orclapex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ore/">ore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rdm/">rdm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/research/">research</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rstats/">rstats</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/science/">science</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/content/id/1723/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">For Your Eyes Only - Redact to Protect</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/content/id/1725/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Certs for APEX Social Sign-In</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+<p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
+
+  <img src="/img/O-ACEAssociate-rgb.png" class="ace-logo">
+</div>
+
+
+  <div class="sidebar-module">
+  <p class="twitter">
+    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fuzziebrain" data-widget-id="487271531987210241">Tweets by @fuzziebrain</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </p>
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/life/">Life</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/reviews/">Reviews</a><span class="sidebar-module-list-count">5</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/reviews/books/">Books</a><span class="sidebar-module-list-count">5</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/">Technology</a><span class="sidebar-module-list-count">47</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/conferences/">Conferences</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/devops/">DevOps</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/infrastructure/">Infrastructure</a><span class="sidebar-module-list-count">9</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/infrastructure/oracle-cloud/">Oracle Cloud</a><span class="sidebar-module-list-count">9</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/others/">Others</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/">Programming</a><span class="sidebar-module-list-count">31</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/ide/">IDE</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/nodejs/">Nodejs</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/oracle-application-express/">Oracle Application Express</a><span class="sidebar-module-list-count">29</span></li></ul></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/18cxe/" style="font-size: 13.75px;">18cXE</a> <a href="/tags/2fa/" style="font-size: 10px;">2fa</a> <a href="/tags/apache-poi/" style="font-size: 10px;">Apache POI</a> <a href="/tags/devops/" style="font-size: 10px;">DevOps</a> <a href="/tags/eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/iaas/" style="font-size: 16.25px;">IaaS</a> <a href="/tags/java/" style="font-size: 10px;">Java</a> <a href="/tags/kscope17/" style="font-size: 10px;">Kscope17</a> <a href="/tags/linux/" style="font-size: 10px;">Linux</a> <a href="/tags/microsoft-word/" style="font-size: 10px;">Microsoft Word</a> <a href="/tags/odtug/" style="font-size: 11.25px;">ODTUG</a> <a href="/tags/oxar/" style="font-size: 10px;">OXAR</a> <a href="/tags/oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/oracle-application-express/" style="font-size: 11.25px;">Oracle Application Express</a> <a href="/tags/oracle-bi-publisher/" style="font-size: 10px;">Oracle BI Publisher</a> <a href="/tags/oracle-text/" style="font-size: 10px;">Oracle Text</a> <a href="/tags/pdf/" style="font-size: 10px;">PDF</a> <a href="/tags/san-antonio/" style="font-size: 10px;">San Antonio</a> <a href="/tags/subversion/" style="font-size: 10px;">Subversion</a> <a href="/tags/thanksodc/" style="font-size: 10px;">ThanksODC</a> <a href="/tags/vagrant/" style="font-size: 10px;">Vagrant</a> <a href="/tags/vancouver/" style="font-size: 10px;">Vancouver</a> <a href="/tags/virtualbox/" style="font-size: 10px;">VirtualBox</a> <a href="/tags/xpath/" style="font-size: 10px;">XPath</a> <a href="/tags/xsl-fo/" style="font-size: 10px;">XSL-FO</a> <a href="/tags/active-directory/" style="font-size: 10px;">active directory</a> <a href="/tags/analytics/" style="font-size: 10px;">analytics</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/artificial-intelligence/" style="font-size: 10px;">artificial intelligence</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/authentication/" style="font-size: 15px;">authentication</a> <a href="/tags/autonomous/" style="font-size: 10px;">autonomous</a> <a href="/tags/azure/" style="font-size: 10px;">azure</a> <a href="/tags/barcode/" style="font-size: 10px;">barcode</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/blogging/" style="font-size: 11.25px;">blogging</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/bots/" style="font-size: 10px;">bots</a> <a href="/tags/career/" style="font-size: 11.25px;">career</a> <a href="/tags/challenge-coin/" style="font-size: 10px;">challenge coin</a> <a href="/tags/change-is-constant/" style="font-size: 10px;">change is constant</a> <a href="/tags/cloud/" style="font-size: 18.75px;">cloud</a> <a href="/tags/community/" style="font-size: 13.75px;">community</a> <a href="/tags/compliance/" style="font-size: 10px;">compliance</a> <a href="/tags/compute/" style="font-size: 10px;">compute</a> <a href="/tags/computer-science/" style="font-size: 10px;">computer science</a> <a href="/tags/confidential/" style="font-size: 10px;">confidential</a> <a href="/tags/container/" style="font-size: 10px;">container</a> <a href="/tags/customer-service/" style="font-size: 10px;">customer service</a> <a href="/tags/data/" style="font-size: 12.5px;">data</a> <a href="/tags/database/" style="font-size: 12.5px;">database</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/devops/" style="font-size: 18.75px;">devops</a> <a href="/tags/digitalocean/" style="font-size: 10px;">digitalocean</a> <a href="/tags/disney/" style="font-size: 10px;">disney</a> <a href="/tags/docker/" style="font-size: 11.25px;">docker</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/emerging-technology/" style="font-size: 10px;">emerging technology</a> <a href="/tags/environment/" style="font-size: 10px;">environment</a> <a href="/tags/face-detection/" style="font-size: 10px;">face detection</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/fnproj/" style="font-size: 10px;">fnproj</a> <a href="/tags/full-stack/" style="font-size: 10px;">full stack</a> <a href="/tags/functions/" style="font-size: 10px;">functions</a> <a href="/tags/geolocation/" style="font-size: 10px;">geolocation</a> <a href="/tags/gis/" style="font-size: 10px;">gis</a> <a href="/tags/google/" style="font-size: 12.5px;">google</a> <a href="/tags/gps/" style="font-size: 11.25px;">gps</a> <a href="/tags/graphql/" style="font-size: 10px;">graphql</a> <a href="/tags/gratitude/" style="font-size: 10px;">gratitude</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/hosting/" style="font-size: 12.5px;">hosting</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/image-processing/" style="font-size: 10px;">image processing</a> <a href="/tags/infrastructure/" style="font-size: 16.25px;">infrastructure</a> <a href="/tags/insum/" style="font-size: 10px;">insum</a> <a href="/tags/integration/" style="font-size: 10px;">integration</a> <a href="/tags/iphone/" style="font-size: 10px;">iphone</a> <a href="/tags/java/" style="font-size: 11.25px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/knowledge-sharing/" style="font-size: 10px;">knowledge sharing</a> <a href="/tags/kubernetes/" style="font-size: 10px;">kubernetes</a> <a href="/tags/launch/" style="font-size: 10px;">launch</a> <a href="/tags/lbs/" style="font-size: 11.25px;">lbs</a> <a href="/tags/learning/" style="font-size: 13.75px;">learning</a> <a href="/tags/linked-data/" style="font-size: 10px;">linked data</a> <a href="/tags/linode/" style="font-size: 12.5px;">linode</a> <a href="/tags/location-based-services/" style="font-size: 10px;">location-based services</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/mahout/" style="font-size: 10px;">mahout</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/mapreduce/" style="font-size: 10px;">mapreduce</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/meetup/" style="font-size: 10px;">meetup</a> <a href="/tags/memorabilia/" style="font-size: 10px;">memorabilia</a> <a href="/tags/mfa/" style="font-size: 10px;">mfa</a> <a href="/tags/microsoft/" style="font-size: 13.75px;">microsoft</a> <a href="/tags/migration/" style="font-size: 10px;">migration</a> <a href="/tags/monetization/" style="font-size: 10px;">monetization</a> <a href="/tags/monitoring/" style="font-size: 10px;">monitoring</a> <a href="/tags/multi-factor/" style="font-size: 10px;">multi-factor</a> <a href="/tags/multimedia/" style="font-size: 10px;">multimedia</a> <a href="/tags/nodejs/" style="font-size: 12.5px;">nodejs</a> <a href="/tags/oauth2/" style="font-size: 13.75px;">oauth2</a> <a href="/tags/oci/" style="font-size: 16.25px;">oci</a> <a href="/tags/ocr/" style="font-size: 10px;">ocr</a> <a href="/tags/odtug/" style="font-size: 13.75px;">odtug</a> <a href="/tags/office-365/" style="font-size: 10px;">office 365</a> <a href="/tags/oracle/" style="font-size: 17.5px;">oracle</a> <a href="/tags/oracle-database/" style="font-size: 12.5px;">oracle database</a> <a href="/tags/orclapex/" style="font-size: 20px;">orclapex</a> <a href="/tags/orclfn/" style="font-size: 10px;">orclfn</a> <a href="/tags/ore/" style="font-size: 10px;">ore</a> <a href="/tags/orlando/" style="font-size: 10px;">orlando</a> <a href="/tags/oxar/" style="font-size: 13.75px;">oxar</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pki/" style="font-size: 11.25px;">pki</a> <a href="/tags/platform/" style="font-size: 10px;">platform</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/powershell/" style="font-size: 10px;">powershell</a> <a href="/tags/preview/" style="font-size: 11.25px;">preview</a> <a href="/tags/protection/" style="font-size: 10px;">protection</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/quality/" style="font-size: 10px;">quality</a> <a href="/tags/r/" style="font-size: 10px;">r</a> <a href="/tags/rdm/" style="font-size: 12.5px;">rdm</a> <a href="/tags/redact/" style="font-size: 10px;">redact</a> <a href="/tags/release/" style="font-size: 10px;">release</a> <a href="/tags/reporting/" style="font-size: 10px;">reporting</a> <a href="/tags/research/" style="font-size: 11.25px;">research</a> <a href="/tags/research-data-management/" style="font-size: 10px;">research data management</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/review/" style="font-size: 10px;">review</a> <a href="/tags/rstats/" style="font-size: 11.25px;">rstats</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/scripting/" style="font-size: 10px;">scripting</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/seattle/" style="font-size: 10px;">seattle</a> <a href="/tags/security/" style="font-size: 13.75px;">security</a> <a href="/tags/semantic-web/" style="font-size: 10px;">semantic web</a> <a href="/tags/serverless/" style="font-size: 11.25px;">serverless</a> <a href="/tags/single-sign-on/" style="font-size: 11.25px;">single sign on</a> <a href="/tags/single-sign-on/" style="font-size: 11.25px;">single sign-on</a> <a href="/tags/smtp/" style="font-size: 10px;">smtp</a> <a href="/tags/solutions/" style="font-size: 10px;">solutions</a> <a href="/tags/spf/" style="font-size: 10px;">spf</a> <a href="/tags/spring-framework/" style="font-size: 11.25px;">spring framework</a> <a href="/tags/spring-roo/" style="font-size: 10px;">spring roo</a> <a href="/tags/springsource/" style="font-size: 11.25px;">springsource</a> <a href="/tags/springsource-tool-suite/" style="font-size: 10px;">springsource tool suite</a> <a href="/tags/ssl/" style="font-size: 11.25px;">ssl</a> <a href="/tags/sso/" style="font-size: 13.75px;">sso</a> <a href="/tags/stackscripts/" style="font-size: 10px;">stackscripts</a> <a href="/tags/sts/" style="font-size: 10px;">sts</a> <a href="/tags/subclipse/" style="font-size: 10px;">subclipse</a> <a href="/tags/suez/" style="font-size: 10px;">suez</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/sysadmin/" style="font-size: 10px;">sysadmin</a> <a href="/tags/system-administration/" style="font-size: 10px;">system administration</a> <a href="/tags/tde/" style="font-size: 10px;">tde</a> <a href="/tags/text-recognition/" style="font-size: 10px;">text recognition</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/tls/" style="font-size: 11.25px;">tls</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/training/" style="font-size: 15px;">training</a> <a href="/tags/travel/" style="font-size: 12.5px;">travel</a> <a href="/tags/two-factor/" style="font-size: 10px;">two-factor</a> <a href="/tags/typescript/" style="font-size: 11.25px;">typescript</a> <a href="/tags/user-groups/" style="font-size: 10px;">user groups</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/vagrant/" style="font-size: 12.5px;">vagrant</a> <a href="/tags/viewer/" style="font-size: 10px;">viewer</a> <a href="/tags/virtualbox/" style="font-size: 10px;">virtualbox</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/wasm/" style="font-size: 10px;">wasm</a> <a href="/tags/workshop/" style="font-size: 10px;">workshop</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/07/">July 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/10/">October 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/09/">September 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/02/">February 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/06/">June 2014</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/05/">May 2013</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/04/">April 2013</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/02/">February 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/12/">December 2010</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/10/">October 2010</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/09/">September 2010</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/content/id/1913/">Day 28 - 30 Days on the Oracle Cloud</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1912/">Day 22 - 30 Days on the Oracle Cloud</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1911/">Day 17 - 30 days on the Oracle Cloud</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1910/">Relocating Compute Instances</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1909/">Seattle Take Two</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-sm-6">
+        <div class="me-links">
+          <h4>About Me</h4>
+          <dl>
+            <dd><a href="https://twitter.com/fuzziebrain" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></dd>
+            <dd><a href="https://github.com/fuzziebrain" target="_blank"><i class="fa fa-github"></i> Github</a></dd>
+            <dd><a href="https://www.linkedin.com/in/adrianp" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="col col-sm-6"></div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div id="footer-info" class="inner">
+        &copy; 2019 Adrian Png<br>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script>
+  var disqus_shortname = 'fuzziebrain-blog';
+  
+  var disqus_url = 'https://fuzziebrain.com/content/id/1724/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="//stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

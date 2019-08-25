@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>We Have a Wallet | Thinking Anew</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Photo by Pexels   Updated November 17, 2018Please read this follow-up post as well. It contains an important note about intermediate certificates and where to download the root certificates.  One of t">
+<meta name="keywords" content="orclapex,security,ssl,oracle database,18cXE,tls,pki,https">
+<meta property="og:type" content="article">
+<meta property="og:title" content="We Have a Wallet">
+<meta property="og:url" content="https://fuzziebrain.com/content/id/1720/index.html">
+<meta property="og:site_name" content="Thinking Anew">
+<meta property="og:description" content="Photo by Pexels   Updated November 17, 2018Please read this follow-up post as well. It contains an important note about intermediate certificates and where to download the root certificates.  One of t">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1720/wood-1284077_1920_1280x720.jpg">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1720/apex-instance-setting-wallet.jpg">
+<meta property="og:updated_time" content="2019-08-25T05:11:34.236Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="We Have a Wallet">
+<meta name="twitter:description" content="Photo by Pexels   Updated November 17, 2018Please read this follow-up post as well. It contains an important note about intermediate certificates and where to download the root certificates.  One of t">
+<meta name="twitter:image" content="https://fuzziebrain.com/content/id/1720/wood-1284077_1920_1280x720.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Thinking Anew" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link href="//fonts.googleapis.com/css?family=Roboto+Condensed|Roboto" rel="stylesheet" type="text/css">
+  <link href="//stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE=" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-10103110-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+</head>
+</html>
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/categories/reviews/">Reviews</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <img src="/img/flames.png">
+  <h1 class="blog-title">Thinking Anew</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-we-have-a-wallet" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      We Have a Wallet
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/content/id/1720/" class="article-date"><time datetime="2018-10-24T05:17:22.000Z" itemprop="datePublished">2018-10-23</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/technology/">Technology</a> / <a class="article-category-link" href="/categories/technology/programming/">Programming</a> / <a class="article-category-link" href="/categories/technology/programming/oracle-application-express/">Oracle Application Express</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/content/id/1720/wood-1284077_1920_1280x720.jpg" width="1280" height="720" title="Photo by Pexels"><span class="caption">Photo by Pexels</span>
+
+<blockquote>
+<p><strong>Updated November 17, 2018</strong><br>Please read this follow-up <a href="/content/id/1725/">post</a> as well. It contains an important note about intermediate certificates and where to download the root certificates.</p>
+</blockquote>
+<p>One of the difficulties working with web services in the previous version of Oracle Database Express Edition (XE) was the lack of a usable Oracle Wallet. This was fast becoming a huge problems for developers, as many API providers started enforcing requirements to that clients accessed services through secured channels. When working with 11g XE, I often relied on proxies within a sandbox to mask the need for SSL/TLS. I discussed this somewhat at length in a previous <a href="/content/id/1711/">blog post</a>.</p>
+<p>With the 18c release, Oracle has opened up and provided us developers the opportunities to make our apps safer. We now have access to the (<a href="https://docs.oracle.com/en/database/oracle/oracle-database/18/dbseg/using-the-orapki-utility-to-manage-pki-elements.html#GUID-83EF7865-373A-4C39-8A64-44A73EB87759" target="_blank" rel="noopener"><code>orapki</code></a>) tools needed to manage an Oracle Wallet. I don’t do this a lot, so I keep a snippets of what I do to make this easy.</p>
+<a id="more"></a>
+
+<p>I had to revisit this procedure while configuring <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express</a> (APEX) to support email sending using the <a href="https://docs.oracle.com/database/apex-18.2/AEAPI/APEX_MAIL.htm#AEAPI341" target="_blank" rel="noopener"><code>APEX_MAIL</code></a> package. The target SMTP server is Google’s <code>smtp.google.com</code>, and because we want to secure the user credentials during authentication, we have to use TLS. We will use this for context.</p>
+<h2 id="Obtain-Root-and-Intermediate-Certificates"><a href="#Obtain-Root-and-Intermediate-Certificates" class="headerlink" title="Obtain Root and Intermediate Certificates"></a>Obtain Root and Intermediate Certificates</h2><p>To obtain the certificates for Google’s SMTP servers, execute the following command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line">$ openssl s_client -starttls smtp -connect smtp.gmail.com:587 -showcerts</span><br><span class="line">CONNECTED(000001B4)</span><br><span class="line">---</span><br><span class="line">Certificate chain</span><br><span class="line"> 0 s:/C=US/ST=California/L=Mountain View/O=Google LLC/CN=smtp.gmail.com</span><br><span class="line">   i:/C=US/O=Google Trust Services/CN=Google Internet Authority G3</span><br><span class="line">-----BEGIN CERTIFICATE-----</span><br><span class="line">MIIEgjCCA2qgAwIBAgIIYYzIf9CCTNQwDQYJKoZIhvcNAQELBQAwVDELMAkGA1UE</span><br><span class="line">BhMCVVMxHjAcBgNVBAoTFUdvb2dsZSBUcnVzdCBTZXJ2aWNlczElMCMGA1UEAxMc</span><br><span class="line">R29vZ2xlIEludGVybmV0IEF1dGhvcml0eSBHMzAeFw0xODEwMDkxMzA4MDBaFw0x</span><br><span class="line">OTAxMDExMzA4MDBaMGgxCzAJBgNVBAYTAlVTMRMwEQYDVQQIDApDYWxpZm9ybmlh</span><br><span class="line">MRYwFAYDVQQHDA1Nb3VudGFpbiBWaWV3MRMwEQYDVQQKDApHb29nbGUgTExDMRcw</span><br><span class="line">FQYDVQQDDA5zbXRwLmdtYWlsLmNvbTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCC</span><br><span class="line">AQoCggEBAObRl1CBmcUdG0DKuFBKZUrtiI9LEjkWdLkCTG5GZN2dmmyoVF2Um+3Q</span><br><span class="line">8GkxPSp4cNE/pV/+eKpX0swjsX7OSr+H75tG3SwPAwgsxKK/hciP5+UZn3hNxIGe</span><br><span class="line">vkNZUIIiZcLpSmUm2C13AVYO+RrSQoswy72Pqq9L5MOin40RJq2zF1MCqA8AG3S6</span><br><span class="line">c5uNevdHhRAfF9PuFc+FS+KRfMIOKZ1mnE6iMR9rBV4n3I5muVb0F24NlwtnQfKq</span><br><span class="line">8KvUBIZzgZsoj9ED7WeTunTny1n70ElE9AgrOx7+YOpx8UiBsN1uMhszzb+l+Fck</span><br><span class="line">Y6sJl4bjb7HfnYBKbihqauFcxGbsocECAwEAAaOCAUIwggE+MBMGA1UdJQQMMAoG</span><br><span class="line">CCsGAQUFBwMBMBkGA1UdEQQSMBCCDnNtdHAuZ21haWwuY29tMGgGCCsGAQUFBwEB</span><br><span class="line">BFwwWjAtBggrBgEFBQcwAoYhaHR0cDovL3BraS5nb29nL2dzcjIvR1RTR0lBRzMu</span><br><span class="line">Y3J0MCkGCCsGAQUFBzABhh1odHRwOi8vb2NzcC5wa2kuZ29vZy9HVFNHSUFHMzAd</span><br><span class="line">BgNVHQ4EFgQUHPvi7USz6x/8/XVkgFyMk9ndjJAwDAYDVR0TAQH/BAIwADAfBgNV</span><br><span class="line">HSMEGDAWgBR3wrhQmmd2drEtwobQg6B+pn66SzAhBgNVHSAEGjAYMAwGCisGAQQB</span><br><span class="line">1nkCBQMwCAYGZ4EMAQICMDEGA1UdHwQqMCgwJqAkoCKGIGh0dHA6Ly9jcmwucGtp</span><br><span class="line">Lmdvb2cvR1RTR0lBRzMuY3JsMA0GCSqGSIb3DQEBCwUAA4IBAQC+CB4l2nvFPQck</span><br><span class="line">8aJZRZ8vvT1G3gs5BGIPnpB3wIUEp6Hg4xHuPt3CAGktttMEu/wGJABxzfIr4RFo</span><br><span class="line">qgafq3cg7/w5R9+4kaDX0YcNNdgvC6/8UXlHHTjEsNgJiGFDJGRzttHmGGhUvsxg</span><br><span class="line">MwCihV1N0E5YZYIMfxVFHmbLTZe0tI4Ma0n+hxxbXSlSCOH4fjbaZ+sKX0RbWTDx</span><br><span class="line">wweZxQM9JIn7Lwz4Fe34e+YfpyNqOow6FdvaOf5J3dEmqHoS5rXJ+dp8jTSTld5L</span><br><span class="line">wn+ganMirE5mLNJNh9AvfIVtz4sHw1Wg5v+TkvWZ6t5J1oJY3UJPSfJrPQy6fssu</span><br><span class="line">9rs+s4BX</span><br><span class="line">-----END CERTIFICATE-----</span><br><span class="line"> 1 s:/C=US/O=Google Trust Services/CN=Google Internet Authority G3</span><br><span class="line">   i:/OU=GlobalSign Root CA - R2/O=GlobalSign/CN=GlobalSign</span><br><span class="line">-----BEGIN CERTIFICATE-----</span><br><span class="line">MIIEXDCCA0SgAwIBAgINAeOpMBz8cgY4P5pTHTANBgkqhkiG9w0BAQsFADBMMSAw</span><br><span class="line">HgYDVQQLExdHbG9iYWxTaWduIFJvb3QgQ0EgLSBSMjETMBEGA1UEChMKR2xvYmFs</span><br><span class="line">U2lnbjETMBEGA1UEAxMKR2xvYmFsU2lnbjAeFw0xNzA2MTUwMDAwNDJaFw0yMTEy</span><br><span class="line">MTUwMDAwNDJaMFQxCzAJBgNVBAYTAlVTMR4wHAYDVQQKExVHb29nbGUgVHJ1c3Qg</span><br><span class="line">U2VydmljZXMxJTAjBgNVBAMTHEdvb2dsZSBJbnRlcm5ldCBBdXRob3JpdHkgRzMw</span><br><span class="line">ggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDKUkvqHv/OJGuo2nIYaNVW</span><br><span class="line">XQ5IWi01CXZaz6TIHLGp/lOJ+600/4hbn7vn6AAB3DVzdQOts7G5pH0rJnnOFUAK</span><br><span class="line">71G4nzKMfHCGUksW/mona+Y2emJQ2N+aicwJKetPKRSIgAuPOB6Aahh8Hb2XO3h9</span><br><span class="line">RUk2T0HNouB2VzxoMXlkyW7XUR5mw6JkLHnA52XDVoRTWkNty5oCINLvGmnRsJ1z</span><br><span class="line">ouAqYGVQMc/7sy+/EYhALrVJEA8KbtyX+r8snwU5C1hUrwaW6MWOARa8qBpNQcWT</span><br><span class="line">kaIeoYvy/sGIJEmjR0vFEwHdp1cSaWIr6/4g72n7OqXwfinu7ZYW97EfoOSQJeAz</span><br><span class="line">AgMBAAGjggEzMIIBLzAOBgNVHQ8BAf8EBAMCAYYwHQYDVR0lBBYwFAYIKwYBBQUH</span><br><span class="line">AwEGCCsGAQUFBwMCMBIGA1UdEwEB/wQIMAYBAf8CAQAwHQYDVR0OBBYEFHfCuFCa</span><br><span class="line">Z3Z2sS3ChtCDoH6mfrpLMB8GA1UdIwQYMBaAFJviB1dnHB7AagbeWbSaLd/cGYYu</span><br><span class="line">MDUGCCsGAQUFBwEBBCkwJzAlBggrBgEFBQcwAYYZaHR0cDovL29jc3AucGtpLmdv</span><br><span class="line">b2cvZ3NyMjAyBgNVHR8EKzApMCegJaAjhiFodHRwOi8vY3JsLnBraS5nb29nL2dz</span><br><span class="line">cjIvZ3NyMi5jcmwwPwYDVR0gBDgwNjA0BgZngQwBAgIwKjAoBggrBgEFBQcCARYc</span><br><span class="line">aHR0cHM6Ly9wa2kuZ29vZy9yZXBvc2l0b3J5LzANBgkqhkiG9w0BAQsFAAOCAQEA</span><br><span class="line">HLeJluRT7bvs26gyAZ8so81trUISd7O45skDUmAge1cnxhG1P2cNmSxbWsoiCt2e</span><br><span class="line">ux9LSD+PAj2LIYRFHW31/6xoic1k4tbWXkDCjir37xTTNqRAMPUyFRWSdvt+nlPq</span><br><span class="line">wnb8Oa2I/maSJukcxDjNSfpDh/Bd1lZNgdd/8cLdsE3+wypufJ9uXO1iQpnh9zbu</span><br><span class="line">FIwsIONGl1p3A8CgxkqI/UAih3JaGOqcpcdaCIzkBaR9uYQ1X4k2Vg5APRLouzVy</span><br><span class="line">7a8IVk6wuy6pm+T7HT4LY8ibS5FEZlfAFLSW8NwsVz9SBK2Vqn1N0PIMn5xA6NZV</span><br><span class="line">c7o835DLAFshEWfC7TIe3g==</span><br><span class="line">-----END CERTIFICATE-----</span><br><span class="line">---</span><br><span class="line">Server certificate</span><br><span class="line">subject=/C=US/ST=California/L=Mountain View/O=Google LLC/CN=smtp.gmail.com</span><br><span class="line">issuer=/C=US/O=Google Trust Services/CN=Google Internet Authority G3</span><br><span class="line">---</span><br><span class="line">No client certificate CA names sent</span><br><span class="line">Peer signing digest: SHA256</span><br><span class="line">Server Temp Key: ECDH, P-256, 256 bits</span><br><span class="line">---</span><br><span class="line">SSL handshake has read 3240 bytes and written 469 bytes</span><br><span class="line">---</span><br><span class="line">New, TLSv1/SSLv3, Cipher is ECDHE-RSA-AES128-GCM-SHA256</span><br><span class="line">Server public key is 2048 bit</span><br><span class="line">Secure Renegotiation IS supported</span><br><span class="line">Compression: NONE</span><br><span class="line">Expansion: NONE</span><br><span class="line">No ALPN negotiated</span><br><span class="line">SSL-Session:</span><br><span class="line">    Protocol  : TLSv1.2</span><br><span class="line">    Cipher    : ECDHE-RSA-AES128-GCM-SHA256</span><br><span class="line">    Session-ID: 5DF77BA747412BE89EB308BEAFE46CB25A88516376424ED100CA56C2BDD34225</span><br><span class="line">    Session-ID-ctx:</span><br><span class="line">    Master-Key: 565E04E20E6D8200A4FECD2A5F09ED4549EA2FA982350A598B6A9D4EDA2B9FD26F434F66475CA6524B8EF469A1A0A563</span><br><span class="line">    Key-Arg   : None</span><br><span class="line">    PSK identity: None</span><br><span class="line">    PSK identity hint: None</span><br><span class="line">    SRP username: None</span><br><span class="line">    TLS session ticket lifetime hint: 100800 (seconds)</span><br><span class="line">    TLS session ticket:</span><br><span class="line">    0000 - 00 85 11 42 e7 58 60 f5-50 28 ca bc 82 57 ec 48   ...B.X`.P(...W.H</span><br><span class="line">    0010 - 68 64 84 5a 2b ca 65 e3-2f 92 2a 46 16 43 f3 7b   hd.Z+.e./.*F.C.&#123;</span><br><span class="line">    0020 - 13 e2 99 52 c2 8f bb 9a-de d1 89 3e 22 de 5a 60   ...R.......&gt;&quot;.Z`</span><br><span class="line">    0030 - 90 fc 24 8c d6 4f f6 40-d0 f4 e7 2c bc f9 46 e7   ..$..O.@...,..F.</span><br><span class="line">    0040 - 7f 7b a1 96 0f da da 6e-14 cd 32 2a 98 f1 97 e6   .&#123;.....n..2*....</span><br><span class="line">    0050 - 09 06 9f 59 d5 ef 93 a3-e9 7f c7 b6 88 64 b0 1d   ...Y.........d..</span><br><span class="line">    0060 - 98 93 06 a9 01 57 9b b7-fc 57 14 45 0a cb 3a 6a   .....W...W.E..:j</span><br><span class="line">    0070 - 39 4e 80 43 d7 04 e9 16-62 61 d5 ef 36 7b 75 b4   9N.C....ba..6&#123;u.</span><br><span class="line">    0080 - 0a db bb 0b 2d 58 bd 32-7e 15 e7 20 b6 61 9d 39   ....-X.2~.. .a.9</span><br><span class="line">    0090 - 2d 74 b1 e8 67 da f1 3d-40 2d 62 e3 b2 ab 51 3e   -t..g..=@-b...Q&gt;</span><br><span class="line">    00a0 - 56 0b ec 51 90 df d4 90-54 76 a2 5b b0 e3 3c 95   V..Q....Tv.[..&lt;.</span><br><span class="line">    00b0 - 1b af 75 d5 70 10 c7 e9-e1 e0 b4 1d 8c ea 7a 85   ..u.p.........z.</span><br><span class="line">    00c0 - e5 89 f8 81 81 02 22 99-b7 a9 2f 80 e3 37 d3 c6   ......&quot;.../..7..</span><br><span class="line">    00d0 - 88 be 7d 33 b7                                    ..&#125;3.</span><br><span class="line"></span><br><span class="line">    Start Time: 1540348953</span><br><span class="line">    Timeout   : 300 (sec)</span><br><span class="line">    Verify return code: 0 (ok)</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>The first certificate in the chain (lines 7 to 33) belongs to the server you intend to connect to. You do/should <strong>NOT</strong> put this in the wallet. The remaining entries are the intermediate(s) and root certificate. These are needed. In this case, there is only an intermediate certificate. Take the content from lines 36 to 61 and save it in a file named <code>/home/oracle/certs/Google-Internet-Authority-G3.pem</code>.</p>
+<blockquote>
+<p>For regular websites over SSL/TLS, you would use this instead:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ openssl s_client -connect google.com:443 -showcerts</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>The application <code>openssl</code> is commonly found in Linux distributions and probably in the MacOS as well. For Windows users, use Git Bash.</p>
+<h2 id="Create-the-Oracle-Wallet"><a href="#Create-the-Oracle-Wallet" class="headerlink" title="Create the Oracle Wallet"></a>Create the Oracle Wallet</h2><p>Do this only if you have not already done so. Create the Oracle Wallet using the following command:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ orapki wallet create -wallet /home/oracle/wallets/mywallet \</span><br><span class="line">  -<span class="built_in">pwd</span> averysecurepassword</span><br></pre></td></tr></table></figure>
+
+<h2 id="Add-Certificates"><a href="#Add-Certificates" class="headerlink" title="Add Certificates"></a>Add Certificates</h2><p>Now add the certificate using the following command against every certificate that was retrieved in the previous step.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ orapki wallet add -wallet /home/oracle/wallets/mywallet \</span><br><span class="line">  -trusted_cert -cert /home/oracle/certs/Google-Internet-Authority-G3.pem</span><br></pre></td></tr></table></figure>
+
+<h2 id="Don’t-Leave-Home-Without-It"><a href="#Don’t-Leave-Home-Without-It" class="headerlink" title="Don’t Leave Home Without It"></a>Don’t Leave Home Without It</h2><p>Check the wallet to make sure that the certificate has been successfully added:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ orapki wallet display -wallet /home/oracle/wallets/mywallet/</span><br><span class="line">Oracle PKI Tool Release 18.0.0.0.0 - Production</span><br><span class="line">Version 18.1.0.0.0</span><br><span class="line">Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Enter wallet password:</span><br><span class="line">Requested Certificates:</span><br><span class="line">User Certificates:</span><br><span class="line">Trusted Certificates:</span><br><span class="line">Subject:        CN=Google Internet Authority G3,O=Google Trust Services,C=US</span><br></pre></td></tr></table></figure>
+
+<h2 id="Set-Up-APEX-to-Use-the-Wallet"><a href="#Set-Up-APEX-to-Use-the-Wallet" class="headerlink" title="Set Up APEX to Use the Wallet"></a>Set Up APEX to Use the Wallet</h2><p>Login to APEX as the instance administrator and navigate to “Manage Instance &gt; Instance Settings”.</p>
+<img src="/content/id/1720/apex-instance-setting-wallet.jpg" title="APEX Instance Setting - Wallet"><span class="caption">APEX Instance Setting - Wallet</span>
+
+<p>That’s it!</p>
+<h2 id="One-Last-Thing"><a href="#One-Last-Thing" class="headerlink" title="One Last Thing"></a>One Last Thing</h2><p>I did most of this in a Docker container using this <a href="https://github.com/fuzziebrain/docker-oracle-xe" target="_blank" rel="noopener">image build</a>. The image doesn’t have <code>openssl</code> available, so I grabbed the certs from the host operating system environment. For the Oracle Wallet management, you can access the tool by obtaining a Bash session in the database container.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[opc@hostserver ~]$ docker <span class="built_in">exec</span> -it -u oracle oracledb bash</span><br><span class="line">[oracle@oracledb /]$ . oraenv</span><br><span class="line">ORACLE_SID = [XE] ?</span><br><span class="line">The Oracle base remains unchanged with value /opt/oracle</span><br><span class="line">[oracle@oracledb /]$</span><br></pre></td></tr></table></figure>
+
+<p>Hope this helps. Lock it down!</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://fuzziebrain.com/content/id/1720/" data-id="cjzql7lgt00k7d32nowipz4hh" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/18cxe/">18cXE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/https/">https</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle-database/">oracle database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/orclapex/">orclapex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/pki/">pki</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/security/">security</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssl/">ssl</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tls/">tls</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/content/id/1719/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Sweet 18 - A New Oracle XE Release</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/content/id/1721/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Protect Your Data with Transparent Data Encryption</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+<p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
+
+  <img src="/img/O-ACEAssociate-rgb.png" class="ace-logo">
+</div>
+
+
+  <div class="sidebar-module">
+  <p class="twitter">
+    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fuzziebrain" data-widget-id="487271531987210241">Tweets by @fuzziebrain</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </p>
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/life/">Life</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/reviews/">Reviews</a><span class="sidebar-module-list-count">5</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/reviews/books/">Books</a><span class="sidebar-module-list-count">5</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/">Technology</a><span class="sidebar-module-list-count">47</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/conferences/">Conferences</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/devops/">DevOps</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/infrastructure/">Infrastructure</a><span class="sidebar-module-list-count">9</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/infrastructure/oracle-cloud/">Oracle Cloud</a><span class="sidebar-module-list-count">9</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/others/">Others</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/">Programming</a><span class="sidebar-module-list-count">31</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/ide/">IDE</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/nodejs/">Nodejs</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/oracle-application-express/">Oracle Application Express</a><span class="sidebar-module-list-count">29</span></li></ul></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/18cxe/" style="font-size: 13.75px;">18cXE</a> <a href="/tags/2fa/" style="font-size: 10px;">2fa</a> <a href="/tags/apache-poi/" style="font-size: 10px;">Apache POI</a> <a href="/tags/devops/" style="font-size: 10px;">DevOps</a> <a href="/tags/eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/iaas/" style="font-size: 16.25px;">IaaS</a> <a href="/tags/java/" style="font-size: 10px;">Java</a> <a href="/tags/kscope17/" style="font-size: 10px;">Kscope17</a> <a href="/tags/linux/" style="font-size: 10px;">Linux</a> <a href="/tags/microsoft-word/" style="font-size: 10px;">Microsoft Word</a> <a href="/tags/odtug/" style="font-size: 11.25px;">ODTUG</a> <a href="/tags/oxar/" style="font-size: 10px;">OXAR</a> <a href="/tags/oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/oracle-application-express/" style="font-size: 11.25px;">Oracle Application Express</a> <a href="/tags/oracle-bi-publisher/" style="font-size: 10px;">Oracle BI Publisher</a> <a href="/tags/oracle-text/" style="font-size: 10px;">Oracle Text</a> <a href="/tags/pdf/" style="font-size: 10px;">PDF</a> <a href="/tags/san-antonio/" style="font-size: 10px;">San Antonio</a> <a href="/tags/subversion/" style="font-size: 10px;">Subversion</a> <a href="/tags/thanksodc/" style="font-size: 10px;">ThanksODC</a> <a href="/tags/vagrant/" style="font-size: 10px;">Vagrant</a> <a href="/tags/vancouver/" style="font-size: 10px;">Vancouver</a> <a href="/tags/virtualbox/" style="font-size: 10px;">VirtualBox</a> <a href="/tags/xpath/" style="font-size: 10px;">XPath</a> <a href="/tags/xsl-fo/" style="font-size: 10px;">XSL-FO</a> <a href="/tags/active-directory/" style="font-size: 10px;">active directory</a> <a href="/tags/analytics/" style="font-size: 10px;">analytics</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/artificial-intelligence/" style="font-size: 10px;">artificial intelligence</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/authentication/" style="font-size: 15px;">authentication</a> <a href="/tags/autonomous/" style="font-size: 10px;">autonomous</a> <a href="/tags/azure/" style="font-size: 10px;">azure</a> <a href="/tags/barcode/" style="font-size: 10px;">barcode</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/blogging/" style="font-size: 11.25px;">blogging</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/bots/" style="font-size: 10px;">bots</a> <a href="/tags/career/" style="font-size: 11.25px;">career</a> <a href="/tags/challenge-coin/" style="font-size: 10px;">challenge coin</a> <a href="/tags/change-is-constant/" style="font-size: 10px;">change is constant</a> <a href="/tags/cloud/" style="font-size: 18.75px;">cloud</a> <a href="/tags/community/" style="font-size: 13.75px;">community</a> <a href="/tags/compliance/" style="font-size: 10px;">compliance</a> <a href="/tags/compute/" style="font-size: 10px;">compute</a> <a href="/tags/computer-science/" style="font-size: 10px;">computer science</a> <a href="/tags/confidential/" style="font-size: 10px;">confidential</a> <a href="/tags/container/" style="font-size: 10px;">container</a> <a href="/tags/customer-service/" style="font-size: 10px;">customer service</a> <a href="/tags/data/" style="font-size: 12.5px;">data</a> <a href="/tags/database/" style="font-size: 12.5px;">database</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/devops/" style="font-size: 18.75px;">devops</a> <a href="/tags/digitalocean/" style="font-size: 10px;">digitalocean</a> <a href="/tags/disney/" style="font-size: 10px;">disney</a> <a href="/tags/docker/" style="font-size: 11.25px;">docker</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/emerging-technology/" style="font-size: 10px;">emerging technology</a> <a href="/tags/environment/" style="font-size: 10px;">environment</a> <a href="/tags/face-detection/" style="font-size: 10px;">face detection</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/fnproj/" style="font-size: 10px;">fnproj</a> <a href="/tags/full-stack/" style="font-size: 10px;">full stack</a> <a href="/tags/functions/" style="font-size: 10px;">functions</a> <a href="/tags/geolocation/" style="font-size: 10px;">geolocation</a> <a href="/tags/gis/" style="font-size: 10px;">gis</a> <a href="/tags/google/" style="font-size: 12.5px;">google</a> <a href="/tags/gps/" style="font-size: 11.25px;">gps</a> <a href="/tags/graphql/" style="font-size: 10px;">graphql</a> <a href="/tags/gratitude/" style="font-size: 10px;">gratitude</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/hosting/" style="font-size: 12.5px;">hosting</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/image-processing/" style="font-size: 10px;">image processing</a> <a href="/tags/infrastructure/" style="font-size: 16.25px;">infrastructure</a> <a href="/tags/insum/" style="font-size: 10px;">insum</a> <a href="/tags/integration/" style="font-size: 10px;">integration</a> <a href="/tags/iphone/" style="font-size: 10px;">iphone</a> <a href="/tags/java/" style="font-size: 11.25px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/knowledge-sharing/" style="font-size: 10px;">knowledge sharing</a> <a href="/tags/kubernetes/" style="font-size: 10px;">kubernetes</a> <a href="/tags/launch/" style="font-size: 10px;">launch</a> <a href="/tags/lbs/" style="font-size: 11.25px;">lbs</a> <a href="/tags/learning/" style="font-size: 13.75px;">learning</a> <a href="/tags/linked-data/" style="font-size: 10px;">linked data</a> <a href="/tags/linode/" style="font-size: 12.5px;">linode</a> <a href="/tags/location-based-services/" style="font-size: 10px;">location-based services</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/mahout/" style="font-size: 10px;">mahout</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/mapreduce/" style="font-size: 10px;">mapreduce</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/meetup/" style="font-size: 10px;">meetup</a> <a href="/tags/memorabilia/" style="font-size: 10px;">memorabilia</a> <a href="/tags/mfa/" style="font-size: 10px;">mfa</a> <a href="/tags/microsoft/" style="font-size: 13.75px;">microsoft</a> <a href="/tags/migration/" style="font-size: 10px;">migration</a> <a href="/tags/monetization/" style="font-size: 10px;">monetization</a> <a href="/tags/monitoring/" style="font-size: 10px;">monitoring</a> <a href="/tags/multi-factor/" style="font-size: 10px;">multi-factor</a> <a href="/tags/multimedia/" style="font-size: 10px;">multimedia</a> <a href="/tags/nodejs/" style="font-size: 12.5px;">nodejs</a> <a href="/tags/oauth2/" style="font-size: 13.75px;">oauth2</a> <a href="/tags/oci/" style="font-size: 16.25px;">oci</a> <a href="/tags/ocr/" style="font-size: 10px;">ocr</a> <a href="/tags/odtug/" style="font-size: 13.75px;">odtug</a> <a href="/tags/office-365/" style="font-size: 10px;">office 365</a> <a href="/tags/oracle/" style="font-size: 17.5px;">oracle</a> <a href="/tags/oracle-database/" style="font-size: 12.5px;">oracle database</a> <a href="/tags/orclapex/" style="font-size: 20px;">orclapex</a> <a href="/tags/orclfn/" style="font-size: 10px;">orclfn</a> <a href="/tags/ore/" style="font-size: 10px;">ore</a> <a href="/tags/orlando/" style="font-size: 10px;">orlando</a> <a href="/tags/oxar/" style="font-size: 13.75px;">oxar</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pki/" style="font-size: 11.25px;">pki</a> <a href="/tags/platform/" style="font-size: 10px;">platform</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/powershell/" style="font-size: 10px;">powershell</a> <a href="/tags/preview/" style="font-size: 11.25px;">preview</a> <a href="/tags/protection/" style="font-size: 10px;">protection</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/quality/" style="font-size: 10px;">quality</a> <a href="/tags/r/" style="font-size: 10px;">r</a> <a href="/tags/rdm/" style="font-size: 12.5px;">rdm</a> <a href="/tags/redact/" style="font-size: 10px;">redact</a> <a href="/tags/release/" style="font-size: 10px;">release</a> <a href="/tags/reporting/" style="font-size: 10px;">reporting</a> <a href="/tags/research/" style="font-size: 11.25px;">research</a> <a href="/tags/research-data-management/" style="font-size: 10px;">research data management</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/review/" style="font-size: 10px;">review</a> <a href="/tags/rstats/" style="font-size: 11.25px;">rstats</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/scripting/" style="font-size: 10px;">scripting</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/seattle/" style="font-size: 10px;">seattle</a> <a href="/tags/security/" style="font-size: 13.75px;">security</a> <a href="/tags/semantic-web/" style="font-size: 10px;">semantic web</a> <a href="/tags/serverless/" style="font-size: 11.25px;">serverless</a> <a href="/tags/single-sign-on/" style="font-size: 11.25px;">single sign on</a> <a href="/tags/single-sign-on/" style="font-size: 11.25px;">single sign-on</a> <a href="/tags/smtp/" style="font-size: 10px;">smtp</a> <a href="/tags/solutions/" style="font-size: 10px;">solutions</a> <a href="/tags/spf/" style="font-size: 10px;">spf</a> <a href="/tags/spring-framework/" style="font-size: 11.25px;">spring framework</a> <a href="/tags/spring-roo/" style="font-size: 10px;">spring roo</a> <a href="/tags/springsource/" style="font-size: 11.25px;">springsource</a> <a href="/tags/springsource-tool-suite/" style="font-size: 10px;">springsource tool suite</a> <a href="/tags/ssl/" style="font-size: 11.25px;">ssl</a> <a href="/tags/sso/" style="font-size: 13.75px;">sso</a> <a href="/tags/stackscripts/" style="font-size: 10px;">stackscripts</a> <a href="/tags/sts/" style="font-size: 10px;">sts</a> <a href="/tags/subclipse/" style="font-size: 10px;">subclipse</a> <a href="/tags/suez/" style="font-size: 10px;">suez</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/sysadmin/" style="font-size: 10px;">sysadmin</a> <a href="/tags/system-administration/" style="font-size: 10px;">system administration</a> <a href="/tags/tde/" style="font-size: 10px;">tde</a> <a href="/tags/text-recognition/" style="font-size: 10px;">text recognition</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/tls/" style="font-size: 11.25px;">tls</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/training/" style="font-size: 15px;">training</a> <a href="/tags/travel/" style="font-size: 12.5px;">travel</a> <a href="/tags/two-factor/" style="font-size: 10px;">two-factor</a> <a href="/tags/typescript/" style="font-size: 11.25px;">typescript</a> <a href="/tags/user-groups/" style="font-size: 10px;">user groups</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/vagrant/" style="font-size: 12.5px;">vagrant</a> <a href="/tags/viewer/" style="font-size: 10px;">viewer</a> <a href="/tags/virtualbox/" style="font-size: 10px;">virtualbox</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/wasm/" style="font-size: 10px;">wasm</a> <a href="/tags/workshop/" style="font-size: 10px;">workshop</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/07/">July 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/10/">October 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/09/">September 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/02/">February 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/06/">June 2014</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/05/">May 2013</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/04/">April 2013</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/02/">February 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/12/">December 2010</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/10/">October 2010</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/09/">September 2010</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/content/id/1913/">Day 28 - 30 Days on the Oracle Cloud</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1912/">Day 22 - 30 Days on the Oracle Cloud</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1911/">Day 17 - 30 days on the Oracle Cloud</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1910/">Relocating Compute Instances</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1909/">Seattle Take Two</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-sm-6">
+        <div class="me-links">
+          <h4>About Me</h4>
+          <dl>
+            <dd><a href="https://twitter.com/fuzziebrain" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></dd>
+            <dd><a href="https://github.com/fuzziebrain" target="_blank"><i class="fa fa-github"></i> Github</a></dd>
+            <dd><a href="https://www.linkedin.com/in/adrianp" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="col col-sm-6"></div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div id="footer-info" class="inner">
+        &copy; 2019 Adrian Png<br>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script>
+  var disqus_shortname = 'fuzziebrain-blog';
+  
+  var disqus_url = 'https://fuzziebrain.com/content/id/1720/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="//stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>

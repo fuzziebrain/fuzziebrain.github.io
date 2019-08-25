@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>Day 22 - 30 Days on the Oracle Cloud | Thinking Anew</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="All sorts of functions  Oracle Function was announced late last year (2018), with limited availability to select Oracle Cloud customers. The platform is built on Fn and is Oracle’s solution for develo">
+<meta name="keywords" content="cloud,oracle,oci,IaaS,infrastructure,fnproj,serverless,orclfn,functions">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Day 22 - 30 Days on the Oracle Cloud">
+<meta property="og:url" content="https://fuzziebrain.com/content/id/1912/index.html">
+<meta property="og:site_name" content="Thinking Anew">
+<meta property="og:description" content="All sorts of functions  Oracle Function was announced late last year (2018), with limited availability to select Oracle Cloud customers. The platform is built on Fn and is Oracle’s solution for develo">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1912/mathematics-757566_1280x720.jpg">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1912/create-fn-application.png">
+<meta property="og:updated_time" content="2019-08-25T05:11:33.998Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Day 22 - 30 Days on the Oracle Cloud">
+<meta name="twitter:description" content="All sorts of functions  Oracle Function was announced late last year (2018), with limited availability to select Oracle Cloud customers. The platform is built on Fn and is Oracle’s solution for develo">
+<meta name="twitter:image" content="https://fuzziebrain.com/content/id/1912/mathematics-757566_1280x720.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Thinking Anew" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link href="//fonts.googleapis.com/css?family=Roboto+Condensed|Roboto" rel="stylesheet" type="text/css">
+  <link href="//stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE=" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="/css/styles.css">
+  
+   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-10103110-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+</head>
+</html>
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/categories/reviews/">Reviews</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <img src="/img/flames.png">
+  <h1 class="blog-title">Thinking Anew</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-day-22-30-days-on-the-oracle-cloud" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Day 22 - 30 Days on the Oracle Cloud
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/content/id/1912/" class="article-date"><time datetime="2019-07-23T08:03:15.000Z" itemprop="datePublished">2019-07-23</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/technology/">Technology</a> / <a class="article-category-link" href="/categories/technology/infrastructure/">Infrastructure</a> / <a class="article-category-link" href="/categories/technology/infrastructure/oracle-cloud/">Oracle Cloud</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/content/id/1912/mathematics-757566_1280x720.jpg" title="All sorts of functions"><span class="caption">All sorts of functions</span>
+
+<p>Oracle Function was <a href="https://www.oracle.com/corporate/pressrelease/oracle-cloud-native-framework-121118.html" target="_blank" rel="noopener">announced</a> late last year (2018), with limited availability to select <a href="https://cloud.oracle.com" target="_blank" rel="noopener">Oracle Cloud</a> customers. The platform is built on <a href="https://fnproject.io" target="_blank" rel="noopener">Fn</a> and is Oracle’s solution for developers wanting to deploy services using a <a href="https://wikipedia.org/wiki/Serverless_Framework" target="_blank" rel="noopener">Serverless Framework</a>.</p>
+<p>As succinctly explained by <a href="https://twitter.com/kaslinfields" target="_blank" rel="noopener">Kaslin Fields</a>, a Fn function is a small embodiment of code that listens and speaks to HTTP streams. Ideally, each Fn function serves one, and only one purpose. It can be implemented in wide variety of programming languages and they are listed <a href="https://github.com/fnproject/docs/blob/master/cli/ref/fn-init.md" target="_blank" rel="noopener">here</a> (see the list of runtime options available).</p>
+<a id="more"></a>
+
+<h2 id="Development-Environment-Setup"><a href="#Development-Environment-Setup" class="headerlink" title="Development Environment Setup"></a>Development Environment Setup</h2><p>The Fn project provides a concise <a href="https://fnproject.io/tutorials/install/" target="_blank" rel="noopener">set of instructions</a> on installing the Fn command line interface (CLI) utility. The CLI allows developers to run a Fn server locally, and perform developer and deployment client functions.</p>
+<p>A rather recent version of <a href="https://www.docker.com/" target="_blank" rel="noopener">Docker</a> is required, and if you are on a Microsoft Windows machine, I highly recommend installing <a href="https://www.virtualbox.org/" target="_blank" rel="noopener">Virtual Box</a> and running a Linux virtual machine (VM) for Fn development. You can create a VM manually, or you can install <a href="https://www.vagrantup.com/" target="_blank" rel="noopener">Vagrant</a> and quickly stand up a suitable using Oracle’s official <a href="https://github.com/oracle/vagrant-boxes" target="_blank" rel="noopener">Vagrant build scripts</a> (see <a href="https://github.com/oracle/vagrant-boxes/tree/master/DockerEngine" target="_blank" rel="noopener">Orace Linux 7 with Docker engine</a>).</p>
+<p>In a nutshell, assuming a Linux Operating System (OS), do the following:</p>
+<ol>
+<li><p>Install, configure and run Docker.</p>
+</li>
+<li><p>Install Fn CLI using the command provided:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl -LSs https://raw.githubusercontent.com/fnproject/cli/master/install | sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Open a console and start the Fn Server for <strong>local</strong> development:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fn start</span><br></pre></td></tr></table></figure>
+
+<p> This pulls a Docker image and runs a container. The default server API URL is <code>http://127.0.0.1:8080</code>.</p>
+</li>
+<li><p>Configure the VM to work with a local registry if you are planning to start out by developing serverless functions locally.</p>
+</li>
+<li><p>Follow the <a href="https://fnproject.io/tutorials/Apps/" target="_blank" rel="noopener">quick tutorial</a> on creating a simple “Helloworld” service, changing the runtime to use the programming language of your choice.</p>
+</li>
+</ol>
+<h2 id="Oracle-Cloud-Setup"><a href="#Oracle-Cloud-Setup" class="headerlink" title="Oracle Cloud Setup"></a>Oracle Cloud Setup</h2><p>Oracle Functions is not 100% ready to go, right out of the box when your Oracle Cloud account is provisioned. The setup tasks and deployment instructions are already available in the <a href="https://docs.cloud.oracle.com/iaas/Content/Functions/Concepts/functionsoverview.htm" target="_blank" rel="noopener">official documentation</a>. I shall attempt to summarise and highlight the important steps.</p>
+<h3 id="OCI-Components-Required"><a href="#OCI-Components-Required" class="headerlink" title="OCI Components Required"></a>OCI Components Required</h3><ol>
+<li><p>A minimally functional Virtual Cloud Network (VCN)</p>
+</li>
+<li><p>Policies that allows Oracle Functions (FaaS) to:<br> a. Access the Oracle Cloud Infrastructure Registry (OCIR); and</p>
+<pre><code><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Allow<span class="built_in"> service </span>FaaS <span class="keyword">to</span> read repos <span class="keyword">in</span> tenancy</span><br></pre></td></tr></table></figure></code></pre><p> b. Use network components in the target compartment.</p>
+<pre><code><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Allow<span class="built_in"> service </span>FaaS <span class="keyword">to</span> use virtual-network-family <span class="keyword">in</span> compartment &lt;COMPARTMENT_NAME&gt;</span><br></pre></td></tr></table></figure></code></pre><blockquote>
+<p>One or two policies may be created, however, the first policy statement must be created in a policy within the root compartment.</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="Configure-Environment-for-Oracle-Functions"><a href="#Configure-Environment-for-Oracle-Functions" class="headerlink" title="Configure Environment for Oracle Functions"></a>Configure Environment for Oracle Functions</h3><p>There are <strong>ten</strong> steps to perform for <a href="https://docs.cloud.oracle.com/iaas/Content/Functions/Tasks/functionsconfiguringclient.htm" target="_blank" rel="noopener">configuring</a> the Fn development environment. The minimum you will need to invoke a simple “Helloworld” function are:</p>
+<ol>
+<li><p><a href="https://docs.cloud.oracle.com/iaas/Content/Functions/Tasks/functionssetupapikey.htm" target="_blank" rel="noopener">Setting up the OCI API Signing key</a> .</p>
+<ol>
+<li>Run <code>openssl</code> command to generate the private and public keys. Note down the <strong>paths</strong> and <strong>passphrase</strong> used.</li>
+<li>Add the public key to the OCI user’s API Keys and then noting the <strong>fingerprint</strong>.</li>
+</ol>
+</li>
+<li><p><a href="https://docs.cloud.oracle.com/iaas/Content/Functions/Tasks/functionsconfigureocicli.htm" target="_blank" rel="noopener">Create the OCI profile</a> and configuration file (<code>~/.oci/config</code>). Make sure the values required are entered correctly, or API signing will fail and you will not be able to authenticate with the endpoint. Note the <strong>profile</strong> name. The end result is a profile like this:</p>
+ <figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[my_oci-profile]</span><br><span class="line">user=ocid1.user.oc1..**********</span><br><span class="line">fingerprint=**<span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span><span class="symbol">:**</span></span><br><span class="line">key_file=~<span class="regexp">/.oci/my</span>-private-key.pem</span><br><span class="line">tenancy=ocid1.tenancy.oc1..**********</span><br><span class="line">region=us-ashburn-<span class="number">1</span></span><br><span class="line">pass_phrase=mysupersecretpassword</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Setup <code>oci-curl</code>, which isn’t really required to do a quick invocation test.</p>
+</li>
+<li><p>If you already have a Fn development environment, then chances are, Docker and Fn CLI are already installed, configured and running.</p>
+</li>
+<li><p>Setup the <a href="https://docs.cloud.oracle.com/iaas/Content/Functions/Tasks/functionscreatefncontext.htm" target="_blank" rel="noopener">context</a> (and <a href="https://docs.cloud.oracle.com/iaas/Content/Functions/Tasks/functionssetoracleprofile.htm" target="_blank" rel="noopener">this</a>) for Fn CLI to work with Oracle Functions. After performing these steps, a context file will be created in <code>~/.fn/contexts</code>, containing contents similar to this:</p>
+ <figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">api-<span class="string">url:</span> <span class="string">https:</span><span class="comment">//functions.us-ashburn-1.oraclecloud.com</span></span><br><span class="line">oracle.compartment-<span class="string">id:</span> ocid1.compartment.oc1..**********</span><br><span class="line">oracle.<span class="string">profile:</span> my-oci-profile</span><br><span class="line"><span class="string">provider:</span> oracle</span><br><span class="line"><span class="string">registry:</span> iad.ocir.io<span class="regexp">/&lt;TENANT_NAMESPACE&gt;/</span>&lt;REPOSITORY_NAME&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Generate and note the Auth token, and then login to the OCIR.</p>
+</li>
+</ol>
+<h2 id="Deploying-to-Oracle-Function"><a href="#Deploying-to-Oracle-Function" class="headerlink" title="Deploying to Oracle Function"></a>Deploying to Oracle Function</h2><p>The best way to check that the environment is configured (<code>~/.oci/config</code>) correctly, is to list the applications available:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ fn list apps</span><br><span class="line">No apps found</span><br><span class="line">NAME    ID</span><br></pre></td></tr></table></figure>
+
+<p>To create an application, either use the OCI console:</p>
+<img src="/content/id/1912/create-fn-application.png" title="Oracle Functions - Create Application"><span class="caption">Oracle Functions - Create Application</span>
+
+<p>Or, use the Fn CLI, specifying the name of the application, and the OCID of the subnet to attach to:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ fn create app nodeapp --annotation oracle.com/oci/subnetIds=<span class="string">'["ocid1.subnet.oc1.iad.**********"]'</span></span><br></pre></td></tr></table></figure>
+
+<p>List the applications again to ensure it was successfully created:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ fn list apps</span><br><span class="line">NAME    ID</span><br><span class="line">nodeapp ocid1.fnapp.oc1.iad.**********</span><br></pre></td></tr></table></figure>
+
+<p>Following the Fn tutorial, you would have created a directory containing the following artifacts required for a Fn function:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[/home/myuser/projects/nodefn]$ ls</span><br><span class="line">func.js  func.yaml  package.json</span><br></pre></td></tr></table></figure>
+
+<p>Set your working directory here and then attempt to deploy the application:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line">[/home/myuser/projects/nodefn]$ fn -v deploy --app nodeapp</span><br><span class="line">Deploying nodefn to app: nodeapp</span><br><span class="line">Bumped to version 0.0.5</span><br><span class="line">Building image iad.ocir.io/**********/fndemo/nodefn:0.0.5</span><br><span class="line">FN_REGISTRY:  iad.ocir.io/**********/fndemo</span><br><span class="line">Current Context:  fboci05</span><br><span class="line">Sending build context to Docker daemon   5.12kB</span><br><span class="line">Step 1/9 : FROM fnproject/node:dev as build-stage</span><br><span class="line"> ---&gt; b557a05fec78</span><br><span class="line">Step 2/9 : WORKDIR /<span class="keyword">function</span></span><br><span class="line"> ---&gt; Using cache</span><br><span class="line"> ---&gt; 80aba4e33a61</span><br><span class="line">Step 3/9 : ADD package.json /<span class="keyword">function</span>/</span><br><span class="line"> ---&gt; Using cache</span><br><span class="line"> ---&gt; ce7d7130e497</span><br><span class="line">Step 4/9 : RUN npm install</span><br><span class="line"> ---&gt; Using cache</span><br><span class="line"> ---&gt; 622fc377f1a9</span><br><span class="line">Step 5/9 : FROM fnproject/node</span><br><span class="line"> ---&gt; c8da69259495</span><br><span class="line">Step 6/9 : WORKDIR /<span class="keyword">function</span></span><br><span class="line"> ---&gt; Using cache</span><br><span class="line"> ---&gt; e4ef6fe5e78e</span><br><span class="line">Step 7/9 : ADD . /<span class="keyword">function</span>/</span><br><span class="line"> ---&gt; 2d41667e41f6</span><br><span class="line">Step 8/9 : COPY --from=build-stage /<span class="keyword">function</span>/node_modules/ /<span class="keyword">function</span>/node_modules/</span><br><span class="line"> ---&gt; 14abb279af71</span><br><span class="line">Step 9/9 : ENTRYPOINT [<span class="string">"node"</span>, <span class="string">"func.js"</span>]</span><br><span class="line"> ---&gt; Running <span class="keyword">in</span> 60097a195252</span><br><span class="line">Removing intermediate container 60097a195252</span><br><span class="line"> ---&gt; 9a54e9d7ef1d</span><br><span class="line">Successfully built 9a54e9d7ef1d</span><br><span class="line">Successfully tagged iad.ocir.io/**********/fndemo/nodefn:0.0.5</span><br><span class="line"></span><br><span class="line">Parts:  [iad.ocir.io ********** fndemo nodefn:0.0.5]</span><br><span class="line">Pushing iad.ocir.io/**********/fndemo/nodefn:0.0.5 to docker registry...The push refers to repository [iad.ocir.io/**********/fndemo/nodefn]</span><br><span class="line">a71bd36619f2: Pushed</span><br><span class="line">e355820d7f01: Pushed</span><br><span class="line">9682c276ebcb: Pushed</span><br><span class="line">a0d7b4199dce: Pushed</span><br><span class="line">8aed3db29123: Pushed</span><br><span class="line">9c85c117f8f6: Pushed</span><br><span class="line">a464c54f93a9: Pushed</span><br><span class="line">0.0.5: digest: sha256:6dca91254ae9a404236e3ac5f486a9d0fb575b1589f987c146b9489b4900ffdf size: 1780</span><br><span class="line">Updating <span class="keyword">function</span> nodefn using image iad.ocir.io/**********/fndemo/nodefn:0.0.5...</span><br><span class="line">Successfully created <span class="keyword">function</span>: nodefn with iad.ocir.io/**********/fndemo/nodefn:0.0.5</span><br><span class="line"></span><br><span class="line">Fn: [GET /triggers][500] ListTriggers default  &amp;&#123;Fields: Message:Internal server error&#125;</span><br><span class="line"></span><br><span class="line">See <span class="string">'fn &lt;command&gt; --help'</span> <span class="keyword">for</span> more information. Client version: 0.5.84</span><br></pre></td></tr></table></figure>
+
+<p>With increase verbosity, it is clear that Docker is used to containerize the service. I have not delved into the nuts and bolts of the deployment model, but from the little I know, a Docker image is first created and deployed to the OCIR. When a function is invoked, the platform creates a container, executes the function and then terminates, releasing any allocated resources.</p>
+<p>To invoke the function, simply execute the command or use the <code>oci-curl</code> if available:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[/home/myuser/projects/nodefn]]$ fn invoke nodeapp nodefn</span><br><span class="line">&#123;<span class="string">"message"</span>:<span class="string">"Hello World"</span>&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>The tutorial’s “Helloworld” example doesn’t do much for now. However, as mentioned earlier in this article, Fn functions are wrapped up in a Docker container. By creating a custom <code>Dockerfile</code> for your Fn, the possibilities are endless.</p>
+<p>Also in the tutorials, the authors provide a roadmap on how to create a custom Docker image that uses <a href="https://imagemagick.org/index.php" target="_blank" rel="noopener">ImageMagick</a> to perform image manipulations. Something that could be useful to us <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express</a> developers when Oracle Multimedia is completely removed in future Oracle Database versions.</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://fuzziebrain.com/content/id/1912/" data-id="cjzql7lgc00jmd32nr1f434u4" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iaas/">IaaS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cloud/">cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/fnproj/">fnproj</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/functions/">functions</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/infrastructure/">infrastructure</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oci/">oci</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/orclfn/">orclfn</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/serverless/">serverless</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/content/id/1911/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Day 17 - 30 days on the Oracle Cloud</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/content/id/1913/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Day 28 - 30 Days on the Oracle Cloud</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+<p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
+
+  <img src="/img/O-ACEAssociate-rgb.png" class="ace-logo">
+</div>
+
+
+  <div class="sidebar-module">
+  <p class="twitter">
+    <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fuzziebrain" data-widget-id="487271531987210241">Tweets by @fuzziebrain</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </p>
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/life/">Life</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/reviews/">Reviews</a><span class="sidebar-module-list-count">5</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/reviews/books/">Books</a><span class="sidebar-module-list-count">5</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/">Technology</a><span class="sidebar-module-list-count">47</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/conferences/">Conferences</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/devops/">DevOps</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/infrastructure/">Infrastructure</a><span class="sidebar-module-list-count">9</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/infrastructure/oracle-cloud/">Oracle Cloud</a><span class="sidebar-module-list-count">9</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/others/">Others</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/">Programming</a><span class="sidebar-module-list-count">31</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/ide/">IDE</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/nodejs/">Nodejs</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/oracle-application-express/">Oracle Application Express</a><span class="sidebar-module-list-count">29</span></li></ul></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/18cxe/" style="font-size: 13.75px;">18cXE</a> <a href="/tags/2fa/" style="font-size: 10px;">2fa</a> <a href="/tags/apache-poi/" style="font-size: 10px;">Apache POI</a> <a href="/tags/devops/" style="font-size: 10px;">DevOps</a> <a href="/tags/eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/iaas/" style="font-size: 16.25px;">IaaS</a> <a href="/tags/java/" style="font-size: 10px;">Java</a> <a href="/tags/kscope17/" style="font-size: 10px;">Kscope17</a> <a href="/tags/linux/" style="font-size: 10px;">Linux</a> <a href="/tags/microsoft-word/" style="font-size: 10px;">Microsoft Word</a> <a href="/tags/odtug/" style="font-size: 11.25px;">ODTUG</a> <a href="/tags/oxar/" style="font-size: 10px;">OXAR</a> <a href="/tags/oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/oracle-application-express/" style="font-size: 11.25px;">Oracle Application Express</a> <a href="/tags/oracle-bi-publisher/" style="font-size: 10px;">Oracle BI Publisher</a> <a href="/tags/oracle-text/" style="font-size: 10px;">Oracle Text</a> <a href="/tags/pdf/" style="font-size: 10px;">PDF</a> <a href="/tags/san-antonio/" style="font-size: 10px;">San Antonio</a> <a href="/tags/subversion/" style="font-size: 10px;">Subversion</a> <a href="/tags/thanksodc/" style="font-size: 10px;">ThanksODC</a> <a href="/tags/vagrant/" style="font-size: 10px;">Vagrant</a> <a href="/tags/vancouver/" style="font-size: 10px;">Vancouver</a> <a href="/tags/virtualbox/" style="font-size: 10px;">VirtualBox</a> <a href="/tags/xpath/" style="font-size: 10px;">XPath</a> <a href="/tags/xsl-fo/" style="font-size: 10px;">XSL-FO</a> <a href="/tags/active-directory/" style="font-size: 10px;">active directory</a> <a href="/tags/analytics/" style="font-size: 10px;">analytics</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/artificial-intelligence/" style="font-size: 10px;">artificial intelligence</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/authentication/" style="font-size: 15px;">authentication</a> <a href="/tags/autonomous/" style="font-size: 10px;">autonomous</a> <a href="/tags/azure/" style="font-size: 10px;">azure</a> <a href="/tags/barcode/" style="font-size: 10px;">barcode</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/blogging/" style="font-size: 11.25px;">blogging</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/bots/" style="font-size: 10px;">bots</a> <a href="/tags/career/" style="font-size: 11.25px;">career</a> <a href="/tags/challenge-coin/" style="font-size: 10px;">challenge coin</a> <a href="/tags/change-is-constant/" style="font-size: 10px;">change is constant</a> <a href="/tags/cloud/" style="font-size: 18.75px;">cloud</a> <a href="/tags/community/" style="font-size: 13.75px;">community</a> <a href="/tags/compliance/" style="font-size: 10px;">compliance</a> <a href="/tags/compute/" style="font-size: 10px;">compute</a> <a href="/tags/computer-science/" style="font-size: 10px;">computer science</a> <a href="/tags/confidential/" style="font-size: 10px;">confidential</a> <a href="/tags/container/" style="font-size: 10px;">container</a> <a href="/tags/customer-service/" style="font-size: 10px;">customer service</a> <a href="/tags/data/" style="font-size: 12.5px;">data</a> <a href="/tags/database/" style="font-size: 12.5px;">database</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/devops/" style="font-size: 18.75px;">devops</a> <a href="/tags/digitalocean/" style="font-size: 10px;">digitalocean</a> <a href="/tags/disney/" style="font-size: 10px;">disney</a> <a href="/tags/docker/" style="font-size: 11.25px;">docker</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/emerging-technology/" style="font-size: 10px;">emerging technology</a> <a href="/tags/environment/" style="font-size: 10px;">environment</a> <a href="/tags/face-detection/" style="font-size: 10px;">face detection</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/fnproj/" style="font-size: 10px;">fnproj</a> <a href="/tags/full-stack/" style="font-size: 10px;">full stack</a> <a href="/tags/functions/" style="font-size: 10px;">functions</a> <a href="/tags/geolocation/" style="font-size: 10px;">geolocation</a> <a href="/tags/gis/" style="font-size: 10px;">gis</a> <a href="/tags/google/" style="font-size: 12.5px;">google</a> <a href="/tags/gps/" style="font-size: 11.25px;">gps</a> <a href="/tags/graphql/" style="font-size: 10px;">graphql</a> <a href="/tags/gratitude/" style="font-size: 10px;">gratitude</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/hosting/" style="font-size: 12.5px;">hosting</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/ide/" style="font-size: 10px;">ide</a> <a href="/tags/image-processing/" style="font-size: 10px;">image processing</a> <a href="/tags/infrastructure/" style="font-size: 16.25px;">infrastructure</a> <a href="/tags/insum/" style="font-size: 10px;">insum</a> <a href="/tags/integration/" style="font-size: 10px;">integration</a> <a href="/tags/iphone/" style="font-size: 10px;">iphone</a> <a href="/tags/java/" style="font-size: 11.25px;">java</a> <a href="/tags/javascript/" style="font-size: 10px;">javascript</a> <a href="/tags/knowledge-sharing/" style="font-size: 10px;">knowledge sharing</a> <a href="/tags/kubernetes/" style="font-size: 10px;">kubernetes</a> <a href="/tags/launch/" style="font-size: 10px;">launch</a> <a href="/tags/lbs/" style="font-size: 11.25px;">lbs</a> <a href="/tags/learning/" style="font-size: 13.75px;">learning</a> <a href="/tags/linked-data/" style="font-size: 10px;">linked data</a> <a href="/tags/linode/" style="font-size: 12.5px;">linode</a> <a href="/tags/location-based-services/" style="font-size: 10px;">location-based services</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/mahout/" style="font-size: 10px;">mahout</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/mapreduce/" style="font-size: 10px;">mapreduce</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/meetup/" style="font-size: 10px;">meetup</a> <a href="/tags/memorabilia/" style="font-size: 10px;">memorabilia</a> <a href="/tags/mfa/" style="font-size: 10px;">mfa</a> <a href="/tags/microsoft/" style="font-size: 13.75px;">microsoft</a> <a href="/tags/migration/" style="font-size: 10px;">migration</a> <a href="/tags/monetization/" style="font-size: 10px;">monetization</a> <a href="/tags/monitoring/" style="font-size: 10px;">monitoring</a> <a href="/tags/multi-factor/" style="font-size: 10px;">multi-factor</a> <a href="/tags/multimedia/" style="font-size: 10px;">multimedia</a> <a href="/tags/nodejs/" style="font-size: 12.5px;">nodejs</a> <a href="/tags/oauth2/" style="font-size: 13.75px;">oauth2</a> <a href="/tags/oci/" style="font-size: 16.25px;">oci</a> <a href="/tags/ocr/" style="font-size: 10px;">ocr</a> <a href="/tags/odtug/" style="font-size: 13.75px;">odtug</a> <a href="/tags/office-365/" style="font-size: 10px;">office 365</a> <a href="/tags/oracle/" style="font-size: 17.5px;">oracle</a> <a href="/tags/oracle-database/" style="font-size: 12.5px;">oracle database</a> <a href="/tags/orclapex/" style="font-size: 20px;">orclapex</a> <a href="/tags/orclfn/" style="font-size: 10px;">orclfn</a> <a href="/tags/ore/" style="font-size: 10px;">ore</a> <a href="/tags/orlando/" style="font-size: 10px;">orlando</a> <a href="/tags/oxar/" style="font-size: 13.75px;">oxar</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pki/" style="font-size: 11.25px;">pki</a> <a href="/tags/platform/" style="font-size: 10px;">platform</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/powershell/" style="font-size: 10px;">powershell</a> <a href="/tags/preview/" style="font-size: 11.25px;">preview</a> <a href="/tags/protection/" style="font-size: 10px;">protection</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/quality/" style="font-size: 10px;">quality</a> <a href="/tags/r/" style="font-size: 10px;">r</a> <a href="/tags/rdm/" style="font-size: 12.5px;">rdm</a> <a href="/tags/redact/" style="font-size: 10px;">redact</a> <a href="/tags/release/" style="font-size: 10px;">release</a> <a href="/tags/reporting/" style="font-size: 10px;">reporting</a> <a href="/tags/research/" style="font-size: 11.25px;">research</a> <a href="/tags/research-data-management/" style="font-size: 10px;">research data management</a> <a href="/tags/rest/" style="font-size: 10px;">rest</a> <a href="/tags/review/" style="font-size: 10px;">review</a> <a href="/tags/rstats/" style="font-size: 11.25px;">rstats</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/scripting/" style="font-size: 10px;">scripting</a> <a href="/tags/search/" style="font-size: 10px;">search</a> <a href="/tags/seattle/" style="font-size: 10px;">seattle</a> <a href="/tags/security/" style="font-size: 13.75px;">security</a> <a href="/tags/semantic-web/" style="font-size: 10px;">semantic web</a> <a href="/tags/serverless/" style="font-size: 11.25px;">serverless</a> <a href="/tags/single-sign-on/" style="font-size: 11.25px;">single sign on</a> <a href="/tags/single-sign-on/" style="font-size: 11.25px;">single sign-on</a> <a href="/tags/smtp/" style="font-size: 10px;">smtp</a> <a href="/tags/solutions/" style="font-size: 10px;">solutions</a> <a href="/tags/spf/" style="font-size: 10px;">spf</a> <a href="/tags/spring-framework/" style="font-size: 11.25px;">spring framework</a> <a href="/tags/spring-roo/" style="font-size: 10px;">spring roo</a> <a href="/tags/springsource/" style="font-size: 11.25px;">springsource</a> <a href="/tags/springsource-tool-suite/" style="font-size: 10px;">springsource tool suite</a> <a href="/tags/ssl/" style="font-size: 11.25px;">ssl</a> <a href="/tags/sso/" style="font-size: 13.75px;">sso</a> <a href="/tags/stackscripts/" style="font-size: 10px;">stackscripts</a> <a href="/tags/sts/" style="font-size: 10px;">sts</a> <a href="/tags/subclipse/" style="font-size: 10px;">subclipse</a> <a href="/tags/suez/" style="font-size: 10px;">suez</a> <a href="/tags/support/" style="font-size: 10px;">support</a> <a href="/tags/sysadmin/" style="font-size: 10px;">sysadmin</a> <a href="/tags/system-administration/" style="font-size: 10px;">system administration</a> <a href="/tags/tde/" style="font-size: 10px;">tde</a> <a href="/tags/text-recognition/" style="font-size: 10px;">text recognition</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/tls/" style="font-size: 11.25px;">tls</a> <a href="/tags/tools/" style="font-size: 10px;">tools</a> <a href="/tags/training/" style="font-size: 15px;">training</a> <a href="/tags/travel/" style="font-size: 12.5px;">travel</a> <a href="/tags/two-factor/" style="font-size: 10px;">two-factor</a> <a href="/tags/typescript/" style="font-size: 11.25px;">typescript</a> <a href="/tags/user-groups/" style="font-size: 10px;">user groups</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/vagrant/" style="font-size: 12.5px;">vagrant</a> <a href="/tags/viewer/" style="font-size: 10px;">viewer</a> <a href="/tags/virtualbox/" style="font-size: 10px;">virtualbox</a> <a href="/tags/vscode/" style="font-size: 10px;">vscode</a> <a href="/tags/wasm/" style="font-size: 10px;">wasm</a> <a href="/tags/workshop/" style="font-size: 10px;">workshop</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/07/">July 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/10/">October 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/09/">September 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/02/">February 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/06/">June 2014</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/05/">May 2013</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/04/">April 2013</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/02/">February 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/12/">December 2010</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/10/">October 2010</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/09/">September 2010</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/content/id/1913/">Day 28 - 30 Days on the Oracle Cloud</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1912/">Day 22 - 30 Days on the Oracle Cloud</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1911/">Day 17 - 30 days on the Oracle Cloud</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1910/">Relocating Compute Instances</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/1909/">Seattle Take Two</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-sm-6">
+        <div class="me-links">
+          <h4>About Me</h4>
+          <dl>
+            <dd><a href="https://twitter.com/fuzziebrain" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></dd>
+            <dd><a href="https://github.com/fuzziebrain" target="_blank"><i class="fa fa-github"></i> Github</a></dd>
+            <dd><a href="https://www.linkedin.com/in/adrianp" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="col col-sm-6"></div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div id="footer-info" class="inner">
+        &copy; 2019 Adrian Png<br>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script>
+  var disqus_shortname = 'fuzziebrain-blog';
+  
+  var disqus_url = 'https://fuzziebrain.com/content/id/1912/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="//stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+</body>
+</html>
