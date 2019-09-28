@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1920/bucket-details.png">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1920/generate-auth-token.png">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1920/download-wallet.png">
-<meta property="og:updated_time" content="2019-09-28T03:07:54.928Z">
+<meta property="og:updated_time" content="2019-09-28T03:11:27.984Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Making the Move to the Autonomous Database">
 <meta name="twitter:description" content="Packing boxes  In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Applicatio">
@@ -335,7 +335,7 @@ ga('send', 'pageview');
 <li><p>Extract the contents of the ZIP file into the wallet directory:</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip wallet_ATP01.zip -d <span class="variable">$TNS_ADMIN</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>The wallet contains a <code>sqlnet.ora</code> file. Replace the <em>DIRECTORY</em> location <code>?/network/admin</code> with *WALLET.</p>
+<li><p>The wallet contains a <code>sqlnet.ora</code> file. Replace the path <code>?/network/admin</code>, specified for <code>DIRECTORY</code>, with the wallet’s path (<code>TNS_ADMIN</code>).</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i -r <span class="string">"s|?/network/admin|<span class="variable">$TNS_ADMIN</span>|g"</span> <span class="variable">$TNS_ADMIN</span>/sqlnet.ora</span><br></pre></td></tr></table></figure>
 
 </li>
