@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1920/bucket-details.png">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1920/generate-auth-token.png">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1920/download-wallet.png">
-<meta property="og:updated_time" content="2019-10-07T00:16:09.340Z">
+<meta property="og:updated_time" content="2019-10-07T01:35:30.282Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Making the Move to the Autonomous Database">
 <meta name="twitter:description" content="Packing boxes  In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Applicatio">
@@ -256,7 +256,14 @@ ga('send', 'pageview');
 <p>Optionally, specify only the applications by id, using the <code>-applicationid</code> parameter. The export process would produce files named after the application ID, e.g. <code>f1000.sql</code> and <code>f1400.sql</code>.</p>
 </blockquote>
 </li>
+<li><p>If there are any REST services to be migrated, then execute the following:</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spool rest_services.sql</span><br><span class="line">rest export</span><br><span class="line">spool off</span><br></pre></td></tr></table></figure>
+</li>
 <li><p>Logout.</p>
+</li>
+<li><p>If REST services were exported, then execute the following:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"/"</span> &gt;&gt; rest_services.sql</span><br></pre></td></tr></table></figure>
+
 </li>
 </ol>
 <h3 id="Export-Schemas"><a href="#Export-Schemas" class="headerlink" title="Export Schemas"></a>Export Schemas</h3><p>Login to the source database using SSH as user <em>oracle</em>. The subsequent commands in this section will be executed on the source server.</p>
@@ -291,6 +298,7 @@ ga('send', 'pageview');
 <li><code>exp_cloud-migration.log</code></li>
 <li><code>f1000.sql</code></li>
 <li><code>f1400.sql</code></li>
+<li><code>rest_services.sql</code></li>
 <li><code>w1234567890.sql</code></li>
 </ul>
 </li>
@@ -378,6 +386,9 @@ ga('send', 'pageview');
 </li>
 <li><p>Load and execute each application export file to import the application to the target workspace:</p>
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@f1000.sql</span><br><span class="line">@f1400.sql</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Import the REST services if any:</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@rest_services.sql</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Exit the application.</p>
 </li>
