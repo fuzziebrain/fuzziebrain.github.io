@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fuzziebrain.com/content/id/1922/</loc>
+    
+    <lastmod>2019-10-13T06:10:59.962Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fuzziebrain.com/content/id/1921/</loc>
     
     <lastmod>2019-10-10T07:36:41.835Z</lastmod>
@@ -86,14 +93,14 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/image-rights/index.html</loc>
+    <loc>https://fuzziebrain.com/portfolio/index.html</loc>
     
     <lastmod>2019-08-25T05:11:34.242Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/portfolio/index.html</loc>
+    <loc>https://fuzziebrain.com/image-rights/index.html</loc>
     
     <lastmod>2019-08-25T05:11:34.242Z</lastmod>
     
@@ -121,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/content/id/490/</loc>
+    <loc>https://fuzziebrain.com/content/id/185/</loc>
     
     <lastmod>2019-08-25T05:11:34.170Z</lastmod>
     
@@ -135,16 +142,9 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/content/id/185/</loc>
+    <loc>https://fuzziebrain.com/content/id/490/</loc>
     
     <lastmod>2019-08-25T05:11:34.170Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/content/id/1726/</loc>
-    
-    <lastmod>2019-08-25T05:11:34.161Z</lastmod>
     
   </url>
   
@@ -157,6 +157,13 @@
   
   <url>
     <loc>https://fuzziebrain.com/content/id/1703/</loc>
+    
+    <lastmod>2019-08-25T05:11:34.161Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/content/id/1726/</loc>
     
     <lastmod>2019-08-25T05:11:34.161Z</lastmod>
     
