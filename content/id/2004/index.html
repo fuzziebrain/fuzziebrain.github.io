@@ -14,7 +14,7 @@
 <meta property="og:description" content="Man repairing the engine of a car  The Oracle Autonomous Database (ADB) is Oracle’s currernt flagship database product and rightly so! Each instance comes with self-tuning, self-patching and several O">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/2004/auto-repair-3691962_1280x720.jpg">
-<meta property="og:updated_time" content="2020-07-02T16:40:41.270Z">
+<meta property="og:updated_time" content="2020-07-09T13:04:17.517Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Running ORDS Against the Autonomous Database">
 <meta name="twitter:description" content="Man repairing the engine of a car  The Oracle Autonomous Database (ADB) is Oracle’s currernt flagship database product and rightly so! Each instance comes with self-tuning, self-patching and several O">
@@ -211,7 +211,7 @@ ga('send', 'pageview');
 <h3 id="APEX-Image-Files"><a href="#APEX-Image-Files" class="headerlink" title="APEX Image Files"></a>APEX Image Files</h3><p>Login as the <code>oracle</code> user again to  deploy the APEX image files.</p>
 <p>Download the compatible APEX installer and extract the contents of the images directory to <code>/opt/oracle/apex/images/$RELEASE</code>, where the <code>RELEASE</code> must be set to the current release number in full.</p>
 <p>Based on what’s current, set the following values:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RELEASE=19.2.0.00.18</span><br><span class="line">APEX_FILE=/tmp/apex_19.2.zip</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RELEASE=20.1.0.00.13</span><br><span class="line">APEX_FILE=/tmp/apex_20.1.zip</span><br></pre></td></tr></table></figure>
 
 <p>Then execute the following:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /opt/oracle/apex/images/<span class="variable">$RELEASE</span></span><br><span class="line">unzip <span class="variable">$APEX_FILE</span> -d /tmp/</span><br><span class="line">cp -R /tmp/apex/images/* /opt/oracle/apex/images/<span class="variable">$RELEASE</span></span><br><span class="line">rm -rf /tmp/apex</span><br></pre></td></tr></table></figure>
