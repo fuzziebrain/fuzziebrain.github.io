@@ -5,12 +5,12 @@
   
   <title>Search Better with Oracle Text | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="It’s not unusual for an established principal investigator (PI) to have desks and shelves full of books, journal articles, grant applications, graduate student theses etc. Often, they’d also have a">
+  <meta name="description" content="Photo by John Michael Thompson  It’s not unusual for an established principal investigator (PI) to have desks and shelves full of books, journal articles, grant applications, graduate student theses e">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Search Better with Oracle Text">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1715/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="It’s not unusual for an established principal investigator (PI) to have desks and shelves full of books, journal articles, grant applications, graduate student theses etc. Often, they’d also have a">
+<meta property="og:description" content="Photo by John Michael Thompson  It’s not unusual for an established principal investigator (PI) to have desks and shelves full of books, journal articles, grant applications, graduate student theses e">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1715/john-michael-thomson-555276-unsplash_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1715/oracle-text-ig.jpg">
@@ -139,7 +139,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1715/john-michael-thomson-555276-unsplash_1280x720.jpg" class="" title="Photo by John Michael Thompson">
+        <img src="/content/id/1715/john-michael-thomson-555276-unsplash_1280x720.jpg" class="" title="Photo by John Michael Thompson"><span class="caption">Photo by John Michael Thompson</span>
 
 <p>It’s not unusual for an established <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Principal_investigator">principal investigator</a> (PI) to have desks and shelves full of books, journal articles, grant applications, graduate student theses etc. Often, they’d also have a mountain of such material in electronic form and stored on desktop hard drives that sometimes get forgotten. It takes an extremely good memory to remember which articles are relevant to a particular keyword you might be interested in.</p>
 <p>Thankfully, there’s Oracle Text (and <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX)) to keep you sane!</p>
@@ -192,15 +192,15 @@ ga('send', 'pageview');
 
 <h2 id="Querying-with-APEX"><a href="#Querying-with-APEX" class="headerlink" title="Querying with APEX"></a>Querying with APEX</h2><p>With too little screen space on a blog post, it’s easier to demonstrate the search results using APEX. The accompanying <a target="_blank" rel="noopener" href="https://apeks.app/ords/f?p=awardsearch">demo application</a> showcases Oracle Text integration using two different user interface approaches.</p>
 <p>The first uses Interactive Grids (IG) that has built-in support for Oracle Text. After creating the IG, click on <code>Attributes</code> and then on the right, scroll down to the <code>Advanced</code> section and select the indexed column as the <code>Oracle Text Index Column</code> attribute.</p>
-<img src="/content/id/1715/oracle-text-ig.jpg" class="" title="Setup Oracle Text for Interactive Grids">
+<img src="/content/id/1715/oracle-text-ig.jpg" class="" title="Setup Oracle Text for Interactive Grids"><span class="caption">Setup Oracle Text for Interactive Grids</span>
 
 <p>Interactive Grids allows developers to specify a PL/SQL function for converting simple keyword inputs to well-formed Oracle Text syntax. Go to the application’s <code>Shared Components</code>&gt; <code>Component Settings</code> &gt; <code>Interactive Grids</code> and then enter the name of the function to use. We can use one of the functions from Ford’s Parser package as they meet the requirement of accepting a single string argument.</p>
-<img src="/content/id/1715/oracle-text-ig-settings.jpg" class="" title="Specify a PL&#x2F;SQL Function for Preprocessing Input String">
+<img src="/content/id/1715/oracle-text-ig-settings.jpg" class="" title="Specify a PL&#x2F;SQL Function for Preprocessing Input String"><span class="caption">Specify a PL&#x2F;SQL Function for Preprocessing Input String</span>
 
 <p>The second approach uses a Classic Report (CR) that allows more flexibility on how the results are displayed, for example, sorting the results by score (descending) and application title (ascending). The user enters the search keywords in a single text field page item (<code>P2_SEARCH_TERMS</code>) that is then parsed and used with a <code>CONTAINS</code> operator to query the table. The SQL query used is as follows:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">    application_title <span class="keyword">as</span> search_title</span><br><span class="line">    , application_summary <span class="keyword">as</span> search_desc</span><br><span class="line">    , round(score(<span class="number">1</span>), <span class="number">2</span>) <span class="keyword">as</span> value_01</span><br><span class="line">    , <span class="string">&#x27;Score&#x27;</span> <span class="keyword">as</span> label_01</span><br><span class="line">    , q<span class="string">&#x27;[javascript:apex.message.alert(&#x27;</span><span class="keyword">Not</span> implemented.<span class="string">&#x27;);void(0);]&#x27;</span> <span class="keyword">as</span> search_link</span><br><span class="line"><span class="keyword">from</span> award</span><br><span class="line"><span class="keyword">where</span> <span class="number">1</span> <span class="operator">=</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">and</span> <span class="keyword">contains</span>(application_title, parser.progrelax(:P2_SEARCH_TERMS), <span class="number">1</span>) <span class="operator">&gt;</span> <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
-<img src="/content/id/1715/oracle-text-cr.jpg" class="" title="Displaying Oracle Text Search Results Using Classic Reports">
+<img src="/content/id/1715/oracle-text-cr.jpg" class="" title="Displaying Oracle Text Search Results Using Classic Reports"><span class="caption">Displaying Oracle Text Search Results Using Classic Reports</span>
 
 <h2 id="Multilingual-Search"><a href="#Multilingual-Search" class="headerlink" title="Multilingual Search"></a>Multilingual Search</h2><p>Both search interfaces will accept either English or French keywords. However, search results are language-specific. If an English keyword is entered, then only applications submitted in English will be returned. Likewise with French search terms. For a heterogenous search, a thesaurus will be required. The parsing function will also need to be “translation-aware”, and either accept or transform queries to use operators such as <code>TR</code>. These translation operators will expand the search keywords to include the specified language’s equivalent term.</p>
 <p>The <code>ctxload</code> utility provides developers the ability to import a thesaurus contained in a plain-text file. Developers can also script the thesaurus:</p>
@@ -245,7 +245,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1715/" data-id="ckmr6zpgm003tw4fd62re6ao6" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1715/" data-id="ckmr8jze40041q4fd5xzobsmf" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

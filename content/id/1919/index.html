@@ -5,12 +5,12 @@
   
   <title>Autonomous DB - The Developers&#39; Playground | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="As mentioned in a previous post, the Free Tier for Oracle Cloud (OCI) is every Oracle Developer’s dream. For a while now, I have hosted a personal Oracle Application Express (APEX) instance on Linod">
+  <meta name="description" content="Kids&amp;apos; Playground  As mentioned in a previous post, the Free Tier for Oracle Cloud (OCI) is every Oracle Developer’s dream. For a while now, I have hosted a personal Oracle Application Express">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Autonomous DB - The Developers&#39; Playground">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1919/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="As mentioned in a previous post, the Free Tier for Oracle Cloud (OCI) is every Oracle Developer’s dream. For a while now, I have hosted a personal Oracle Application Express (APEX) instance on Linod">
+<meta property="og:description" content="Kids&amp;apos; Playground  As mentioned in a previous post, the Free Tier for Oracle Cloud (OCI) is every Oracle Developer’s dream. For a while now, I have hosted a personal Oracle Application Express">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1919/playground-470402_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1919/set-apex-account-password.png">
@@ -139,7 +139,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1919/playground-470402_1280x720.jpg" class="" title="Kids&amp;apos; Playground">
+        <img src="/content/id/1919/playground-470402_1280x720.jpg" class="" title="Kids&amp;apos; Playground"><span class="caption">Kids&amp;apos; Playground</span>
 
 <p>As mentioned in a previous <a href="/content/id/1919/">post</a>, the <a target="_blank" rel="noopener" href="https://oracle.com/cloud/free/">Free Tier</a> for <a target="_blank" rel="noopener" href="https://cloud.oracle.com/">Oracle Cloud</a> (OCI) is every Oracle Developer’s dream. For a while now, I have hosted a personal <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX) instance on Linode. It currently runs an older Oracle Database 11gR2 <a target="_blank" rel="noopener" href="https://oracle.com/xe/">Express Edition</a> (XE), and I would like to upgrade it to version 18c. The key issue I had though, was that the existing virtual machine hosted on <a target="_blank" rel="noopener" href="https://www.linode.com/?r=41672b20d515344de465e9ed44c1a75356445597">Linode</a>, only has one gigabyte of RAM and that does not meet the 18c XE minimum requirement of two. That left me procrastinating for a long time, but perhaps a blessing in disguise. With this new offering, the next steps are pretty obvious.</p>
 <span id="more"></span>
@@ -158,7 +158,7 @@ ga('send', 'pageview');
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> jdoe identified <span class="keyword">by</span> &quot;mySuper!P@55&quot;;</span><br></pre></td></tr></table></figure>
 
 <p>For the purpose of authenticating to APEX, no specific privileges or quota’s are necessary. Login to the workspace using the workspace and database user’s credentials.</p>
-<img src="/content/id/1919/set-apex-account-password.png" class="" title="Set APEX account password">
+<img src="/content/id/1919/set-apex-account-password.png" class="" title="Set APEX account password"><span class="caption">Set APEX account password</span>
 
 <p>The Application Express account with the same username will need to have its password reset. If this is not done, you will continually be prompted to do so. Strangely, clicking on that big blue button and then using the password change dialog does not seem to perform this successfully for me. What worked was using the user and group management utilities and then forced setting the user’s password.</p>
 <p>Alternatively, before exporting the workspace, create an APEX workspace administrator with the same username as its schema, e.g. MYSCHEMA. Note that the ADB’s APEX Instance Administration functionality is severely limited and does not appear to allow management of workspace users and groups, so the user must be added from the old instance.</p>
@@ -212,7 +212,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1919/" data-id="ckmr6zpf8000ow4fd2g2ge61y" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1919/" data-id="ckmr8jzcv000lq4fddl5j53nc" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

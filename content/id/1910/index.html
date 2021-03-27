@@ -5,12 +5,12 @@
   
   <title>Relocating Compute Instances | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="To everyone following my 30 Days on the Oracle Cloud experience, I apologise that I was not able to keep up with the series previously, due to work commitments. I have enrolled in yet another trial,">
+  <meta name="description" content="Moving a House, New Zealand Style  To everyone following my 30 Days on the Oracle Cloud experience, I apologise that I was not able to keep up with the series previously, due to work commitments. I ha">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Relocating Compute Instances">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1910/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="To everyone following my 30 Days on the Oracle Cloud experience, I apologise that I was not able to keep up with the series previously, due to work commitments. I have enrolled in yet another trial,">
+<meta property="og:description" content="Moving a House, New Zealand Style  To everyone following my 30 Days on the Oracle Cloud experience, I apologise that I was not able to keep up with the series previously, due to work commitments. I ha">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1910/moving_houses_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1910/01-create_custom_image.png">
@@ -150,7 +150,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1910/moving_houses_1280x720.jpg" class="" title="Moving a House, New Zealand Style">
+        <img src="/content/id/1910/moving_houses_1280x720.jpg" class="" title="Moving a House, New Zealand Style"><span class="caption">Moving a House, New Zealand Style</span>
 
 <p>To everyone following my <a href="/content/id/1903/">30 Days on the Oracle Cloud</a> experience, I apologise that I was not able to keep up with the series previously, due to work commitments. I have enrolled in yet another <a target="_blank" rel="noopener" href="https://cloud.oracle.com/tryit">trial</a>, so I am hoping to continue where I left off and share my thirty day adventure with an <a target="_blank" rel="noopener" href="https://cloud.oracle.com/">Oracle Cloud</a> trial. I’m on Day 14 now, and for this post, I’ll examine an important issue that many of us face, even in our personal life - moving houses!</p>
 <span id="more"></span>
@@ -160,22 +160,22 @@ ga('send', 'pageview');
 <h2 id="Create-and-Export-a-Custom-Image"><a href="#Create-and-Export-a-Custom-Image" class="headerlink" title="Create and Export a Custom Image"></a>Create and Export a Custom Image</h2><p>First, on the source tenant, create a custom image of the compute instance and then prepare the image for export.</p>
 <ol>
 <li>Click <i class="fa fa-bars"></i> <i class="fa fa-caret-right"></i> Compute <i class="fa fa-caret-right"></i> Instances.</li>
-<li>Place the mouse cursor over the <i class="fas fa-ellipsis-h"></i> and then click “Create Custom Image”. <strong>WARNING</strong>: this will initiate a system shutdown on the target instance! <img src="/content/id/1910/01-create_custom_image.png" class="" title="Initiate custom image creation. IMPORTANT: Instance will shutdown!"></li>
-<li>Select the target compartment, enter a name and then click “Create Custom Image”. <img src="/content/id/1910/02-create_custom_image.png" class="" title="Specify name and target compartment"></li>
-<li>While waiting for the process to be completed, if a new Object Storage Bucket needs to be created, click <i class="fa fa-bars"></i> <i class="fa fa-caret-right"></i> Object Storage <i class="fa fa-caret-right"></i> Object Storage. <img src="/content/id/1910/03-create_object_storage_bucket.png" class="" title="Create an Object Storage Bucket if necessary"></li>
+<li>Place the mouse cursor over the <i class="fas fa-ellipsis-h"></i> and then click “Create Custom Image”. <strong>WARNING</strong>: this will initiate a system shutdown on the target instance! <img src="/content/id/1910/01-create_custom_image.png" class="" title="Initiate custom image creation. IMPORTANT: Instance will shutdown!"><span class="caption">Initiate custom image creation. IMPORTANT: Instance will shutdown!</span></li>
+<li>Select the target compartment, enter a name and then click “Create Custom Image”. <img src="/content/id/1910/02-create_custom_image.png" class="" title="Specify name and target compartment"><span class="caption">Specify name and target compartment</span></li>
+<li>While waiting for the process to be completed, if a new Object Storage Bucket needs to be created, click <i class="fa fa-bars"></i> <i class="fa fa-caret-right"></i> Object Storage <i class="fa fa-caret-right"></i> Object Storage. <img src="/content/id/1910/03-create_object_storage_bucket.png" class="" title="Create an Object Storage Bucket if necessary"><span class="caption">Create an Object Storage Bucket if necessary</span></li>
 <li>Enter a Bucket Name, select Standard Storage Tier, use Oracle-managed keys and then click “Create Bucket”.</li>
-<li>Click <i class="fa fa-bars"></i> <i class="fa fa-caret-right"></i> Compute <i class="fa fa-caret-right"></i> Custom Images. The status should show green and “Available” when the custom image is ready. At this point, the compute instance would have powered back on automatically. <img src="/content/id/1910/04-create_custom_image.png" class="" title="Custom Image ready"></li>
+<li>Click <i class="fa fa-bars"></i> <i class="fa fa-caret-right"></i> Compute <i class="fa fa-caret-right"></i> Custom Images. The status should show green and “Available” when the custom image is ready. At this point, the compute instance would have powered back on automatically. <img src="/content/id/1910/04-create_custom_image.png" class="" title="Custom Image ready"><span class="caption">Custom Image ready</span></li>
 <li>Place the mouse cursor over the <i class="fas fa-ellipsis-h"></i> next to the newly created custom image and then click “Export Custom Image”.</li>
-<li>Select Object Storage Bucket, the Bucket compartment and name, and then enter a new Object Name. Click “Export Image” when you are ready to proceed. <img src="/content/id/1910/05-export_custom_image.png" class="" title="Export Image to Object Storage Bucket"></li>
+<li>Select Object Storage Bucket, the Bucket compartment and name, and then enter a new Object Name. Click “Export Image” when you are ready to proceed. <img src="/content/id/1910/05-export_custom_image.png" class="" title="Export Image to Object Storage Bucket"><span class="caption">Export Image to Object Storage Bucket</span></li>
 <li>Exporting the image takes a while to complete. click <i class="fa fa-bars"></i> <i class="fa fa-caret-right"></i> Object Storage <i class="fa fa-caret-right"></i> Object Storage and then select the bucket that the image was written to. When it is completed, the object will appear in the Objects table.</li>
-<li>Place the mouse cursor over the <i class="fas fa-ellipsis-h"></i> next to the newly created object and click “Create Pre-Authenticated Request”. <img src="/content/id/1910/06-generate_preauthenticated_request.png" class="" title="Generate a Pre-Authenticated Request"></li>
-<li>Enter the name of the request, select Object for the request target, Permit Read on the Object for Access Type and then specify an expiration date. Click “Create Pre-Authenticated Request” when done. <img src="/content/id/1910/07-generate_preauthenticated_request.png" class="" title="Enter Pre-Authenticated Request details"></li>
-<li>The next dialog presented contains the Pre-Authenticated Request URL. Copy the link in full. It will be required for the import process. <img src="/content/id/1910/08-generate_preauthenticated_request.png" class="" title="Copy the Pre-Authenticated Request URL"></li>
+<li>Place the mouse cursor over the <i class="fas fa-ellipsis-h"></i> next to the newly created object and click “Create Pre-Authenticated Request”. <img src="/content/id/1910/06-generate_preauthenticated_request.png" class="" title="Generate a Pre-Authenticated Request"><span class="caption">Generate a Pre-Authenticated Request</span></li>
+<li>Enter the name of the request, select Object for the request target, Permit Read on the Object for Access Type and then specify an expiration date. Click “Create Pre-Authenticated Request” when done. <img src="/content/id/1910/07-generate_preauthenticated_request.png" class="" title="Enter Pre-Authenticated Request details"><span class="caption">Enter Pre-Authenticated Request details</span></li>
+<li>The next dialog presented contains the Pre-Authenticated Request URL. Copy the link in full. It will be required for the import process. <img src="/content/id/1910/08-generate_preauthenticated_request.png" class="" title="Copy the Pre-Authenticated Request URL"><span class="caption">Copy the Pre-Authenticated Request URL</span></li>
 </ol>
 <h2 id="Import-the-Image-and-Create-Compute-Instance"><a href="#Import-the-Image-and-Create-Compute-Instance" class="headerlink" title="Import the Image and Create Compute Instance"></a>Import the Image and Create Compute Instance</h2><p>Next, on the target tenant, create a new compute instance using the imported custom image.</p>
 <ol>
 <li>Click <i class="fa fa-bars"></i> <i class="fa fa-caret-right"></i> Compute <i class="fa fa-caret-right"></i> Custom Images.</li>
-<li>Click “Import Image” and enter the following information and then click “Import Image”. <img src="/content/id/1910/09-import_custom_image.png" class="" title="Import the custom image">
+<li>Click “Import Image” and enter the following information and then click “Import Image”. <img src="/content/id/1910/09-import_custom_image.png" class="" title="Import the custom image"><span class="caption">Import the custom image</span>
 <ul>
 <li>Compartment to create a new custom image in.</li>
 <li>Name of the new custom image.</li>
@@ -184,8 +184,8 @@ ga('send', 'pageview');
 <li>Select OCI for Image Type.</li>
 </ul>
 </li>
-<li>Importing the image again takes a long time to finish. When it’s done, the fastest path to create the instance is to click “Create Instance”. <img src="/content/id/1910/10-import_custom_image.png" class="" title="Custom image import details showing progress"></li>
-<li>From here, creating the instance is the same as <a href="/content/id/1904/">previously described</a>. <img src="/content/id/1910/11-create_compute_from_custom_image.png" class="" title="Create the compute instance from imported custom image"></li>
+<li>Importing the image again takes a long time to finish. When it’s done, the fastest path to create the instance is to click “Create Instance”. <img src="/content/id/1910/10-import_custom_image.png" class="" title="Custom image import details showing progress"><span class="caption">Custom image import details showing progress</span></li>
+<li>From here, creating the instance is the same as <a href="/content/id/1904/">previously described</a>. <img src="/content/id/1910/11-create_compute_from_custom_image.png" class="" title="Create the compute instance from imported custom image"><span class="caption">Create the compute instance from imported custom image</span></li>
 </ol>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>This looks like a lengthy process, but it’s really simple to move your compute instances from one tenant to another. This might come in handy, especially when you’ve put in quite a bit of effort creating your compute instances during a trial. I’m just saying! <i class="far fa-smile-wink"></i></p>
 <blockquote>
@@ -202,7 +202,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1910/" data-id="ckmr6zpgi003hw4fdgksmd2ki" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1910/" data-id="ckmr8jze0003pq4fdcbab7tmh" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

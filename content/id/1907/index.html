@@ -5,12 +5,12 @@
   
   <title>Day 15 - 30 Days on the Oracle Cloud | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="One of my fondest memories of my previous job was working with VMware virtualization products. With VMware Workstation, system administrators had the ability to “move” a virtual machine (VM) from a">
+  <meta name="description" content="Photo by Genty  One of my fondest memories of my previous job was working with VMware virtualization products. With VMware Workstation, system administrators had the ability to “move” a virtual machin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Day 15 - 30 Days on the Oracle Cloud">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1907/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="One of my fondest memories of my previous job was working with VMware virtualization products. With VMware Workstation, system administrators had the ability to “move” a virtual machine (VM) from a">
+<meta property="og:description" content="Photo by Genty  One of my fondest memories of my previous job was working with VMware virtualization products. With VMware Workstation, system administrators had the ability to “move” a virtual machin">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1907/wormhole-2514312_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1907/oci-vcn-simple.png">
@@ -148,7 +148,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1907/wormhole-2514312_1280x720.jpg" class="" title="Photo by Genty">
+        <img src="/content/id/1907/wormhole-2514312_1280x720.jpg" class="" title="Photo by Genty"><span class="caption">Photo by Genty</span>
 
 <p>One of my fondest memories of my previous job was working with <a target="_blank" rel="noopener" href="https://www.vmware.com/">VMware</a> virtualization products. With VMware Workstation, system administrators had the ability to “move” a virtual machine (VM) from a local workstation to vSphere. It was no surprise then that I was very exited (and itching to play) when <a target="_blank" rel="noopener" href="https://www.virtualbox.org/">VirtualBox</a> 6.0 was released with a new feature: support for exporting a VM to <a target="_blank" rel="noopener" href="https://cloud.oracle.com/iaas/">Oracle Cloud Infrastructure (OCI)</a>!</p>
 <span id="more"></span>
@@ -165,7 +165,7 @@ ga('send', 'pageview');
 <p>All tasks were performed in a Windows environment.</p>
 </blockquote>
 <h2 id="Preparing-OCI-Compartments-and-Networks"><a href="#Preparing-OCI-Compartments-and-Networks" class="headerlink" title="Preparing OCI - Compartments and Networks"></a>Preparing OCI - Compartments and Networks</h2><p>On <a href="/content/id/1904">Day 2 of our journey</a>, we went through some of the steps needed to successfully deploy a Compute Instance (VM). Follow the instructions to create a compartment and the required network components, but <strong>do not</strong> create the Compute Instance. One cool feature I failed to mention in that article though, was the “easy option”. I had gone through step-by-step, how to create the Virtual Cloud Network (VCN), subnets, an Internet Gateway and a Route Table, which is important should you need to customise the network layout. However, the OCI does offer us a simple alternative:</p>
-<img src="/content/id/1907/oci-vcn-simple.png" class="" title="Quick VCN Setup">
+<img src="/content/id/1907/oci-vcn-simple.png" class="" title="Quick VCN Setup"><span class="caption">Quick VCN Setup</span>
 
 <p>Selecting the option <em>CREATE VIRTUAL CLOUD NETWORK PLUS RELATED RESOURCES</em> will automatically create the VCN, an Internet Gateway, a Route Table and three public subnets, with one in every Availability Domain.</p>
 <h2 id="Create-OCI-User-and-Generate-API-Key"><a href="#Create-OCI-User-and-Generate-API-Key" class="headerlink" title="Create OCI User and Generate API Key"></a>Create OCI User and Generate API Key</h2><blockquote>
@@ -176,7 +176,7 @@ ga('send', 'pageview');
 <li>Click <em>Create User</em> and enter:<ul>
 <li><strong>NAME</strong>: <em>Desired username</em></li>
 <li><strong>DESCRIPTION</strong>: <em>User’s full name</em></li>
-<li><strong>Email</strong>: <em>Email address for recovery</em><img src="/content/id/1907/oci-create-user.png" class="" title="&amp;nbsp;"></li>
+<li><strong>Email</strong>: <em>Email address for recovery</em><img src="/content/id/1907/oci-create-user.png" class="" title="&amp;nbsp;"><span class="caption">&amp;nbsp;</span></li>
 </ul>
 </li>
 <li>Click on the username of the new user created.</li>
@@ -188,8 +188,8 @@ ga('send', 'pageview');
 <li>On Windows, please install <a target="_blank" rel="noopener" href="https://git-scm.com/download/win">Git Bash</a>. On Linux, most of the tools and commands are already available in the operating system.</li>
 <li>Create the directory <code>~/.oci</code> that stores the private key, and for the various SDKs available, a configuration file.</li>
 <li>Generate a private key and its corresponding public key in PEM format.</li>
-<li>Grab the contents of the public key and add this to the OCI user account’s collection of API Keys. <img src="/content/id/1907/oci-add-pub-key.png" class="" title="&amp;nbsp;"></li>
-<li>Copy the fingerprint from OCI console. <img src="/content/id/1907/oci-api-key-fingerprint.png" class="" title="&amp;nbsp;"></li>
+<li>Grab the contents of the public key and add this to the OCI user account’s collection of API Keys. <img src="/content/id/1907/oci-add-pub-key.png" class="" title="&amp;nbsp;"><span class="caption">&amp;nbsp;</span></li>
+<li>Copy the fingerprint from OCI console. <img src="/content/id/1907/oci-api-key-fingerprint.png" class="" title="&amp;nbsp;"><span class="caption">&amp;nbsp;</span></li>
 <li>Obtain the OCID values from the OCI console.</li>
 <li>Decide which region to deploy the server.</li>
 </ol>
@@ -207,11 +207,11 @@ ga('send', 'pageview');
 <h2 id="Deploy-a-VM-to-the-Cloud"><a href="#Deploy-a-VM-to-the-Cloud" class="headerlink" title="Deploy a VM to the Cloud"></a>Deploy a VM to the Cloud</h2><ol>
 <li>Click File <i class="fa fa-caret-right"></i> Export Appliance</li>
 <li>Select the VM to export and then click <em>Next</em>.</li>
-<li>For <em>Format</em>, select <em>Oracle Cloud Infrastructure</em> and then select the <em>Account</em> that you wish to deploy the VM to. <img src="/content/id/1907/vbox-export-appliance-oci.jpg" class="" title="&amp;nbsp;"></li>
-<li>Click <em>Next</em>. Using the private key and other information provided in the selected <em>Cloud Profile</em>, VirtualBox will call the OCI APIs to retrieve information and available resource selections for the target Compute Instance. You may change the name of the new Compute Instance, select a different instance Shape or specify a disk size etc. <img src="/content/id/1907/vbox-compute-instance-configuration.jpg" class="" title="&amp;nbsp;"></li>
+<li>For <em>Format</em>, select <em>Oracle Cloud Infrastructure</em> and then select the <em>Account</em> that you wish to deploy the VM to. <img src="/content/id/1907/vbox-export-appliance-oci.jpg" class="" title="&amp;nbsp;"><span class="caption">&amp;nbsp;</span></li>
+<li>Click <em>Next</em>. Using the private key and other information provided in the selected <em>Cloud Profile</em>, VirtualBox will call the OCI APIs to retrieve information and available resource selections for the target Compute Instance. You may change the name of the new Compute Instance, select a different instance Shape or specify a disk size etc. <img src="/content/id/1907/vbox-compute-instance-configuration.jpg" class="" title="&amp;nbsp;"><span class="caption">&amp;nbsp;</span></li>
 </ol>
 <p>When ready, click the <em>Export</em> button and VirtualBox will first export the VM as an image and then upload it to the target Object Store Bucket. Once the upload process is completed - and it can take a very long time - the OCI will create the instance from the image and voila! Like magic!</p>
-<img src="/content/id/1907/oci-compute-instance-provisioning.png" class="" title="In the Final Stages!">
+<img src="/content/id/1907/oci-compute-instance-provisioning.png" class="" title="In the Final Stages!"><span class="caption">In the Final Stages!</span>
 
 <h2 id="What-Next"><a href="#What-Next" class="headerlink" title="What Next?"></a>What Next?</h2><p>For this simple proof-of-concept, I had created a base Oracle Enterprise Linux 7 using <a target="_blank" rel="noopener" href="https://www.vagrantup.com/">Vagrant</a> without putting anything much on it except the necessary user accounts so that I can access the Compute Instance later. This approach can be used, for example, to install and configure a full <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express (APEX)</a> stack in VirtualBox, using either <a target="_blank" rel="noopener" href="https://github.com/OraOpenSource/OXAR">OXAR</a> or more recently, <a href="/content/id/1902">helper scripts</a> for <a target="_blank" rel="noopener" href="https://www.docker.com/">Docker</a>.</p>
 
@@ -224,7 +224,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1907/" data-id="ckmr6zpfe0013w4fd3sp4hopj" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1907/" data-id="ckmr8jzd20010q4fddcr4cvuq" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

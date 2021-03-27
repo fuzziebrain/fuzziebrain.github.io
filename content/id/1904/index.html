@@ -156,10 +156,10 @@ ga('send', 'pageview');
 <span id="more"></span>
 
 <p>Think of the <a target="_blank" rel="noopener" href="https://cloud.oracle.com/iaas">Oracle Cloud Infrastructure (OCI)</a> as your server room in the cloud. With OCI, customers have access to the basic components needed for every server infrastructure and more! Besides virtual networks, firewalls, machines and storage, customers also have access to various specialty appliances and services. That includes autonomous database systems and container services. You can access the OCI console using a URL like <code>https://console.us-ashburn-1.oraclecloud.com/?tenant=&lt;MY_TENANT&gt;</code> where <code>&lt;MY_TENANT&gt;</code> is the name of your tenancy. Login with the Oracle Cloud credentials.</p>
-<img src="/content/id/1904/oci-console-landing-page.png" class="" title="OCI Console">
+<img src="/content/id/1904/oci-console-landing-page.png" class="" title="OCI Console"><span class="caption">OCI Console</span>
 
 <p>As an avid <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express (APEX)</a> fan, my main interest is always about setting up the components necessary to build my APEX Stack. On Day 2 of my trial, let’s examine the shortest path needed to get the environment up and running.</p>
-<h2 id="Required-Components"><a href="#Required-Components" class="headerlink" title="Required Components"></a>Required Components</h2><img src="/content/id/1904/oci-topology.png" class="" title="A Simple Topology">
+<h2 id="Required-Components"><a href="#Required-Components" class="headerlink" title="Required Components"></a>Required Components</h2><img src="/content/id/1904/oci-topology.png" class="" title="A Simple Topology"><span class="caption">A Simple Topology</span>
 
 <ol>
 <li><a target="_blank" rel="noopener" href="https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVCNs.htm">Virtual Cloud Network (VCN)</a></li>
@@ -175,7 +175,7 @@ ga('send', 'pageview');
 <li>On the <em>Compartments</em> page, I have two compartments already created. I will create a <em>DEV</em> compartment under the tenancy’s root compartment. Click <em>Create Compartment</em> and then enter a name and description for the compartment. Choose <em><MY_TENANT> (root)</em> for the parent compartment.</li>
 <li>Click <em>Create Compartment</em></li>
 </ol>
-<img src="/content/id/1904/oci-create-dev-compartment.png" class="" title="Create a compartment for DEV resources">
+<img src="/content/id/1904/oci-create-dev-compartment.png" class="" title="Create a compartment for DEV resources"><span class="caption">Create a compartment for DEV resources</span>
 
 <h3 id="Network"><a href="#Network" class="headerlink" title="Network"></a>Network</h3><p>All resources will need to live within a VCN. It encapsulates the subnets, gateways</p>
 <ol>
@@ -183,7 +183,7 @@ ga('send', 'pageview');
 <li>On the <em>Virtual Cloud Networks</em> page, click <em>Create Virtual Cloud Network</em>. Select the target compartment and enter a name if necessary. Provide the network range (<em>CIDR BLOCK</em>) for this subnet, e.g. <code>10.1.0.0/16</code>. There online tools that can help determine what the IPv4 range for a <a target="_blank" rel="noopener" href="https://wikipedia.org/wiki/Classless_Inter-Domain_Routing">CIDR</a> block.</li>
 <li>Click <em>Create Virtual Cloud Network</em></li>
 </ol>
-<img src="/content/id/1904/oci-create-dev-vcn.png" class="" title="Create a VCN">
+<img src="/content/id/1904/oci-create-dev-vcn.png" class="" title="Create a VCN"><span class="caption">Create a VCN</span>
 
 <ol start="4">
 <li>Next, create a public subnet. On the VCN Details page, check that the correct compartment is selected (on the left side of the page), then click <em>Create Subnet</em>. Enter a name if required, and set the following values:<ul>
@@ -195,14 +195,14 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ol>
-<img src="/content/id/1904/oci-create-dev-subnet.png" class="" title="Create a public subnet">
+<img src="/content/id/1904/oci-create-dev-subnet.png" class="" title="Create a public subnet"><span class="caption">Create a public subnet</span>
 
 <ol start="5">
 <li>Back on the VCN Details page, click <em>Internet Gateways</em> on the left.</li>
 <li>On the <em>Internet Gateways</em> page, click <em>Create Internet Gateway</em>.</li>
 <li>Enter a name if required and then click <em>Create Internet Gateway</em>.</li>
 </ol>
-<img src="/content/id/1904/oci-create-dev-ig.png" class="" title="Create an Internet Gateway">
+<img src="/content/id/1904/oci-create-dev-ig.png" class="" title="Create an Internet Gateway"><span class="caption">Create an Internet Gateway</span>
 
 <ol start="8">
 <li>On the left again, click <em>Route Tables</em> and then on the <em>Route Tables</em> page, click on the default route table.</li>
@@ -230,19 +230,19 @@ ga('send', 'pageview');
 </ul>
 </li>
 </ol>
-<img src="/content/id/1904/oci-create-dev-compute.png" class="" title="Create a Virtual Machine">
+<img src="/content/id/1904/oci-create-dev-compute.png" class="" title="Create a Virtual Machine"><span class="caption">Create a Virtual Machine</span>
 
 <p>Compute Instances are sold in “Shapes”. Resources provided by the various shapes are documented <a target="_blank" rel="noopener" href="https://docs.cloud.oracle.com/iaas/Content/Compute/References/computeshapes.htm">here</a>. Availability is dependent on region. In Ashburn, the new (cheaper) AMD-based shapes are available. I had selected <em>VM.Standard.E2.1</em> that provides 1 OCPU (2 vCPUs), a generous 8 GB of memory and ~50 GB storage!</p>
-<h2 id="Accessing-the-Server"><a href="#Accessing-the-Server" class="headerlink" title="Accessing the Server"></a>Accessing the Server</h2><img src="/content/id/1904/oci-compute-created.png" class="" title="The new VM">
+<h2 id="Accessing-the-Server"><a href="#Accessing-the-Server" class="headerlink" title="Accessing the Server"></a>Accessing the Server</h2><img src="/content/id/1904/oci-compute-created.png" class="" title="The new VM"><span class="caption">The new VM</span>
 
 <p>The server can be accessed via the public IP address. All instances are created with the user <code>opc</code>. Use the private key that generated the SSH public key provided when the instance was created. The <code>opc</code> user is on the <em>sudoers</em> list and can be used to perform system administration tasks on the server.</p>
 <p>I struggled a little bit getting my APEX stack up and running but was eventually able to get it running with the helper scripts I had shared in an earlier <a href="/content/id/1902">post</a>.</p>
-<img src="/content/id/1904/oci-apex.png" class="" title="APEX Up and Running">
+<img src="/content/id/1904/oci-apex.png" class="" title="APEX Up and Running"><span class="caption">APEX Up and Running</span>
 
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><blockquote>
 <p><del>3. What do I need to do to create an Oracle Application Express (APEX) stack?</del></p>
 </blockquote>
-<img src="/content/id/1904/oci-emexpress.png" class="" title="Oracle 18c XE - EM Express">
+<img src="/content/id/1904/oci-emexpress.png" class="" title="Oracle 18c XE - EM Express"><span class="caption">Oracle 18c XE - EM Express</span>
 
 <p>This article provides a list of tasks needed to spin up a VM that could then be used to create an APEX stack powered by the free <a target="_blank" rel="noopener" href="https://oracle.com/xe">Oracle Database 18c Express Edition</a>. Compared to other hosting platforms like <a target="_blank" rel="noopener" href="https://m.do.co/c/6f9b549ca569">DigitalOcean</a> and <a target="_blank" rel="noopener" href="https://www.linode.com/?r=41672b20d515344de465e9ed44c1a75356445597">Linode</a>, the setup process feels like an overkill. However, the OCI was designed for larger goals and this is merely a starting point for me. In the coming days, I will explore other services that OCI provides for creating “enterprise-grade” IT environments including the much talk about Database Systems.</p>
 <p>Stay tuned!</p>
@@ -256,7 +256,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1904/" data-id="ckmr6zpfg0016w4fd016r0u4u" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1904/" data-id="ckmr8jzd50013q4fdgmvrfzks" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

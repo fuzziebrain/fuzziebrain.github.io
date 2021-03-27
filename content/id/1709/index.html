@@ -162,56 +162,56 @@ ga('send', 'pageview');
 <li>Next, login to Google’s Developers <a target="_blank" rel="noopener" href="https://console.developers.google.com/">console</a>.</li>
 <li>Create a project in order to enable the APIs you need to perform the OAuth2 login process. Click <code>Create Project</code> (see figure 1).</li>
 </ul>
-<img src="/content/id/1709/create-project_01.jpg" class="" title="Figure 1: Create a Project - step 1">
+<img src="/content/id/1709/create-project_01.jpg" class="" title="Figure 1: Create a Project - step 1"><span class="caption">Figure 1: Create a Project - step 1</span>
 
 <ul>
 <li>Click <code>Create</code> (see figure 2) to continue.</li>
 </ul>
-<img src="/content/id/1709/create-project_02.jpg" class="" title="Figure 2: Create a Project - step 2">
+<img src="/content/id/1709/create-project_02.jpg" class="" title="Figure 2: Create a Project - step 2"><span class="caption">Figure 2: Create a Project - step 2</span>
 
 <ul>
 <li>Enter a project name and then click <code>Create</code> to complete the process</li>
 </ul>
-<img src="/content/id/1709/create-project_03.jpg" class="" title="Figure 3: Create a Project - step 3">
+<img src="/content/id/1709/create-project_03.jpg" class="" title="Figure 3: Create a Project - step 3"><span class="caption">Figure 3: Create a Project - step 3</span>
 
 <ul>
 <li>Once the project is created, you will be returned to the console dashboard, and the new project should be selected automatically. You should see this at the top-left of the page, right next to the Google APIs page banner.</li>
 </ul>
-<img src="/content/id/1709/create-project_04.jpg" class="" title="Figure 4: Console dashboard with project selected">
+<img src="/content/id/1709/create-project_04.jpg" class="" title="Figure 4: Console dashboard with project selected"><span class="caption">Figure 4: Console dashboard with project selected</span>
 
 <ul>
 <li>Click the third link <code>Credentials</code> and then select to create an <code>OAuth client ID</code> credential.</li>
 </ul>
-<img src="/content/id/1709/create-project_05.jpg" class="" title="Figure 5: Create a OAuth client ID credential">
+<img src="/content/id/1709/create-project_05.jpg" class="" title="Figure 5: Create a OAuth client ID credential"><span class="caption">Figure 5: Create a OAuth client ID credential</span>
 
 <ul>
 <li>Next, click <code>Configure consent screen</code>.</li>
 </ul>
-<img src="/content/id/1709/create-project_06.jpg" class="" title="Figure 6: Configure the consent screen first">
+<img src="/content/id/1709/create-project_06.jpg" class="" title="Figure 6: Configure the consent screen first"><span class="caption">Figure 6: Configure the consent screen first</span>
 
 <ul>
 <li>Enter a product name and then click <code>Save</code> on the bottom of the page.</li>
 </ul>
-<img src="/content/id/1709/create-project_07.jpg" class="" title="Figure 7: Enter the product name">
+<img src="/content/id/1709/create-project_07.jpg" class="" title="Figure 7: Enter the product name"><span class="caption">Figure 7: Enter the product name</span>
 
 <ul>
 <li>When returned to the previous page, select <code>Web application</code>. Additional fields will be displayed.</li>
 <li>Enter the <code>Name</code> of the application and enter <code>https://apexea.oracle.com/pls/apex/apex_authentication.callback</code> under the list of <code>Authorized redirect URIs</code>.</li>
 <li>Click <code>Create</code>.</li>
 </ul>
-<img src="/content/id/1709/create-project_08.jpg" class="" title="Figure 8: Create the client ID">
+<img src="/content/id/1709/create-project_08.jpg" class="" title="Figure 8: Create the client ID"><span class="caption">Figure 8: Create the client ID</span>
 
 <ul>
 <li>Take note of the <code>client ID</code> and <code>client secret</code> and then click <code>OK</code> to close the modal dialog.</li>
 <li>Return to the APEX App Builder and create an application.</li>
 <li>Go to <code>Shared Components</code> and then click <code>Credentials</code>.</li>
 </ul>
-<img src="/content/id/1709/setup-application_01.jpg" class="" title="Figure 9: Manage Credentials">
+<img src="/content/id/1709/setup-application_01.jpg" class="" title="Figure 9: Manage Credentials"><span class="caption">Figure 9: Manage Credentials</span>
 
 <ul>
 <li>Click <code>Create</code>.</li>
 </ul>
-<img src="/content/id/1709/setup-application_02.jpg" class="" title="Figure 10: Create a Credential">
+<img src="/content/id/1709/setup-application_02.jpg" class="" title="Figure 10: Create a Credential"><span class="caption">Figure 10: Create a Credential</span>
 
 <ul>
 <li>Enter a name for the credential you are about to store.</li>
@@ -219,7 +219,7 @@ ga('send', 'pageview');
 <li>Enter the <code>Client ID</code> and <code>Client Secret</code> obtained from the Google Developers console.</li>
 <li>Click <code>Create</code>.</li>
 </ul>
-<img src="/content/id/1709/setup-application_03.jpg" class="" title="Figure 11: Setup the Credential">
+<img src="/content/id/1709/setup-application_03.jpg" class="" title="Figure 11: Setup the Credential"><span class="caption">Figure 11: Setup the Credential</span>
 
 <ul>
 <li>Create a new Authentication Scheme.</li>
@@ -230,15 +230,15 @@ ga('send', 'pageview');
 <blockquote>
 <p>The email address of the user will be username (a.k.a. <code>APP_USER</code>) in your APEX application.</p>
 </blockquote>
-<img src="/content/id/1709/setup-application_04.jpg" class="" title="Figure 12: Create the Social Sign-In authentication scheme">
+<img src="/content/id/1709/setup-application_04.jpg" class="" title="Figure 12: Create the Social Sign-In authentication scheme"><span class="caption">Figure 12: Create the Social Sign-In authentication scheme</span>
 
 <p>Run the application. If everything was configured correctly, you will be prompted to login with your (any) Google Account.</p>
-<img src="/content/id/1709/run-application_01.jpg" class="" title="Figure 13: Login with a Google Account">
+<img src="/content/id/1709/run-application_01.jpg" class="" title="Figure 13: Login with a Google Account"><span class="caption">Figure 13: Login with a Google Account</span>
 
-<img src="/content/id/1709/run-application_02.jpg" class="" title="Figure 14: Application Homepage">
+<img src="/content/id/1709/run-application_02.jpg" class="" title="Figure 14: Application Homepage"><span class="caption">Figure 14: Application Homepage</span>
 
 <p>You might observe that the application’s logout link has no effect. However, take a closer look and you will see that the session identifier changes. Logging out only terminates your APEX session, but since your Google sign-on session is still valid, you are automatically authenticated back into the application. To ensure a proper logout, set the post-logout URL. For Google, this is <code>https://account.google.com/logout</code>.</p>
-<img src="/content/id/1709/post-logout.jpg" class="" title="Figure 15: Set the Post-Logout URL">
+<img src="/content/id/1709/post-logout.jpg" class="" title="Figure 15: Set the Post-Logout URL"><span class="caption">Figure 15: Set the Post-Logout URL</span>
 
 <p>Unfortunately, Google does not allow post-logout, third-party site redirects, so users will need to re-enter your site’s URL again to access the application.</p>
 <p>In the absence of official documentation, this is my best guess on how to set this up. As we progress towards the final release, we should get better clarity on the correctness of this article.</p>
@@ -256,7 +256,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1709/" data-id="ckmr6zpf6000kw4fdhr4fe5yw" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1709/" data-id="ckmr8jzcu000kq4fdglbfcyx9" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

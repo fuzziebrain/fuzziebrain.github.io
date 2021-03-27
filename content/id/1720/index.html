@@ -5,12 +5,12 @@
   
   <title>We Have a Wallet | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Updated November 17, 2018Please read this follow-up post as well. It contains an important note about intermediate certificates and where to download the root certificates.  One of the difficulties">
+  <meta name="description" content="Photo by Pexels   Updated November 17, 2018Please read this follow-up post as well. It contains an important note about intermediate certificates and where to download the root certificates.  One of t">
 <meta property="og:type" content="article">
 <meta property="og:title" content="We Have a Wallet">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1720/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Updated November 17, 2018Please read this follow-up post as well. It contains an important note about intermediate certificates and where to download the root certificates.  One of the difficulties">
+<meta property="og:description" content="Photo by Pexels   Updated November 17, 2018Please read this follow-up post as well. It contains an important note about intermediate certificates and where to download the root certificates.  One of t">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1720/wood-1284077_1920_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1720/apex-instance-setting-wallet.jpg">
@@ -141,7 +141,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1720/wood-1284077_1920_1280x720.jpg" class="" width="1280" height="720" title="Photo by Pexels">
+        <img src="/content/id/1720/wood-1284077_1920_1280x720.jpg" class="" width="1280" height="720" title="Photo by Pexels"><span class="caption">Photo by Pexels</span>
 
 <blockquote>
 <p><strong>Updated November 17, 2018</strong><br>Please read this follow-up <a href="/content/id/1725/">post</a> as well. It contains an important note about intermediate certificates and where to download the root certificates.</p>
@@ -170,7 +170,7 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ orapki wallet display -wallet /home/oracle/wallets/mywallet/</span><br><span class="line">Oracle PKI Tool Release 18.0.0.0.0 - Production</span><br><span class="line">Version 18.1.0.0.0</span><br><span class="line">Copyright (c) 2004, 2017, Oracle and/or its affiliates. All rights reserved.</span><br><span class="line"></span><br><span class="line">Enter wallet password:</span><br><span class="line">Requested Certificates:</span><br><span class="line">User Certificates:</span><br><span class="line">Trusted Certificates:</span><br><span class="line">Subject:        CN=Google Internet Authority G3,O=Google Trust Services,C=US</span><br></pre></td></tr></table></figure>
 
 <h2 id="Set-Up-APEX-to-Use-the-Wallet"><a href="#Set-Up-APEX-to-Use-the-Wallet" class="headerlink" title="Set Up APEX to Use the Wallet"></a>Set Up APEX to Use the Wallet</h2><p>Login to APEX as the instance administrator and navigate to “Manage Instance &gt; Instance Settings”.</p>
-<img src="/content/id/1720/apex-instance-setting-wallet.jpg" class="" title="APEX Instance Setting - Wallet">
+<img src="/content/id/1720/apex-instance-setting-wallet.jpg" class="" title="APEX Instance Setting - Wallet"><span class="caption">APEX Instance Setting - Wallet</span>
 
 <p>That’s it!</p>
 <h2 id="One-Last-Thing"><a href="#One-Last-Thing" class="headerlink" title="One Last Thing"></a>One Last Thing</h2><p>I did most of this in a Docker container using this <a target="_blank" rel="noopener" href="https://github.com/fuzziebrain/docker-oracle-xe">image build</a>. The image doesn’t have <code>openssl</code> available, so I grabbed the certs from the host operating system environment. For the Oracle Wallet management, you can access the tool by obtaining a Bash session in the database container.</p>
@@ -187,7 +187,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1720/" data-id="ckmr6zpl800u0w4fdbr6z8ekn" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1720/" data-id="ckmr8jziw00vbq4fderudhl97" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

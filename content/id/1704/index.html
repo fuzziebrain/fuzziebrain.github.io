@@ -5,12 +5,12 @@
   
   <title>Mail Dropped | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Before I begin, I just wanted to be absolutely clear that this post has nothing to do with Apple’s nifty tool for sending out large email attachments. In my previous post, I shared an approach for c">
+  <meta name="description" content="Screen capture of http:&#x2F;&#x2F;www.mail-tester.com&#x2F; Results  Before I begin, I just wanted to be absolutely clear that this post has nothing to do with Apple’s nifty tool for sending out larg">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mail Dropped">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1704/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Before I begin, I just wanted to be absolutely clear that this post has nothing to do with Apple’s nifty tool for sending out large email attachments. In my previous post, I shared an approach for c">
+<meta property="og:description" content="Screen capture of http:&#x2F;&#x2F;www.mail-tester.com&#x2F; Results  Before I begin, I just wanted to be absolutely clear that this post has nothing to do with Apple’s nifty tool for sending out larg">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1704/before.png">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1704/apex-email-settings.png">
@@ -143,7 +143,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1704/before.png" class="" title="Screen capture of http:&#x2F;&#x2F;www.mail-tester.com&#x2F; Results">
+        <img src="/content/id/1704/before.png" class="" title="Screen capture of http:&#x2F;&#x2F;www.mail-tester.com&#x2F; Results"><span class="caption">Screen capture of http:&#x2F;&#x2F;www.mail-tester.com&#x2F; Results</span>
 
 <p>Before I begin, I just wanted to be absolutely clear that this post has nothing to do with Apple’s nifty <a target="_blank" rel="noopener" href="https://support.apple.com/kb/ph2629">tool</a> for sending out large email attachments.</p>
 <p>In my previous <a href="/content/id/cizx69jya000ra0pvv26u3cez/">post</a>, I shared an approach for creating your very own <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX) instance on a small budget. Briefly, the solution involves using <a target="_blank" rel="noopener" href="https://www.vagrantup.com/">Vagrant</a> to create a very affordable virtual machine (VM) on <a target="_blank" rel="noopener" href="https://www.linode.com/?r=41672b20d515344de465e9ed44c1a75356445597">Linode’s</a> pool of servers and run the <a target="_blank" rel="noopener" href="https://github.com/OraOpenSource/OXAR">OXAR</a> build script, to setup the APEX instance very quickly and painlessly.</p>
@@ -192,7 +192,7 @@ ga('send', 'pageview');
 <li>Click Apply Changes to save</li>
 <li>Ensure the proper network ACL has been set to allow the “APEX schema” to communicate with <code>localhost</code>.</li>
 </ol>
-<img src="/content/id/1704/apex-email-settings.png" class="" title="Instance Administration - Instance Settings - Email">
+<img src="/content/id/1704/apex-email-settings.png" class="" title="Instance Administration - Instance Settings - Email"><span class="caption">Instance Administration - Instance Settings - Email</span>
 
 <p>An easy way to test the service is to run the following procedure block using SQL Workshop’s <a target="_blank" rel="noopener" href="https://docs.oracle.com/database/apex-5.1/AEUTL/SQL-commands.htm#AEUTL220">SQL Commands</a> interface:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">  apex_mail.send(</span><br><span class="line">    p_to <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;myfriend@email.com&#x27;</span></span><br><span class="line">    , p_from <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;me@myselfandi.com&#x27;</span></span><br><span class="line">    , p_subj <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;Popularity of Semantic Web Today&#x27;</span></span><br><span class="line">    , p_body <span class="operator">=</span><span class="operator">&gt;</span> q<span class="string">&#x27;[</span></span><br><span class="line"><span class="string">        The 2017 Gartner Hype Cycle indicates that Semantic Web-related </span></span><br><span class="line"><span class="string">        technologies are heading past the trough of disillusionment. </span></span><br><span class="line"><span class="string">        We should investigate.</span></span><br><span class="line"><span class="string">      ]&#x27;</span></span><br><span class="line">    , p_body_html <span class="operator">=</span><span class="operator">&gt;</span> q<span class="string">&#x27;[</span></span><br><span class="line"><span class="string">        &lt;p&gt;</span></span><br><span class="line"><span class="string">          The 2017 Gartner Hype Cycle indicates that Semantic Web-related </span></span><br><span class="line"><span class="string">          technologies are heading past the trough of disillusionment. We </span></span><br><span class="line"><span class="string">          should investigate.</span></span><br><span class="line"><span class="string">        &lt;/p&gt;</span></span><br><span class="line"><span class="string">      ]&#x27;</span></span><br><span class="line">  );</span><br><span class="line">  apex_mail.push_queue;</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="operator">/</span></span><br></pre></td></tr></table></figure>
@@ -219,9 +219,9 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v=spf1 a mx include:_spf.google.com include:servers.mcsv.net ip4:204.244.186.184/32 ~all</span><br></pre></td></tr></table></figure>
 
 <p>Before adding a SPF record to your DNS, test it first using the <a target="_blank" rel="noopener" href="http://www.kitterman.com/spf/validate.html">tool</a> provided by Kitterman. Add it to your DNS only when the SPF record validates successfully and can correctly identify your SMTP server as an authorized server for the specified domain. </p>
-<img src="/content/id/1704/spf-validate-form.png" class="" title="Inputs to test a what-if email was sent from my personal APEX instance">
+<img src="/content/id/1704/spf-validate-form.png" class="" title="Inputs to test a what-if email was sent from my personal APEX instance"><span class="caption">Inputs to test a what-if email was sent from my personal APEX instance</span>
 
-<img src="/content/id/1704/spf-validate-results.png" class="" title="Results">
+<img src="/content/id/1704/spf-validate-results.png" class="" title="Results"><span class="caption">Results</span>
 
 <p>After adding the SPF record, check to see if the record is being read correcly. You can use <a target="_blank" rel="noopener" href="https://mxtoolbox.com/">MxToolBox</a> for this. Here’s what the SPF record for the domain <code>bcoug.org</code> looks like:</p>
 <table>
@@ -307,7 +307,7 @@ ga('send', 'pageview');
 </tr>
 </tbody></table>
 <h3 id="Outcome"><a href="#Outcome" class="headerlink" title="Outcome"></a>Outcome</h3><p>After taking my APEX instance through cycles of corrective actions, I was finally able to achieve a score of 9/10. Where I fell short of a perfect score, is the absence of <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/DomainKeys">DomainKeys</a> (DKIM) information. I have yet to implement DKIM support for my APEX instance, so stay tuned, and you can expect a follow up howto post.</p>
-<img src="/content/id/1704/after.png" class="" title="Results after the appropriate SPF records are added">
+<img src="/content/id/1704/after.png" class="" title="Results after the appropriate SPF records are added"><span class="caption">Results after the appropriate SPF records are added</span>
 
 <h2 id="Last-Words"><a href="#Last-Words" class="headerlink" title="Last Words"></a>Last Words</h2><p>I hope this information here saves you some time figuring out what you need to do to stay out of the junk mail folder. Before I end though, here are a few more notes: </p>
 <ul>
@@ -325,7 +325,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1704/" data-id="ckmr6zpfv001yw4fd36z01pxc" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1704/" data-id="ckmr8jzdj0022q4fdh3rf8dls" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

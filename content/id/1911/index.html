@@ -5,12 +5,12 @@
   
   <title>Day 17 - 30 days on the Oracle Cloud | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In case you missed it (which is almost impossible), the Oracle Autonomous Database (AutonomousDB) is Oracle’s hottest offering on the Oracle Cloud and it now comes fitted with what is arguably the b">
+  <meta name="description" content="Autonomous TT  In case you missed it (which is almost impossible), the Oracle Autonomous Database (AutonomousDB) is Oracle’s hottest offering on the Oracle Cloud and it now comes fitted with what is a">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Day 17 - 30 days on the Oracle Cloud">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1911/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="In case you missed it (which is almost impossible), the Oracle Autonomous Database (AutonomousDB) is Oracle’s hottest offering on the Oracle Cloud and it now comes fitted with what is arguably the b">
+<meta property="og:description" content="Autonomous TT  In case you missed it (which is almost impossible), the Oracle Autonomous Database (AutonomousDB) is Oracle’s hottest offering on the Oracle Cloud and it now comes fitted with what is a">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1911/autonomous_tt_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1911/01-create_atp.png">
@@ -146,7 +146,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1911/autonomous_tt_1280x720.jpg" class="" title="Autonomous TT">
+        <img src="/content/id/1911/autonomous_tt_1280x720.jpg" class="" title="Autonomous TT"><span class="caption">Autonomous TT</span>
 
 <p>In case you missed it (which is almost impossible), the <a target="_blank" rel="noopener" href="https://www.oracle.com/database/autonomous-database.html">Oracle Autonomous Database (AutonomousDB)</a> is Oracle’s hottest offering on the <a target="_blank" rel="noopener" href="https://cloud.oracle.com/">Oracle Cloud</a> and it now <a target="_blank" rel="noopener" href="https://blogs.oracle.com/apex/announcing-the-availability-of-oracle-apex-on-autonomous-database-cloud">comes fitted</a> with what is arguably the best feature of the Oracle Database: <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express (APEX)</a>. I have a few more days to go with this <a target="_blank" rel="noopener" href="https://cloud.oracle.com/tryit">trial</a>, so why not take one out for a spin?</p>
 <div style="height: 1.05em; border-bottom: 1px solid darkgrey;"><i id="mini-car" class="fas fa-car-side" style="position: absolute;"></i></div>
@@ -167,30 +167,30 @@ ga('send', 'pageview');
 <li>Resources needed, CPU core count and storage size (the minimum 1 TB is really daunting).</li>
 <li>Select <a target="_blank" rel="noopener" href="https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/adboverview.htm#autoscaling">auto scaling</a> if required.</li>
 <li>Enter the <code>ADMIN</code> user’s password twice, and then</li>
-<li>Select the license type. Note that for trials, select either doesn’t really matter. I have addressed this issue <a href="/content/id/1906/">before</a>, don’t be fooled by the extraordinary low prices to run an autonomous DB. Use the <a target="_blank" rel="noopener" href="https://cloud.oracle.com/cost-estimator">cost estimator</a> for more realistic numbers for budgeting.<img src="/content/id/1911/01-create_atp.png" class="" title="Create a serverless Autonomous Transaction Processing database"></li>
+<li>Select the license type. Note that for trials, select either doesn’t really matter. I have addressed this issue <a href="/content/id/1906/">before</a>, don’t be fooled by the extraordinary low prices to run an autonomous DB. Use the <a target="_blank" rel="noopener" href="https://cloud.oracle.com/cost-estimator">cost estimator</a> for more realistic numbers for budgeting.<img src="/content/id/1911/01-create_atp.png" class="" title="Create a serverless Autonomous Transaction Processing database"><span class="caption">Create a serverless Autonomous Transaction Processing database</span></li>
 </ul>
 </li>
 </ol>
 <h2 id="Connecting-to-the-Instance"><a href="#Connecting-to-the-Instance" class="headerlink" title="Connecting to the Instance"></a>Connecting to the Instance</h2><p>Once the autonomous DB is alive and breathing, return to the details page. Click <i class="fa fa-bars"></i> <i class="fa fa-caret-right"></i> Autonomous Transaction Processing (or Autonomous Data Warehouse) and the select the target autonomous DB. On the details page, click “DB Connection”.</p>
-<img src="/content/id/1911/02-db_connection.png" class="" title="Database Connection Dialog Page">
+<img src="/content/id/1911/02-db_connection.png" class="" title="Database Connection Dialog Page"><span class="caption">Database Connection Dialog Page</span>
 
 <p>Here, click “Download” to grab the client credentials and wallet. You will need these for connecting to the database using <a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/appdev/sql-developer.html">SQL Developer</a> and <a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/appdev/sqlcl.html">SQLcl</a>. Also, take note of the connection strings as you will need them to connect to the DB with the required service level.</p>
 <p>When creating a connection profile for the autonomous DB, select the Connection Type “Cloud Wallet”. Then select the downloaded ZIP file for the Configuration File. Select the appropriate Service (TNS name).</p>
-<img src="/content/id/1911/03-sqldev_connection.jpg" class="" title="SQL Developer Connection Profile">
+<img src="/content/id/1911/03-sqldev_connection.jpg" class="" title="SQL Developer Connection Profile"><span class="caption">SQL Developer Connection Profile</span>
 
 <p>In SQLcl, select and load the Cloud Wallet using the command:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SQL&gt; <span class="built_in">set</span> cloud config /path/to/my/wallet_file.zip</span><br></pre></td></tr></table></figure>
 
 <p>Once the cloud wallet is loaded, connect to the DB as you would with any Oracle Database, providing the appropriate TNS Name to connect to.</p>
-<img src="/content/id/1911/04-sqlcl_connection.jpg" class="" title="Connecting to the DB using SQLcl">
+<img src="/content/id/1911/04-sqlcl_connection.jpg" class="" title="Connecting to the DB using SQLcl"><span class="caption">Connecting to the DB using SQLcl</span>
 
 <h2 id="What-Makes-It-Cool"><a href="#What-Makes-It-Cool" class="headerlink" title="What Makes It Cool?"></a>What Makes It Cool?</h2><p>IMHO, here are few good reasons:</p>
 <ol>
 <li>There’s some cool old school Artificial Intelligence/Machine Learning techniques applied. It ain’t just a marketing buzzword. Some of the algorithms used to put “auto” in “autonomous” are highlighted in <a target="_blank" rel="noopener" href="https://twitter.com/SQLMaria">Maria Colgan’s</a> Kscope19 <a target="_blank" rel="noopener" href="https://kscope19.odtug.com/e/in/eid=32&req=info&s=2823&all=1">session</a>. If you are a full <a target="_blank" rel="noopener" href="https://www.odtug.com/">ODTUG</a> member, you will have access to her presentation slide deck and hopefully a recording as well.</li>
-<li>Oracle Machine Learning Notebooks - if you have used <a target="_blank" rel="noopener" href="https://jupyter.org/">Jupyter</a> before, then you’ll find the interface and purpose very familiar. <img src="/content/id/1911/05-oml_notebook.png" class="" title="Available Tasks">
- <img src="/content/id/1911/06-oml_notebook.png" class="" title="An OML Notebook"></li>
+<li>Oracle Machine Learning Notebooks - if you have used <a target="_blank" rel="noopener" href="https://jupyter.org/">Jupyter</a> before, then you’ll find the interface and purpose very familiar. <img src="/content/id/1911/05-oml_notebook.png" class="" title="Available Tasks"><span class="caption">Available Tasks</span>
+ <img src="/content/id/1911/06-oml_notebook.png" class="" title="An OML Notebook"><span class="caption">An OML Notebook</span></li>
 <li>APEX, enough said!</li>
-<li>SQL Developer Web - while we are going to see this available to install on premise in the near future, it doesn’t hurt to get an early preview of how powerful a development platform we have with SQLDEV Web and APEX combined. <img src="/content/id/1911/07-sqldev_web.png" class="" title="SQL Developer in a browser!"></li>
+<li>SQL Developer Web - while we are going to see this available to install on premise in the near future, it doesn’t hurt to get an early preview of how powerful a development platform we have with SQLDEV Web and APEX combined. <img src="/content/id/1911/07-sqldev_web.png" class="" title="SQL Developer in a browser!"><span class="caption">SQL Developer in a browser!</span></li>
 </ol>
 <p>Not convinced? Get a trial account and check it out!</p>
 <blockquote>
@@ -207,7 +207,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1911/" data-id="ckmr6zpfh0018w4fdgazwbmn3" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1911/" data-id="ckmr8jzd60015q4fd46sw5881" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

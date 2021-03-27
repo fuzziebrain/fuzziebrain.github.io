@@ -5,12 +5,12 @@
   
   <title>Oracle APEX and REST Without the Pain | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Earlier this year (2017), I had the privilege to share with the community, some of the work and experiences I gained helping to build some of the blocks that form the foundation of apex.world. In my">
+  <meta name="description" content="Photo by &lt;a href&#x3D;https:&#x2F;&#x2F;unsplash.com&#x2F;@moudy100 target&#x3D;_blank&gt;Hisham Abo-hamad&lt;&#x2F;a&gt; on Unsplash  Earlier this year (2017), I had the privilege to share with th">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Oracle APEX and REST Without the Pain">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1706/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Earlier this year (2017), I had the privilege to share with the community, some of the work and experiences I gained helping to build some of the blocks that form the foundation of apex.world. In my">
+<meta property="og:description" content="Photo by &lt;a href&#x3D;https:&#x2F;&#x2F;unsplash.com&#x2F;@moudy100 target&#x3D;_blank&gt;Hisham Abo-hamad&lt;&#x2F;a&gt; on Unsplash  Earlier this year (2017), I had the privilege to share with th">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1706/ismalia-egypt.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1706/suez.png">
@@ -140,7 +140,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1706/ismalia-egypt.jpg" class="" title="Photo by &lt;a href&#x3D;https:&#x2F;&#x2F;unsplash.com&#x2F;@moudy100 target&#x3D;_blank&gt;Hisham Abo-hamad&lt;&#x2F;a&gt; on Unsplash">
+        <img src="/content/id/1706/ismalia-egypt.jpg" class="" title="Photo by &lt;a href&#x3D;https:&#x2F;&#x2F;unsplash.com&#x2F;@moudy100 target&#x3D;_blank&gt;Hisham Abo-hamad&lt;&#x2F;a&gt; on Unsplash"><span class="caption">Photo by &lt;a href&#x3D;https:&#x2F;&#x2F;unsplash.com&#x2F;@moudy100 target&#x3D;_blank&gt;Hisham Abo-hamad&lt;&#x2F;a&gt; on Unsplash</span>
 
 <p>Earlier this year (2017), I had the privilege to share with the community, some of the work and experiences I gained helping to build some of the blocks that form the foundation of <a target="_blank" rel="noopener" href="https://apex.world/">apex.world</a>. In my presentations, I had shared some of the challenges I had integrating RESTful web services with <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX). A crippling issue involved the use of <a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/database/database-technologies/express-edition/">Oracle Database Express Edition</a> (Oracle XE) and communicating with web services over a secured protocol. The by-product of that experience led to the development of a simple <a target="_blank" rel="noopener" href="https://nodejs.org/">Node.js</a> application, which I named <a target="_blank" rel="noopener" href="https://github.com/fuzziebrain/suez">Suez</a>.</p>
 <span id="more"></span>
@@ -150,7 +150,7 @@ ga('send', 'pageview');
 <p>Many API providers offer web services over HTTPS and consumers are highly encouraged, and sometimes forced to use this protocol for accessing content. The Oracle Wallet is used to store and manage SSL certificates that are required for establishing connections (SSL handshakes). For Oracle Database Standard and Enterprise Editions, a tool known as the Oracle Wallet Manager (OWM) is used to conveniently add and remove certificates. Not surprisingly, this is absent in the free Express Edition. A workaround using OpenSSL was prescribed by Hazrul Nizam’s <a target="_blank" rel="noopener" href="https://blog.hazrulnizam.com/openssl-workaround-oracle-xe-wallet/">blog post</a>. Good read!</p>
 <p>However, like any other web technology, SSL is prone to weaknesses and vulnerabilities and hence, it continues to evolve. For example, older SSL certificates that were signed with a weaker hashing algorithm SHA-1, have been made obsolete as it was been proven to be <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Collision_attack">prone to collisions</a>. For older versions of the Oracle DB, an active Oracle Support contract allows you access to patches that upgrade the wallet to handle newer hashes. However, if you are developing using Oracle XE, then you are out of luck. Well… kinda.</p>
 <p>Without any upgrades to support newer hash algorithms, we were forced to improvise a solution for integrating Slack and apex.world. This is done through a proxy that accepts communications on a non-secure HTTP channel, relay the request and then pipe the response back to the caller. However, rather than write code for every API that needed to be accessed, I wrote Suez.</p>
-<img src="/content/id/1706/suez.png" class="" title="Suez usage example">
+<img src="/content/id/1706/suez.png" class="" title="Suez usage example"><span class="caption">Suez usage example</span>
 
 <p>Suez relies on <a target="_blank" rel="noopener" href="https://twitter.com/chimurai">Steven Chim’s</a> <a target="_blank" rel="noopener" href="https://github.com/chimurai/http-proxy-middleware">work</a> for creating simple web proxies using Node.js, and that in turn is powered by Nodejitsu’s <a target="_blank" rel="noopener" href="https://github.com/nodejitsu/node-http-proxy">node-http-proxy</a>. It uses the request’s hostname value, looks up the configuration and then routes the call to the intended API target. Instructions on how to configure and deploy the application is detailed in the project’s <a target="_blank" rel="noopener" href="https://github.com/fuzziebrain/suez/blob/master/README.md">README</a>.</p>
 <p>I am hoping that this small utility would help developers get started on integrating cool APIs and build even cooler APEX applications. That said, I would end by emphasizing that orthdox approaches to security are always preferred. If budget allows, continue to rely on SSL certificates not only for securing end-to-end communications, but also, verifying that your application is talking to authorized servers.</p>
@@ -164,7 +164,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1706/" data-id="ckmr6zpg8002tw4fdbj745mk3" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1706/" data-id="ckmr8jzdr002uq4fd9i5n7b1s" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

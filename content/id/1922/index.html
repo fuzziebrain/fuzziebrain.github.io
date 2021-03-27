@@ -5,12 +5,12 @@
   
   <title>Watch Your Weight | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="A reader left an interesting comment&#x2F;question in my previous post on Making the Move to the Autonomous Database:  “Would You explain how can i check my on-premise DB to satisfy ADB size limitation 2">
+  <meta name="description" content="Horizontal Old Weights  A reader left an interesting comment&#x2F;question in my previous post on Making the Move to the Autonomous Database:  “Would You explain how can i check my on-premise DB to satisfy">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Watch Your Weight">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1922/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="A reader left an interesting comment&#x2F;question in my previous post on Making the Move to the Autonomous Database:  “Would You explain how can i check my on-premise DB to satisfy ADB size limitation 2">
+<meta property="og:description" content="Horizontal Old Weights  A reader left an interesting comment&#x2F;question in my previous post on Making the Move to the Autonomous Database:  “Would You explain how can i check my on-premise DB to satisfy">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1922/horizontal-930716_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1922/adb-service-console-overview.png">
@@ -140,7 +140,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1922/horizontal-930716_1280x720.jpg" class="" title="Horizontal Old Weights">
+        <img src="/content/id/1922/horizontal-930716_1280x720.jpg" class="" title="Horizontal Old Weights"><span class="caption">Horizontal Old Weights</span>
 
 <p>A reader left an interesting comment/question in my previous post on <a href="/content/id/1920/">Making the Move to the Autonomous Database</a>:</p>
 <blockquote>
@@ -157,7 +157,7 @@ ga('send', 'pageview');
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">OWNER                SPACE_USAGE_KB SPACE_USAGE_MB SPACE_USAGE_GB</span><br><span class="line">-------------------- -------------- -------------- --------------</span><br><span class="line">CONTOSO_APP               32,896.00          32.13           0.03</span><br><span class="line">CONTOSO_WEB                6,720.00           6.56           0.01</span><br><span class="line">LOGGER                     1,280.00           1.25           0.00</span><br><span class="line">Total                     40,896.00          39.94           0.04</span><br></pre></td></tr></table></figure>
 
 <p>That’s great! My toy application only requires about 40 MB of storage, but after importing the data into the ADB, I get this on the Service Console?</p>
-<img src="/content/id/1922/adb-service-console-overview.png" class="" title="ADB Service Console">
+<img src="/content/id/1922/adb-service-console-overview.png" class="" title="ADB Service Console"><span class="caption">ADB Service Console</span>
 
 <p>As it turns out, the total amount of storage used includes quite a few more components than anticipated. The following query should yield values that tally with the amount displayed on the Service Console.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line">  <span class="keyword">case</span> <span class="keyword">grouping</span>(tablespace_name) <span class="keyword">when</span> <span class="number">1</span> <span class="keyword">then</span> <span class="string">&#x27;Total&#x27;</span> <span class="keyword">else</span> tablespace_name <span class="keyword">end</span> <span class="keyword">as</span> tablespace_name</span><br><span class="line">  , round(<span class="built_in">sum</span>(bytes) <span class="operator">/</span> <span class="built_in">power</span>(<span class="number">2</span>, <span class="number">30</span>), <span class="number">2</span>) <span class="keyword">as</span> total_size_gb</span><br><span class="line">  , round(<span class="built_in">sum</span>(maxbytes) <span class="operator">/</span> <span class="built_in">power</span>(<span class="number">2</span>, <span class="number">30</span>), <span class="number">2</span>) <span class="keyword">as</span> max_size_gb</span><br><span class="line"><span class="keyword">from</span> (</span><br><span class="line">  <span class="keyword">select</span> tablespace_name, bytes, maxbytes</span><br><span class="line">  <span class="keyword">from</span> dba_data_files</span><br><span class="line">  <span class="keyword">where</span> tablespace_name <span class="operator">!=</span> <span class="string">&#x27;SAMPLESCHEMA&#x27;</span></span><br><span class="line">  <span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line">  <span class="keyword">select</span> <span class="string">&#x27;TEMP&#x27;</span> <span class="keyword">as</span> tablespace_name, bytes, maxbytes</span><br><span class="line">  <span class="keyword">from</span> dba_temp_files</span><br><span class="line">)</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="keyword">rollup</span>(tablespace_name);</span><br></pre></td></tr></table></figure>
@@ -206,7 +206,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1922/" data-id="ckmr6zpl900u1w4fdc60zfp8h" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1922/" data-id="ckmr8jziv00v9q4fd3dzd0cvq" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

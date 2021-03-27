@@ -5,12 +5,12 @@
   
   <title>Real Uptime Monitoring of Oracle APEX Instances | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Running a production application on an Oracle APEX instance? Then read on! Making sure your application is up and running 24&#x2F;7 doesn’t need to be a daunting task, plus it may not even cost you a dim">
+  <meta name="description" content="All Systems Go!  Running a production application on an Oracle APEX instance? Then read on! Making sure your application is up and running 24&#x2F;7 doesn’t need to be a daunting task, plus it may not even">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Real Uptime Monitoring of Oracle APEX Instances">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1705/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Running a production application on an Oracle APEX instance? Then read on! Making sure your application is up and running 24&#x2F;7 doesn’t need to be a daunting task, plus it may not even cost you a dim">
+<meta property="og:description" content="All Systems Go!  Running a production application on an Oracle APEX instance? Then read on! Making sure your application is up and running 24&#x2F;7 doesn’t need to be a daunting task, plus it may not even">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1705/all-systems-go.png">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1705/https-monitor-configuration.png">
@@ -140,7 +140,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1705/all-systems-go.png" class="" title="All Systems Go!">
+        <img src="/content/id/1705/all-systems-go.png" class="" title="All Systems Go!"><span class="caption">All Systems Go!</span>
 
 <p>Running a production application on an Oracle APEX instance? Then read on!</p>
 <p>Making sure your application is up and running 24/7 doesn’t need to be a daunting task, plus it may not even cost you a dime! <a target="_blank" rel="noopener" href="https://uptimerobot.com/">UptimeRobot</a> provides <strong>50 free monitors</strong> that can poll your servers using the smallest interval of 5 minutes. You can easily monitor websites and receive multi-channel notifications of downtime. No excuse!</p>
@@ -178,7 +178,7 @@ ga('send', 'pageview');
 <li>Select the contact(s) to be notified.</li>
 <li>Click <em>Create Monitor</em>.</li>
 </ol>
-<h3 id="3-HTTP-s"><a href="#3-HTTP-s" class="headerlink" title="3. HTTP(s)"></a>3. HTTP(s)</h3><img src="/content/id/1705/https-monitor-configuration.png" class="" title="HTTP(s) Monitor Configuration">
+<h3 id="3-HTTP-s"><a href="#3-HTTP-s" class="headerlink" title="3. HTTP(s)"></a>3. HTTP(s)</h3><img src="/content/id/1705/https-monitor-configuration.png" class="" title="HTTP(s) Monitor Configuration"><span class="caption">HTTP(s) Monitor Configuration</span>
 
 <p>This monitor type uses HTTP status codes returned by the specified URL or IP address to indicate whether the service is up (<code>200</code>) or down (anything else, e.g. <code>404</code>, <code>500</code>, <code>504</code> etc.).</p>
 <p>To configure a HTTP(s) Monitor:</p>
@@ -204,7 +204,7 @@ ga('send', 'pageview');
 <li>Click <em>Create Monitor</em>.</li>
 </ol>
 <p><strong>NOTEWORTHY</strong> Web servers will log access by both HTTP(s) and Keyword monitor types. Keep that in mind when setting up monitors with short intervals.</p>
-<h2 id="Notifications"><a href="#Notifications" class="headerlink" title="Notifications"></a>Notifications</h2><img src="/content/id/1705/downtime-notification-email.png" class="" title="Service Down Email Notification">
+<h2 id="Notifications"><a href="#Notifications" class="headerlink" title="Notifications"></a>Notifications</h2><img src="/content/id/1705/downtime-notification-email.png" class="" title="Service Down Email Notification"><span class="caption">Service Down Email Notification</span>
 
 <p>When setting up monitors, you need to specify which contact(s) to notify when things go wrong. This is set up under <em>My Settings</em>. You may add contacts using either of the following technologies:</p>
 <ul>
@@ -221,7 +221,7 @@ ga('send', 'pageview');
 </ul>
 <p>There is also an option of adding a public status page or using RSS feeds to display server statuses on your website. These are nice to haves, but not always necessary.</p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>For APEX applications, I would generally prefer using either <em>HTTP(s)</em> or <em>Keyword</em> monitoring as they provide the most reliable method for detecting if the web server (reverse proxy), JavaEE Web Container (hosting <a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/developer-tools/rest-data-services/">ORDS</a>) and/or Oracle Database had gone down. All three are important services responsible for delivering APEX applications. Any of them going down will trigger an alert.</p>
-<img src="/content/id/1705/apex-error-page.png" class="" title="APEX Error Page">
+<img src="/content/id/1705/apex-error-page.png" class="" title="APEX Error Page"><span class="caption">APEX Error Page</span>
 
 <p>Between the two though, I feel <em>Keyword</em> stands out. It really depends on what your definition of “uptime” is. To me, that includes having the APEX instance deliver the expected outcomes. Any errors as a result of application runtime execution, should also classify as downtime. Often, APEX would still return a HTTP status code <code>200</code> even if an error had occured. Either we trap these events during error handling and then return the appropriate status code, or create a strategy involving keywords and then monitor these terms to signal service status for better insights to availability.</p>
 <p>That said, regardless of what you choose, anything is better than nothing. So get monitored now!</p>
@@ -235,7 +235,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1705/" data-id="ckmr6zpgf003bw4fdf15yg4qp" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1705/" data-id="ckmr8jzdy003jq4fdeq2m71d9" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

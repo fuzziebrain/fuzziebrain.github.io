@@ -5,12 +5,12 @@
   
   <title>Snap in Storage For Your Docker Playground | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ICYMI (in case you missed it), a team from Oracle has been hard at work these few months churning out a bunch of Vagrant configuration files and scripts that help you provision some really cool virt">
+  <meta name="description" content="Floppy Disks  ICYMI (in case you missed it), a team from Oracle has been hard at work these few months churning out a bunch of Vagrant configuration files and scripts that help you provision some real">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Snap in Storage For Your Docker Playground">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1713/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="ICYMI (in case you missed it), a team from Oracle has been hard at work these few months churning out a bunch of Vagrant configuration files and scripts that help you provision some really cool virt">
+<meta property="og:description" content="Floppy Disks  ICYMI (in case you missed it), a team from Oracle has been hard at work these few months churning out a bunch of Vagrant configuration files and scripts that help you provision some real">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1713/black-18320_1920.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1713/vm-storage-config.jpg">
@@ -139,7 +139,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1713/black-18320_1920.jpg" class="" title="Floppy Disks">
+        <img src="/content/id/1713/black-18320_1920.jpg" class="" title="Floppy Disks"><span class="caption">Floppy Disks</span>
 
 <p>ICYMI (in case you missed it), a team from <a target="_blank" rel="noopener" href="https://www.oracle.com/">Oracle</a> has been hard at work these few months churning out a bunch of <a target="_blank" rel="noopener" href="https://www.vagrantup.com/">Vagrant</a> configuration files and scripts that help you provision some really cool virtual machines (VM), powered by <a target="_blank" rel="noopener" href="https://www.oracle.com/linux/">Oracle Enterprise Linux</a>. At the time of writing, here are some of the cool VMs you can build:</p>
 <span id="more"></span>
@@ -159,7 +159,7 @@ ga('send', 'pageview');
 <p>My first thought was to set a larger container base size, but the VM was configured to use <a target="_blank" rel="noopener" href="https://btrfs.wiki.kernel.org/">Btrfs</a> as the storage driver, so that clearly wasn’t the issue. A quick check on the filesystem quickly revealed what the root problem was: <strong>free disk space</strong>!</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ df -h</span><br><span class="line">Filesystem                   Size  Used Avail Use% Mounted on</span><br><span class="line">devtmpfs                     854M     0  854M   0% /dev</span><br><span class="line">tmpfs                        871M     0  871M   0% /dev/shm</span><br><span class="line">tmpfs                        871M   17M  855M   2% /run</span><br><span class="line">tmpfs                        871M     0  871M   0% /sys/fs/cgroup</span><br><span class="line">/dev/mapper/vg_main-lv_root   32G  5.2G   27G  17% /</span><br><span class="line">/dev/sda1                    497M   99M  398M  20% /boot</span><br><span class="line">vagrant                      941G  172G  770G  19% /vagrant</span><br><span class="line">vagrant_share                941G  172G  770G  19% /vagrant_share</span><br><span class="line">/dev/sdb                      16G  3.4G   11G  25% /var/lib/docker</span><br><span class="line">tmpfs                        175M     0  175M   0% /run/user/1000</span><br></pre></td></tr></table></figure>
 
-<img src="/content/id/1713/vm-storage-config.jpg" class="" title="VM" alt="s Storage Devices">
+<img src="/content/id/1713/vm-storage-config.jpg" class="" title="VM" alt="s Storage Devices"><span class="caption">VM</span>
 
 <p>The base OEL vagrant box downloaded came with two attached virtual disk. The second, was about 16 GB and was available to the system as <code>/dev/sdb</code>. This device is then used for the storage device for Docker containers.</p>
 <p>See <a target="_blank" rel="noopener" href="https://github.com/oracle/vagrant-boxes/blob/master/DockerEngine/scripts/install.sh"><code>scripts/install.sh</code></a>, line 21:</p>
@@ -169,7 +169,7 @@ ga('send', 'pageview');
 <ol>
 <li>Shutdown the VM (using the Vagrant command to halt the system) so that I could add another 16 GB virtual disk.</li>
 </ol>
-<img src="/content/id/1713/vm-storage-config-new.jpg" class="" title="Virtual disk OL7U5_x86_64-disk3.vmdk added">
+<img src="/content/id/1713/vm-storage-config-new.jpg" class="" title="Virtual disk OL7U5_x86_64-disk3.vmdk added"><span class="caption">Virtual disk OL7U5_x86_64-disk3.vmdk added</span>
 
 <ol start="2">
 <li>Power on the VM.</li>
@@ -198,7 +198,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1713/" data-id="ckmr6zpgp0045w4fddsidg4sw" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1713/" data-id="ckmr8jze60047q4fd4c18fnn9" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

@@ -5,12 +5,12 @@
   
   <title>Running ORDS Against the Autonomous Database - Part 2 | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In my previous post, we looked at installing and configuring Oracle REST Data Services (ORDS) and have it work with Oracle Application Express (APEX) that comes preinstalled with every Oracle Autono">
+  <meta name="description" content="Old pipes and valves  In my previous post, we looked at installing and configuring Oracle REST Data Services (ORDS) and have it work with Oracle Application Express (APEX) that comes preinstalled with">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Running ORDS Against the Autonomous Database - Part 2">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/2005/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="In my previous post, we looked at installing and configuring Oracle REST Data Services (ORDS) and have it work with Oracle Application Express (APEX) that comes preinstalled with every Oracle Autono">
+<meta property="og:description" content="Old pipes and valves  In my previous post, we looked at installing and configuring Oracle REST Data Services (ORDS) and have it work with Oracle Application Express (APEX) that comes preinstalled with">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/2005/pipes-5146458_1280x800.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/2005/topology.png">
@@ -30,8 +30,8 @@
 <meta property="article:tag" content="orclapex">
 <meta property="article:tag" content="autonomous">
 <meta property="article:tag" content="database">
-<meta property="article:tag" content="rest">
 <meta property="article:tag" content="ords">
+<meta property="article:tag" content="rest">
 <meta property="article:tag" content="load balancer">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://fuzziebrain.com/content/id/2005/pipes-5146458_1280x800.jpg">
@@ -149,7 +149,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/2005/pipes-5146458_1280x800.jpg" class="" title="Old pipes and valves">
+        <img src="/content/id/2005/pipes-5146458_1280x800.jpg" class="" title="Old pipes and valves"><span class="caption">Old pipes and valves</span>
 
 <p>In my <a href="/content/id/2004/">previous post</a>, we looked at installing and configuring <a target="_blank" rel="noopener" href="https://www.oracle.com/ca-en/database/technologies/appdev/rest.html">Oracle REST Data Services</a> (ORDS) and have it work with <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX) that comes preinstalled with every <a target="_blank" rel="noopener" href="https://www.oracle.com/database/what-is-autonomous-database.html">Oracle Autonomous Database</a> (ADB). Like APEX, ORDS is also included as a feature of the ADB. However, there are certain situations where you might like to manage your own instance of ORDS.</p>
 <span id="more"></span>
@@ -161,12 +161,12 @@ ga('send', 'pageview');
 <li>Restricting “direct” access to the ADB, for example, to connect to the database using external tools like <a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/appdev/sqldeveloper-landing.html">SQL Developer and SQLcl</a>.</li>
 </ol>
 <p>The figure below depicts the topology that I will build for my APEX applications.</p>
-<img src="/content/id/2005/topology.png" class="" title="Planned topology">
+<img src="/content/id/2005/topology.png" class="" title="Planned topology"><span class="caption">Planned topology</span>
 
 <p>Note that I chose a single subnet for the Load Balancer and Compute. The latter may be deployed in a separate subnet for further isolation.</p>
 <h2 id="Load-Balancers"><a href="#Load-Balancers" class="headerlink" title="Load Balancers"></a>Load Balancers</h2><p>Under the <a target="_blank" rel="noopener" href="https://oracle.com/cloud/free">Oracle Cloud Free Tier</a> offering, users are provided with one <em>Always Free</em> load balancer. It has a special bandwidth size called <em>Micro</em> and is limited to a maximum of 10 Mbps.</p>
 <p>Go to the Load Balancers page. You will find it under the Networks menu item. Click on the blue <em>Create Load Balancer</em> button to begin.</p>
-<img src="/content/id/2005/screen01.png" class="" title="Create Load Balancer Wizard">
+<img src="/content/id/2005/screen01.png" class="" title="Create Load Balancer Wizard"><span class="caption">Create Load Balancer Wizard</span>
 
 <p>In the first step, do the following:</p>
 <ul>
@@ -176,11 +176,11 @@ ga('send', 'pageview');
 <li>Select the appropriate Virtual Cloud Network (VCN) and subnet that the load balancer should be placed in. Make sure that it is setup as a public network, an Internet Gateway and network route rules for bidirectional Internet traffic.</li>
 </ul>
 <p>In the next step, leave the default settings. However, on the third and final step, change the listener to listen for HTTP traffic.</p>
-<img src="/content/id/2005/screen02.png" class="" title="Create Load Balancer Wizard - Final Step">
+<img src="/content/id/2005/screen02.png" class="" title="Create Load Balancer Wizard - Final Step"><span class="caption">Create Load Balancer Wizard - Final Step</span>
 
 <p>Click on <em>Submit</em> to create the load balancer. A Listener and Backend Set is also created in the process, but we should delete them both once the load balancer is up.</p>
 <p>Once created, the Load Balancer Details page will display the Reserved Public IP address it has been assigned with. Use this to update your DNS records.</p>
-<img src="/content/id/2005/screen03.png" class="" title="Load Balancer Details page">
+<img src="/content/id/2005/screen03.png" class="" title="Load Balancer Details page"><span class="caption">Load Balancer Details page</span>
 
 <blockquote>
 <p>Remember to delete the listener and backend set created by default.</p>
@@ -194,12 +194,12 @@ ga('send', 'pageview');
 </ul>
 <p>After the backend set is created successfully, click on its name and add backends. You can access the list of backends from the Resources menu on the left of the Backend Set Information page.</p>
 <p>To begin, click the blue <em>Add Backends</em> button and then select the Compute instance that is hosting ORDS. Be sure to change the port number to <code>8080</code>.</p>
-<img src="/content/id/2005/screen04.png" class="" title="Add Backends Modal Dialog">
+<img src="/content/id/2005/screen04.png" class="" title="Add Backends Modal Dialog"><span class="caption">Add Backends Modal Dialog</span>
 
 <p>For traffic to flow between the load balancer and backends, appropriate ingress and egress security list rules are required. You may do this manually, but for convenience, you can have the wizard perform these tasks automaticallly.</p>
 <p>Click the <em>Add</em> button to complete the process.</p>
 <h2 id="Hostnames"><a href="#Hostnames" class="headerlink" title="Hostnames"></a>Hostnames</h2><p>This is an optional resource but is simple to create. Simply provide a name and the URL that will be associated with the listener.</p>
-<img src="/content/id/2005/screen05.png" class="" title="Add Hostname Modal Dialog">
+<img src="/content/id/2005/screen05.png" class="" title="Add Hostname Modal Dialog"><span class="caption">Add Hostname Modal Dialog</span>
 
 <h2 id="SSL-TLS-Certificates"><a href="#SSL-TLS-Certificates" class="headerlink" title="SSL/TLS Certificates"></a>SSL/TLS Certificates</h2><p>We will want to secure our access to the APEX instance. I will not go into details now on how to obtain a valid SSL/TLS certificate. To create this resource, you should have the following:</p>
 <ol>
@@ -207,7 +207,7 @@ ga('send', 'pageview');
 <li>CA certificate (while optional, I have found issues with REST clients validating with <a target="_blank" rel="noopener" href="https://letsencrypt.org/">Let’s Encrypt</a> certificates)</li>
 <li>Private key</li>
 </ol>
-<img src="/content/id/2005/screen06.png" class="" title="Add Certificate Modal Dialog">
+<img src="/content/id/2005/screen06.png" class="" title="Add Certificate Modal Dialog"><span class="caption">Add Certificate Modal Dialog</span>
 
 <blockquote>
 <p><strong>All</strong> certificates and key must be in the PEM format.</p>
@@ -227,7 +227,7 @@ ga('send', 'pageview');
 <li>The backend defined for the ORDS server selected</li>
 <li>Default timeout of 60 seconds (or leave it blank)</li>
 </ul>
-<img src="/content/id/2005/screen07.png" class="" title="Create Listener Modal Dialog for HTTP Protocol">
+<img src="/content/id/2005/screen07.png" class="" title="Create Listener Modal Dialog for HTTP Protocol"><span class="caption">Create Listener Modal Dialog for HTTP Protocol</span>
 
 <p>The HTTPS listener should have the following attributes:</p>
 <ul>
@@ -241,7 +241,7 @@ ga('send', 'pageview');
 <li>The backend defined for the ORDS server selected</li>
 <li>Idle timeout set to 1800 seconds</li>
 </ul>
-<img src="/content/id/2005/screen08.png" class="" title="Create Listener Modal Dialog for HTTPS Protocol">
+<img src="/content/id/2005/screen08.png" class="" title="Create Listener Modal Dialog for HTTPS Protocol"><span class="caption">Create Listener Modal Dialog for HTTPS Protocol</span>
 
 <blockquote>
 <p>The idle timeout I have suggested can be tweaked to your requirements. I have found 60 seconds to be too short for a functional APEX application. For example, file operations sometimes require a longer length of time to be completed successfully.</p>
@@ -255,14 +255,14 @@ ga('send', 'pageview');
 <li>Response Header</li>
 <li>HTTP Header</li>
 </ul>
-<img src="/content/id/2005/screen09.png" class="" title="Create Rule Set Modal Dialog">
+<img src="/content/id/2005/screen09.png" class="" title="Create Rule Set Modal Dialog"><span class="caption">Create Rule Set Modal Dialog</span>
 
 <p>You might also serve other resources hosted on other backend servers. For example, I host some static content on the apeks.app website. For that, I run an Apache Web Server that hosts a single static HTML page. I can create Path Route Sets that will redirect the browser to the appropriate backend server based on the supplied path. Any path that starts with <code>/i</code> or <code>/ords</code>, which is used by APEX and ORDS, hands off to the backend running ORDS. The default, and so every other path, will lead to the other web server.</p>
 <blockquote>
 <p><em>Update [Sep 14, 2020]</em></p>
 <p>Thanks to <a target="_blank" rel="noopener" href="https://disqus.com/by/disqus_RgMBmO0DI7/">Robert Barton</a> for pointing out in the comments. I forgot to mention that once the path route set has been created, assign it to the target listener. In my case, this would be the listener with SSL enabled.</p>
 </blockquote>
-<img src="/content/id/2005/screen10.png" class="" title="Create Path Route Set Modal Dialog">
+<img src="/content/id/2005/screen10.png" class="" title="Create Path Route Set Modal Dialog"><span class="caption">Create Path Route Set Modal Dialog</span>
 
 <h2 id="Final-Step"><a href="#Final-Step" class="headerlink" title="Final Step"></a>Final Step</h2><p>Login to the server hosting ORDS as the <em>opc</em> user and edit the <em>ORDS Service Script Configuration File</em>:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/ords/ords.conf</span><br></pre></td></tr></table></figure>
@@ -284,7 +284,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/2005/" data-id="ckmr6zpgl003qw4fdacc3gixq" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/2005/" data-id="ckmr8jze1003sq4fd9gzmcvpn" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       

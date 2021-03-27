@@ -5,12 +5,12 @@
   
   <title>Making the Move to the Autonomous Database | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Application Express (AP">
+  <meta name="description" content="Packing boxes  In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Applicatio">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Making the Move to the Autonomous Database">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1920/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Application Express (AP">
+<meta property="og:description" content="Packing boxes  In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Applicatio">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1920/boxes-2719166_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1920/apex_instance_admin_login.png">
@@ -146,7 +146,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1920/boxes-2719166_1280x720.jpg" class="" title="Packing boxes">
+        <img src="/content/id/1920/boxes-2719166_1280x720.jpg" class="" title="Packing boxes"><span class="caption">Packing boxes</span>
 
 <p>In my <a href="/content/id/1919">previous post</a>, I mentioned that I have created my <a target="_blank" rel="noopener" href="https://oracle.com/cloud/free/">Oracle Cloud Free Tier</a> account and provisioned an <a target="_blank" rel="noopener" href="https://www.oracle.com/database/what-is-autonomous-database.html">Autonomous Database</a> (ADB). Now, I’m ready to move my existing <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX) to this new environment. Next, I’ll describe the steps I took to move (1) workspace, (2) application and (3) data, from the old to new database.</p>
 <span id="more"></span>
@@ -290,27 +290,27 @@ ga('send', 'pageview');
 </li>
 </ol>
 <h2 id="Import-Components-into-ADB"><a href="#Import-Components-into-ADB" class="headerlink" title="Import Components into ADB"></a>Import Components into ADB</h2><h3 id="Import-the-Workspace"><a href="#Import-the-Workspace" class="headerlink" title="Import the Workspace"></a>Import the Workspace</h3><ol>
-<li>Login to the ADB’s APEX <em>Administration Services</em> as the <em>admin</em> user: <img src="/content/id/1920/apex_instance_admin_login.png" class="" title="Login screen"></li>
+<li>Login to the ADB’s APEX <em>Administration Services</em> as the <em>admin</em> user: <img src="/content/id/1920/apex_instance_admin_login.png" class="" title="Login screen"><span class="caption">Login screen</span></li>
 <li>Use the <em>Manage Workspaces</em> utilities to import the workspace from the file <code>w1234567890.sql</code>.</li>
-<li>During the import process, create the workspace schema. Set the password and space quota as required. <img src="/content/id/1920/create_schema.png" class="" title="Create workspace schema"></li>
+<li>During the import process, create the workspace schema. Set the password and space quota as required. <img src="/content/id/1920/create_schema.png" class="" title="Create workspace schema"><span class="caption">Create workspace schema</span></li>
 </ol>
 <h3 id="Prerequisites-for-Using-IMPDP-with-ADB"><a href="#Prerequisites-for-Using-IMPDP-with-ADB" class="headerlink" title="Prerequisites for Using IMPDP with ADB"></a>Prerequisites for Using IMPDP with ADB</h3><p>Data can be imported into an ADB using Oracle Data Pump. However, since we do not access to the database server’s file system, <a target="_blank" rel="noopener" href="https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm">Object Storage</a> must be used to deliver the dumpfile. </p>
 <p>The official instructions to prepare for data pump can be found <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/load-data-data-pump.html#GUID-30DB1EEA-DB45-49EA-9E97-DF49A9968E24">here</a>. The following is a summary account of what I did.</p>
 <h4 id="Object-Storage"><a href="#Object-Storage" class="headerlink" title="Object Storage"></a>Object Storage</h4><ol>
-<li>Access the Oracle Cloud Object Storage. <img src="/content/id/1920/goto-object-storage.png" class="" title="Access Object Storage"></li>
-<li>Create a bucket and name it <code>cloud-migration</code>. <img src="/content/id/1920/create-bucket.png" class="" title="Create bucket"></li>
-<li>Take note of the Object Storage namespace (1) that is required for determining the URI for the dumpfile. <img src="/content/id/1920/bucket-details.png" class="" title="Bucket details"></li>
+<li>Access the Oracle Cloud Object Storage. <img src="/content/id/1920/goto-object-storage.png" class="" title="Access Object Storage"><span class="caption">Access Object Storage</span></li>
+<li>Create a bucket and name it <code>cloud-migration</code>. <img src="/content/id/1920/create-bucket.png" class="" title="Create bucket"><span class="caption">Create bucket</span></li>
+<li>Take note of the Object Storage namespace (1) that is required for determining the URI for the dumpfile. <img src="/content/id/1920/bucket-details.png" class="" title="Bucket details"><span class="caption">Bucket details</span></li>
 <li>Upload the dumpfile <code>cloud-migration.dmp</code> to the bucket. </li>
 </ol>
 <h4 id="Set-Cloud-Credentials-for-ADB"><a href="#Set-Cloud-Credentials-for-ADB" class="headerlink" title="Set Cloud Credentials for ADB"></a>Set Cloud Credentials for ADB</h4><ol>
-<li><a target="_blank" rel="noopener" href="https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#two">Generate an Auth Token</a> for a user in the tenant with the necessary access to the bucket and its contents. <img src="/content/id/1920/generate-auth-token.png" class="" title="Generate an Auth Token"></li>
+<li><a target="_blank" rel="noopener" href="https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#two">Generate an Auth Token</a> for a user in the tenant with the necessary access to the bucket and its contents. <img src="/content/id/1920/generate-auth-token.png" class="" title="Generate an Auth Token"><span class="caption">Generate an Auth Token</span></li>
 <li>Set the Cloud Object Storage credentials: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">  dbms_cloud.create_credential(</span><br><span class="line">    credential_name <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;DEF_CRED_NAME&#x27;</span></span><br><span class="line">    , username <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;jdoe&#x27;</span></span><br><span class="line">    , password <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;the_generated_auth_token&#x27;</span></span><br><span class="line">  );</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="operator">/</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <h4 id="Instant-Client-Setup-for-ADB"><a href="#Instant-Client-Setup-for-ADB" class="headerlink" title="Instant Client Setup for ADB"></a>Instant Client Setup for ADB</h4><p>Official instructions for setting up your system to connect to the database using the tools provided by the Oracle Instant Client, including the Oracle Data Pump utilies needed for importing the data, can be found <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-preparing.html#GUID-EFAFA00E-54CC-47C7-8C71-E7868279EF3B">here</a>.</p>
 <p>Here’s a quick overview of what I did:</p>
 <ol>
 <li><p>Download the Cient Credentials (Wallet) from the ADB’s Service Console.</p>
- <img src="/content/id/1920/download-wallet.png" class="" title="Download wallet"></li>
+ <img src="/content/id/1920/download-wallet.png" class="" title="Download wallet"><span class="caption">Download wallet</span></li>
 <li><p>Set the enviroment variable <code>TNS_ADMIN</code>:</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> TNS_ADMIN=/home/jdoe/.wallets/atp01</span><br></pre></td></tr></table></figure>
 
@@ -372,7 +372,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1920/" data-id="ckmr6zpfy0022w4fd6qw20gbd" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1920/" data-id="ckmr8jzdm002cq4fd1tusa8vc" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
