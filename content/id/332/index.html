@@ -5,12 +5,12 @@
   
   <title>Generating XSL-FO Layouts with Microsoft Word and Apache POI | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The objective of this post is to describe how to create XSL-FO Layouts with little or no costs! These can then be used for custom PDF documents printing in Oracle Application Express (APEX). Let’s get">
+  <meta name="description" content="The objective of this post is to describe how to create XSL-FO Layouts with little or no costs! These can then be used for custom PDF documents printing in Oracle Application Express (APEX). Let’s get">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Generating XSL-FO Layouts with Microsoft Word and Apache POI">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/332/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="The objective of this post is to describe how to create XSL-FO Layouts with little or no costs! These can then be used for custom PDF documents printing in Oracle Application Express (APEX). Let’s get">
+<meta property="og:description" content="The objective of this post is to describe how to create XSL-FO Layouts with little or no costs! These can then be used for custom PDF documents printing in Oracle Application Express (APEX). Let’s get">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/332/apex_custom_pdf_report_06.png">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/332/apex_custom_pdf_report_07.png">
@@ -149,47 +149,47 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <p>The objective of this post is to describe how to create XSL-FO Layouts with little or no costs! These can then be used for custom <a href="http://www.slideshare.net/" title="SlideShare" target="_blank" rel="noopener">PDF documents</a> printing in <a href="http://apex.oracle.com" title="Oracle Application Express" target="_blank" rel="noopener">Oracle Application Express</a> (APEX).</p>
+        <p>The objective of this post is to describe how to create XSL-FO Layouts with little or no costs! These can then be used for custom <a target="_blank" rel="noopener" href="http://www.slideshare.net/" title="SlideShare">PDF documents</a> printing in <a target="_blank" rel="noopener" href="http://apex.oracle.com/" title="Oracle Application Express">Oracle Application Express</a> (APEX).</p>
 <p>Let’s get started…</p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>Tools that you will need:</p>
 <ol>
-<li><a href="http://office.microsoft.com/en-us/word/" title="Microsoft Word" target="_blank" rel="noopener">Microsoft Word</a> 97 and up.</li>
-<li><a href="http://poi.apache.org" title="Apache POI" target="_blank" rel="noopener">Apache POI</a> binaries.</li>
+<li> <a target="_blank" rel="noopener" href="http://office.microsoft.com/en-us/word/" title="Microsoft Word">Microsoft Word</a> 97 and up.</li>
+<li> <a target="_blank" rel="noopener" href="http://poi.apache.org/" title="Apache POI">Apache POI</a> binaries.</li>
 </ol>
 <h3 id="Step-1"><a href="#Step-1" class="headerlink" title="Step 1"></a>Step 1</h3><p>Design your report template using Microsoft Word and populate the document with variable placeholders.</p>
-<img src="/content/id/332/apex_custom_pdf_report_06.png" title="Design the form/report"><span class="caption">Design the form/report</span>
+<img src="/content/id/332/apex_custom_pdf_report_06.png" class="" title="Design the form&#x2F;report">
 
 <h3 id="Step-2"><a href="#Step-2" class="headerlink" title="Step 2"></a>Step 2</h3><p>Save this template as a <span style="text-decoration: underline;">Word 97-2003</span> document.</p>
-<h3 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h3><p>Download the latest Apache POI binaries. At the time of writing, the latest version is 3.9 and the utility needed is still under development. The two <a href="http://www.oracle.com/technetwork/java/" title="Java (programming language)" target="_blank" rel="noopener">Java</a> library (jar) files are highlighted.</p>
-<img src="/content/id/332/apex_custom_pdf_report_07.png" title="Files in Apache POI"><span class="caption">Files in Apache POI</span>
+<h3 id="Step-3"><a href="#Step-3" class="headerlink" title="Step 3"></a>Step 3</h3><p>Download the latest Apache POI binaries. At the time of writing, the latest version is 3.9 and the utility needed is still under development. The two <a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/java/" title="Java (programming language)">Java</a> library (jar) files are highlighted.</p>
+<img src="/content/id/332/apex_custom_pdf_report_07.png" class="" title="Files in Apache POI">
 
 <h3 id="Step-4"><a href="#Step-4" class="headerlink" title="Step 4"></a>Step 4</h3><p>Extract the package and change the current directory to the folder the files were extracted to.</p>
 <h3 id="Step-5"><a href="#Step-5" class="headerlink" title="Step 5"></a>Step 5</h3><p>For convenience, copy/move the template document to the same directories as the Java libraries.</p>
 <h3 id="Step-6"><a href="#Step-6" class="headerlink" title="Step 6"></a>Step 6</h3><p>Perform the Word to FO conversion. Enter the command as highlighted.</p>
-<img src="/content/id/332/apex_custom_pdf_report_09.png" title="Executing the Word-to-FO Conversion Process"><span class="caption">Executing the Word-to-FO Conversion Process</span>
+<img src="/content/id/332/apex_custom_pdf_report_09.png" class="" title="Executing the Word-to-FO Conversion Process">
 
 <h3 id="Step-7"><a href="#Step-7" class="headerlink" title="Step 7"></a>Step 7</h3><p>The contents of the FO file should be something similar to this:</p>
-<img src="/content/id/332/apex_custom_pdf_report_10.png" title="Sample Contents"><span class="caption">Sample Contents</span>
+<img src="/content/id/332/apex_custom_pdf_report_10.png" class="" title="Sample Contents">
 
 <h3 id="Step-8"><a href="#Step-8" class="headerlink" title="Step 8"></a>Step 8</h3><p>Place the contents of this file - stuff between the &lt;fo:root&gt; element - within a transformation template.</p>
-<img src="/content/id/332/apex_custom_pdf_report_11.png" title="XSLT Template"><span class="caption">XSLT Template</span>
+<img src="/content/id/332/apex_custom_pdf_report_11.png" class="" title="XSLT Template">
 
-<p>Note: If <a href="http://www.oracle.com/technology/products/xml-publisher/index.html" title="Oracle BI Publisher" target="_blank" rel="noopener">Oracle BI Publisher</a> is used to generate the PDFs, then remove the and any child elements within. Consulting the <a href="http://docs.oracle.com/cd/E28280_01/bi.1111/e22254/toc.htm" target="_blank" rel="noopener">docs</a> for supported elements would be helpful.</p>
+<p>Note: If <a target="_blank" rel="noopener" href="http://www.oracle.com/technology/products/xml-publisher/index.html" title="Oracle BI Publisher">Oracle BI Publisher</a> is used to generate the PDFs, then remove the and any child elements within. Consulting the <a target="_blank" rel="noopener" href="http://docs.oracle.com/cd/E28280_01/bi.1111/e22254/toc.htm">docs</a> for supported elements would be helpful.</p>
 <h3 id="Step-9"><a href="#Step-9" class="headerlink" title="Step 9"></a>Step 9</h3><p>Replace the placeholders defined in the Word document with elements.</p>
-<img src="/content/id/332/apex_custom_pdf_report_15.png" title="Placeholders to be replaced"><span class="caption">Placeholders to be replaced</span>
+<img src="/content/id/332/apex_custom_pdf_report_15.png" class="" title="Placeholders to be replaced">
 
-<p>Use <a href="http://en.wikipedia.org/wiki/XPath" title="XPath" target="_blank" rel="noopener">XPath</a> to select the values from the <a href="http://en.wikipedia.org/wiki/XML" title="XML" target="_blank" rel="noopener">XML</a> data file generated by APEX.</p>
-<img src="/content/id/332/apex_custom_pdf_report_17.png" title="Embedding Query Results using XPath"><span class="caption">Embedding Query Results using XPath</span>
+<p>Use <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/XPath" title="XPath">XPath</a> to select the values from the <a target="_blank" rel="noopener" href="http://en.wikipedia.org/wiki/XML" title="XML">XML</a> data file generated by APEX.</p>
+<img src="/content/id/332/apex_custom_pdf_report_17.png" class="" title="Embedding Query Results using XPath">
 
 <h3 id="Step-10"><a href="#Step-10" class="headerlink" title="Step 10"></a>Step 10</h3><p>Images would be removed and replaced by a placeholder comment tag.</p>
-<img src="/content/id/332/apex_custom_pdf_report_13.png" title="Image Placeholder"><span class="caption">Image Placeholder</span>
+<img src="/content/id/332/apex_custom_pdf_report_13.png" class="" title="Image Placeholder">
 
 <h3 id="Step-11"><a href="#Step-11" class="headerlink" title="Step 11"></a>Step 11</h3><p>Include the image file as &lt;fo:external-graphic&gt; elements.</p>
-<img src="/content/id/332/apex_custom_pdf_report_14.png" title="Adding an External Graphic"><span class="caption">Adding an External Graphic</span>
+<img src="/content/id/332/apex_custom_pdf_report_14.png" class="" title="Adding an External Graphic">
 
-<h3 id="Step-12"><a href="#Step-12" class="headerlink" title="Step 12"></a>Step 12</h3><p>Save the file with an XML extension. To see this template in action, click on the “Print” button <a href="http://apex.oracle.com/pls/apex/f?p=69146:301:0::::P301_EMPNO:7782" target="_blank" rel="noopener">here</a>.</p>
+<h3 id="Step-12"><a href="#Step-12" class="headerlink" title="Step 12"></a>Step 12</h3><p>Save the file with an XML extension. To see this template in action, click on the “Print” button <a target="_blank" rel="noopener" href="http://apex.oracle.com/pls/apex/f?p=69146:301:0::::P301_EMPNO:7782">here</a>.</p>
 <p>Known Issue: The graphics element renders correctly when using Oracle APEX Listener 2.0 embedded Apache FOP print rendering engine, but not on apex.oracle.com, which uses Oracle BI Publisher. I am still trying to figure out why and if you do know the reason, I’d be happy if you could share it with me. Thanks! :-)</p>
 
       
@@ -201,7 +201,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/332/" data-id="ckmr4pjmf001jx0fdjfbbf1r2" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/332/" data-id="ckmr6zpfn001mw4fdefhne247" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -249,7 +249,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

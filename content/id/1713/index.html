@@ -5,12 +5,12 @@
   
   <title>Snap in Storage For Your Docker Playground | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Floppy Disks  ICYMI (in case you missed it), a team from Oracle has been hard at work these few months churning out a bunch of Vagrant configuration files and scripts that help you provision some real">
+  <meta name="description" content="ICYMI (in case you missed it), a team from Oracle has been hard at work these few months churning out a bunch of Vagrant configuration files and scripts that help you provision some really cool virt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Snap in Storage For Your Docker Playground">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1713/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Floppy Disks  ICYMI (in case you missed it), a team from Oracle has been hard at work these few months churning out a bunch of Vagrant configuration files and scripts that help you provision some real">
+<meta property="og:description" content="ICYMI (in case you missed it), a team from Oracle has been hard at work these few months churning out a bunch of Vagrant configuration files and scripts that help you provision some really cool virt">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1713/black-18320_1920.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1713/vm-storage-config.jpg">
@@ -139,10 +139,10 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1713/black-18320_1920.jpg" title="Floppy Disks"><span class="caption">Floppy Disks</span>
+        <img src="/content/id/1713/black-18320_1920.jpg" class="" title="Floppy Disks">
 
-<p>ICYMI (in case you missed it), a team from <a href="https://www.oracle.com" target="_blank" rel="noopener">Oracle</a> has been hard at work these few months churning out a bunch of <a href="https://www.vagrantup.com" target="_blank" rel="noopener">Vagrant</a> configuration files and scripts that help you provision some really cool virtual machines (VM), powered by <a href="https://www.oracle.com/linux/" target="_blank" rel="noopener">Oracle Enterprise Linux</a>. At the time of writing, here are some of the cool VMs you can build:</p>
-<a id="more"></a>
+<p>ICYMI (in case you missed it), a team from <a target="_blank" rel="noopener" href="https://www.oracle.com/">Oracle</a> has been hard at work these few months churning out a bunch of <a target="_blank" rel="noopener" href="https://www.vagrantup.com/">Vagrant</a> configuration files and scripts that help you provision some really cool virtual machines (VM), powered by <a target="_blank" rel="noopener" href="https://www.oracle.com/linux/">Oracle Enterprise Linux</a>. At the time of writing, here are some of the cool VMs you can build:</p>
+<span id="more"></span>
 
 <ul>
 <li>Vanilla Oracle Linux</li>
@@ -152,24 +152,24 @@ ga('send', 'pageview');
 <li>Docker Host</li>
 <li>Kubernetes</li>
 </ul>
-<p>Make sure you “star” or “watch” their <a href="https://github.com/oracle/vagrant-boxes" target="_blank" rel="noopener">repository</a> for the latest updates.</p>
-<p>I was recently tasked to develop a deployment guide using <a href="https://www.docker.com" target="_blank" rel="noopener">Docker</a> for creating <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express</a> (APEX) on the <a href="https://cloud.oracle.com" target="_blank" rel="noopener">Oracle Cloud Infrastructure</a>. To setup my working environment, I decided to deploy an Oracle Database instance using the <a href="https://github.com/oracle/docker-images" target="_blank" rel="noopener">Docker images</a> that Oracle has also open sourced previously. However, during that process, I encountered the dreaded:</p>
+<p>Make sure you “star” or “watch” their <a target="_blank" rel="noopener" href="https://github.com/oracle/vagrant-boxes">repository</a> for the latest updates.</p>
+<p>I was recently tasked to develop a deployment guide using <a target="_blank" rel="noopener" href="https://www.docker.com/">Docker</a> for creating <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX) on the <a target="_blank" rel="noopener" href="https://cloud.oracle.com/">Oracle Cloud Infrastructure</a>. To setup my working environment, I decided to deploy an Oracle Database instance using the <a target="_blank" rel="noopener" href="https://github.com/oracle/docker-images">Docker images</a> that Oracle has also open sourced previously. However, during that process, I encountered the dreaded:</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">checkSpace.sh: ERROR - There is not enough space available in the docker container.</span><br><span class="line">checkSpace.sh: The container needs at least 15 GB, but only 4 GB are available.</span><br></pre></td></tr></table></figure>
 
-<p>My first thought was to set a larger container base size, but the VM was configured to use <a href="https://btrfs.wiki.kernel.org/" target="_blank" rel="noopener">Btrfs</a> as the storage driver, so that clearly wasn’t the issue. A quick check on the filesystem quickly revealed what the root problem was: <strong>free disk space</strong>!</p>
+<p>My first thought was to set a larger container base size, but the VM was configured to use <a target="_blank" rel="noopener" href="https://btrfs.wiki.kernel.org/">Btrfs</a> as the storage driver, so that clearly wasn’t the issue. A quick check on the filesystem quickly revealed what the root problem was: <strong>free disk space</strong>!</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ df -h</span><br><span class="line">Filesystem                   Size  Used Avail Use% Mounted on</span><br><span class="line">devtmpfs                     854M     0  854M   0% /dev</span><br><span class="line">tmpfs                        871M     0  871M   0% /dev/shm</span><br><span class="line">tmpfs                        871M   17M  855M   2% /run</span><br><span class="line">tmpfs                        871M     0  871M   0% /sys/fs/cgroup</span><br><span class="line">/dev/mapper/vg_main-lv_root   32G  5.2G   27G  17% /</span><br><span class="line">/dev/sda1                    497M   99M  398M  20% /boot</span><br><span class="line">vagrant                      941G  172G  770G  19% /vagrant</span><br><span class="line">vagrant_share                941G  172G  770G  19% /vagrant_share</span><br><span class="line">/dev/sdb                      16G  3.4G   11G  25% /var/lib/docker</span><br><span class="line">tmpfs                        175M     0  175M   0% /run/user/1000</span><br></pre></td></tr></table></figure>
 
-<img src="/content/id/1713/vm-storage-config.jpg" title="VM" alt="s Storage Devices"><span class="caption">VM</span>
+<img src="/content/id/1713/vm-storage-config.jpg" class="" title="VM" alt="s Storage Devices">
 
 <p>The base OEL vagrant box downloaded came with two attached virtual disk. The second, was about 16 GB and was available to the system as <code>/dev/sdb</code>. This device is then used for the storage device for Docker containers.</p>
-<p>See <a href="https://github.com/oracle/vagrant-boxes/blob/master/DockerEngine/scripts/install.sh" target="_blank" rel="noopener"><code>scripts/install.sh</code></a>, line 21:</p>
+<p>See <a target="_blank" rel="noopener" href="https://github.com/oracle/vagrant-boxes/blob/master/DockerEngine/scripts/install.sh"><code>scripts/install.sh</code></a>, line 21:</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker-storage-config -s btrfs -d /dev/sdb</span><br></pre></td></tr></table></figure>
 
 <p>To solve this issue, I needed to increase the amount of storage available to Docker. Fortunately for Btrfs, this is pretty easy to do. </p>
 <ol>
 <li>Shutdown the VM (using the Vagrant command to halt the system) so that I could add another 16 GB virtual disk.</li>
 </ol>
-<img src="/content/id/1713/vm-storage-config-new.jpg" title="Virtual disk OL7U5_x86_64-disk3.vmdk added"><span class="caption">Virtual disk OL7U5_x86_64-disk3.vmdk added</span>
+<img src="/content/id/1713/vm-storage-config-new.jpg" class="" title="Virtual disk OL7U5_x86_64-disk3.vmdk added">
 
 <ol start="2">
 <li>Power on the VM.</li>
@@ -183,9 +183,9 @@ ga('send', 'pageview');
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo btrfs device add /dev/sdc /var/lib/docker</span><br></pre></td></tr></table></figure>
 
 <ol start="5">
-<li>Attempt to spread the data evenly (<a href="https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F" target="_blank" rel="noopener">balance</a>) across all devices:</li>
+<li>Attempt to spread the data evenly (<a target="_blank" rel="noopener" href="https://btrfs.wiki.kernel.org/index.php/FAQ#What_does_.22balance.22_do.3F">balance</a>) across all devices:</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo btrfs filesystem balance /var/lib/docker</span><br><span class="line">WARNING:</span><br><span class="line"></span><br><span class="line">        Full balance without filters requested. This operation is very</span><br><span class="line">        intense and takes potentially very long. It is recommended to</span><br><span class="line">        use the balance filters to narrow down the balanced data.</span><br><span class="line">        Use <span class="string">'btrfs balance start --full-balance'</span> option to skip this</span><br><span class="line">        warning. The operation will start <span class="keyword">in</span> 10 seconds.</span><br><span class="line">        Use Ctrl-C to stop it.</span><br><span class="line">10 9 8 7 6 5 4 3 2 1</span><br><span class="line">Starting balance without any filters.</span><br><span class="line">Done, had to relocate 12 out of 12 chunks</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ sudo btrfs filesystem balance /var/lib/docker</span><br><span class="line">WARNING:</span><br><span class="line"></span><br><span class="line">        Full balance without filters requested. This operation is very</span><br><span class="line">        intense and takes potentially very long. It is recommended to</span><br><span class="line">        use the balance filters to narrow down the balanced data.</span><br><span class="line">        Use <span class="string">&#x27;btrfs balance start --full-balance&#x27;</span> option to skip this</span><br><span class="line">        warning. The operation will start <span class="keyword">in</span> 10 seconds.</span><br><span class="line">        Use Ctrl-C to stop it.</span><br><span class="line">10 9 8 7 6 5 4 3 2 1</span><br><span class="line">Starting balance without any filters.</span><br><span class="line">Done, had to relocate 12 out of 12 chunks</span><br></pre></td></tr></table></figure>
 
 <p>Finally, check all went well and that we now have sufficient space to build our very own Oracle Database container.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ df -h</span><br><span class="line">Filesystem                   Size  Used Avail Use% Mounted on</span><br><span class="line">devtmpfs                     854M     0  854M   0% /dev</span><br><span class="line">tmpfs                        871M     0  871M   0% /dev/shm</span><br><span class="line">tmpfs                        871M   17M  855M   2% /run</span><br><span class="line">tmpfs                        871M     0  871M   0% /sys/fs/cgroup</span><br><span class="line">/dev/mapper/vg_main-lv_root   32G  5.2G   27G  17% /</span><br><span class="line">/dev/sdb                      32G  3.4G   28G  11% /var/lib/docker</span><br><span class="line">/dev/sda1                    497M   99M  398M  20% /boot</span><br><span class="line">vagrant                      941G  175G  767G  19% /vagrant</span><br><span class="line">vagrant_share                941G  175G  767G  19% /vagrant_share</span><br><span class="line">tmpfs                        175M     0  175M   0% /run/user/1000</span><br></pre></td></tr></table></figure>
@@ -198,7 +198,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1713/" data-id="ckmr4pjox0044x0fdlqnb5pg0" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1713/" data-id="ckmr6zpgp0045w4fddsidg4sw" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -246,7 +246,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

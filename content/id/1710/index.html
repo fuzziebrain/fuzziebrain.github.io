@@ -5,12 +5,12 @@
   
   <title>Just a Drop of Oracle APEX | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Photo by Johnny Brown  In a previous article, I had demonstrated how one could use Vagrant to deploy an OXAR virtual machine directly to Linode. With Digital Ocean (DO) lowering their prices to match">
+  <meta name="description" content="In a previous article, I had demonstrated how one could use Vagrant to deploy an OXAR virtual machine directly to Linode. With Digital Ocean (DO) lowering their prices to match Linode’s, I thought i">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Just a Drop of Oracle APEX">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1710/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Photo by Johnny Brown  In a previous article, I had demonstrated how one could use Vagrant to deploy an OXAR virtual machine directly to Linode. With Digital Ocean (DO) lowering their prices to match">
+<meta property="og:description" content="In a previous article, I had demonstrated how one could use Vagrant to deploy an OXAR virtual machine directly to Linode. With Digital Ocean (DO) lowering their prices to match Linode’s, I thought i">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1710/johnny-brown-1280x720.jpg">
 <meta property="article:published_time" content="2018-02-13T04:02:24.000Z">
@@ -139,33 +139,21 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1710/johnny-brown-1280x720.jpg" title="<a href=https://unsplash.com/photos/V-afy242gY4 target=_blank>Photo</a> by Johnny Brown"><span class="caption"><a href="https://unsplash.com/photos/V-afy242gY4" target="_blank">Photo</a> by Johnny Brown</span>
+        <img src="/content/id/1710/johnny-brown-1280x720.jpg" class="" title="&lt;a href&#x3D;https:&#x2F;&#x2F;unsplash.com&#x2F;photos&#x2F;V-afy242gY4 target&#x3D;_blank&gt;Photo&lt;&#x2F;a&gt; by Johnny Brown">
 
-<p>In a previous <a href="/content/id/cizx69jya000ra0pvv26u3cez">article</a>, I had demonstrated how one could use <a href="https://vagrantup.com" target="_blank" rel="noopener">Vagrant</a> to deploy an <a href="https://github.com/OraOpenSource/OXAR" target="_blank" rel="noopener">OXAR</a> virtual machine directly to <a href="https://www.linode.com/?r=41672b20d515344de465e9ed44c1a75356445597" target="_blank" rel="noopener">Linode</a>.</p>
-<p>With <a href="https://m.do.co/c/6f9b549ca569" target="_blank" rel="noopener">Digital Ocean</a> (DO) lowering their prices to match Linode’s, I thought it would help the community if I created a similar set of instructions to deploy OXAR on DO. I took this a step further and have provided a branch on the Github repository with a modified Vagrantfile.</p>
-<a id="more"></a>
+<p>In a previous <a href="/content/id/cizx69jya000ra0pvv26u3cez">article</a>, I had demonstrated how one could use <a target="_blank" rel="noopener" href="https://vagrantup.com/">Vagrant</a> to deploy an <a target="_blank" rel="noopener" href="https://github.com/OraOpenSource/OXAR">OXAR</a> virtual machine directly to <a target="_blank" rel="noopener" href="https://www.linode.com/?r=41672b20d515344de465e9ed44c1a75356445597">Linode</a>.</p>
+<p>With <a target="_blank" rel="noopener" href="https://m.do.co/c/6f9b549ca569">Digital Ocean</a> (DO) lowering their prices to match Linode’s, I thought it would help the community if I created a similar set of instructions to deploy OXAR on DO. I took this a step further and have provided a branch on the Github repository with a modified Vagrantfile.</p>
+<span id="more"></span>
 
 <ol>
-<li><p>Clone the branch:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> -b vagrant/digitalocean https://github.com/OraOpenSource/OXAR.git</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Install the DigitalOcean Vagrant Provider plugin:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant plugin install vagrant-digitalocean</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Make the installation files available over the web. For example, upload the files to Dropbox and create a shareable link.</p>
-</li>
-<li><p>Update the config.properties with the shareable link and any other customizations.</p>
-</li>
-<li><p>Generate a personal access token using the instructions available <a href="https://www..com/community/tutorials/how-to-use-the-digitalocean-api-v2" target="_blank" rel="noopener">here</a>.</p>
-</li>
-<li><p>Update the Vagrantfile with your token and any Droplet customizations.</p>
-</li>
-<li><p>Make sure that you have your SSH keys generated, if not, follow the instructions <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2" target="_blank" rel="noopener">here</a>.</p>
-</li>
-<li><p>Run Vagrant:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant up</span><br></pre></td></tr></table></figure>
-
-</li>
+<li>Clone the branch:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="built_in">clone</span> -b vagrant/digitalocean https://github.com/OraOpenSource/OXAR.git</span><br></pre></td></tr></table></figure></li>
+<li>Install the DigitalOcean Vagrant Provider plugin:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant plugin install vagrant-digitalocean</span><br></pre></td></tr></table></figure></li>
+<li>Make the installation files available over the web. For example, upload the files to Dropbox and create a shareable link.</li>
+<li>Update the config.properties with the shareable link and any other customizations.</li>
+<li>Generate a personal access token using the instructions available <a target="_blank" rel="noopener" href="https://www..com/community/tutorials/how-to-use-the-digitalocean-api-v2">here</a>.</li>
+<li>Update the Vagrantfile with your token and any Droplet customizations.</li>
+<li>Make sure that you have your SSH keys generated, if not, follow the instructions <a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2">here</a>.</li>
+<li>Run Vagrant:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vagrant up</span><br></pre></td></tr></table></figure></li>
 </ol>
 <p>It takes about thirty minutes to provision the VM. Enjoy!</p>
 
@@ -178,7 +166,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1710/" data-id="ckmr4pjn0001sx0fdec1aq1zs" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1710/" data-id="ckmr6zpfs001rw4fd76mv5d7r" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -226,7 +214,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

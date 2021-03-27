@@ -5,12 +5,12 @@
   
   <title>Social Sign In with Azure | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Photo by Gerd Altmann  Since Oracle Application Express (APEX) version 18.1, application developers are able to easily integrate OAuth2-based authentication using many popular identity providers inclu">
+  <meta name="description" content="Since Oracle Application Express (APEX) version 18.1, application developers are able to easily integrate OAuth2-based authentication using many popular identity providers including Google, Facebook">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Social Sign In with Azure">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1908/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Photo by Gerd Altmann  Since Oracle Application Express (APEX) version 18.1, application developers are able to easily integrate OAuth2-based authentication using many popular identity providers inclu">
+<meta property="og:description" content="Since Oracle Application Express (APEX) version 18.1, application developers are able to easily integrate OAuth2-based authentication using many popular identity providers including Google, Facebook">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1908/board-895399_1920x1280.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1908/apps_dev_microsoft.png">
@@ -26,9 +26,9 @@
 <meta property="article:tag" content="orclapex">
 <meta property="article:tag" content="oauth2">
 <meta property="article:tag" content="authentication">
-<meta property="article:tag" content="single sign on">
-<meta property="article:tag" content="sso">
 <meta property="article:tag" content="microsoft">
+<meta property="article:tag" content="sso">
+<meta property="article:tag" content="single sign on">
 <meta property="article:tag" content="azure">
 <meta property="article:tag" content="active directory">
 <meta property="article:tag" content="office 365">
@@ -148,24 +148,24 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1908/board-895399_1920x1280.jpg" title="Photo by Gerd Altmann"><span class="caption">Photo by Gerd Altmann</span>
+        <img src="/content/id/1908/board-895399_1920x1280.jpg" class="" title="Photo by Gerd Altmann">
 
-<p>Since <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express (APEX)</a> version 18.1, application developers are able to easily integrate <a href="https://oauth.net/2/" target="_blank" rel="noopener">OAuth2</a>-based authentication using many popular identity providers including Google, Facebook and Microsoft. <a href="https://twitter.com/mortenbraten" target="_blank" rel="noopener">Morten Braten</a>, <a href="https://twitter.com/c2anton" target="_blank" rel="noopener">Anton Nielsen</a> and I have previously written on this subject.</p>
+<p>Since <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express (APEX)</a> version 18.1, application developers are able to easily integrate <a target="_blank" rel="noopener" href="https://oauth.net/2/">OAuth2</a>-based authentication using many popular identity providers including Google, Facebook and Microsoft. <a target="_blank" rel="noopener" href="https://twitter.com/mortenbraten">Morten Braten</a>, <a target="_blank" rel="noopener" href="https://twitter.com/c2anton">Anton Nielsen</a> and I have previously written on this subject.</p>
 <ul>
-<li><a href="https://ora-00001.blogspot.com/2018/02/apex-authentication-with-microsoft-account.html" target="_blank" rel="noopener">APEX Authentication with Microsoft account</a></li>
-<li><a href="http://c2anton.blogspot.com/2019/01/oracle-apex-social-sign-on-with.html" target="_blank" rel="noopener">Oracle APEX Social Sign-On with Microsoft Azure</a></li>
-<li><a href="http://c2anton.blogspot.com/2019/02/oracle-apex-less-social-sign-on-with-ms.html" target="_blank" rel="noopener">Oracle APEX Less Social Sign-On with MS Azure and Office 365</a></li>
+<li><a target="_blank" rel="noopener" href="https://ora-00001.blogspot.com/2018/02/apex-authentication-with-microsoft-account.html">APEX Authentication with Microsoft account</a></li>
+<li><a target="_blank" rel="noopener" href="http://c2anton.blogspot.com/2019/01/oracle-apex-social-sign-on-with.html">Oracle APEX Social Sign-On with Microsoft Azure</a></li>
+<li><a target="_blank" rel="noopener" href="http://c2anton.blogspot.com/2019/02/oracle-apex-less-social-sign-on-with-ms.html">Oracle APEX Less Social Sign-On with MS Azure and Office 365</a></li>
 <li><a href="/content/id/1711/">APEX Social Sign-In Without a Wallet </a></li>
 </ul>
 <p>Starting May 2019, Microsoft is changing how developers manage their OAuth2 application registrations.</p>
-<a id="more"></a>
+<span id="more"></span>
 
-<p>Currently, developers manage these entries using Microsoft’s Application Registration Portal (<a href="https://apps.dev.microsoft.com/" target="_blank" rel="noopener">https://apps.dev.microsoft.com/</a>). This is being phased out. Going forward, application registrations will be managed via the Azure portal (<a href="https://portal.azure.com" target="_blank" rel="noopener">https://portal.azure.com</a>). While currently in preview, it is functional and remains rather straightforward to manage.</p>
-<img src="/content/id/1908/apps_dev_microsoft.png" title="Microsoft Application Registration Portal"><span class="caption">Microsoft Application Registration Portal</span>
+<p>Currently, developers manage these entries using Microsoft’s Application Registration Portal (<a target="_blank" rel="noopener" href="https://apps.dev.microsoft.com/">https://apps.dev.microsoft.com/</a>). This is being phased out. Going forward, application registrations will be managed via the Azure portal (<a target="_blank" rel="noopener" href="https://portal.azure.com/">https://portal.azure.com</a>). While currently in preview, it is functional and remains rather straightforward to manage.</p>
+<img src="/content/id/1908/apps_dev_microsoft.png" class="" title="Microsoft Application Registration Portal">
 
 <p>Before we begin, make sure that the database is configured with the appropriate network privileges and the APEX instance is configured to use an Oracle Wallet containing all the necessary SSL/TLS certificates. Please read this previous <a href="/content/id/1725">article</a> if you need some guidance.</p>
 <ol>
-<li><p>Sign in to <a href="https://portal.azure.com" target="_blank" rel="noopener">Azure</a></p>
+<li><p>Sign in to <a target="_blank" rel="noopener" href="https://portal.azure.com/">Azure</a></p>
 </li>
 <li><p>Click <em>Azure Active Directory</em> <i class="fa fa-chevron-right"></i> <em>App registrations (Preview)</em></p>
 </li>
@@ -175,14 +175,13 @@ ga('send', 'pageview');
 </li>
 <li><p>For supported types, choose between the <u>three</u> options:</p>
 <ul>
-<li><p>Accounts in this organizational directory only (*<company_name><em>)\</em></company_name></p>
-</li>
-<li><p>Accounts in any organizational directory</p>
-</li>
-<li><p>Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)</p>
-<p>The list above is ordered in increasing accessibility but decreasing security. Microsoft provides the following descriptions for each option:</p>
+<li>Accounts in this organizational directory only (<em><COMPANY_NAME></em>)*</li>
+<li>Accounts in any organizational directory</li>
+<li>Accounts in any organizational directory and personal Microsoft accounts (e.g. Skype, Xbox, Outlook.com)</li>
+</ul>
+<p> The list above is ordered in increasing accessibility but decreasing security. Microsoft provides the following descriptions for each option:</p>
 <blockquote>
-<p><strong>Accounts in this organizational directory only (*<company_name>*)</company_name></strong></p>
+<p><strong>Accounts in this organizational directory only (<em><COMPANY_NAME></em>)</strong></p>
 <p>All user and guest accounts in your directory can use your application or API.</p>
 <p>Use this option if your target audience is internal to your organization.</p>
 <p><strong>Accounts in any organizational directory</strong></p>
@@ -192,24 +191,22 @@ ga('send', 'pageview');
 <p>All users with a work or school, or personal Microsoft account can use your application or API. It includes schools and businesses that use Office 365 as well as personal accounts that are used to sign in to services like Xbox and Skype.</p>
 <p>Use this option to target the widest set of Microsoft identities.</p>
 </blockquote>
-<p>* <em>The first option is only available to Azure AD subscribers. Business accounts should have access to this feature.</em></p>
+<p> * <em>The first option is only available to Azure AD subscribers. Business accounts should have access to this feature.</em></p>
 </li>
-</ul>
-</li>
-<li><p>Enter the APEX callback URL as a <em>Web</em> Redirect URI, e.g. <a href="https://apex.oracle.com/pls/apex/apex_authentication.callback" target="_blank" rel="noopener">https://apex.oracle.com/pls/apex/apex_authentication.callback</a></p>
+<li><p>Enter the APEX callback URL as a <em>Web</em> Redirect URI, e.g. <a target="_blank" rel="noopener" href="https://apex.oracle.com/pls/apex/apex_authentication.callback">https://apex.oracle.com/pls/apex/apex_authentication.callback</a></p>
 </li>
 <li><p>Read the policy and click <em>Register</em> to proceed.</p>
- <img src="/content/id/1908/app_registration_register.png" title="New App Registration"><span class="caption">New App Registration</span></li>
+ <img src="/content/id/1908/app_registration_register.png" class="" title="New App Registration"></li>
 <li><p>Once the app registration is completed, note the <em>Application (client) ID</em> on the Overview page. For Azure Active Directory (AD) subscribers (e.g. Azure AD for Office 365), also note the <em>Directory ID</em>.</p>
- <img src="/content/id/1908/app_registration_overview.png" title="Application Registration Overview Page"><span class="caption">Application Registration Overview Page</span></li>
+ <img src="/content/id/1908/app_registration_overview.png" class="" title="Application Registration Overview Page"></li>
 <li><p>Click <em>Certificates &amp; secrets</em> and then the <em>New client secret</em> button under the section <em>Client secrets</em>.</p>
 </li>
 <li><p>Provide a description and expiration period. Click <em>Add</em> and copy the secret value as it will be displayed only once.</p>
- <img src="/content/id/1908/app_registration_client_secret.png" title="Adding a client secret"><span class="caption">Adding a client secret</span></li>
+ <img src="/content/id/1908/app_registration_client_secret.png" class="" title="Adding a client secret"></li>
 <li><p>The required API permissions should have been already added, if not, ensure that the app has at least <em>User.Read</em> on the <em>Microsoft Graph</em> API.</p>
 </li>
 <li><p>In APEX App Builder, create a <em>Web Credential</em> using the values for the client ID and secret pair generated earlier in the Azure portal.</p>
- <img src="/content/id/1908/app_builder_web_credential.png" title="Azure Web Credential"><span class="caption">Azure Web Credential</span></li>
+ <img src="/content/id/1908/app_builder_web_credential.png" class="" title="Azure Web Credential"></li>
 <li><p>Create an <em>Authentication Scheme</em> with the following values:</p>
 </li>
 </ol>
@@ -230,15 +227,15 @@ ga('send', 'pageview');
 </tr>
 <tr>
 <td>Authorization Endpoint URL</td>
-<td><a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize" target="_blank" rel="noopener">https://login.microsoftonline.com/common/oauth2/v2.0/authorize</a></td>
+<td><a target="_blank" rel="noopener" href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize">https://login.microsoftonline.com/common/oauth2/v2.0/authorize</a></td>
 </tr>
 <tr>
 <td>Token Endpoint URL(Value Required)</td>
-<td><a href="https://login.microsoftonline.com/common/oauth2/v2.0/token" target="_blank" rel="noopener">https://login.microsoftonline.com/common/oauth2/v2.0/token</a></td>
+<td><a target="_blank" rel="noopener" href="https://login.microsoftonline.com/common/oauth2/v2.0/token">https://login.microsoftonline.com/common/oauth2/v2.0/token</a></td>
 </tr>
 <tr>
 <td>User Info Endpoint URL</td>
-<td><a href="https://graph.microsoft.com/v1.0/me" target="_blank" rel="noopener">https://graph.microsoft.com/v1.0/me</a></td>
+<td><a target="_blank" rel="noopener" href="https://graph.microsoft.com/v1.0/me">https://graph.microsoft.com/v1.0/me</a></td>
 </tr>
 <tr>
 <td>Scope</td>
@@ -267,19 +264,19 @@ ga('send', 'pageview');
 <li><em>Authorization Endpoint URL</em> - <code>https://login.microsoftonline.com/&lt;DIRECTORY_ID&gt;/oauth2/v2.0/authorize</code></li>
 <li><em>Token Endpoint URL</em> - <code>https://login.microsoftonline.com/&lt;DIRECTORY_ID&gt;/oauth2/v2.0/token</code></li>
 </ul>
-<img src="/content/id/1908/app_builder_authentication_scheme.png" title="Social Sign In Authentication Scheme for Azure AD subscribers"><span class="caption">Social Sign In Authentication Scheme for Azure AD subscribers</span></li>
-<li><p>In the Authentication Scheme’s <em>Post-Logout URL</em>, set the value to <a href="https://login.microsoftonline.com/common/oauth2/logout" target="_blank" rel="noopener">https://login.microsoftonline.com/common/oauth2/logout</a>, <strong>if</strong> Single Sign Out is required.</p>
+<img src="/content/id/1908/app_builder_authentication_scheme.png" class="" title="Social Sign In Authentication Scheme for Azure AD subscribers"></li>
+<li><p>In the Authentication Scheme’s <em>Post-Logout URL</em>, set the value to <a target="_blank" rel="noopener" href="https://login.microsoftonline.com/common/oauth2/logout">https://login.microsoftonline.com/common/oauth2/logout</a>, <strong>if</strong> Single Sign Out is required.</p>
 </li>
 </ol>
 <h3 id="OpenID-Connect"><a href="#OpenID-Connect" class="headerlink" title="OpenID Connect"></a>OpenID Connect</h3><blockquote>
 <p>Updated on 2019-04-24</p>
 </blockquote>
-<p>With much thanks to Jean-Marc (see comments below), please note that with the Microsoft identity platform, developers can also use the <a href="https://openid.net/connect/" target="_blank" rel="noopener">OpenID Connect</a> to create the Authentication scheme. Unlike the older OpenID v1.0 and v2.0 specifications that are now obsolete, the OpenID Connect specification works on top of the OAuth2 protocol. It provides a JSON-based metadata document that provides the necessary information for the client to execute the OAuth2 authentication workflow.</p>
+<p>With much thanks to Jean-Marc (see comments below), please note that with the Microsoft identity platform, developers can also use the <a target="_blank" rel="noopener" href="https://openid.net/connect/">OpenID Connect</a> to create the Authentication scheme. Unlike the older OpenID v1.0 and v2.0 specifications that are now obsolete, the OpenID Connect specification works on top of the OAuth2 protocol. It provides a JSON-based metadata document that provides the necessary information for the client to execute the OAuth2 authentication workflow.</p>
 <p>From <code>https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration</code>:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"authorization_endpoint"</span>: <span class="string">"https://login.microsoftonline.com/common/oauth2/v2.0/authorize"</span>,</span><br><span class="line">    <span class="attr">"token_endpoint"</span>: <span class="string">"https://login.microsoftonline.com/common/oauth2/v2.0/token"</span>,</span><br><span class="line">    <span class="attr">"token_endpoint_auth_methods_supported"</span>: [</span><br><span class="line">        <span class="string">"client_secret_post"</span>,</span><br><span class="line">        <span class="string">"private_key_jwt"</span>,</span><br><span class="line">        <span class="string">"client_secret_basic"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"jwks_uri"</span>: <span class="string">"https://login.microsoftonline.com/common/discovery/v2.0/keys"</span>,</span><br><span class="line">    <span class="attr">"response_modes_supported"</span>: [</span><br><span class="line">        <span class="string">"query"</span>,</span><br><span class="line">        <span class="string">"fragment"</span>,</span><br><span class="line">        <span class="string">"form_post"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"subject_types_supported"</span>: [</span><br><span class="line">        <span class="string">"pairwise"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"id_token_signing_alg_values_supported"</span>: [</span><br><span class="line">        <span class="string">"RS256"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"http_logout_supported"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"frontchannel_logout_supported"</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">"end_session_endpoint"</span>: <span class="string">"https://login.microsoftonline.com/common/oauth2/v2.0/logout"</span>,</span><br><span class="line">    <span class="attr">"response_types_supported"</span>: [</span><br><span class="line">        <span class="string">"code"</span>,</span><br><span class="line">        <span class="string">"id_token"</span>,</span><br><span class="line">        <span class="string">"code id_token"</span>,</span><br><span class="line">        <span class="string">"id_token token"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"scopes_supported"</span>: [</span><br><span class="line">        <span class="string">"openid"</span>,</span><br><span class="line">        <span class="string">"profile"</span>,</span><br><span class="line">        <span class="string">"email"</span>,</span><br><span class="line">        <span class="string">"offline_access"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"issuer"</span>: <span class="string">"https://login.microsoftonline.com/&#123;tenantid&#125;/v2.0"</span>,</span><br><span class="line">    <span class="attr">"claims_supported"</span>: [</span><br><span class="line">        <span class="string">"sub"</span>,</span><br><span class="line">        <span class="string">"iss"</span>,</span><br><span class="line">        <span class="string">"cloud_instance_name"</span>,</span><br><span class="line">        <span class="string">"cloud_instance_host_name"</span>,</span><br><span class="line">        <span class="string">"cloud_graph_host_name"</span>,</span><br><span class="line">        <span class="string">"msgraph_host"</span>,</span><br><span class="line">        <span class="string">"aud"</span>,</span><br><span class="line">        <span class="string">"exp"</span>,</span><br><span class="line">        <span class="string">"iat"</span>,</span><br><span class="line">        <span class="string">"auth_time"</span>,</span><br><span class="line">        <span class="string">"acr"</span>,</span><br><span class="line">        <span class="string">"nonce"</span>,</span><br><span class="line">        <span class="string">"preferred_username"</span>,</span><br><span class="line">        <span class="string">"name"</span>,</span><br><span class="line">        <span class="string">"tid"</span>,</span><br><span class="line">        <span class="string">"ver"</span>,</span><br><span class="line">        <span class="string">"at_hash"</span>,</span><br><span class="line">        <span class="string">"c_hash"</span>,</span><br><span class="line">        <span class="string">"email"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"request_uri_parameter_supported"</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">"userinfo_endpoint"</span>: <span class="string">"https://graph.microsoft.com/oidc/userinfo"</span>,</span><br><span class="line">    <span class="attr">"tenant_region_scope"</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">"cloud_instance_name"</span>: <span class="string">"microsoftonline.com"</span>,</span><br><span class="line">    <span class="attr">"cloud_graph_host_name"</span>: <span class="string">"graph.windows.net"</span>,</span><br><span class="line">    <span class="attr">"msgraph_host"</span>: <span class="string">"graph.microsoft.com"</span>,</span><br><span class="line">    <span class="attr">"rbac_url"</span>: <span class="string">"https://pas.windows.net"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;authorization_endpoint&quot;</span>: <span class="string">&quot;https://login.microsoftonline.com/common/oauth2/v2.0/authorize&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;token_endpoint&quot;</span>: <span class="string">&quot;https://login.microsoftonline.com/common/oauth2/v2.0/token&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;token_endpoint_auth_methods_supported&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;client_secret_post&quot;</span>,</span><br><span class="line">        <span class="string">&quot;private_key_jwt&quot;</span>,</span><br><span class="line">        <span class="string">&quot;client_secret_basic&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;jwks_uri&quot;</span>: <span class="string">&quot;https://login.microsoftonline.com/common/discovery/v2.0/keys&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;response_modes_supported&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;query&quot;</span>,</span><br><span class="line">        <span class="string">&quot;fragment&quot;</span>,</span><br><span class="line">        <span class="string">&quot;form_post&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;subject_types_supported&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;pairwise&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;id_token_signing_alg_values_supported&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;RS256&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;http_logout_supported&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;frontchannel_logout_supported&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">&quot;end_session_endpoint&quot;</span>: <span class="string">&quot;https://login.microsoftonline.com/common/oauth2/v2.0/logout&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;response_types_supported&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;code&quot;</span>,</span><br><span class="line">        <span class="string">&quot;id_token&quot;</span>,</span><br><span class="line">        <span class="string">&quot;code id_token&quot;</span>,</span><br><span class="line">        <span class="string">&quot;id_token token&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;scopes_supported&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;openid&quot;</span>,</span><br><span class="line">        <span class="string">&quot;profile&quot;</span>,</span><br><span class="line">        <span class="string">&quot;email&quot;</span>,</span><br><span class="line">        <span class="string">&quot;offline_access&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;issuer&quot;</span>: <span class="string">&quot;https://login.microsoftonline.com/&#123;tenantid&#125;/v2.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;claims_supported&quot;</span>: [</span><br><span class="line">        <span class="string">&quot;sub&quot;</span>,</span><br><span class="line">        <span class="string">&quot;iss&quot;</span>,</span><br><span class="line">        <span class="string">&quot;cloud_instance_name&quot;</span>,</span><br><span class="line">        <span class="string">&quot;cloud_instance_host_name&quot;</span>,</span><br><span class="line">        <span class="string">&quot;cloud_graph_host_name&quot;</span>,</span><br><span class="line">        <span class="string">&quot;msgraph_host&quot;</span>,</span><br><span class="line">        <span class="string">&quot;aud&quot;</span>,</span><br><span class="line">        <span class="string">&quot;exp&quot;</span>,</span><br><span class="line">        <span class="string">&quot;iat&quot;</span>,</span><br><span class="line">        <span class="string">&quot;auth_time&quot;</span>,</span><br><span class="line">        <span class="string">&quot;acr&quot;</span>,</span><br><span class="line">        <span class="string">&quot;nonce&quot;</span>,</span><br><span class="line">        <span class="string">&quot;preferred_username&quot;</span>,</span><br><span class="line">        <span class="string">&quot;name&quot;</span>,</span><br><span class="line">        <span class="string">&quot;tid&quot;</span>,</span><br><span class="line">        <span class="string">&quot;ver&quot;</span>,</span><br><span class="line">        <span class="string">&quot;at_hash&quot;</span>,</span><br><span class="line">        <span class="string">&quot;c_hash&quot;</span>,</span><br><span class="line">        <span class="string">&quot;email&quot;</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">&quot;request_uri_parameter_supported&quot;</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">&quot;userinfo_endpoint&quot;</span>: <span class="string">&quot;https://graph.microsoft.com/oidc/userinfo&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;tenant_region_scope&quot;</span>: <span class="literal">null</span>,</span><br><span class="line">    <span class="attr">&quot;cloud_instance_name&quot;</span>: <span class="string">&quot;microsoftonline.com&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;cloud_graph_host_name&quot;</span>: <span class="string">&quot;graph.windows.net&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;msgraph_host&quot;</span>: <span class="string">&quot;graph.microsoft.com&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;rbac_url&quot;</span>: <span class="string">&quot;https://pas.windows.net&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Along with the necessary endpoint URLs for OAuth2 authentication, the document also indicates the scope and claims supported, which are useful for setting up your APEX Authentication Scheme.</p>
-<h4 id="APEX-Authentication-Scheme-using-OpenID-Connect"><a href="#APEX-Authentication-Scheme-using-OpenID-Connect" class="headerlink" title="APEX Authentication Scheme using OpenID Connect"></a>APEX Authentication Scheme using OpenID Connect</h4><img src="/content/id/1908/app_builder_authentication_scheme_openid.png" title="APEX Authentication Scheme using OpenID Connect provider"><span class="caption">APEX Authentication Scheme using OpenID Connect provider</span>
+<h4 id="APEX-Authentication-Scheme-using-OpenID-Connect"><a href="#APEX-Authentication-Scheme-using-OpenID-Connect" class="headerlink" title="APEX Authentication Scheme using OpenID Connect"></a>APEX Authentication Scheme using OpenID Connect</h4><img src="/content/id/1908/app_builder_authentication_scheme_openid.png" class="" title="APEX Authentication Scheme using OpenID Connect provider">
 
 <table>
 <thead>
@@ -298,7 +295,7 @@ ga('send', 'pageview');
 </tr>
 <tr>
 <td>Discovery URL</td>
-<td><code>https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration</code> *</td>
+<td><code>https://login.microsoftonline.com/&#123;tenant&#125;/v2.0/.well-known/openid-configuration</code> *</td>
 </tr>
 <tr>
 <td>Scope</td>
@@ -322,7 +319,7 @@ ga('send', 'pageview');
 </tr>
 </tbody></table>
 <blockquote>
-<p>* Where <code>{tenant}</code> can be either of the following:</p>
+<p>* Where <code>&#123;tenant&#125;</code> can be either of the following:</p>
 <ul>
 <li><code>common</code></li>
 <li><code>organizations</code></li>
@@ -342,7 +339,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1908/" data-id="ckmr4pjp0004ax0fdhxcrvo81" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1908/" data-id="ckmr6zpgq0048w4fd4jac1hh4" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -390,7 +387,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

@@ -5,12 +5,12 @@
   
   <title>APEX Social Sign-In Without a Wallet | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Social Media   Updated June 4, 2018  Added settings for social sign-in with Microsoft OAuth2.   The much anticipated Oracle Application Express version 18.1 was announced on May 24, 2018. Since early">
+  <meta name="description" content="Updated June 4, 2018  Added settings for social sign-in with Microsoft OAuth2.   The much anticipated Oracle Application Express version 18.1 was announced on May 24, 2018. Since early this year Mo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="APEX Social Sign-In Without a Wallet">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1711/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Social Media   Updated June 4, 2018  Added settings for social sign-in with Microsoft OAuth2.   The much anticipated Oracle Application Express version 18.1 was announced on May 24, 2018. Since early">
+<meta property="og:description" content="Updated June 4, 2018  Added settings for social sign-in with Microsoft OAuth2.   The much anticipated Oracle Application Express version 18.1 was announced on May 24, 2018. Since early this year Mo">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1711/media-998990_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1711/authscheme-settings.png">
@@ -21,8 +21,8 @@
 <meta property="article:tag" content="oauth2">
 <meta property="article:tag" content="authentication">
 <meta property="article:tag" content="google">
-<meta property="article:tag" content="sso">
 <meta property="article:tag" content="microsoft">
+<meta property="article:tag" content="sso">
 <meta property="article:tag" content="single sign-on">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://fuzziebrain.com/content/id/1711/media-998990_1280x720.jpg">
@@ -140,7 +140,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1711/media-998990_1280x720.jpg" title="Social Media"><span class="caption">Social Media</span>
+        <img src="/content/id/1711/media-998990_1280x720.jpg" class="" title="Social Media">
 
 <blockquote>
 <p><strong>Updated June 4, 2018</strong></p>
@@ -148,12 +148,12 @@ ga('send', 'pageview');
 <li>Added settings for social sign-in with Microsoft OAuth2.</li>
 </ul>
 </blockquote>
-<p>The much anticipated <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express</a> version 18.1 was <a href="https://blogs.oracle.com/apex/announcing-oracle-apex-181" target="_blank" rel="noopener">announced</a> on May 24, 2018. Since early this year <a href="https://twitter.com/monty_latiolais" target="_blank" rel="noopener">Monty Latiolais</a> has been posting a monthly series of blog posts on <a href="https://www.insum.ca/power-ranking-oracle-apex-18-1-new-features-march/" target="_blank" rel="noopener">Power Ranking Oracle APEX 18.1 New Features</a>. My personal favourite is Social Login, but unfortunately it never made it to the top, even though it should!</p>
-<a id="more"></a>
+<p>The much anticipated <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> version 18.1 was <a target="_blank" rel="noopener" href="https://blogs.oracle.com/apex/announcing-oracle-apex-181">announced</a> on May 24, 2018. Since early this year <a target="_blank" rel="noopener" href="https://twitter.com/monty_latiolais">Monty Latiolais</a> has been posting a monthly series of blog posts on <a target="_blank" rel="noopener" href="https://www.insum.ca/power-ranking-oracle-apex-18-1-new-features-march/">Power Ranking Oracle APEX 18.1 New Features</a>. My personal favourite is Social Login, but unfortunately it never made it to the top, even though it should!</p>
+<span id="more"></span>
 
 <p>When 4.2 was released, I was ecstatic. The introduction of the HTTP Header Variable authentication scheme allowed me to convince my boss back then, that APEX was the way to go. One critical success factor was the ease in integrating APEX application with the wider enterprise authentication framework that has already been established. However, you typically had to have a certain system architecture to capitalize on this authentication scheme.</p>
-<p>With the newly released <a href="https://docs.oracle.com/database/apex-18.1/HTMDB/establishing-user-identity-through-authentication.htm#GUID-CF10F6D7-768C-42F9-9362-4CF23BF1C4B8" target="_blank" rel="noopener">Social Sign-in Authentication Scheme</a>, just about anyone can utilize the countless social platforms that provide OAuth2 logins.</p>
-<p>As you might expected, it didn’t take long for me to upgrade my personal APEX instance that runs on top of Oracle Database 11g Express Edition (XE) that is too many years out of date now. The authentication scheme makes calls to identity providers using the <a href="https://docs.oracle.com/database/apex-18.1/AEAPI/APEX_WEB_SERVICE.htm#AEAPI537" target="_blank" rel="noopener"><code>APEX_WEB_SERVICE</code></a> package and usually, that’s over HTTPS. So yes, you will need to load up your Oracle wallets with the certificate chains. Read <a href="https://twitter.com/cczarski" target="_blank" rel="noopener">Carsten Czarski’s</a> excellent explanation <a href="https://blogs.oracle.com/apex/apex-https-certificates-and-the-oracle-wallet" target="_blank" rel="noopener">here</a>. You can get these from your browser as Carsten describes, or directly from the source such as DigiCert’s <a href="https://www.digicert.com/digicert-root-certificates.htm" target="_blank" rel="noopener">list</a> of Root and Intermediate Certificates. However, the deal breaker here is that there is no convenient way to do this in XE. Even if you do successfully <a href="https://blog.hazrulnizam.com/openssl-workaround-oracle-xe-wallet/" target="_blank" rel="noopener">create a wallet for XE</a>, being so old and unpatched, it will still have difficulty negotiating with modern day certificates. </p>
+<p>With the newly released <a target="_blank" rel="noopener" href="https://docs.oracle.com/database/apex-18.1/HTMDB/establishing-user-identity-through-authentication.htm#GUID-CF10F6D7-768C-42F9-9362-4CF23BF1C4B8">Social Sign-in Authentication Scheme</a>, just about anyone can utilize the countless social platforms that provide OAuth2 logins.</p>
+<p>As you might expected, it didn’t take long for me to upgrade my personal APEX instance that runs on top of Oracle Database 11g Express Edition (XE) that is too many years out of date now. The authentication scheme makes calls to identity providers using the <a target="_blank" rel="noopener" href="https://docs.oracle.com/database/apex-18.1/AEAPI/APEX_WEB_SERVICE.htm#AEAPI537"><code>APEX_WEB_SERVICE</code></a> package and usually, that’s over HTTPS. So yes, you will need to load up your Oracle wallets with the certificate chains. Read <a target="_blank" rel="noopener" href="https://twitter.com/cczarski">Carsten Czarski’s</a> excellent explanation <a target="_blank" rel="noopener" href="https://blogs.oracle.com/apex/apex-https-certificates-and-the-oracle-wallet">here</a>. You can get these from your browser as Carsten describes, or directly from the source such as DigiCert’s <a target="_blank" rel="noopener" href="https://www.digicert.com/digicert-root-certificates.htm">list</a> of Root and Intermediate Certificates. However, the deal breaker here is that there is no convenient way to do this in XE. Even if you do successfully <a target="_blank" rel="noopener" href="https://blog.hazrulnizam.com/openssl-workaround-oracle-xe-wallet/">create a wallet for XE</a>, being so old and unpatched, it will still have difficulty negotiating with modern day certificates. </p>
 <p>Thank goodness for reverse proxies! There are many ways to do this, but for me, I use <a href="/content/id/1706/">Suez</a>.</p>
 <blockquote>
 <p><strong>IMPORTANT SECURITY NOTE:</strong><br>Even though you can bypass SSL checks, doesn’t mean that you should. End-to-end encryption is always preferred, especially when dealing with confidential information.</p>
@@ -162,30 +162,30 @@ ga('send', 'pageview');
 <ol>
 <li>Add the following to the Suez configuration:</li>
 </ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"service"</span>: &#123;</span><br><span class="line">        <span class="attr">"port"</span>: <span class="number">3001</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"apiTargets"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"googleapis"</span>,</span><br><span class="line">            <span class="attr">"proxyTarget"</span>: <span class="string">"https://www.googleapis.com"</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;service&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;port&quot;</span>: <span class="number">3001</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;apiTargets&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;googleapis&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;proxyTarget&quot;</span>: <span class="string">&quot;https://www.googleapis.com&quot;</span></span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li><p>Ensure that <code>googleapis.localhost</code> resolves to 127.0.0.1.</p>
 </li>
 <li><p>Follow my <a href="/content/id/1709/">previous guide</a> on setting up Google Sign-in. The key difference is not to use the pre-configured Google option, but instead, set up a Generic OAuth2 Provider using the following settings:</p>
 <ul>
-<li><strong>Authorization Endpoint URL</strong>: <a href="https://accounts.google.com/o/oauth2/v2/auth" target="_blank" rel="noopener">https://accounts.google.com/o/oauth2/v2/auth</a></li>
-<li><strong>Token Endpoint URL</strong>: <a href="http://googleapis.localhost:3001/oauth2/v4/token" target="_blank" rel="noopener">http://googleapis.localhost:3001/oauth2/v4/token</a></li>
-<li><strong>User Info Endpoint URL</strong>: <a href="http://googleapis.localhost:3001/oauth2/v2/userinfo" target="_blank" rel="noopener">http://googleapis.localhost:3001/oauth2/v2/userinfo</a></li>
+<li><strong>Authorization Endpoint URL</strong>: <a target="_blank" rel="noopener" href="https://accounts.google.com/o/oauth2/v2/auth">https://accounts.google.com/o/oauth2/v2/auth</a></li>
+<li><strong>Token Endpoint URL</strong>: <a target="_blank" rel="noopener" href="http://googleapis.localhost:3001/oauth2/v4/token">http://googleapis.localhost:3001/oauth2/v4/token</a></li>
+<li><strong>User Info Endpoint URL</strong>: <a target="_blank" rel="noopener" href="http://googleapis.localhost:3001/oauth2/v2/userinfo">http://googleapis.localhost:3001/oauth2/v2/userinfo</a></li>
 </ul>
 </li>
 </ol>
-<img src="/content/id/1711/authscheme-settings.png" title="My Social Sign-in Settings for Google"><span class="caption">My Social Sign-in Settings for Google</span>
+<img src="/content/id/1711/authscheme-settings.png" class="" title="My Social Sign-in Settings for Google">
 
 <h2 id="Microsoft"><a href="#Microsoft" class="headerlink" title="Microsoft"></a>Microsoft</h2><ol>
 <li>Add the following to the Suez configuration:</li>
 </ol>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"service"</span>: &#123;</span><br><span class="line">        <span class="attr">"port"</span>: <span class="number">3001</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"apiTargets"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"loginmicrosoftonline"</span>,</span><br><span class="line">      <span class="attr">"proxyTarget"</span>: <span class="string">"https://login.microsoftonline.com"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">"name"</span>: <span class="string">"graphmicrosoft"</span>,</span><br><span class="line">      <span class="attr">"proxyTarget"</span>: <span class="string">"https://graph.microsoft.com"</span></span><br><span class="line">    &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">&quot;service&quot;</span>: &#123;</span><br><span class="line">        <span class="attr">&quot;port&quot;</span>: <span class="number">3001</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">&quot;apiTargets&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">      <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;loginmicrosoftonline&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;proxyTarget&quot;</span>: <span class="string">&quot;https://login.microsoftonline.com&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;graphmicrosoft&quot;</span>,</span><br><span class="line">      <span class="attr">&quot;proxyTarget&quot;</span>: <span class="string">&quot;https://graph.microsoft.com&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="2">
 <li><p>Ensure that <code>loginmicrosoftonline.localhost</code> and <code>graphmicrosoft.localhost</code> resolves to 127.0.0.1.</p>
 </li>
-<li><p>Go to Microsoft’s <a href="https://apps.dev.microsoft.com/" target="_blank" rel="noopener">Application Registration Portal</a>. Add an application under “Converged applications”.</p>
+<li><p>Go to Microsoft’s <a target="_blank" rel="noopener" href="https://apps.dev.microsoft.com/">Application Registration Portal</a>. Add an application under “Converged applications”.</p>
 </li>
 <li><p>Enter the application name and the following information:</p>
 <ul>
@@ -202,9 +202,9 @@ ga('send', 'pageview');
 </li>
 <li><p>Create the authentication scheme using a Generic OAuth2 Provider with the following settings:</p>
 <ul>
-<li><strong>Authorization Endpoint URL</strong>: <a href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize" target="_blank" rel="noopener">https://login.microsoftonline.com/common/oauth2/v2.0/authorize</a></li>
-<li><strong>Token Endpoint URL</strong>: <a href="http://loginmicrosoftonline.localhost:3001/common/oauth2/v2.0/token" target="_blank" rel="noopener">http://loginmicrosoftonline.localhost:3001/common/oauth2/v2.0/token</a></li>
-<li><strong>User Info Endpoint URL</strong>: <a href="http://graphmicrosoft.localhost:3001/v1.0/me" target="_blank" rel="noopener">http://graphmicrosoft.localhost:3001/v1.0/me</a></li>
+<li><strong>Authorization Endpoint URL</strong>: <a target="_blank" rel="noopener" href="https://login.microsoftonline.com/common/oauth2/v2.0/authorize">https://login.microsoftonline.com/common/oauth2/v2.0/authorize</a></li>
+<li><strong>Token Endpoint URL</strong>: <a target="_blank" rel="noopener" href="http://loginmicrosoftonline.localhost:3001/common/oauth2/v2.0/token">http://loginmicrosoftonline.localhost:3001/common/oauth2/v2.0/token</a></li>
+<li><strong>User Info Endpoint URL</strong>: <a target="_blank" rel="noopener" href="http://graphmicrosoft.localhost:3001/v1.0/me">http://graphmicrosoft.localhost:3001/v1.0/me</a></li>
 <li><strong>Scope</strong>: User.Read</li>
 <li><strong>Username Attribute</strong>: userPrincipalName</li>
 </ul>
@@ -221,7 +221,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1711/" data-id="ckmr4pjkl000hx0fdt9erz1fj" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1711/" data-id="ckmr6zpf5000hw4fd2zj125kq" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -269,7 +269,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

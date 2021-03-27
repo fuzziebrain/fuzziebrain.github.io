@@ -5,12 +5,12 @@
   
   <title>Keep Your APEX Images Updated | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Spider Web  As Uncle Ben would say, “Remember, with great power, comes great responsibility.” With the release of Oracle REST Data Services (ORDS) version 19.4.6, many of us were eager to deploy a cus">
+  <meta name="description" content="As Uncle Ben would say, “Remember, with great power, comes great responsibility.” With the release of Oracle REST Data Services (ORDS) version 19.4.6, many of us were eager to deploy a customer-mana">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Keep Your APEX Images Updated">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/2006/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Spider Web  As Uncle Ben would say, “Remember, with great power, comes great responsibility.” With the release of Oracle REST Data Services (ORDS) version 19.4.6, many of us were eager to deploy a cus">
+<meta property="og:description" content="As Uncle Ben would say, “Remember, with great power, comes great responsibility.” With the release of Oracle REST Data Services (ORDS) version 19.4.6, many of us were eager to deploy a customer-mana">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/2006/spider-223982_1280x800.jpg">
 <meta property="article:published_time" content="2020-07-26T00:03:59.000Z">
@@ -136,43 +136,34 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/2006/spider-223982_1280x800.jpg" title="Spider Web"><span class="caption">Spider Web</span>
+        <img src="/content/id/2006/spider-223982_1280x800.jpg" class="" title="Spider Web">
 
-<p>As Uncle Ben would say, “Remember, with great power, comes great responsibility.” With the release of <a href="https://www.oracle.com/database/technologies/appdev/rest.html" target="_blank" rel="noopener">Oracle REST Data Services</a> (ORDS) version 19.4.6, many of us were eager to deploy a customer-managed ORDS solution in order to support vanity URLs with <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express</a> (APEX), myself <a href="/content/id/2004">included</a>. It has worked well for me until a few days ago, I noticed that my <a href="https://oracle.com/jet" target="_blank" rel="noopener">Oracle JET</a> charts weren’t loading any more.</p>
-<a id="more"></a>
+<p>As Uncle Ben would say, “Remember, with great power, comes great responsibility.” With the release of <a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/appdev/rest.html">Oracle REST Data Services</a> (ORDS) version 19.4.6, many of us were eager to deploy a customer-managed ORDS solution in order to support vanity URLs with <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX), myself <a href="/content/id/2004">included</a>. It has worked well for me until a few days ago, I noticed that my <a target="_blank" rel="noopener" href="https://oracle.com/jet">Oracle JET</a> charts weren’t loading any more.</p>
+<span id="more"></span>
 
-<p>A quick check showed multiple <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5" target="_blank" rel="noopener">HTTP 404</a> errors were triggered. APEX was referencing a newer Oracle JET version, 8.3.0 insted of the stock 8.0.0.</p>
-<p>One of the key benefits of running APEX on an <a href="https://www.oracle.com/database/what-is-autonomous-database.html" target="_blank" rel="noopener">Oracle Autonomous Database</a> is auto-patching, and clearly something got updated in the recent days. True enough, an updated Patch Set Bundle (PSE) was released on July 20, 2020 (Source: <a href="https://apex.oracle.com/download" target="_blank" rel="noopener">https://apex.oracle.com/download</a>).</p>
-<p>On the <a href="https://www.oracle.com/tools/downloads/apex-downloads/apex-201-known-issues.html" target="_blank" rel="noopener">Known Issues</a> page, it states:</p>
+<p>A quick check showed multiple <a target="_blank" rel="noopener" href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html#sec10.4.5">HTTP 404</a> errors were triggered. APEX was referencing a newer Oracle JET version, 8.3.0 insted of the stock 8.0.0.</p>
+<p>One of the key benefits of running APEX on an <a target="_blank" rel="noopener" href="https://www.oracle.com/database/what-is-autonomous-database.html">Oracle Autonomous Database</a> is auto-patching, and clearly something got updated in the recent days. True enough, an updated Patch Set Bundle (PSE) was released on July 20, 2020 (Source: <a target="_blank" rel="noopener" href="https://apex.oracle.com/download">https://apex.oracle.com/download</a>).</p>
+<p>On the <a target="_blank" rel="noopener" href="https://www.oracle.com/tools/downloads/apex-downloads/apex-201-known-issues.html">Known Issues</a> page, it states:</p>
 <blockquote>
 <p>With 20.1, we integrated the following third party libraries: Oracle JET 8.0.0, jQuery 3.4.1, jQuery Migrate 3.0.1, and jQuery FullCalendar 3.10.0. Upgraded versions of these libraries have been made available: Oracle JET 8.3.0, jQuery 3.5.1, jQuery Migrate 3.3.0, and jQuery FullCalendar 3.10.2.</p>
 </blockquote>
 <p>Here’s what I did to get my server updated.</p>
 <ol>
-<li><p>Login to <a href="https://support.oracle.com" target="_blank" rel="noopener">Oracle Support</a> and search <code>30990551</code>, or simply click <a href="https://support.oracle.com/epmos/faces/PatchDetail?patchId=30990551" target="_blank" rel="noopener">here</a></p>
-</li>
-<li><p>Download the patch. The file name should be <code>p30990551_2010_Generic.zip</code>.</p>
-<blockquote>
+<li>Login to <a target="_blank" rel="noopener" href="https://support.oracle.com/">Oracle Support</a> and search <code>30990551</code>, or simply click <a target="_blank" rel="noopener" href="https://support.oracle.com/epmos/faces/PatchDetail?patchId=30990551">here</a></li>
+<li>Download the patch. The file name should be <code>p30990551_2010_Generic.zip</code>.<blockquote>
 <p>Important</p>
 <p>You will need an active support contract in order to download the PSE.</p>
 </blockquote>
 </li>
-<li><p>Upload the patch to the Compute instance hosting ORDS. Place the file in the <code>/tmp</code> directory.</p>
-</li>
-<li><p>Login to the server as the user <code>opc</code>, using SSH.</p>
-</li>
-<li><p>Set the environment variables:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RELEASE=20.1.0.00.13</span><br><span class="line">PATCHNUM=30990551</span><br><span class="line">PATCHFILE=p30990551_2010_Generic.zip</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Execute the following:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /tmp/<span class="variable">$RELEASE</span></span><br><span class="line">unzip /tmp/<span class="variable">$PATCHFILE</span> <span class="string">"<span class="variable">$PATCHNUM</span>/images/*"</span> -d /tmp/<span class="variable">$RELEASE</span></span><br><span class="line">cp -R /tmp/<span class="variable">$RELEASE</span>/<span class="variable">$PATCHNUM</span>/images/* /opt/oracle/apex/images/<span class="variable">$RELEASE</span></span><br><span class="line">rm -rf /tmp/<span class="variable">$RELEASE</span></span><br></pre></td></tr></table></figure>
-
-</li>
+<li>Upload the patch to the Compute instance hosting ORDS. Place the file in the <code>/tmp</code> directory.</li>
+<li>Login to the server as the user <code>opc</code>, using SSH.</li>
+<li>Set the environment variables: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">RELEASE=20.1.0.00.13</span><br><span class="line">PATCHNUM=30990551</span><br><span class="line">PATCHFILE=p30990551_2010_Generic.zip</span><br></pre></td></tr></table></figure></li>
+<li>Execute the following: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /tmp/<span class="variable">$RELEASE</span></span><br><span class="line">unzip /tmp/<span class="variable">$PATCHFILE</span> <span class="string">&quot;<span class="variable">$PATCHNUM</span>/images/*&quot;</span> -d /tmp/<span class="variable">$RELEASE</span></span><br><span class="line">cp -R /tmp/<span class="variable">$RELEASE</span>/<span class="variable">$PATCHNUM</span>/images/* /opt/oracle/apex/images/<span class="variable">$RELEASE</span></span><br><span class="line">rm -rf /tmp/<span class="variable">$RELEASE</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 <p>That’s it!</p>
 <blockquote>
 <p><u>Photo Credits</u></p>
-<p>Photo by <a href="https://pixabay.com/users/arttower-5337/" target="_blank" rel="noopener">ArtTower</a></p>
+<p>Photo by <a target="_blank" rel="noopener" href="https://pixabay.com/users/arttower-5337/">ArtTower</a></p>
 </blockquote>
 
       
@@ -184,7 +175,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/2006/" data-id="ckmr4pjnc001yx0fdgmy7b3gj" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/2006/" data-id="ckmr6zpg1002aw4fd6m839jw0" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -232,7 +223,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

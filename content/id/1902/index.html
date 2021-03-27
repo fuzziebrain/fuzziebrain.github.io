@@ -5,12 +5,12 @@
   
   <title>Helper Scripts - Build an APEX Stack | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Photo by Markus Distelrath  When Oracle Database 18c Express Edition (18cXE) was released late last year, I was motivated to work on an image for running the newly released, FREE database using Docker">
+  <meta name="description" content="When Oracle Database 18c Express Edition (18cXE) was released late last year, I was motivated to work on an image for running the newly released, FREE database using Docker. The scripts were based o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Helper Scripts - Build an APEX Stack">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1902/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Photo by Markus Distelrath  When Oracle Database 18c Express Edition (18cXE) was released late last year, I was motivated to work on an image for running the newly released, FREE database using Docker">
+<meta property="og:description" content="When Oracle Database 18c Express Edition (18cXE) was released late last year, I was motivated to work on an image for running the newly released, FREE database using Docker. The scripts were based o">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1902/container-2687008_1280x720.jpg">
 <meta property="article:published_time" content="2019-02-17T19:03:47.000Z">
@@ -138,14 +138,14 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1902/container-2687008_1280x720.jpg" title="Photo by Markus Distelrath"><span class="caption">Photo by Markus Distelrath</span>
+        <img src="/content/id/1902/container-2687008_1280x720.jpg" class="" title="Photo by Markus Distelrath">
 
-<p>When <a href="https://oracle.com/xe" target="_blank" rel="noopener">Oracle Database 18c Express Edition (18cXE)</a> was released late last year, I was motivated to work on an <a href="https://github.com/fuzziebrain/docker-oracle-xe" target="_blank" rel="noopener">image</a> for running the newly released, <strong>FREE</strong> database using <a href="https://www.docker.com" target="_blank" rel="noopener">Docker</a>. The scripts were based on the official Docker images <a href="https://github.com/oracle/docker-images" target="_blank" rel="noopener">published by Oracle</a>. With much help from <a href="https://twitter.com/martindsouza" target="_blank" rel="noopener">Martin D’Souza</a>, we released the scripts to the community with pointers on how to install and run an <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express (APEX)</a> stack.</p>
-<a id="more"></a>
+<p>When <a target="_blank" rel="noopener" href="https://oracle.com/xe">Oracle Database 18c Express Edition (18cXE)</a> was released late last year, I was motivated to work on an <a target="_blank" rel="noopener" href="https://github.com/fuzziebrain/docker-oracle-xe">image</a> for running the newly released, <strong>FREE</strong> database using <a target="_blank" rel="noopener" href="https://www.docker.com/">Docker</a>. The scripts were based on the official Docker images <a target="_blank" rel="noopener" href="https://github.com/oracle/docker-images">published by Oracle</a>. With much help from <a target="_blank" rel="noopener" href="https://twitter.com/martindsouza">Martin D’Souza</a>, we released the scripts to the community with pointers on how to install and run an <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express (APEX)</a> stack.</p>
+<span id="more"></span>
 
 <p>While I am proud of the work Martin and I did, it has always been my intention to mothball the project as soon as the team from Oracle released support for 18cXE, which they did about two months ago.</p>
-<p>One of the features of Oracle’s images that I discussed with <a href="https://twitter.com/GeraldVenzl" target="_blank" rel="noopener">Gerald Venzl</a>, who happened to be in Vancouver for the <a href="https://bcoug.org/techday" target="_blank" rel="noopener">BCOUG Tech Day</a> last year, was the <code>setup</code> and <code>startup</code> scripts folder. Any shell or SQL scripts placed in these folders would be automatically executed when the database is created (running the container the first time with no preexisting <code>oradata</code> mounted) and started respectively. The puzzle that needed to be solved was how best to inject the necessary files and code for installing and running APEX and <a href="https://www.oracle.com/ca-en/database/technologies/appdev/rest.html" target="_blank" rel="noopener">Oracle REST Data Services (ORDS)</a>.</p>
-<p>I think I have something figured out and have placed the scripts I used in this <a href="https://github.com" target="_blank" rel="noopener">Github</a> <a href="https://github.com/fuzziebrain/docker-apex-stack" target="_blank" rel="noopener">repository</a>. It includes a three-step formula that will:</p>
+<p>One of the features of Oracle’s images that I discussed with <a target="_blank" rel="noopener" href="https://twitter.com/GeraldVenzl">Gerald Venzl</a>, who happened to be in Vancouver for the <a target="_blank" rel="noopener" href="https://bcoug.org/techday">BCOUG Tech Day</a> last year, was the <code>setup</code> and <code>startup</code> scripts folder. Any shell or SQL scripts placed in these folders would be automatically executed when the database is created (running the container the first time with no preexisting <code>oradata</code> mounted) and started respectively. The puzzle that needed to be solved was how best to inject the necessary files and code for installing and running APEX and <a target="_blank" rel="noopener" href="https://www.oracle.com/ca-en/database/technologies/appdev/rest.html">Oracle REST Data Services (ORDS)</a>.</p>
+<p>I think I have something figured out and have placed the scripts I used in this <a target="_blank" rel="noopener" href="https://github.com/">Github</a> <a target="_blank" rel="noopener" href="https://github.com/fuzziebrain/docker-apex-stack">repository</a>. It includes a three-step formula that will:</p>
 <ol>
 <li>Grab the latest code from Oracle’s repository, but only keep the important pieces for this to work.</li>
 <li>Build the image; and then</li>
@@ -163,7 +163,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1902/" data-id="ckmr4pjmo001nx0fd0q11qvxa" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1902/" data-id="ckmr6zpfr001qw4fdhwfr5179" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -211,7 +211,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

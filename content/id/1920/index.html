@@ -5,12 +5,12 @@
   
   <title>Making the Move to the Autonomous Database | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Packing boxes  In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Applicatio">
+  <meta name="description" content="In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Application Express (AP">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Making the Move to the Autonomous Database">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1920/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Packing boxes  In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Applicatio">
+<meta property="og:description" content="In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Application Express (AP">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1920/boxes-2719166_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1920/apex_instance_admin_login.png">
@@ -146,10 +146,10 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1920/boxes-2719166_1280x720.jpg" title="Packing boxes"><span class="caption">Packing boxes</span>
+        <img src="/content/id/1920/boxes-2719166_1280x720.jpg" class="" title="Packing boxes">
 
-<p>In my <a href="/content/id/1919">previous post</a>, I mentioned that I have created my <a href="https://oracle.com/cloud/free/" target="_blank" rel="noopener">Oracle Cloud Free Tier</a> account and provisioned an <a href="https://www.oracle.com/database/what-is-autonomous-database.html" target="_blank" rel="noopener">Autonomous Database</a> (ADB). Now, I’m ready to move my existing <a href="https://apex.oracle.com/" target="_blank" rel="noopener">Oracle Application Express</a> (APEX) to this new environment. Next, I’ll describe the steps I took to move (1) workspace, (2) application and (3) data, from the old to new database.</p>
-<a id="more"></a>
+<p>In my <a href="/content/id/1919">previous post</a>, I mentioned that I have created my <a target="_blank" rel="noopener" href="https://oracle.com/cloud/free/">Oracle Cloud Free Tier</a> account and provisioned an <a target="_blank" rel="noopener" href="https://www.oracle.com/database/what-is-autonomous-database.html">Autonomous Database</a> (ADB). Now, I’m ready to move my existing <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX) to this new environment. Next, I’ll describe the steps I took to move (1) workspace, (2) application and (3) data, from the old to new database.</p>
+<span id="more"></span>
 
 <h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>To better illustrate the move process, let’s create some fictious information about what I am about to move.</p>
 <table>
@@ -230,8 +230,8 @@ ga('send', 'pageview');
 </blockquote>
 <h3 id="Tools-Required"><a href="#Tools-Required" class="headerlink" title="Tools Required"></a>Tools Required</h3><p>Install the following software in the environment that </p>
 <ul>
-<li><a href="https://www.oracle.com/database/technologies/appdev/sqlcl.html" target="_blank" rel="noopener">SQLcl</a></li>
-<li><a href="https://www.oracle.com/database/technologies/instant-client.html" target="_blank" rel="noopener">Oracle Instant Client</a><ul>
+<li><a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/appdev/sqlcl.html">SQLcl</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/instant-client.html">Oracle Instant Client</a><ul>
 <li>Basic</li>
 <li>Tools (includes the Oracle Data Pump utilities expdp and impdp)</li>
 </ul>
@@ -239,69 +239,47 @@ ga('send', 'pageview');
 </ul>
 <h2 id="Export-Components-from-Old-Database"><a href="#Export-Components-from-Old-Database" class="headerlink" title="Export Components from Old Database"></a>Export Components from Old Database</h2><h3 id="Export-APEX-Workspace-and-Applications"><a href="#Export-APEX-Workspace-and-Applications" class="headerlink" title="Export APEX Workspace and Applications"></a>Export APEX Workspace and Applications</h3><ol>
 <li><p>Start SQLcl:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql /nolog</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql /nolog</span><br></pre></td></tr></table></figure></li>
 <li><p>Create SSH tunnel and local port forwarding:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sshtunnel oracle@dev.contoso.com -L 1523:localhost:1521</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sshtunnel oracle<span class="variable">@dev</span>.contoso.com <span class="operator">-</span>L <span class="number">1523</span>:localhost:<span class="number">1521</span></span><br></pre></td></tr></table></figure></li>
 <li><p>Connect to the dataabse as <em>contoso_apps</em>:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect contoso_apps/secret@//localhost:1523/XE</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">connect</span> contoso_apps<span class="operator">/</span>secret@<span class="operator">/</span><span class="operator">/</span>localhost:<span class="number">1523</span><span class="operator">/</span>XE</span><br></pre></td></tr></table></figure></li>
 <li><p>Obtained the workspace ID:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> to_char(workspace_id) <span class="keyword">from</span> apex_workspaces <span class="keyword">where</span> workspace = <span class="string">'CONTOSO_WEB'</span>;</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> to_char(workspace_id) <span class="keyword">from</span> apex_workspaces <span class="keyword">where</span> workspace <span class="operator">=</span> <span class="string">&#x27;CONTOSO_WEB&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
 <li><p>Export the workspace:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apex export -workspaceid 1234567890 -expWorkspace</span><br></pre></td></tr></table></figure>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apex export <span class="operator">-</span>workspaceid <span class="number">1234567890</span> <span class="operator">-</span>expWorkspace</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>This will produce a file named after the workspace ID, e.g. <code>w1234567890.sql</code></p>
 </blockquote>
 </li>
 <li><p>Export <strong>all</strong> APEX applications in the workspace:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apex export -workspaceid 1234567890</span><br></pre></td></tr></table></figure>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apex export <span class="operator">-</span>workspaceid <span class="number">1234567890</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>Optionally, specify only the applications by id, using the <code>-applicationid</code> parameter. The export process would produce files named after the application ID, e.g. <code>f1000.sql</code> and <code>f1400.sql</code>.</p>
 </blockquote>
 </li>
 <li><p>If there are any REST services to be migrated, then execute the following:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spool rest_services.sql</span><br><span class="line">rest export</span><br><span class="line">spool off</span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spool rest_services.sql</span><br><span class="line">rest export</span><br><span class="line">spool off</span><br></pre></td></tr></table></figure></li>
 <li><p>Logout.</p>
 </li>
 <li><p>If REST services were exported, then execute the following:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">"/"</span> &gt;&gt; rest_services.sql</span><br></pre></td></tr></table></figure>
-
-</li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;/&quot;</span> &gt;&gt; rest_services.sql</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="Export-Schemas"><a href="#Export-Schemas" class="headerlink" title="Export Schemas"></a>Export Schemas</h3><p>Login to the source database using SSH as user <em>oracle</em>. The subsequent commands in this section will be executed on the source server.</p>
 <ol>
-<li><p>Login to the database as <em>SYSDBA</em>:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlplus / as sysdba</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Create the target data dump directory:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">host mkdir /tmp/cloud-migration</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Create the directory object:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">directory</span> CLOUD_MIGRATION_DIR <span class="keyword">as</span> <span class="string">'/tmp/cloud-migration'</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Grant the <em>system</em> user <code>READ</code> and <code>WRITE</code> privileges:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">read</span>, write <span class="keyword">on</span> <span class="keyword">directory</span> CLOUD_MIGRATION_DIR <span class="keyword">to</span> <span class="keyword">system</span>;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Exit SQL*Plus.    </p>
-</li>
-<li><p>Run the export data pump utility (expdp) to export the schema objects:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">expdp system schemas=logger,contoso_apps  \</span><br><span class="line">  directory=CLOUD_MIGRATION_DIR dumpfile=cloud-migration.dmp \</span><br><span class="line">  logfile=exp_cloud-migration.log</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Logout from the source server.</p>
-</li>
+<li>Login to the database as <em>SYSDBA</em>: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlplus <span class="operator">/</span> <span class="keyword">as</span> sysdba</span><br></pre></td></tr></table></figure></li>
+<li>Create the target data dump directory: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">host mkdir <span class="operator">/</span>tmp<span class="operator">/</span>cloud<span class="operator">-</span>migration</span><br></pre></td></tr></table></figure></li>
+<li>Create the directory object: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> directory CLOUD_MIGRATION_DIR <span class="keyword">as</span> <span class="string">&#x27;/tmp/cloud-migration&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li>Grant the <em>system</em> user <code>READ</code> and <code>WRITE</code> privileges: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> read, write <span class="keyword">on</span> directory CLOUD_MIGRATION_DIR <span class="keyword">to</span> <span class="keyword">system</span>;</span><br></pre></td></tr></table></figure></li>
+<li>Exit SQL*Plus.    </li>
+<li>Run the export data pump utility (expdp) to export the schema objects: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">expdp system schemas=logger,contoso_apps  \</span><br><span class="line">  directory=CLOUD_MIGRATION_DIR dumpfile=cloud-migration.dmp \</span><br><span class="line">  logfile=exp_cloud-migration.log</span><br></pre></td></tr></table></figure></li>
+<li>Logout from the source server.</li>
 </ol>
 <h3 id="Preparing-for-Import"><a href="#Preparing-for-Import" class="headerlink" title="Preparing for Import"></a>Preparing for Import</h3><ol>
-<li><p>Grab the dumpfile (and log file if necessary):</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r oracle@dev.contoso.com:/tmp/cloud-migration/* .</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>The local working directory <code>/home/jdoe/cloud-migration</code> should now contain the following files:</p>
-<ul>
+<li>Grab the dumpfile (and log file if necessary): <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r oracle@dev.contoso.com:/tmp/cloud-migration/* .</span><br></pre></td></tr></table></figure></li>
+<li>The local working directory <code>/home/jdoe/cloud-migration</code> should now contain the following files:<ul>
 <li><code>cloud-migration.dmp</code></li>
 <li><code>exp_cloud-migration.log</code></li>
 <li><code>f1000.sql</code></li>
@@ -312,32 +290,27 @@ ga('send', 'pageview');
 </li>
 </ol>
 <h2 id="Import-Components-into-ADB"><a href="#Import-Components-into-ADB" class="headerlink" title="Import Components into ADB"></a>Import Components into ADB</h2><h3 id="Import-the-Workspace"><a href="#Import-the-Workspace" class="headerlink" title="Import the Workspace"></a>Import the Workspace</h3><ol>
-<li>Login to the ADB’s APEX <em>Administration Services</em> as the <em>admin</em> user: <img src="/content/id/1920/apex_instance_admin_login.png" title="Login screen"><span class="caption">Login screen</span></li>
+<li>Login to the ADB’s APEX <em>Administration Services</em> as the <em>admin</em> user: <img src="/content/id/1920/apex_instance_admin_login.png" class="" title="Login screen"></li>
 <li>Use the <em>Manage Workspaces</em> utilities to import the workspace from the file <code>w1234567890.sql</code>.</li>
-<li>During the import process, create the workspace schema. Set the password and space quota as required. <img src="/content/id/1920/create_schema.png" title="Create workspace schema"><span class="caption">Create workspace schema</span>
-
-
-</li>
+<li>During the import process, create the workspace schema. Set the password and space quota as required. <img src="/content/id/1920/create_schema.png" class="" title="Create workspace schema"></li>
 </ol>
-<h3 id="Prerequisites-for-Using-IMPDP-with-ADB"><a href="#Prerequisites-for-Using-IMPDP-with-ADB" class="headerlink" title="Prerequisites for Using IMPDP with ADB"></a>Prerequisites for Using IMPDP with ADB</h3><p>Data can be imported into an ADB using Oracle Data Pump. However, since we do not access to the database server’s file system, <a href="https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm" target="_blank" rel="noopener">Object Storage</a> must be used to deliver the dumpfile. </p>
-<p>The official instructions to prepare for data pump can be found <a href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/load-data-data-pump.html#GUID-30DB1EEA-DB45-49EA-9E97-DF49A9968E24" target="_blank" rel="noopener">here</a>. The following is a summary account of what I did.</p>
+<h3 id="Prerequisites-for-Using-IMPDP-with-ADB"><a href="#Prerequisites-for-Using-IMPDP-with-ADB" class="headerlink" title="Prerequisites for Using IMPDP with ADB"></a>Prerequisites for Using IMPDP with ADB</h3><p>Data can be imported into an ADB using Oracle Data Pump. However, since we do not access to the database server’s file system, <a target="_blank" rel="noopener" href="https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm">Object Storage</a> must be used to deliver the dumpfile. </p>
+<p>The official instructions to prepare for data pump can be found <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/load-data-data-pump.html#GUID-30DB1EEA-DB45-49EA-9E97-DF49A9968E24">here</a>. The following is a summary account of what I did.</p>
 <h4 id="Object-Storage"><a href="#Object-Storage" class="headerlink" title="Object Storage"></a>Object Storage</h4><ol>
-<li>Access the Oracle Cloud Object Storage. <img src="/content/id/1920/goto-object-storage.png" title="Access Object Storage"><span class="caption">Access Object Storage</span></li>
-<li>Create a bucket and name it <code>cloud-migration</code>. <img src="/content/id/1920/create-bucket.png" title="Create bucket"><span class="caption">Create bucket</span></li>
-<li>Take note of the Object Storage namespace (1) that is required for determining the URI for the dumpfile. <img src="/content/id/1920/bucket-details.png" title="Bucket details"><span class="caption">Bucket details</span></li>
+<li>Access the Oracle Cloud Object Storage. <img src="/content/id/1920/goto-object-storage.png" class="" title="Access Object Storage"></li>
+<li>Create a bucket and name it <code>cloud-migration</code>. <img src="/content/id/1920/create-bucket.png" class="" title="Create bucket"></li>
+<li>Take note of the Object Storage namespace (1) that is required for determining the URI for the dumpfile. <img src="/content/id/1920/bucket-details.png" class="" title="Bucket details"></li>
 <li>Upload the dumpfile <code>cloud-migration.dmp</code> to the bucket. </li>
 </ol>
 <h4 id="Set-Cloud-Credentials-for-ADB"><a href="#Set-Cloud-Credentials-for-ADB" class="headerlink" title="Set Cloud Credentials for ADB"></a>Set Cloud Credentials for ADB</h4><ol>
-<li><a href="https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#two" target="_blank" rel="noopener">Generate an Auth Token</a> for a user in the tenant with the necessary access to the bucket and its contents. <img src="/content/id/1920/generate-auth-token.png" title="Generate an Auth Token"><span class="caption">Generate an Auth Token</span></li>
-<li>Set the Cloud Object Storage credentials: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">  dbms_cloud.create_credential(</span><br><span class="line">    credential_name =&gt; <span class="string">'DEF_CRED_NAME'</span></span><br><span class="line">    , username =&gt; <span class="string">'jdoe'</span></span><br><span class="line">    , <span class="keyword">password</span> =&gt; <span class="string">'the_generated_auth_token'</span></span><br><span class="line">  );</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
-
-</li>
+<li><a target="_blank" rel="noopener" href="https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#two">Generate an Auth Token</a> for a user in the tenant with the necessary access to the bucket and its contents. <img src="/content/id/1920/generate-auth-token.png" class="" title="Generate an Auth Token"></li>
+<li>Set the Cloud Object Storage credentials: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">  dbms_cloud.create_credential(</span><br><span class="line">    credential_name <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;DEF_CRED_NAME&#x27;</span></span><br><span class="line">    , username <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;jdoe&#x27;</span></span><br><span class="line">    , password <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;the_generated_auth_token&#x27;</span></span><br><span class="line">  );</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="operator">/</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<h4 id="Instant-Client-Setup-for-ADB"><a href="#Instant-Client-Setup-for-ADB" class="headerlink" title="Instant Client Setup for ADB"></a>Instant Client Setup for ADB</h4><p>Official instructions for setting up your system to connect to the database using the tools provided by the Oracle Instant Client, including the Oracle Data Pump utilies needed for importing the data, can be found <a href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-preparing.html#GUID-EFAFA00E-54CC-47C7-8C71-E7868279EF3B" target="_blank" rel="noopener">here</a>.</p>
+<h4 id="Instant-Client-Setup-for-ADB"><a href="#Instant-Client-Setup-for-ADB" class="headerlink" title="Instant Client Setup for ADB"></a>Instant Client Setup for ADB</h4><p>Official instructions for setting up your system to connect to the database using the tools provided by the Oracle Instant Client, including the Oracle Data Pump utilies needed for importing the data, can be found <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-preparing.html#GUID-EFAFA00E-54CC-47C7-8C71-E7868279EF3B">here</a>.</p>
 <p>Here’s a quick overview of what I did:</p>
 <ol>
 <li><p>Download the Cient Credentials (Wallet) from the ADB’s Service Console.</p>
- <img src="/content/id/1920/download-wallet.png" title="Download wallet"><span class="caption">Download wallet</span></li>
+ <img src="/content/id/1920/download-wallet.png" class="" title="Download wallet"></li>
 <li><p>Set the enviroment variable <code>TNS_ADMIN</code>:</p>
  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> TNS_ADMIN=/home/jdoe/.wallets/atp01</span><br></pre></td></tr></table></figure>
 
@@ -346,28 +319,17 @@ ga('send', 'pageview');
 </blockquote>
 </li>
 <li><p>Create the wallet directory:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p <span class="variable">$TNS_ADMIN</span></span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p <span class="variable">$TNS_ADMIN</span></span><br></pre></td></tr></table></figure></li>
 <li><p>Extract the contents of the ZIP file into the wallet directory:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip wallet_ATP01.zip -d <span class="variable">$TNS_ADMIN</span></span><br></pre></td></tr></table></figure>
-</li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip wallet_ATP01.zip -d <span class="variable">$TNS_ADMIN</span></span><br></pre></td></tr></table></figure></li>
 <li><p>The wallet contains a <code>sqlnet.ora</code> file. Replace the path <code>?/network/admin</code>, specified for the parameter <code>DIRECTORY</code>, with the wallet’s path (<code>TNS_ADMIN</code>).</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i .bak <span class="string">"s|?/network/admin|<span class="variable">$TNS_ADMIN</span>|g"</span> <span class="variable">$TNS_ADMIN</span>/sqlnet.ora</span><br></pre></td></tr></table></figure>
-
-</li>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i .bak <span class="string">&quot;s|?/network/admin|<span class="variable">$TNS_ADMIN</span>|g&quot;</span> <span class="variable">$TNS_ADMIN</span>/sqlnet.ora</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h3 id="Create-Auxiliary-Schemas"><a href="#Create-Auxiliary-Schemas" class="headerlink" title="Create Auxiliary Schemas"></a>Create Auxiliary Schemas</h3><ol>
-<li><p>Launch SQLcl:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql /nolog</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Login to the ADB using SQLcl as <em>admin</em>, the administrator account created when the database was provisioned.</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect admin/supersecret@atp01_high</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Create the auxiliary user and grant needed privileges and quota. For example:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Create user and set quota on DATA, the tablespace for users in ADB.</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> logger <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"secret"</span> <span class="keyword">quota</span> <span class="number">50</span>M <span class="keyword">on</span> <span class="keyword">data</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Grant privileges required by Logger.</span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span>, <span class="keyword">create</span> <span class="keyword">view</span>, <span class="keyword">create</span> job, <span class="keyword">create</span> <span class="keyword">table</span>, <span class="keyword">create</span> <span class="keyword">sequence</span></span><br><span class="line">  , <span class="keyword">create</span> <span class="keyword">trigger</span>, <span class="keyword">create</span> <span class="keyword">procedure</span>, <span class="keyword">create</span> <span class="keyword">any</span> <span class="keyword">context</span> <span class="keyword">to</span> logger;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Logout from the database.</p>
-</li>
+<li>Launch SQLcl: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql /nolog</span><br></pre></td></tr></table></figure></li>
+<li>Login to the ADB using SQLcl as <em>admin</em>, the administrator account created when the database was provisioned. <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">connect</span> admin<span class="operator">/</span>supersecret<span class="variable">@atp01</span>_high</span><br></pre></td></tr></table></figure></li>
+<li>Create the auxiliary user and grant needed privileges and quota. For example: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Create user and set quota on DATA, the tablespace for users in ADB.</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> logger identified <span class="keyword">by</span> &quot;secret&quot; quota <span class="number">50</span>M <span class="keyword">on</span> data;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Grant privileges required by Logger.</span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span>, <span class="keyword">create</span> <span class="keyword">view</span>, <span class="keyword">create</span> job, <span class="keyword">create</span> <span class="keyword">table</span>, <span class="keyword">create</span> sequence</span><br><span class="line">  , <span class="keyword">create</span> <span class="keyword">trigger</span>, <span class="keyword">create</span> <span class="keyword">procedure</span>, <span class="keyword">create</span> <span class="keyword">any</span> context <span class="keyword">to</span> logger;</span><br></pre></td></tr></table></figure></li>
+<li>Logout from the database.</li>
 </ol>
 <h3 id="Import-Schema-Objects"><a href="#Import-Schema-Objects" class="headerlink" title="Import Schema Objects"></a>Import Schema Objects</h3><ol>
 <li><p>Run the import data pump utility (impdp), avoiding the recreation of certain objects as specified by the <code>exclude</code> option:</p>
@@ -375,31 +337,20 @@ ga('send', 'pageview');
 
 <blockquote>
 <ul>
-<li>Details about the DBMS_CLOUD Package File URI format can be found <a href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/file-uri-formats.html#GUID-5D3E1614-ADF2-4DB5-B2B2-D5613F10E4FA" target="_blank" rel="noopener">here</a>. The namespace was noted in an earlier section of this post.</li>
+<li>Details about the DBMS_CLOUD Package File URI format can be found <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/file-uri-formats.html#GUID-5D3E1614-ADF2-4DB5-B2B2-D5613F10E4FA">here</a>. The namespace was noted in an earlier section of this post.</li>
 <li>The exclusions include the creation of a user and modifications of certain properties about the user. The schemas were created in earlier sections of this article. They are redundant and will likely result in errors.</li>
-<li>Take note of the data pump logs. If necessary, <a href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/load-data-data-pump.html#GUID-CC7F258C-5D58-475B-8361-467C35FB0745" target="_blank" rel="noopener">download</a> a copy for further analysis and future reference.</li>
+<li>Take note of the data pump logs. If necessary, <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/load-data-data-pump.html#GUID-CC7F258C-5D58-475B-8361-467C35FB0745">download</a> a copy for further analysis and future reference.</li>
 </ul>
 </blockquote>
 </li>
 </ol>
 <h3 id="Import-Applications"><a href="#Import-Applications" class="headerlink" title="Import Applications"></a>Import Applications</h3><ol>
-<li><p>Launch SQLcl:</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql /nolog</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Login to the ADB as the workspace schema user:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">connect contoso_apps/secret@atp01_high</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Set the workspace:</p>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apex_util.set_workspace('CONTOSO_WEB');</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Load and execute each application export file to import the application to the target workspace:</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@f1000.sql</span><br><span class="line">@f1400.sql</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Import the REST services if any:</p>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@rest_services.sql</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Exit the application.</p>
-</li>
+<li>Launch SQLcl: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql /nolog</span><br></pre></td></tr></table></figure></li>
+<li>Login to the ADB as the workspace schema user: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">connect</span> contoso_apps<span class="operator">/</span>secret<span class="variable">@atp01</span>_high</span><br></pre></td></tr></table></figure></li>
+<li>Set the workspace: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apex_util.set_workspace(<span class="string">&#x27;CONTOSO_WEB&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+<li>Load and execute each application export file to import the application to the target workspace: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@f1000.sql</span><br><span class="line">@f1400.sql</span><br></pre></td></tr></table></figure></li>
+<li>Import the REST services if any: <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@rest_services.sql</span><br></pre></td></tr></table></figure></li>
+<li>Exit the application.</li>
 </ol>
 <h2 id="Post-Migration-Tasks"><a href="#Post-Migration-Tasks" class="headerlink" title="Post-Migration Tasks"></a>Post-Migration Tasks</h2><p>After migrating the applications and data, here are some recommended tasks:</p>
 <ul>
@@ -407,9 +358,7 @@ ga('send', 'pageview');
 <li><i class="fa fa-check-square"></i> Re-create and database links required by the application.</li>
 <li><i class="fa fa-check-square"></i> Search for objects like packages and triggers that did not compile successfully during the import process. Fix any issues and recompile the objects.</li>
 <li><i class="fa fa-check-square"></i> Note the issues highlighted in the <a href="/content/id/1919">previous post</a> concerning workspace developer/administrator access.</li>
-<li><i class="fa fa-check-square"></i> Test all applications.
-
-</li>
+<li><i class="fa fa-check-square"></i> Test all applications.</li>
 </ul>
 <p>Hope I didn’t miss any steps. If you do notice any or mistakes, please let me know in the comments below.</p>
 <p>Thanks for reading!</p>
@@ -423,7 +372,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1920/" data-id="ckmr4pjnh0020x0fd63jdsgm2" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1920/" data-id="ckmr6zpfy0022w4fd6qw20gbd" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -471,7 +420,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

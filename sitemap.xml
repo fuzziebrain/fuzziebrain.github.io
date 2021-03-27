@@ -571,6 +571,55 @@
   </url>
   
   <url>
+    <loc>https://fuzziebrain.com/tags/travel/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/odtug/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/disney/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/orlando/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/learning/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/training/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/community/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://fuzziebrain.com/tags/crisis/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -613,35 +662,7 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/community/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fuzziebrain.com/tags/techgivesback/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/challenge-coin/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/gratitude/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/memorabilia/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -690,48 +711,6 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/travel/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/odtug/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/disney/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/orlando/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/learning/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/training/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fuzziebrain.com/tags/oxar/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -768,6 +747,27 @@
   
   <url>
     <loc>https://fuzziebrain.com/tags/linode/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/challenge-coin/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/gratitude/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/memorabilia/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -837,28 +837,7 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/preview/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fuzziebrain.com/tags/google/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/single-sign-on/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/sso/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -872,7 +851,91 @@
   </url>
   
   <url>
+    <loc>https://fuzziebrain.com/tags/sso/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://fuzziebrain.com/tags/single-sign-on/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/preview/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/single-sign-on/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/security/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/two-factor/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/multi-factor/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/2fa/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/mfa/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/oracle/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/oci/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/autonomous/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/alwaysfree/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -928,41 +991,6 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/oracle/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/oci/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/autonomous/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/alwaysfree/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/facebook/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fuzziebrain.com/tags/api/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -991,6 +1019,13 @@
   </url>
   
   <url>
+    <loc>https://fuzziebrain.com/tags/facebook/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://fuzziebrain.com/tags/iaas/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -1005,41 +1040,6 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/security/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/two-factor/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/multi-factor/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/2fa/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/mfa/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fuzziebrain.com/tags/virtualbox/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -1048,34 +1048,6 @@
   
   <url>
     <loc>https://fuzziebrain.com/tags/database/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/redact/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/confidential/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/protection/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/compliance/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1104,6 +1076,13 @@
   
   <url>
     <loc>https://fuzziebrain.com/tags/functions/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/customer-service/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1180,7 +1159,28 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/customer-service/</loc>
+    <loc>https://fuzziebrain.com/tags/redact/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/confidential/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/protection/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/compliance/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1243,14 +1243,21 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/award/</loc>
+    <loc>https://fuzziebrain.com/tags/faceted-search/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/appreciation/</loc>
+    <loc>https://fuzziebrain.com/tags/facet/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/browsing/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1292,21 +1299,21 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/faceted-search/</loc>
+    <loc>https://fuzziebrain.com/tags/digitalocean/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/facet/</loc>
+    <loc>https://fuzziebrain.com/tags/award/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/browsing/</loc>
+    <loc>https://fuzziebrain.com/tags/appreciation/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1348,13 +1355,6 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/digitalocean/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fuzziebrain.com/tags/email/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -1370,13 +1370,6 @@
   
   <url>
     <loc>https://fuzziebrain.com/tags/spf/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/ords/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1404,21 +1397,21 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/multimedia/</loc>
+    <loc>https://fuzziebrain.com/tags/ords/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/image-processing/</loc>
+    <loc>https://fuzziebrain.com/tags/odtug/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/thanksodc/</loc>
+    <loc>https://fuzziebrain.com/tags/san-antonio/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1488,35 +1481,21 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/odtug/</loc>
+    <loc>https://fuzziebrain.com/tags/multimedia/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/san-antonio/</loc>
+    <loc>https://fuzziebrain.com/tags/image-processing/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/meetup/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/user-groups/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/vancouver/</loc>
+    <loc>https://fuzziebrain.com/tags/thanksodc/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1572,6 +1551,27 @@
   </url>
   
   <url>
+    <loc>https://fuzziebrain.com/tags/meetup/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/user-groups/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/vancouver/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://fuzziebrain.com/tags/oxar/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -1586,13 +1586,6 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/review/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fuzziebrain.com/tags/system-administration/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -1601,6 +1594,13 @@
   
   <url>
     <loc>https://fuzziebrain.com/tags/powershell/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/review/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1677,20 +1677,6 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/vscode/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/ide/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fuzziebrain.com/tags/compute/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -1705,14 +1691,21 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/load-balancer/</loc>
+    <loc>https://fuzziebrain.com/tags/vscode/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/management/</loc>
+    <loc>https://fuzziebrain.com/tags/ide/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/load-balancer/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1733,14 +1726,14 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/environment/</loc>
+    <loc>https://fuzziebrain.com/tags/seattle/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/seattle/</loc>
+    <loc>https://fuzziebrain.com/tags/environment/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1775,13 +1768,6 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/stackscripts/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fuzziebrain.com/tags/launch/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -1796,6 +1782,13 @@
   </url>
   
   <url>
+    <loc>https://fuzziebrain.com/tags/stackscripts/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://fuzziebrain.com/tags/career/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -1804,27 +1797,6 @@
   
   <url>
     <loc>https://fuzziebrain.com/tags/knowledge-sharing/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/insum/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/change-is-constant/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/getinvolved/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1894,6 +1866,27 @@
   </url>
   
   <url>
+    <loc>https://fuzziebrain.com/tags/getinvolved/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/insum/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/change-is-constant/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://fuzziebrain.com/tags/typescript/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -1936,34 +1929,6 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/letsencrypt/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/certificates/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/generate/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/renew/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://fuzziebrain.com/tags/emerging-technology/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -1999,6 +1964,48 @@
   </url>
   
   <url>
+    <loc>https://fuzziebrain.com/tags/letsencrypt/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/certificates/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/generate/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/renew/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/https/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://fuzziebrain.com/tags/limits/</loc>
+    <lastmod>2021-03-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://fuzziebrain.com/tags/quality/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
@@ -2013,14 +2020,7 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/tags/limits/</loc>
-    <lastmod>2021-03-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://fuzziebrain.com/tags/https/</loc>
+    <loc>https://fuzziebrain.com/tags/management/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2043,14 +2043,14 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/categories/technology/conferences/</loc>
+    <loc>https://fuzziebrain.com/categories/technology/community/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/categories/technology/community/</loc>
+    <loc>https://fuzziebrain.com/categories/technology/conferences/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2064,14 +2064,14 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/categories/reviews/</loc>
+    <loc>https://fuzziebrain.com/categories/technology/infrastructure/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/categories/technology/infrastructure/</loc>
+    <loc>https://fuzziebrain.com/categories/reviews/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -2106,14 +2106,14 @@
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/categories/reviews/books/</loc>
+    <loc>https://fuzziebrain.com/categories/technology/infrastructure/oracle-cloud/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://fuzziebrain.com/categories/technology/infrastructure/oracle-cloud/</loc>
+    <loc>https://fuzziebrain.com/categories/reviews/books/</loc>
     <lastmod>2021-03-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

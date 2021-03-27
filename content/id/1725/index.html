@@ -5,12 +5,12 @@
   
   <title>Certs for APEX Social Sign-In | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Verified!   Updated November 18, 2018Added a help utility to populate an Oracle Wallet with root certificates  Oracle Database 18c Express Edition comes with a usable Oracle Wallet. In a previous arti">
+  <meta name="description" content="Updated November 18, 2018Added a help utility to populate an Oracle Wallet with root certificates  Oracle Database 18c Express Edition comes with a usable Oracle Wallet. In a previous article, I ha">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Certs for APEX Social Sign-In">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1725/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Verified!   Updated November 18, 2018Added a help utility to populate an Oracle Wallet with root certificates  Oracle Database 18c Express Edition comes with a usable Oracle Wallet. In a previous arti">
+<meta property="og:description" content="Updated November 18, 2018Added a help utility to populate an Oracle Wallet with root certificates  Oracle Database 18c Express Edition comes with a usable Oracle Wallet. In a previous article, I ha">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1725/seal-1280x720.jpg">
 <meta property="article:published_time" content="2018-11-17T22:25:02.000Z">
@@ -20,8 +20,8 @@
 <meta property="article:tag" content="oauth2">
 <meta property="article:tag" content="authentication">
 <meta property="article:tag" content="google">
-<meta property="article:tag" content="sso">
 <meta property="article:tag" content="microsoft">
+<meta property="article:tag" content="sso">
 <meta property="article:tag" content="single sign-on">
 <meta property="article:tag" content="facebook">
 <meta name="twitter:card" content="summary">
@@ -140,7 +140,7 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1725/seal-1280x720.jpg" title="Verified!"><span class="caption">Verified!</span>
+        <img src="/content/id/1725/seal-1280x720.jpg" class="" title="Verified!">
 
 <blockquote>
 <p><strong>Updated November 18, 2018</strong><br>Added a help utility to populate an Oracle Wallet with root certificates</p>
@@ -151,8 +151,8 @@ ga('send', 'pageview');
 <li>Create and add these certificates to the Oracle Wallet.</li>
 <li>Configure the APEX instance to use the wallet.</li>
 </ol>
-<p>Someone had asked in the comments, what certificates were necessary for Social Sign-in in <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express</a> (APEX) to work. It’s something that I think most of us would like to know too, so I did a little more digging and here’s what I found for three of the more popular social platforms: Google, Facebook and Microsoft.</p>
-<a id="more"></a>
+<p>Someone had asked in the comments, what certificates were necessary for Social Sign-in in <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX) to work. It’s something that I think most of us would like to know too, so I did a little more digging and here’s what I found for three of the more popular social platforms: Google, Facebook and Microsoft.</p>
+<span id="more"></span>
 
 <p>Fortunately, the discovery I did for another previous <a href="/content/id/1711/">work</a> on circumventing wallet issues helped in determining which URLs were called by the authentication workflow. To add a Generic OAuth2 Provider, three of these are required: Authorization, Token and User Info endpoints. </p>
 <p>When the authentication process begins, the user is first redirected to the Authorization endpoint and that interaction is performed through the browser. Upon successful authentication, the Identity Provider (IdP) then calls the APEX authentication callback URL with the necessary parameters. APEX calls the Token and User Info to obtain an access token and user information respectively. These are made through the APEX_WEB_SERVICE APIs and hence, the certificates for these two endpoints will be required. Here they are:</p>
@@ -167,44 +167,44 @@ ga('send', 'pageview');
 <tbody><tr>
 <td>Google</td>
 <td>Token</td>
-<td><a href="https://www.googleapis.com/oauth2/v4/token" target="_blank" rel="noopener">https://www.googleapis.com/oauth2/v4/token</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.googleapis.com/oauth2/v4/token">https://www.googleapis.com/oauth2/v4/token</a></td>
 </tr>
 <tr>
 <td></td>
 <td>User Info</td>
-<td><a href="https://www.googleapis.com/oauth2/v2/userinfo" target="_blank" rel="noopener">https://www.googleapis.com/oauth2/v2/userinfo</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.googleapis.com/oauth2/v2/userinfo">https://www.googleapis.com/oauth2/v2/userinfo</a></td>
 </tr>
 <tr>
 <td>Facebook<sup>*</sup></td>
 <td>Token</td>
-<td><a href="https://graph.facebook.com/v2.10/oauth/access_token" target="_blank" rel="noopener">https://graph.facebook.com/v2.10/oauth/access_token</a></td>
+<td><a target="_blank" rel="noopener" href="https://graph.facebook.com/v2.10/oauth/access_token">https://graph.facebook.com/v2.10/oauth/access_token</a></td>
 </tr>
 <tr>
 <td></td>
 <td>User Info</td>
-<td><a href="https://graph.facebook.com/v2.10/me" target="_blank" rel="noopener">https://graph.facebook.com/v2.10/me</a></td>
+<td><a target="_blank" rel="noopener" href="https://graph.facebook.com/v2.10/me">https://graph.facebook.com/v2.10/me</a></td>
 </tr>
 <tr>
 <td>Microsoft</td>
 <td>Token</td>
-<td><a href="https://login.microsoftonline.com/common/oauth2/v2.0/token" target="_blank" rel="noopener">https://login.microsoftonline.com/common/oauth2/v2.0/token</a></td>
+<td><a target="_blank" rel="noopener" href="https://login.microsoftonline.com/common/oauth2/v2.0/token">https://login.microsoftonline.com/common/oauth2/v2.0/token</a></td>
 </tr>
 <tr>
 <td></td>
 <td>User Info</td>
-<td><a href="https://graph.microsoft.com/v1.0/me" target="_blank" rel="noopener">https://graph.microsoft.com/v1.0/me</a></td>
+<td><a target="_blank" rel="noopener" href="https://graph.microsoft.com/v1.0/me">https://graph.microsoft.com/v1.0/me</a></td>
 </tr>
 </tbody></table>
 <blockquote>
-<p><sup>*</sup> Based on the findings of <a href="https://twitter.com/dgielis" target="_blank" rel="noopener">Dimitri Gielis</a> in this comprehensive <a href="http://dgielis.blogspot.com/2018/06/facebook-google-and-custom.html" target="_blank" rel="noopener">blog post</a></p>
+<p><sup>*</sup> Based on the findings of <a target="_blank" rel="noopener" href="https://twitter.com/dgielis">Dimitri Gielis</a> in this comprehensive <a target="_blank" rel="noopener" href="http://dgielis.blogspot.com/2018/06/facebook-google-and-custom.html">blog post</a></p>
 </blockquote>
 <p>Using the OpenSSL client, we can obtain the necessary certificates like we did <a href="/content/id/1720/">before</a>. However, I’d like to highlight an important issue that I had missed in the previous post, and that is how to obtain the <strong>root certificates</strong>.</p>
-<p>During the <a href="https://knowledge.digicert.com/solution/SO16297.html" target="_blank" rel="noopener">certificate validation process</a>, the full chain is needed to verify and trust the server certificate presented by the web service. Servers however, are not required to include the root certificate. Clients are expected to have those in the trust store and in fact, should ignore any root certificates that a server might send over the channel. Hence, when we attempted to retrieve the certificates for import into the Oracle Wallet, only the server and intermediate certificates were returned.</p>
+<p>During the <a target="_blank" rel="noopener" href="https://knowledge.digicert.com/solution/SO16297.html">certificate validation process</a>, the full chain is needed to verify and trust the server certificate presented by the web service. Servers however, are not required to include the root certificate. Clients are expected to have those in the trust store and in fact, should ignore any root certificates that a server might send over the channel. Hence, when we attempted to retrieve the certificates for import into the Oracle Wallet, only the server and intermediate certificates were returned.</p>
 <p>By importing only the intermediate certificates though, it looks like there’s an implicit trust that the certificates were correctly signed and will validate even if you do not have the root certificates in the wallet. Always download these intermediate certificates with eyes wide open. The OpenSSL client does attempt to verify the certificates, so keep a look out for a message like this:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ openssl s_client -connect sha1-intermediate.badssl.com:443 -showcerts</span><br><span class="line">...</span><br><span class="line">---</span><br><span class="line">SSL handshake has <span class="built_in">read</span> 1938 bytes and written 302 bytes</span><br><span class="line">Verification error: unable to verify the first certificate</span><br><span class="line">---</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>Or towards the end:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Verify return code: 21 (unable to verify the first certificate)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Verify return code: 21 (unable to verify the first certificate)</span><br></pre></td></tr></table></figure>
 
 <p>Assuming that these web services always transmit all the intermediate certificates, then we could reduce the amount of work by adding the root certificates to complete the trust chain. Based on the OpenSSL outputs, today, these are:</p>
 <table>
@@ -217,22 +217,22 @@ ga('send', 'pageview');
 </thead>
 <tbody><tr>
 <td>Google</td>
-<td>GlobalSign (expected to change, see <a href="https://security.googleblog.com/2017/01/the-foundation-of-more-secure-web.html" target="_blank" rel="noopener">announcement</a>)</td>
-<td><a href="https://pki.goog" target="_blank" rel="noopener">Google</a></td>
+<td>GlobalSign (expected to change, see <a target="_blank" rel="noopener" href="https://security.googleblog.com/2017/01/the-foundation-of-more-secure-web.html">announcement</a>)</td>
+<td><a target="_blank" rel="noopener" href="https://pki.goog/">Google</a></td>
 </tr>
 <tr>
 <td>Facebook</td>
 <td>DigiCert High Assurance EV Root CA</td>
-<td><a href="https://www.digicert.com/digicert-root-certificates.htm" target="_blank" rel="noopener">Digicert</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.digicert.com/digicert-root-certificates.htm">Digicert</a></td>
 </tr>
 <tr>
 <td>Microsoft</td>
 <td>Baltimore CyberTrust Root</td>
-<td><a href="https://www.digicert.com/digicert-root-certificates.htm" target="_blank" rel="noopener">Digicert</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.digicert.com/digicert-root-certificates.htm">Digicert</a></td>
 </tr>
 </tbody></table>
-<p>If you trusted Google enough, they maintain a <a href="https://pki.goog/roots.pem" target="_blank" rel="noopener">collection</a> of root certificates that contains all the certificates above. Adding all the root certificates in this file will probably allow access to nearly every legitimate and secure web service on the planet. Alternatively, if OpenSSL is installed, and it probably is, then these certificates can also be found in <code>/etc/ssl/certs</code> or <code>/etc/pki/tls</code>.</p>
-<h2 id="Helper-Script"><a href="#Helper-Script" class="headerlink" title="Helper Script"></a>Helper Script</h2><p>A simple Bash <a href="https://gist.github.com/fuzziebrain/202f902d8fc6d8de586da5097a501047" target="_blank" rel="noopener">script</a> to help populate an Oracle Wallet with bundled root certificates obtained from a reliable source.</p>
+<p>If you trusted Google enough, they maintain a <a target="_blank" rel="noopener" href="https://pki.goog/roots.pem">collection</a> of root certificates that contains all the certificates above. Adding all the root certificates in this file will probably allow access to nearly every legitimate and secure web service on the planet. Alternatively, if OpenSSL is installed, and it probably is, then these certificates can also be found in <code>/etc/ssl/certs</code> or <code>/etc/pki/tls</code>.</p>
+<h2 id="Helper-Script"><a href="#Helper-Script" class="headerlink" title="Helper Script"></a>Helper Script</h2><p>A simple Bash <a target="_blank" rel="noopener" href="https://gist.github.com/fuzziebrain/202f902d8fc6d8de586da5097a501047">script</a> to help populate an Oracle Wallet with bundled root certificates obtained from a reliable source.</p>
 <script src="//gist.github.com/202f902d8fc6d8de586da5097a501047.js"></script>
       
     </div>
@@ -243,7 +243,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1725/" data-id="ckmr4pjkv000mx0fdeud8m021" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1725/" data-id="ckmr6zpfb000uw4fdg12l4s41" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -291,7 +291,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

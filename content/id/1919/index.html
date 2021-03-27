@@ -5,12 +5,12 @@
   
   <title>Autonomous DB - The Developers&#39; Playground | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Kids&amp;apos; Playground  As mentioned in a previous post, the Free Tier for Oracle Cloud (OCI) is every Oracle Developer’s dream. For a while now, I have hosted a personal Oracle Application Express (AP">
+  <meta name="description" content="As mentioned in a previous post, the Free Tier for Oracle Cloud (OCI) is every Oracle Developer’s dream. For a while now, I have hosted a personal Oracle Application Express (APEX) instance on Linod">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Autonomous DB - The Developers&#39; Playground">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1919/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Kids&amp;apos; Playground  As mentioned in a previous post, the Free Tier for Oracle Cloud (OCI) is every Oracle Developer’s dream. For a while now, I have hosted a personal Oracle Application Express (AP">
+<meta property="og:description" content="As mentioned in a previous post, the Free Tier for Oracle Cloud (OCI) is every Oracle Developer’s dream. For a while now, I have hosted a personal Oracle Application Express (APEX) instance on Linod">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1919/playground-470402_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1919/set-apex-account-password.png">
@@ -139,12 +139,12 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1919/playground-470402_1280x720.jpg" title="Kids&apos; Playground"><span class="caption">Kids&apos; Playground</span>
+        <img src="/content/id/1919/playground-470402_1280x720.jpg" class="" title="Kids&amp;apos; Playground">
 
-<p>As mentioned in a previous <a href="/content/id/1919/">post</a>, the <a href="https://oracle.com/cloud/free/" target="_blank" rel="noopener">Free Tier</a> for <a href="https://cloud.oracle.com" target="_blank" rel="noopener">Oracle Cloud</a> (OCI) is every Oracle Developer’s dream. For a while now, I have hosted a personal <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express</a> (APEX) instance on Linode. It currently runs an older Oracle Database 11gR2 <a href="https://oracle.com/xe/" target="_blank" rel="noopener">Express Edition</a> (XE), and I would like to upgrade it to version 18c. The key issue I had though, was that the existing virtual machine hosted on <a href="https://www.linode.com/?r=41672b20d515344de465e9ed44c1a75356445597" target="_blank" rel="noopener">Linode</a>, only has one gigabyte of RAM and that does not meet the 18c XE minimum requirement of two. That left me procrastinating for a long time, but perhaps a blessing in disguise. With this new offering, the next steps are pretty obvious.</p>
-<a id="more"></a>
+<p>As mentioned in a previous <a href="/content/id/1919/">post</a>, the <a target="_blank" rel="noopener" href="https://oracle.com/cloud/free/">Free Tier</a> for <a target="_blank" rel="noopener" href="https://cloud.oracle.com/">Oracle Cloud</a> (OCI) is every Oracle Developer’s dream. For a while now, I have hosted a personal <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX) instance on Linode. It currently runs an older Oracle Database 11gR2 <a target="_blank" rel="noopener" href="https://oracle.com/xe/">Express Edition</a> (XE), and I would like to upgrade it to version 18c. The key issue I had though, was that the existing virtual machine hosted on <a target="_blank" rel="noopener" href="https://www.linode.com/?r=41672b20d515344de465e9ed44c1a75356445597">Linode</a>, only has one gigabyte of RAM and that does not meet the 18c XE minimum requirement of two. That left me procrastinating for a long time, but perhaps a blessing in disguise. With this new offering, the next steps are pretty obvious.</p>
+<span id="more"></span>
 
-<p>After <a href="/content/id/1918/">setting up</a> my new OCI development environment, the next task I looked into was exporting an existing workspace, and then importing it into the new APEX instance, hosted on an <a href="https://www.oracle.com/database/what-is-autonomous-database.html" target="_blank" rel="noopener">Autonomous Database</a> (ADB). During the import process, the you will be asked to either assign an existing schema or create a new one. If you are using an exsiting schema, be sure to include the necessary database privileges for an APEX parsing schema. This all went pretty much as expected, very smoothly!</p>
+<p>After <a href="/content/id/1918/">setting up</a> my new OCI development environment, the next task I looked into was exporting an existing workspace, and then importing it into the new APEX instance, hosted on an <a target="_blank" rel="noopener" href="https://www.oracle.com/database/what-is-autonomous-database.html">Autonomous Database</a> (ADB). During the import process, the you will be asked to either assign an existing schema or create a new one. If you are using an exsiting schema, be sure to include the necessary database privileges for an APEX parsing schema. This all went pretty much as expected, very smoothly!</p>
 <p>However, my workspace did not have an Application Express user, commonly called “admin” (ADMIN), that had workspace access and administrative rights. Hence, I was unable to login to the migrated workspace.</p>
 <p>APEX in ADB is configured to use database user accounts for workspace access. Similar to configuring the workspace access with LDAP, HTTP Header Variable or Social Sign In authentication schemes, a matching Application Express user is required. If your workspace user matches up with a database user, then that user should have no troubles logging in. This user assumes whatever rights the equivalent Application Express user has been granted.</p>
 <p>Suppose I have the following:</p>
@@ -153,12 +153,12 @@ ga('send', 'pageview');
 <li><strong>Schema</strong>: myschema</li>
 <li><strong>Administrator’s username</strong>: jdoe</li>
 </ul>
-<p>To allow JDOE access to the workspace, create a database user with the same name. Do this using either SQL Developer, SQL*PLus or SQLcl. Instructions to connect to the ADB can be found <a href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-tools.html" target="_blank" rel="noopener">here</a>. Login as ADMIN, the administrator account created when the ADB was provisioned.</p>
+<p>To allow JDOE access to the workspace, create a database user with the same name. Do this using either SQL Developer, SQL*PLus or SQLcl. Instructions to connect to the ADB can be found <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/cloud/paas/autonomous-data-warehouse-cloud/user/connect-tools.html">here</a>. Login as ADMIN, the administrator account created when the ADB was provisioned.</p>
 <p>Once connected, execute the command:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> jdoe <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"mySuper!P@55"</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> jdoe identified <span class="keyword">by</span> &quot;mySuper!P@55&quot;;</span><br></pre></td></tr></table></figure>
 
 <p>For the purpose of authenticating to APEX, no specific privileges or quota’s are necessary. Login to the workspace using the workspace and database user’s credentials.</p>
-<img src="/content/id/1919/set-apex-account-password.png" title="Set APEX account password"><span class="caption">Set APEX account password</span>
+<img src="/content/id/1919/set-apex-account-password.png" class="" title="Set APEX account password">
 
 <p>The Application Express account with the same username will need to have its password reset. If this is not done, you will continually be prompted to do so. Strangely, clicking on that big blue button and then using the password change dialog does not seem to perform this successfully for me. What worked was using the user and group management utilities and then forced setting the user’s password.</p>
 <p>Alternatively, before exporting the workspace, create an APEX workspace administrator with the same username as its schema, e.g. MYSCHEMA. Note that the ADB’s APEX Instance Administration functionality is severely limited and does not appear to allow management of workspace users and groups, so the user must be added from the old instance.</p>
@@ -176,30 +176,30 @@ ga('send', 'pageview');
 <p>An indispensible item in an APEX developer toolchain is access to the database schema. The ability to browse, modify and compile schema objects are an essential part of what we do. Depending on company policies and best practices, there are varying access levels and approaches. For example, workspaces available on apex.oracle.com, only allows developers to access the database schema through SQL Workshop. I’m sure you’d agree, this impacts developer productivity. </p>
 <p>For corporate APEX instances however, it’s not uncommon for database administrators to dish out the schema credentials to developers, either in the form of usernames and passwords, or an encrypted SQLDEV connnection export file. But what happens when the password expires, or one of the developers decide to change the it?</p>
 <p>One approach I’m inclined to use these days is to create for developers, a personal account, and then grant them ability to proxy as the APEX schema user.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- As a privileged user, execute:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> myschema <span class="keyword">grant</span> <span class="keyword">connect</span> <span class="keyword">through</span> jdoe;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- As a privileged user, execute:</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">user</span> myschema <span class="keyword">grant</span> <span class="keyword">connect</span> through jdoe;</span><br></pre></td></tr></table></figure>
 
 <p>In the context of APEX+ADB, here are some examples of how we could benefit from this approach:</p>
 <ul>
 <li>JDOE uses <strong>one</strong> account to access APEX App Builder and workspace schema user using the tool of choice. For example, JDOE could connect to the database as MYSCHEMA by simply authenticating using the username <code>jdoe[myschema]</code> and logon with his/her password.</li>
 <li>DBAs can, through profiles, apply standards like password expiration and complexity. When a developer leaves the organisation, there is no need to reset the schema password and communicate that to everyone else involved.</li>
 </ul>
-<h3 id="SQL-Developer-Web"><a href="#SQL-Developer-Web" class="headerlink" title="SQL Developer Web"></a>SQL Developer Web</h3><p>To enable access to a schema, it must first be REST-enabled. For schemas linked to APEX workspaces, one option is to use the RESTful Services utility. For other schemas though, the <a href="https://docs.oracle.com/en/database/oracle/sql-developer-web/19.1/sdweb/about-sdw.html#GUID-A79032C3-86DC-4547-8D39-85674334B4FE" target="_blank" rel="noopener">official documentation</a> dictates that we execute the procedure <code>ords_admin.enable_schema</code>, for example:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">  ords_admin.enable_schema(</span><br><span class="line">    p_enabled =&gt; <span class="literal">true</span></span><br><span class="line">    , p_schema =&gt; <span class="string">'JDOE'</span></span><br><span class="line">    , p_url_mapping_type =&gt; <span class="string">'BASE_PATH'</span></span><br><span class="line">    , p_url_mapping_pattern =&gt; <span class="string">'jdoe'</span></span><br><span class="line">    , p_auto_rest_auth =&gt; <span class="literal">null</span></span><br><span class="line">  );</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">commit</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="SQL-Developer-Web"><a href="#SQL-Developer-Web" class="headerlink" title="SQL Developer Web"></a>SQL Developer Web</h3><p>To enable access to a schema, it must first be REST-enabled. For schemas linked to APEX workspaces, one option is to use the RESTful Services utility. For other schemas though, the <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/database/oracle/sql-developer-web/19.1/sdweb/about-sdw.html#GUID-A79032C3-86DC-4547-8D39-85674334B4FE">official documentation</a> dictates that we execute the procedure <code>ords_admin.enable_schema</code>, for example:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">  ords_admin.enable_schema(</span><br><span class="line">    p_enabled <span class="operator">=</span><span class="operator">&gt;</span> <span class="literal">true</span></span><br><span class="line">    , p_schema <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;JDOE&#x27;</span></span><br><span class="line">    , p_url_mapping_type <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;BASE_PATH&#x27;</span></span><br><span class="line">    , p_url_mapping_pattern <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;jdoe&#x27;</span></span><br><span class="line">    , p_auto_rest_auth <span class="operator">=</span><span class="operator">&gt;</span> <span class="keyword">null</span></span><br><span class="line">  );</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">commit</span>;</span><br><span class="line"><span class="keyword">end</span>;</span><br></pre></td></tr></table></figure>
 
 <p>To access SQLDEVWEB, JDOE would have to use the URL in the following pattern:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://&lt;TENANT_CODE&gt;-&lt;ADB_NAME&gt;.adb.&lt;REGION_ID&gt;.oraclecloudapps.com/ords/&lt;SCHEMA_ALIAS&gt;/_sdw/?nav=worksheet</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:&#x2F;&#x2F;&lt;TENANT_CODE&gt;-&lt;ADB_NAME&gt;.adb.&lt;REGION_ID&gt;.oraclecloudapps.com&#x2F;ords&#x2F;&lt;SCHEMA_ALIAS&gt;&#x2F;_sdw&#x2F;?nav&#x3D;worksheet</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p><em>where</em></p>
 <ul>
 <li><code>&lt;TENANT_CODE&gt;</code> - a random string assigned to all ADB resources in the tenant. This can be easily obtained using the links in the Service Console.</li>
 <li><code>&lt;ADB_NAME&gt;</code> - the ADB’s database name.</li>
-<li><code>&lt;REGION_ID&gt;</code> - the <a href="https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm" target="_blank" rel="noopener">region</a> identifier where the ADB instance was created in.</li>
+<li><code>&lt;REGION_ID&gt;</code> - the <a target="_blank" rel="noopener" href="https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm">region</a> identifier where the ADB instance was created in.</li>
 <li><code>&lt;SCHEMA&gt;</code> - the value specified in <code>p_url_mapping_pattern</code> above.</li>
 </ul>
 </blockquote>
 <p>Unfortunately, it appears that SQLDEVWEB currently does not support proxy user access. Hopefully this would be possible in the future.</p>
-<h3 id="Oracle-ML-SQL-Notebooks"><a href="#Oracle-ML-SQL-Notebooks" class="headerlink" title="Oracle ML SQL Notebooks"></a>Oracle ML SQL Notebooks</h3><p>I haven’t done a lot with this tool, but if you are familiar with <a href="https://jupyter.org/" target="_blank" rel="noopener">Jupyter</a>, it sounds very similar, just seemingly SQL-centric, designed for data analytics and a means to keep good records of data processing workflows.</p>
+<h3 id="Oracle-ML-SQL-Notebooks"><a href="#Oracle-ML-SQL-Notebooks" class="headerlink" title="Oracle ML SQL Notebooks"></a>Oracle ML SQL Notebooks</h3><p>I haven’t done a lot with this tool, but if you are familiar with <a target="_blank" rel="noopener" href="https://jupyter.org/">Jupyter</a>, it sounds very similar, just seemingly SQL-centric, designed for data analytics and a means to keep good records of data processing workflows.</p>
 <p>Enabling database accounts access to OML is pretty simple and straightforward. Either enable users through OML as ADMIN, or grant users the role <code>OML_DEVELOPER</code>. OML users are provisioned personal workspaces that they could then grant other developers access to. One scenario in how this might be useful, is for MYSCHEMA to grant JDOE access to its workspace for running analytics and visualization code that had been collected through an APEX application.</p>
 <p>All these is cool isn’t? And it’s just the beginning!</p>
 
@@ -212,7 +212,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1919/" data-id="ckmr4pjks000lx0fda8jccs9v" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1919/" data-id="ckmr6zpf8000ow4fd2g2ge61y" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -260,7 +260,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

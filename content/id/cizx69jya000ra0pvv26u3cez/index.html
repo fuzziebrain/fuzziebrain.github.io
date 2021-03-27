@@ -5,12 +5,12 @@
   
   <title>APEX and the Affordable Cloud! | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Rivadeneira by Cesar Lopez  Love Oracle Application Express (APEX), but having trouble finding a decent, affordable home for your killer application? Here’s one option you can consider that should not">
+  <meta name="description" content="Love Oracle Application Express (APEX), but having trouble finding a decent, affordable home for your killer application? Here’s one option you can consider that should not burn your wallet.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="APEX and the Affordable Cloud!">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/cizx69jya000ra0pvv26u3cez/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Rivadeneira by Cesar Lopez  Love Oracle Application Express (APEX), but having trouble finding a decent, affordable home for your killer application? Here’s one option you can consider that should not">
+<meta property="og:description" content="Love Oracle Application Express (APEX), but having trouble finding a decent, affordable home for your killer application? Here’s one option you can consider that should not burn your wallet.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/cizx69jya000ra0pvv26u3cez/cesar-lopez-rivadeneira-6088-1280.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/cizx69jya000ra0pvv26u3cez/linode-create-apikey.png">
@@ -141,41 +141,41 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/cizx69jya000ra0pvv26u3cez/cesar-lopez-rivadeneira-6088-1280.jpg" title="Rivadeneira by Cesar Lopez"><span class="caption">Rivadeneira by Cesar Lopez</span>
+        <img src="/content/id/cizx69jya000ra0pvv26u3cez/cesar-lopez-rivadeneira-6088-1280.jpg" class="" title="Rivadeneira by Cesar Lopez">
 
-<p>Love <a href="https://apex.oracle.com/" target="_blank" rel="noopener">Oracle Application Express</a> (APEX), but having trouble finding a decent, affordable home for your killer application? Here’s one option you can consider that should not burn your wallet.</p>
-<a id="more"></a>
+<p>Love <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX), but having trouble finding a decent, affordable home for your killer application? Here’s one option you can consider that should not burn your wallet.</p>
+<span id="more"></span>
 
 <h2 id="Before-We-Begin"><a href="#Before-We-Begin" class="headerlink" title="Before We Begin"></a>Before We Begin</h2><p>The following guide assumes the following:</p>
 <ol>
-<li><a href="https://www.vagrantup.com/" target="_blank" rel="noopener">Vagrant</a> installed. The version I used for this article was 1.9.2.</li>
-<li><a href="https://github.com/OraOpenSource/OXAR" target="_blank" rel="noopener">OXAR</a> cloned.</li>
-<li>Installation files required by OXAR have been downloaded and made available as a web resource. One option is to upload the files to <a href="https://www.dropbox.com/" target="_blank" rel="noopener">Dropbox</a> and then create a <a href="https://www.dropbox.com/en/help/167" target="_blank" rel="noopener">shared link</a>.</li>
-<li>The <code>config.properties</code> files is customized to requirements. The file URLs should point to the relevant installation files as per <a href="https://github.com/OraOpenSource/OXAR/blob/master/README.md" target="_blank" rel="noopener">OXAR instructions</a>.</li>
+<li><a target="_blank" rel="noopener" href="https://www.vagrantup.com/">Vagrant</a> installed. The version I used for this article was 1.9.2.</li>
+<li><a target="_blank" rel="noopener" href="https://github.com/OraOpenSource/OXAR">OXAR</a> cloned.</li>
+<li>Installation files required by OXAR have been downloaded and made available as a web resource. One option is to upload the files to <a target="_blank" rel="noopener" href="https://www.dropbox.com/">Dropbox</a> and then create a <a target="_blank" rel="noopener" href="https://www.dropbox.com/en/help/167">shared link</a>.</li>
+<li>The <code>config.properties</code> files is customized to requirements. The file URLs should point to the relevant installation files as per <a target="_blank" rel="noopener" href="https://github.com/OraOpenSource/OXAR/blob/master/README.md">OXAR instructions</a>.</li>
 <li>SSH keys generated. If not execute the command: <code>ssh-keygen</code>.</li>
 <li>All commands are executed from the project’s root directory.</li>
 </ol>
 <h3 id="OS-Support"><a href="#OS-Support" class="headerlink" title="OS Support"></a>OS Support</h3><p>At this time, I have only been able to demonstrate the remote build using Linux, though I believe Mac users should not have any problems doing the same. I will update or write a new post when I am able to accomplish the same tasks in Windows.</p>
-<h2 id="Linode"><a href="#Linode" class="headerlink" title="Linode"></a>Linode</h2><p>Sign up for an account with <a href="https://www.linode.com/?r=41672b20d515344de465e9ed44c1a75356445597" target="_blank" rel="noopener">Linode</a>. The smallest-sized Linode that you can create has sufficient resources to get a basic OXAR node running. Available to you at an affordable monthly fee of <strong>USD 5</strong>, it’s probably as good as it gets!</p>
+<h2 id="Linode"><a href="#Linode" class="headerlink" title="Linode"></a>Linode</h2><p>Sign up for an account with <a target="_blank" rel="noopener" href="https://www.linode.com/?r=41672b20d515344de465e9ed44c1a75356445597">Linode</a>. The smallest-sized Linode that you can create has sufficient resources to get a basic OXAR node running. Available to you at an affordable monthly fee of <strong>USD 5</strong>, it’s probably as good as it gets!</p>
 <h2 id="Install-the-Linode-Provider-Plugin"><a href="#Install-the-Linode-Provider-Plugin" class="headerlink" title="Install the Linode Provider Plugin"></a>Install the Linode Provider Plugin</h2><p>Execute:<br><code>vagrant plugin install vagrant-linode</code></p>
 <h2 id="Prepare-the-Vagrantfile"><a href="#Prepare-the-Vagrantfile" class="headerlink" title="Prepare the Vagrantfile"></a>Prepare the Vagrantfile</h2><h3 id="Synced-Folders"><a href="#Synced-Folders" class="headerlink" title="Synced Folders"></a>Synced Folders</h3><p>Force Vagrant to sync files using <code>rsync</code>, otherwise Vagrant might attempt to use NFS and the process will most likely fail as it did for me initially.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">config.vm.synced_folder &quot;.&quot;, &quot;/vagrant&quot;, type: &quot;rsync&quot;</span><br><span class="line">  , rsync__exclude: [&quot;.git/&quot;, &quot;.vagrant/&quot;]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">config.vm.synced_folder &quot;.&quot;, &quot;&#x2F;vagrant&quot;, type: &quot;rsync&quot;</span><br><span class="line">  , rsync__exclude: [&quot;.git&#x2F;&quot;, &quot;.vagrant&#x2F;&quot;]</span><br></pre></td></tr></table></figure>
 
 <h3 id="Configure-the-Linode-Provider"><a href="#Configure-the-Linode-Provider" class="headerlink" title="Configure the Linode Provider"></a>Configure the Linode Provider</h3><p>Add the Linode provider block:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">config.vm.provider :linode do |provider, override|</span><br><span class="line">  override.ssh.private_key_path = &apos;~/.ssh/id_rsa&apos;</span><br><span class="line"></span><br><span class="line">  provider.api_key = &apos;&lt;LINODE API KEY&gt;&apos;</span><br><span class="line">  provider.label = &apos;&lt;LABEL FOR LINODE&gt;&apos;</span><br><span class="line">  provider.distribution = &apos;CentOS 7&apos;</span><br><span class="line">  provider.datacenter = &apos;&lt;DATACENTER&gt;&apos;</span><br><span class="line">  provider.planid = &lt;PLAN ID&gt;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">config.vm.provider :linode do |provider, override|</span><br><span class="line">  override.ssh.private_key_path &#x3D; &#39;~&#x2F;.ssh&#x2F;id_rsa&#39;</span><br><span class="line"></span><br><span class="line">  provider.api_key &#x3D; &#39;&lt;LINODE API KEY&gt;&#39;</span><br><span class="line">  provider.label &#x3D; &#39;&lt;LABEL FOR LINODE&gt;&#39;</span><br><span class="line">  provider.distribution &#x3D; &#39;CentOS 7&#39;</span><br><span class="line">  provider.datacenter &#x3D; &#39;&lt;DATACENTER&gt;&#39;</span><br><span class="line">  provider.planid &#x3D; &lt;PLAN ID&gt;</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 
-<p>A list of valid Plan IDs and data centers can be obtained from the Linode Vagrant Provider plugin <a href="https://github.com/displague/vagrant-linode/blob/master/README.md" target="_blank" rel="noopener">documentation</a>. Note that Plan ID is probably enough for a start.</p>
-<h3 id="Set-the-Timezone"><a href="#Set-the-Timezone" class="headerlink" title="Set the Timezone"></a>Set the Timezone</h3><p>During my first build, I encountered issues with ORDS not installing correctly because Java was not able to recognize the system’s timezone correctly, similar to what had previously been <a href="https://github.com/OraOpenSource/OXAR/issues/194" target="_blank" rel="noopener">reported</a>.</p>
+<p>A list of valid Plan IDs and data centers can be obtained from the Linode Vagrant Provider plugin <a target="_blank" rel="noopener" href="https://github.com/displague/vagrant-linode/blob/master/README.md">documentation</a>. Note that Plan ID is probably enough for a start.</p>
+<h3 id="Set-the-Timezone"><a href="#Set-the-Timezone" class="headerlink" title="Set the Timezone"></a>Set the Timezone</h3><p>During my first build, I encountered issues with ORDS not installing correctly because Java was not able to recognize the system’s timezone correctly, similar to what had previously been <a target="_blank" rel="noopener" href="https://github.com/OraOpenSource/OXAR/issues/194">reported</a>.</p>
 <p>The Centos 7 image provisioned by Linode has the timezone set to UTC and that seems to be problem. The workaround for me was to set the timezone prior to calling OXAR’s <code>build.sh</code> script. This is done towards the end of the <code>Vagrantfile</code>, within the SHELL sub-section. Probably something that we should consider adding to the main OXAR build process.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    rsync -rtv --exclude=&apos;files&apos; --exclude=&apos;.*&apos; /vagrant/ /tmp/vagrant-deploy</span><br><span class="line"></span><br><span class="line">    cd /tmp/vagrant-deploy</span><br><span class="line"></span><br><span class="line">    # Set the timezone</span><br><span class="line">    timedatectl set-timezone America/Vancouver</span><br><span class="line"></span><br><span class="line">    ./build.sh</span><br><span class="line">  SHELL</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">    ...</span><br><span class="line"></span><br><span class="line">    rsync -rtv --exclude&#x3D;&#39;files&#39; --exclude&#x3D;&#39;.*&#39; &#x2F;vagrant&#x2F; &#x2F;tmp&#x2F;vagrant-deploy</span><br><span class="line"></span><br><span class="line">    cd &#x2F;tmp&#x2F;vagrant-deploy</span><br><span class="line"></span><br><span class="line">    # Set the timezone</span><br><span class="line">    timedatectl set-timezone America&#x2F;Vancouver</span><br><span class="line"></span><br><span class="line">    .&#x2F;build.sh</span><br><span class="line">  SHELL</span><br><span class="line">end</span><br></pre></td></tr></table></figure>
 
 <p>To get a list of valid timezones, execute the command <code>timedatectl list-timezones</code> on a similar Centos 7 instance.</p>
 <h2 id="Linode-API-Key"><a href="#Linode-API-Key" class="headerlink" title="Linode API Key"></a>Linode API Key</h2><p>Login to your Linode account and then click on “my profile”, found on the top-right corner of the page. Provide your password again when prompted. This will allow you access to the API Keys sub-page.</p>
-<img src="/content/id/cizx69jya000ra0pvv26u3cez/linode-create-apikey.png" title="Create an API Key"><span class="caption">Create an API Key</span>
+<img src="/content/id/cizx69jya000ra0pvv26u3cez/linode-create-apikey.png" class="" title="Create an API Key">
 <br>
 Create a new key. I strongly recommend using a suitable label and setting an expiry date for the generated key.
 
-<img src="/content/id/cizx69jya000ra0pvv26u3cez/linode-note-apikey.png" title="Note the API Key"><span class="caption">Note the API Key</span>
+<img src="/content/id/cizx69jya000ra0pvv26u3cez/linode-note-apikey.png" class="" title="Note the API Key">
 <br>
 Copy and past the API key into the `Vagrantfile`. As warned, the key will only be displayed once!
 
@@ -192,7 +192,7 @@ Copy and past the API key into the `Vagrantfile`. As warned, the key will only b
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/cizx69jya000ra0pvv26u3cez/" data-id="ckmr4pjk90009x0fd8e1m0l0v" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/cizx69jya000ra0pvv26u3cez/" data-id="ckmr6zpez0009w4fdcpzn34xc" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -240,7 +240,7 @@ Copy and past the API key into the `Vagrantfile`. As warned, the key will only b
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

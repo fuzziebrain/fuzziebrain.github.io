@@ -5,12 +5,12 @@
   
   <title>Mail Dropped | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Screen capture of http:&#x2F;&#x2F;www.mail-tester.com&#x2F; Results  Before I begin, I just wanted to be absolutely clear that this post has nothing to do with Apple’s nifty tool for sending out large email attachm">
+  <meta name="description" content="Before I begin, I just wanted to be absolutely clear that this post has nothing to do with Apple’s nifty tool for sending out large email attachments. In my previous post, I shared an approach for c">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mail Dropped">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1704/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Screen capture of http:&#x2F;&#x2F;www.mail-tester.com&#x2F; Results  Before I begin, I just wanted to be absolutely clear that this post has nothing to do with Apple’s nifty tool for sending out large email attachm">
+<meta property="og:description" content="Before I begin, I just wanted to be absolutely clear that this post has nothing to do with Apple’s nifty tool for sending out large email attachments. In my previous post, I shared an approach for c">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1704/before.png">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1704/apex-email-settings.png">
@@ -143,16 +143,16 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1704/before.png" title="Screen capture of http://www.mail-tester.com/ Results"><span class="caption">Screen capture of http://www.mail-tester.com/ Results</span>
+        <img src="/content/id/1704/before.png" class="" title="Screen capture of http:&#x2F;&#x2F;www.mail-tester.com&#x2F; Results">
 
-<p>Before I begin, I just wanted to be absolutely clear that this post has nothing to do with Apple’s nifty <a href="https://support.apple.com/kb/ph2629" target="_blank" rel="noopener">tool</a> for sending out large email attachments.</p>
-<p>In my previous <a href="/content/id/cizx69jya000ra0pvv26u3cez/">post</a>, I shared an approach for creating your very own <a href="https://apex.oracle.com/" target="_blank" rel="noopener">Oracle Application Express</a> (APEX) instance on a small budget. Briefly, the solution involves using <a href="https://www.vagrantup.com/" target="_blank" rel="noopener">Vagrant</a> to create a very affordable virtual machine (VM) on <a href="https://www.linode.com/?r=41672b20d515344de465e9ed44c1a75356445597" target="_blank" rel="noopener">Linode’s</a> pool of servers and run the <a href="https://github.com/OraOpenSource/OXAR" target="_blank" rel="noopener">OXAR</a> build script, to setup the APEX instance very quickly and painlessly.</p>
+<p>Before I begin, I just wanted to be absolutely clear that this post has nothing to do with Apple’s nifty <a target="_blank" rel="noopener" href="https://support.apple.com/kb/ph2629">tool</a> for sending out large email attachments.</p>
+<p>In my previous <a href="/content/id/cizx69jya000ra0pvv26u3cez/">post</a>, I shared an approach for creating your very own <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX) instance on a small budget. Briefly, the solution involves using <a target="_blank" rel="noopener" href="https://www.vagrantup.com/">Vagrant</a> to create a very affordable virtual machine (VM) on <a target="_blank" rel="noopener" href="https://www.linode.com/?r=41672b20d515344de465e9ed44c1a75356445597">Linode’s</a> pool of servers and run the <a target="_blank" rel="noopener" href="https://github.com/OraOpenSource/OXAR">OXAR</a> build script, to setup the APEX instance very quickly and painlessly.</p>
 <p>However, all that power (and savings) comes with great responsibilty. </p>
-<a id="more"></a>
+<span id="more"></span>
 
 <p>Without the aid of managed services, the passionate APEX developer will have to handle the day-to-day administration of the system and database. One of the common tasks required of a developer is to ensure emails can be sent from APEX appplications successfully. This not only involves understanding how to use the APIs to generate and send emails, but also knowledge on maximizing the chance that emails are delivered successfully to the intended audience and do not end up in the spam bin.</p>
 <p>So what’s involved in getting email setup on your OXAR instance?</p>
-<h2 id="Part-One"><a href="#Part-One" class="headerlink" title="Part One"></a>Part One</h2><p>Ensure that a suitable mail daemon is running on your server. If you used the method that I prescribed in my earlier post, then you would be running a <a href="https://www.centos.org/" target="_blank" rel="noopener">CentOS</a> 7 server with <a href="http://www.postfix.org/" target="_blank" rel="noopener">Postfix</a> installed, but not running on boot. Let’s be sure by executing the following command:<br><code>&gt; sudo rpm -q postfix</code></p>
+<h2 id="Part-One"><a href="#Part-One" class="headerlink" title="Part One"></a>Part One</h2><p>Ensure that a suitable mail daemon is running on your server. If you used the method that I prescribed in my earlier post, then you would be running a <a target="_blank" rel="noopener" href="https://www.centos.org/">CentOS</a> 7 server with <a target="_blank" rel="noopener" href="http://www.postfix.org/">Postfix</a> installed, but not running on boot. Let’s be sure by executing the following command:<br><code>&gt; sudo rpm -q postfix</code></p>
 <p>If Postfix is installed, you should see an output with the full package name, e.g. <code>postfix-2.10.1-6.el7.x86_64</code>.</p>
 <p>If absent, install it using yum by executing the command:<br><code>&gt; sudo yum install -y postfix</code></p>
 <p>Next, check that the service is running by executing the command:<br><code>&gt; sudo systemctl is-active postfix</code></p>
@@ -170,26 +170,19 @@ ga('send', 'pageview');
 <h3 id="Email-Relay"><a href="#Email-Relay" class="headerlink" title="Email Relay"></a>Email Relay</h3><p>Some developers have access to SMTP servers and might like to use them to circumvent spam-related issues. It would be prudent to assume that these servers, if exposed to remote requests, will require authentication. And because it is the Internet, using a secured network protocol to authenticate is highly recommended. If you have no problems setting up SSL/TLS support for SMTP connections, then you might not want to use Postfix at all. You can configure the SMTP host, port and credentials in the APEX Instance Administration. this is addressed in Part Two.</p>
 <p>However, if you are unable to set up a secure connection, then consider using Postfix by configuring it as a secure relay. I will use Gmail as an example. Here’s what you need to do:</p>
 <ol>
-<li><p>Install Cyrus <a href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer" target="_blank" rel="noopener">SASL</a> plain authentication package:<br><code>&gt; sudo yum install -y cyrus-sasl-plain</code></p>
-</li>
-<li><p>Execute the command:<br><code>&gt; sudo echo &quot;smtp.gmail.com myaccount@gmail.com:mysecurepassword&quot; &gt; /etc/postfix/sasl_passwd&quot;</code></p>
-</li>
-<li><p>Execute the next command to hash the file to protect it from prying eyes:<br><code>&gt; sudo postmap hash:/etc/postfix/sasl_passwd</code></p>
-</li>
-<li><p>Don’t leave the plain text file lying around:<br><code>&gt; sudo rm -f /etc/postfix/sasl_passwd</code></p>
-</li>
-<li><p>Configure Postfix stored in the configuration file <code>/etc/postfix/main.cf</code>. Place the following lines under the section <em>INTERNET OR INTRANET</em>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">smtp_sasl_auth_enable = yes</span><br><span class="line">smtp_sasl_password_maps = <span class="built_in">hash</span>:/etc/postfix/sasl_passwd</span><br><span class="line">smtp_sasl_security_options = noanonymous</span><br><span class="line">smtp_tls_security_level = secure</span><br><span class="line">smtp_tls_mandatory_protocols = TLSv1</span><br><span class="line">smtp_tls_mandatory_ciphers = high</span><br><span class="line">smtp_tls_secure_cert_match = nexthop</span><br><span class="line">smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt</span><br><span class="line">relayhost = smtp.gmail.com:587</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>Restart Postfix:<br><code>&gt; sudo systemctl restart postfix</code></p>
-</li>
+<li>Install Cyrus <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Simple_Authentication_and_Security_Layer">SASL</a> plain authentication package:<br><code>&gt; sudo yum install -y cyrus-sasl-plain</code></li>
+<li>Execute the command:<br><code>&gt; sudo echo &quot;smtp.gmail.com myaccount@gmail.com:mysecurepassword&quot; &gt; /etc/postfix/sasl_passwd&quot;</code></li>
+<li>Execute the next command to hash the file to protect it from prying eyes:<br><code>&gt; sudo postmap hash:/etc/postfix/sasl_passwd</code></li>
+<li>Don’t leave the plain text file lying around:<br><code>&gt; sudo rm -f /etc/postfix/sasl_passwd</code></li>
+<li>Configure Postfix stored in the configuration file <code>/etc/postfix/main.cf</code>. Place the following lines under the section <em>INTERNET OR INTRANET</em>:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">smtp_sasl_auth_enable = yes</span><br><span class="line">smtp_sasl_password_maps = <span class="built_in">hash</span>:/etc/postfix/sasl_passwd</span><br><span class="line">smtp_sasl_security_options = noanonymous</span><br><span class="line">smtp_tls_security_level = secure</span><br><span class="line">smtp_tls_mandatory_protocols = TLSv1</span><br><span class="line">smtp_tls_mandatory_ciphers = high</span><br><span class="line">smtp_tls_secure_cert_match = nexthop</span><br><span class="line">smtp_tls_CAfile = /etc/pki/tls/certs/ca-bundle.crt</span><br><span class="line">relayhost = smtp.gmail.com:587</span><br></pre></td></tr></table></figure></li>
+<li>Restart Postfix:<br><code>&gt; sudo systemctl restart postfix</code></li>
 </ol>
-<p><strong>IMPORTANT:</strong> To send emails using Gmail’s SMTP servers, you may need to change your account access to <a href="https://support.google.com/accounts/answer/6010255" target="_blank" rel="noopener">allow access from less secure apps</a>. </p>
-<p><em>Attribution: The method for configuring Postfix to relay emails through Gmail was adapted from Charles Auer’s <a href="https://charlesauer.net/tutorials/centos/postfix-as-gmail-relay-centos.php" target="_blank" rel="noopener">post</a>.</em></p>
+<p><strong>IMPORTANT:</strong> To send emails using Gmail’s SMTP servers, you may need to change your account access to <a target="_blank" rel="noopener" href="https://support.google.com/accounts/answer/6010255">allow access from less secure apps</a>. </p>
+<p><em>Attribution: The method for configuring Postfix to relay emails through Gmail was adapted from Charles Auer’s <a target="_blank" rel="noopener" href="https://charlesauer.net/tutorials/centos/postfix-as-gmail-relay-centos.php">post</a>.</em></p>
 <h3 id="IPv6"><a href="#IPv6" class="headerlink" title="IPv6"></a>IPv6</h3><p>If you are not prepared to deal with IPv6 configuration and issues, then you might want to also limit the network protocol that Postfix uses. Update this configuration in <code>/etc/postfix/main.cf</code> and then restart the service.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inet_protocols = ipv4</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">inet_protocols &#x3D; ipv4</span><br></pre></td></tr></table></figure>
 
-<h2 id="Part-Two"><a href="#Part-Two" class="headerlink" title="Part Two"></a>Part Two</h2><p>Configuring the APEX instance for email is simple. The documentation for how to do this is well documented in the <a href="https://docs.oracle.com/database/apex-5.1/AEADM/configuring-instance-settings.htm#GUID-FEC98D5E-3C89-423E-9603-4CD2E553BA34" target="_blank" rel="noopener">docs</a> so I will not explain at length. In a nutshell:</p>
+<h2 id="Part-Two"><a href="#Part-Two" class="headerlink" title="Part Two"></a>Part Two</h2><p>Configuring the APEX instance for email is simple. The documentation for how to do this is well documented in the <a target="_blank" rel="noopener" href="https://docs.oracle.com/database/apex-5.1/AEADM/configuring-instance-settings.htm#GUID-FEC98D5E-3C89-423E-9603-4CD2E553BA34">docs</a> so I will not explain at length. In a nutshell:</p>
 <ol>
 <li>Login to the Instance Administration page</li>
 <li>Click Manage Instance</li>
@@ -199,38 +192,38 @@ ga('send', 'pageview');
 <li>Click Apply Changes to save</li>
 <li>Ensure the proper network ACL has been set to allow the “APEX schema” to communicate with <code>localhost</code>.</li>
 </ol>
-<img src="/content/id/1704/apex-email-settings.png" title="Instance Administration - Instance Settings - Email"><span class="caption">Instance Administration - Instance Settings - Email</span>
+<img src="/content/id/1704/apex-email-settings.png" class="" title="Instance Administration - Instance Settings - Email">
 
-<p>An easy way to test the service is to run the following procedure block using SQL Workshop’s <a href="https://docs.oracle.com/database/apex-5.1/AEUTL/SQL-commands.htm#AEUTL220" target="_blank" rel="noopener">SQL Commands</a> interface:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">  apex_mail.send(</span><br><span class="line">    p_to =&gt; <span class="string">'myfriend@email.com'</span></span><br><span class="line">    , p_from =&gt; <span class="string">'me@myselfandi.com'</span></span><br><span class="line">    , p_subj =&gt; <span class="string">'Popularity of Semantic Web Today'</span></span><br><span class="line">    , p_body =&gt; q<span class="string">'[</span></span><br><span class="line"><span class="string">        The 2017 Gartner Hype Cycle indicates that Semantic Web-related </span></span><br><span class="line"><span class="string">        technologies are heading past the trough of disillusionment. </span></span><br><span class="line"><span class="string">        We should investigate.</span></span><br><span class="line"><span class="string">      ]'</span></span><br><span class="line">    , p_body_html =&gt; q<span class="string">'[</span></span><br><span class="line"><span class="string">        &lt;p&gt;</span></span><br><span class="line"><span class="string">          The 2017 Gartner Hype Cycle indicates that Semantic Web-related </span></span><br><span class="line"><span class="string">          technologies are heading past the trough of disillusionment. We </span></span><br><span class="line"><span class="string">          should investigate.</span></span><br><span class="line"><span class="string">        &lt;/p&gt;</span></span><br><span class="line"><span class="string">      ]'</span></span><br><span class="line">  );</span><br><span class="line">  apex_mail.push_queue;</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line">/</span><br></pre></td></tr></table></figure>
+<p>An easy way to test the service is to run the following procedure block using SQL Workshop’s <a target="_blank" rel="noopener" href="https://docs.oracle.com/database/apex-5.1/AEUTL/SQL-commands.htm#AEUTL220">SQL Commands</a> interface:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">  apex_mail.send(</span><br><span class="line">    p_to <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;myfriend@email.com&#x27;</span></span><br><span class="line">    , p_from <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;me@myselfandi.com&#x27;</span></span><br><span class="line">    , p_subj <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;Popularity of Semantic Web Today&#x27;</span></span><br><span class="line">    , p_body <span class="operator">=</span><span class="operator">&gt;</span> q<span class="string">&#x27;[</span></span><br><span class="line"><span class="string">        The 2017 Gartner Hype Cycle indicates that Semantic Web-related </span></span><br><span class="line"><span class="string">        technologies are heading past the trough of disillusionment. </span></span><br><span class="line"><span class="string">        We should investigate.</span></span><br><span class="line"><span class="string">      ]&#x27;</span></span><br><span class="line">    , p_body_html <span class="operator">=</span><span class="operator">&gt;</span> q<span class="string">&#x27;[</span></span><br><span class="line"><span class="string">        &lt;p&gt;</span></span><br><span class="line"><span class="string">          The 2017 Gartner Hype Cycle indicates that Semantic Web-related </span></span><br><span class="line"><span class="string">          technologies are heading past the trough of disillusionment. We </span></span><br><span class="line"><span class="string">          should investigate.</span></span><br><span class="line"><span class="string">        &lt;/p&gt;</span></span><br><span class="line"><span class="string">      ]&#x27;</span></span><br><span class="line">  );</span><br><span class="line">  apex_mail.push_queue;</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="operator">/</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="Part-Three"><a href="#Part-Three" class="headerlink" title="Part Three"></a>Part Three</h2><p>The third and final piece that I’d like to talk about in this post is to get pass spam filters and allowing emails to arrive safely in your intended receipients’ inbox.</p>
 <p>The following are a list of checks that spam filters typically use to assess an incoming email.</p>
 <ul>
 <li>HELO Greeting Check</li>
 <li>Reverse DNS Check</li>
-<li><a href="http://www.openspf.org/" target="_blank" rel="noopener">Sender Policy Framework</a> (SPF)</li>
-<li>Domain Keys (<a href="http://www.dkim.org/" target="_blank" rel="noopener">DKIM</a>)</li>
-<li><a href="http://spamassassin.apache.org/" target="_blank" rel="noopener">SpamAssassin</a> content checks</li>
-<li><a href="https://en.wikipedia.org/wiki/Bounce_Address_Tag_Validation" target="_blank" rel="noopener">BATV</a> (Bounce Address Tag Validation)</li>
+<li><a target="_blank" rel="noopener" href="http://www.openspf.org/">Sender Policy Framework</a> (SPF)</li>
+<li>Domain Keys (<a target="_blank" rel="noopener" href="http://www.dkim.org/">DKIM</a>)</li>
+<li><a target="_blank" rel="noopener" href="http://spamassassin.apache.org/">SpamAssassin</a> content checks</li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bounce_Address_Tag_Validation">BATV</a> (Bounce Address Tag Validation)</li>
 <li>Blacklisting<ul>
-<li><a href="http://www.dnsbl.info/" target="_blank" rel="noopener">DNSBL</a> </li>
-<li><a href="http://uribl.com/" target="_blank" rel="noopener">URIBL</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.dnsbl.info/">DNSBL</a> </li>
+<li><a target="_blank" rel="noopener" href="http://uribl.com/">URIBL</a></li>
 </ul>
 </li>
 </ul>
 <p>The easiest checks to get past is ensuring that your DNS records are correct. The HELO greeting simply checks that your domain has a valid forward and reverse entry. The latter might be a little harder to achieve since PTR records, reverse DNS mappings, are usually managed by the organization that issued the IP address. Most spam filters recognize this and would accept the email as long as there is one. </p>
 <p>The single most important factor seems to be how the SPF records are set for your domain. It’s not difficult for anyone to setup a SMTP server and with an appropriate email api/client, spoof a domain that he/she does not own and send out unauthorized emails. For example, if your APEX application attempts to use an <em>@yahoo.com</em> or <em>@gmail.com</em> email address sent from an unauthorized SMTP server, then these emails will likely be flagged as spam. Servers with strict policies might even outrightly reject these emails.</p>
-<p>SPF is a <strong>single</strong> <a href="https://en.wikipedia.org/wiki/TXT_record" target="_blank" rel="noopener">TXT</a> record in the DNS that uses <a href="http://www.openspf.org/Mechanisms" target="_blank" rel="noopener">mechanisms</a> to help verify if the incoming email originated from an authorized source. Commonly used mechanisms include: <code>a</code>, <code>mx</code>, <code>include</code>, <code>ip4</code> and <code>all</code>. Each mechanism in the record can have one of four qualifiers (<code>-</code> &rArr; fail, <code>~</code> &rArr; softfail, <code>+</code> &rArr; pass or <code>?</code> &rArr; neutral) that email filters could then use to decide on whether to flag as spam. </p>
+<p>SPF is a <strong>single</strong> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/TXT_record">TXT</a> record in the DNS that uses <a target="_blank" rel="noopener" href="http://www.openspf.org/Mechanisms">mechanisms</a> to help verify if the incoming email originated from an authorized source. Commonly used mechanisms include: <code>a</code>, <code>mx</code>, <code>include</code>, <code>ip4</code> and <code>all</code>. Each mechanism in the record can have one of four qualifiers (<code>-</code> &rArr; fail, <code>~</code> &rArr; softfail, <code>+</code> &rArr; pass or <code>?</code> &rArr; neutral) that email filters could then use to decide on whether to flag as spam. </p>
 <p>Below is the SPF record for the domain <code>bcoug.org</code>. It begins with the SPF version number and then six mechanisms. Five of them state different ways to resolve an authorized source. The last is a catch-all to state that the email source is unauthorized.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v=spf1 a mx include:_spf.google.com include:servers.mcsv.net ip4:204.244.186.184/32 ~all</span><br></pre></td></tr></table></figure>
 
-<p>Before adding a SPF record to your DNS, test it first using the <a href="http://www.kitterman.com/spf/validate.html" target="_blank" rel="noopener">tool</a> provided by Kitterman. Add it to your DNS only when the SPF record validates successfully and can correctly identify your SMTP server as an authorized server for the specified domain. </p>
-<img src="/content/id/1704/spf-validate-form.png" title="Inputs to test a what-if email was sent from my personal APEX instance"><span class="caption">Inputs to test a what-if email was sent from my personal APEX instance</span>
+<p>Before adding a SPF record to your DNS, test it first using the <a target="_blank" rel="noopener" href="http://www.kitterman.com/spf/validate.html">tool</a> provided by Kitterman. Add it to your DNS only when the SPF record validates successfully and can correctly identify your SMTP server as an authorized server for the specified domain. </p>
+<img src="/content/id/1704/spf-validate-form.png" class="" title="Inputs to test a what-if email was sent from my personal APEX instance">
 
-<img src="/content/id/1704/spf-validate-results.png" title="Results"><span class="caption">Results</span>
+<img src="/content/id/1704/spf-validate-results.png" class="" title="Results">
 
-<p>After adding the SPF record, check to see if the record is being read correcly. You can use <a href="https://mxtoolbox.com/" target="_blank" rel="noopener">MxToolBox</a> for this. Here’s what the SPF record for the domain <code>bcoug.org</code> looks like:</p>
+<p>After adding the SPF record, check to see if the record is being read correcly. You can use <a target="_blank" rel="noopener" href="https://mxtoolbox.com/">MxToolBox</a> for this. Here’s what the SPF record for the domain <code>bcoug.org</code> looks like:</p>
 <table>
 <thead>
 <tr>
@@ -292,7 +285,7 @@ ga('send', 'pageview');
 </tr>
 </tbody></table>
 <p><strong>NOTE:</strong> Since <code>bcoug.org</code> resolves to IPv4 <code>204.244.186.184</code>, the ip4 mechanism can be omitted.</p>
-<h3 id="Evaluate-Your-Email’s-Spamminess"><a href="#Evaluate-Your-Email’s-Spamminess" class="headerlink" title="Evaluate Your Email’s Spamminess"></a>Evaluate Your Email’s Spamminess</h3><p>Here’s a bunch of tools I gathered from websites and <a href="https://stackoverflow.com/" target="_blank" rel="noopener">stackoverflow</a> posts that are useful for evaluating your emails (content, SPF records etc.) and creating an actionalble checklist. They have helped me quite a bit, so I’m counting on them to do the same for you!</p>
+<h3 id="Evaluate-Your-Email’s-Spamminess"><a href="#Evaluate-Your-Email’s-Spamminess" class="headerlink" title="Evaluate Your Email’s Spamminess"></a>Evaluate Your Email’s Spamminess</h3><p>Here’s a bunch of tools I gathered from websites and <a target="_blank" rel="noopener" href="https://stackoverflow.com/">stackoverflow</a> posts that are useful for evaluating your emails (content, SPF records etc.) and creating an actionalble checklist. They have helped me quite a bit, so I’m counting on them to do the same for you!</p>
 <table>
 <thead>
 <tr>
@@ -301,20 +294,20 @@ ga('send', 'pageview');
 </tr>
 </thead>
 <tbody><tr>
-<td><a href="http://www.mail-tester.com/" target="_blank" rel="noopener">http://www.mail-tester.com/</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.mail-tester.com/">http://www.mail-tester.com/</a></td>
 <td>Create an email and send it through your designated SMTP server.</td>
 </tr>
 <tr>
-<td><a href="http://www.allaboutspam.com/" target="_blank" rel="noopener">http://www.allaboutspam.com/</a></td>
+<td><a target="_blank" rel="noopener" href="http://www.allaboutspam.com/">http://www.allaboutspam.com/</a></td>
 <td>Like Mail Tester, send an email through your designated SMTP server.</td>
 </tr>
 <tr>
-<td><a href="http://spamcheck.postmarkapp.com/" target="_blank" rel="noopener">http://spamcheck.postmarkapp.com/</a></td>
+<td><a target="_blank" rel="noopener" href="http://spamcheck.postmarkapp.com/">http://spamcheck.postmarkapp.com/</a></td>
 <td>Copy and paste an email with its headers to get a SpamAssassin score.</td>
 </tr>
 </tbody></table>
-<h3 id="Outcome"><a href="#Outcome" class="headerlink" title="Outcome"></a>Outcome</h3><p>After taking my APEX instance through cycles of corrective actions, I was finally able to achieve a score of 9/10. Where I fell short of a perfect score, is the absence of <a href="https://en.wikipedia.org/wiki/DomainKeys" target="_blank" rel="noopener">DomainKeys</a> (DKIM) information. I have yet to implement DKIM support for my APEX instance, so stay tuned, and you can expect a follow up howto post.</p>
-<img src="/content/id/1704/after.png" title="Results after the appropriate SPF records are added"><span class="caption">Results after the appropriate SPF records are added</span>
+<h3 id="Outcome"><a href="#Outcome" class="headerlink" title="Outcome"></a>Outcome</h3><p>After taking my APEX instance through cycles of corrective actions, I was finally able to achieve a score of 9/10. Where I fell short of a perfect score, is the absence of <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/DomainKeys">DomainKeys</a> (DKIM) information. I have yet to implement DKIM support for my APEX instance, so stay tuned, and you can expect a follow up howto post.</p>
+<img src="/content/id/1704/after.png" class="" title="Results after the appropriate SPF records are added">
 
 <h2 id="Last-Words"><a href="#Last-Words" class="headerlink" title="Last Words"></a>Last Words</h2><p>I hope this information here saves you some time figuring out what you need to do to stay out of the junk mail folder. Before I end though, here are a few more notes: </p>
 <ul>
@@ -332,7 +325,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1704/" data-id="ckmr4pjn7001vx0fdvhgm2mv6" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1704/" data-id="ckmr6zpfv001yw4fd36z01pxc" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -380,7 +373,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

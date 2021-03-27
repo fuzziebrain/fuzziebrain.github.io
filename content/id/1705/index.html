@@ -5,12 +5,12 @@
   
   <title>Real Uptime Monitoring of Oracle APEX Instances | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="All Systems Go!  Running a production application on an Oracle APEX instance? Then read on! Making sure your application is up and running 24&#x2F;7 doesn’t need to be a daunting task, plus it may not even">
+  <meta name="description" content="Running a production application on an Oracle APEX instance? Then read on! Making sure your application is up and running 24&#x2F;7 doesn’t need to be a daunting task, plus it may not even cost you a dim">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Real Uptime Monitoring of Oracle APEX Instances">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1705/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="All Systems Go!  Running a production application on an Oracle APEX instance? Then read on! Making sure your application is up and running 24&#x2F;7 doesn’t need to be a daunting task, plus it may not even">
+<meta property="og:description" content="Running a production application on an Oracle APEX instance? Then read on! Making sure your application is up and running 24&#x2F;7 doesn’t need to be a daunting task, plus it may not even cost you a dim">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1705/all-systems-go.png">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1705/https-monitor-configuration.png">
@@ -140,15 +140,15 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1705/all-systems-go.png" title="All Systems Go!"><span class="caption">All Systems Go!</span>
+        <img src="/content/id/1705/all-systems-go.png" class="" title="All Systems Go!">
 
 <p>Running a production application on an Oracle APEX instance? Then read on!</p>
-<p>Making sure your application is up and running 24/7 doesn’t need to be a daunting task, plus it may not even cost you a dime! <a href="https://uptimerobot.com/" target="_blank" rel="noopener">UptimeRobot</a> provides <strong>50 free monitors</strong> that can poll your servers using the smallest interval of 5 minutes. You can easily monitor websites and receive multi-channel notifications of downtime. No excuse!</p>
-<a id="more"></a>
+<p>Making sure your application is up and running 24/7 doesn’t need to be a daunting task, plus it may not even cost you a dime! <a target="_blank" rel="noopener" href="https://uptimerobot.com/">UptimeRobot</a> provides <strong>50 free monitors</strong> that can poll your servers using the smallest interval of 5 minutes. You can easily monitor websites and receive multi-channel notifications of downtime. No excuse!</p>
+<span id="more"></span>
 
-<p>There are several solutions out there for server monitoring including the ever popular, open-sourced <a href="https://www.nagios.org/" target="_blank" rel="noopener">Nagios</a>. However, build-your-own solutions often require more resources to set up. It only makes sense to host the monitoring software on an independent server - possibly even network/infrastructure - that your APEX instance uses. Not forgetting the much needed knowledge and time spent to set up the systems.</p>
+<p>There are several solutions out there for server monitoring including the ever popular, open-sourced <a target="_blank" rel="noopener" href="https://www.nagios.org/">Nagios</a>. However, build-your-own solutions often require more resources to set up. It only makes sense to host the monitoring software on an independent server - possibly even network/infrastructure - that your APEX instance uses. Not forgetting the much needed knowledge and time spent to set up the systems.</p>
 <p>UptimeRobot provides monitoring services for free or for fee. You can choose four monitoring types:</p>
-<h3 id="1-Ping"><a href="#1-Ping" class="headerlink" title="1.Ping"></a>1.Ping</h3><p>Monitors servers by sending <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol" target="_blank" rel="noopener">ICMP</a> packets and waiting for a response. Sending ping requests are not logged, so that can be a good thing. However, for web servers, a ping response is not a reliable measure of whether the required service is operational. A server can respond to pings even though the server application, e.g. Apache HTTPD server, is not running.</p>
+<h3 id="1-Ping"><a href="#1-Ping" class="headerlink" title="1.Ping"></a>1.Ping</h3><p>Monitors servers by sending <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol">ICMP</a> packets and waiting for a response. Sending ping requests are not logged, so that can be a good thing. However, for web servers, a ping response is not a reliable measure of whether the required service is operational. A server can respond to pings even though the server application, e.g. Apache HTTPD server, is not running.</p>
 <p>To configure a Ping Monitor:</p>
 <ol>
 <li>Select the monitor type <em>Ping</em>.</li>
@@ -178,14 +178,14 @@ ga('send', 'pageview');
 <li>Select the contact(s) to be notified.</li>
 <li>Click <em>Create Monitor</em>.</li>
 </ol>
-<h3 id="3-HTTP-s"><a href="#3-HTTP-s" class="headerlink" title="3. HTTP(s)"></a>3. HTTP(s)</h3><img src="/content/id/1705/https-monitor-configuration.png" title="HTTP(s) Monitor Configuration"><span class="caption">HTTP(s) Monitor Configuration</span>
+<h3 id="3-HTTP-s"><a href="#3-HTTP-s" class="headerlink" title="3. HTTP(s)"></a>3. HTTP(s)</h3><img src="/content/id/1705/https-monitor-configuration.png" class="" title="HTTP(s) Monitor Configuration">
 
 <p>This monitor type uses HTTP status codes returned by the specified URL or IP address to indicate whether the service is up (<code>200</code>) or down (anything else, e.g. <code>404</code>, <code>500</code>, <code>504</code> etc.).</p>
 <p>To configure a HTTP(s) Monitor:</p>
 <ol>
 <li>Select the monitor type <em>HTTP(s)</em>.</li>
 <li>Enter a friendly name, e.g. <em>Contoso APEX Instance</em>.</li>
-<li>Enter the URL or IP address to monitor, e.g.  <em><a href="https://contoso.com/ords/f?p=STORE:HOME:0" target="_blank" rel="noopener">https://contoso.com/ords/f?p=STORE:HOME:0</a></em>.</li>
+<li>Enter the URL or IP address to monitor, e.g.  <em><a target="_blank" rel="noopener" href="https://contoso.com/ords/f?p=STORE:HOME:0">https://contoso.com/ords/f?p=STORE:HOME:0</a></em>.</li>
 <li>Set the monitoring interval. <strong>For free accounts, the range is from 5 minutes to 24 hours.</strong></li>
 <li>If authentication is required, then click ont he <em>Advanced Settings</em>, <em>Authentication Settings</em> and then enter the user credentials and authentication type.</li>
 <li>Select the contact(s) to be notified.</li>
@@ -196,7 +196,7 @@ ga('send', 'pageview');
 <ol>
 <li>Select the monitor type <em>Keyword</em>.</li>
 <li>Enter a friendly name, e.g. <em>Contoso Homepage</em>.</li>
-<li>Enter the URL or IP address to monitor, e.g.  <em><a href="https://contoso.com/ords/f?p=STORE:HOME:0" target="_blank" rel="noopener">https://contoso.com/ords/f?p=STORE:HOME:0</a></em>.</li>
+<li>Enter the URL or IP address to monitor, e.g.  <em><a target="_blank" rel="noopener" href="https://contoso.com/ords/f?p=STORE:HOME:0">https://contoso.com/ords/f?p=STORE:HOME:0</a></em>.</li>
 <li>Enter the keyword to scan for, e.g. <em>Welcome to Contoso Store</em>. <strong>Note that the keyword entered is case-sensitive.</strong></li>
 <li>Set to alert when either <em>Keyword Exists</em> or <em>Keyword Not Exists</em></li>
 <li>Enter authentication information if required.</li>
@@ -204,24 +204,24 @@ ga('send', 'pageview');
 <li>Click <em>Create Monitor</em>.</li>
 </ol>
 <p><strong>NOTEWORTHY</strong> Web servers will log access by both HTTP(s) and Keyword monitor types. Keep that in mind when setting up monitors with short intervals.</p>
-<h2 id="Notifications"><a href="#Notifications" class="headerlink" title="Notifications"></a>Notifications</h2><img src="/content/id/1705/downtime-notification-email.png" title="Service Down Email Notification"><span class="caption">Service Down Email Notification</span>
+<h2 id="Notifications"><a href="#Notifications" class="headerlink" title="Notifications"></a>Notifications</h2><img src="/content/id/1705/downtime-notification-email.png" class="" title="Service Down Email Notification">
 
 <p>When setting up monitors, you need to specify which contact(s) to notify when things go wrong. This is set up under <em>My Settings</em>. You may add contacts using either of the following technologies:</p>
 <ul>
 <li>Email</li>
 <li>Pro SMS (for paid accounts, receive up to 10 messages included in the subscription, otherwise SMS credits are required)</li>
-<li><a href="https://twitter.com/" target="_blank" rel="noopener">Twitter</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Webhook" target="_blank" rel="noopener">Webhook</a></li>
+<li><a target="_blank" rel="noopener" href="https://twitter.com/">Twitter</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Webhook">Webhook</a></li>
 <li>Email-to-SMS (uses service providers’ free email-to-SMS gateways and may not always be stable)</li>
-<li><a href="https://boxcar.io/" target="_blank" rel="noopener">Boxcar 2</a></li>
-<li><a href="https://www.pushbullet.com/" target="_blank" rel="noopener">Pushbullet</a></li>
-<li><a href="https://pushover.net/" target="_blank" rel="noopener">Pushover</a></li>
-<li><a href="https://www.hipchat.com/" target="_blank" rel="noopener">HipChat</a></li>
-<li><a href="https://slack.com/" target="_blank" rel="noopener">Slack</a></li>
+<li><a target="_blank" rel="noopener" href="https://boxcar.io/">Boxcar 2</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.pushbullet.com/">Pushbullet</a></li>
+<li><a target="_blank" rel="noopener" href="https://pushover.net/">Pushover</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.hipchat.com/">HipChat</a></li>
+<li><a target="_blank" rel="noopener" href="https://slack.com/">Slack</a></li>
 </ul>
 <p>There is also an option of adding a public status page or using RSS feeds to display server statuses on your website. These are nice to haves, but not always necessary.</p>
-<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>For APEX applications, I would generally prefer using either <em>HTTP(s)</em> or <em>Keyword</em> monitoring as they provide the most reliable method for detecting if the web server (reverse proxy), JavaEE Web Container (hosting <a href="http://www.oracle.com/technetwork/developer-tools/rest-data-services/" target="_blank" rel="noopener">ORDS</a>) and/or Oracle Database had gone down. All three are important services responsible for delivering APEX applications. Any of them going down will trigger an alert.</p>
-<img src="/content/id/1705/apex-error-page.png" title="APEX Error Page"><span class="caption">APEX Error Page</span>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>For APEX applications, I would generally prefer using either <em>HTTP(s)</em> or <em>Keyword</em> monitoring as they provide the most reliable method for detecting if the web server (reverse proxy), JavaEE Web Container (hosting <a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/developer-tools/rest-data-services/">ORDS</a>) and/or Oracle Database had gone down. All three are important services responsible for delivering APEX applications. Any of them going down will trigger an alert.</p>
+<img src="/content/id/1705/apex-error-page.png" class="" title="APEX Error Page">
 
 <p>Between the two though, I feel <em>Keyword</em> stands out. It really depends on what your definition of “uptime” is. To me, that includes having the APEX instance deliver the expected outcomes. Any errors as a result of application runtime execution, should also classify as downtime. Often, APEX would still return a HTTP status code <code>200</code> even if an error had occured. Either we trap these events during error handling and then return the appropriate status code, or create a strategy involving keywords and then monitor these terms to signal service status for better insights to availability.</p>
 <p>That said, regardless of what you choose, anything is better than nothing. So get monitored now!</p>
@@ -235,7 +235,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1705/" data-id="ckmr4pjoj003cx0fd8zxl3vjg" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1705/" data-id="ckmr6zpgf003bw4fdf15yg4qp" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -283,7 +283,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

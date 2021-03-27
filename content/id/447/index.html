@@ -5,12 +5,12 @@
   
   <title>An Even Faster Guide to Build A Personal Oracle APEX Instance | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ORCLAPEX Meetup Logo Want to get started on APEX development but don’t want to muck around with Linux too much, then this guide’s for you! As a follow-up to our second ORCLAPEX-YVR meetup on June 17,">
+  <meta name="description" content="Want to get started on APEX development but don’t want to muck around with Linux too much, then this guide’s for you! As a follow-up to our second ORCLAPEX-YVR meetup on June 17, 2015, and to supplem">
 <meta property="og:type" content="article">
 <meta property="og:title" content="An Even Faster Guide to Build A Personal Oracle APEX Instance">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/447/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="ORCLAPEX Meetup Logo Want to get started on APEX development but don’t want to muck around with Linux too much, then this guide’s for you! As a follow-up to our second ORCLAPEX-YVR meetup on June 17,">
+<meta property="og:description" content="Want to get started on APEX development but don’t want to muck around with Linux too much, then this guide’s for you! As a follow-up to our second ORCLAPEX-YVR meetup on June 17, 2015, and to supplem">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/447/orclapex-meetup-logo.jpeg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/447/oraclexe-apex-project-dir-structure-112x300.png">
@@ -142,34 +142,36 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/447/orclapex-meetup-logo.jpeg" title="ORCLAPEX Meetup Logo"><span class="caption">ORCLAPEX Meetup Logo</span>
-<p>Want to get started on APEX development but don’t want to muck around with Linux too much, then this guide’s for you! As a follow-up to our <a href="http://www.meetup.com/orclapex-YVR/events/223156789/" target="_blank" rel="noopener">second ORCLAPEX-YVR meetup</a> on <strong>June 17, 2015</strong>, and to supplement <a href="https://twitter.com/trentschafer" target="_blank" rel="noopener">Trent Schafer</a>‘s excellent <a href="http://apextips.blogspot.com.au/2015/06/building-oracle-11g-xe-server-with-apex.html" target="_blank" rel="noopener">post</a> on how you could build an Oracle APEX instance, here’s a simple procedure that you can use to stand up your personal APEX development environment in probably much less than 30 minutes depending on your Internet connection bandwidth!</p>
-<a id="more"></a>
-<p>This method involves the use of <a href="https://www.vagrantup.com/" target="_blank" rel="noopener">Vagrant</a> and <a href="https://www.virtualbox.org/" target="_blank" rel="noopener">Oracle VirtualBox</a>, and will work on any host operating system (OS) that both software supports. So let’s get started!</p>
+        <img src="/content/id/447/orclapex-meetup-logo.jpeg" class="" title="ORCLAPEX Meetup Logo">
+<p>Want to get started on APEX development but don’t want to muck around with Linux too much, then this guide’s for you! As a follow-up to our <a target="_blank" rel="noopener" href="http://www.meetup.com/orclapex-YVR/events/223156789/">second ORCLAPEX-YVR meetup</a> on <strong>June 17, 2015</strong>, and to supplement <a target="_blank" rel="noopener" href="https://twitter.com/trentschafer">Trent Schafer</a>‘s excellent <a target="_blank" rel="noopener" href="http://apextips.blogspot.com.au/2015/06/building-oracle-11g-xe-server-with-apex.html">post</a> on how you could build an Oracle APEX instance, here’s a simple procedure that you can use to stand up your personal APEX development environment in probably much less than 30 minutes depending on your Internet connection bandwidth!</p>
+<span id="more"></span>
+<p>This method involves the use of <a target="_blank" rel="noopener" href="https://www.vagrantup.com/">Vagrant</a> and <a target="_blank" rel="noopener" href="https://www.virtualbox.org/">Oracle VirtualBox</a>, and will work on any host operating system (OS) that both software supports. So let’s get started!</p>
 <ol>
-<li>Download and save the following installation packages on your computer:<ul>
-<li><a href="http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html" target="_blank" rel="noopener">Oracle Database Express Edition 11g Release 2</a></li>
-<li><a href="http://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html" target="_blank" rel="noopener">Oracle Application Express 5.0</a></li>
-<li><a href="http://www.oracle.com/technetwork/developer-tools/rest-data-services/downloads/index.html" target="_blank" rel="noopener">Oracle REST Data Services 3.0</a></li>
-</ul>
-</li>
-<li>Download and install <a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a> (you may use other Git clients if preferred, e.g. <a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener">SourceTree</a>)</li>
-<li>Download and install <a href="https://www.virtualbox.org/" target="_blank" rel="noopener">Oracle </a><a href="https://www.virtualbox.org/" target="_blank" rel="noopener">VirtualBox</a> (version 5.0.x)</li>
-<li>Download and install <a href="https://www.vagrantup.com/" target="_blank" rel="noopener">Vagrant</a> (version 1.7.x)</li>
-<li>Start a terminal session or the Command Prompt for the next few steps. <strong>Note</strong>: “vagrant” should have been added to your system path during the installation.</li>
-<li>Clone the <a href="https://github.com/OraOpenSource/oraclexe-apex" target="_blank" rel="noopener">oraclexe</a><a href="https://github.com/OraOpenSource/oraclexe-apex" target="_blank" rel="noopener">-apex</a> project:<br><code>$ git clone https://github.com/OraOpenSource/OXAR.git</code></li>
-<li>Change your working directory to oraclexe-apex<br><code>$ cd OXAR</code></li>
-<li>Copy the installation files into files subdirectory. <img src="/content/id/447/oraclexe-apex-project-dir-structure-112x300.png" title="OXAR project folder structure"><span class="caption">OXAR project folder structure</span></li>
-<li>Update the config.properties. Specify the location and filenames of the installation files. <img src="/content/id/447/oraclexe-apex-project-config-changes-300x74.png" title="OXAR Project Configuration Changes"><span class="caption">OXAR Project Configuration Changes</span></li>
-<li>Execute the command:<br><code>$ vagrant up</code></li>
-<li>Done! Wait for the build process to complete and then test your instance using your browser and point to <a href="http://localhost:50080/ords/" target="_blank" rel="noopener">http://localhost:50080/ords/</a>. If you see the APEX login page, then you are good to go!<br>By default, the Vagrant is configured to use the <a href="http://centos.org/" target="_blank" rel="noopener">Centos</a> 7 base box provided by <a href="https://puppetlabs.com/" target="_blank" rel="noopener">Puppet Labs</a>. If <a href="http://www.ubuntu.com/" target="_blank" rel="noopener">Ubuntu</a> is preferred, then try switching the base box <a href="https://atlas.hashicorp.com/ubuntu/boxes/trusty64" target="_blank" rel="noopener">ubuntu/trusty64</a>. To do so, update the vagrantfile and set the desired base box.</li>
+<li> Download and save the following installation packages on your computer:</li>
 </ol>
-<img src="/content/id/447/oraclexe-apex-project-box-change-300x32.png" title="Change the base box used by the oraclexe-apex project"><span class="caption">Change the base box used by the oraclexe-apex project</span>
-<p>For the trust64 base box provided by Ubuntu, the Oracle REST Data Services (ORDS) application may not run out-of-the-box (pun intended). If the time-zone for the guest OS has not been defined, then that might result in a JDBC connection error (<a href="http://docs.oracle.com/cd/E11882_01/server.112/e17766/e1500.htm#ORA-01882" target="_blank" rel="noopener">ORA-01882</a>). If you encounter a similar issue, please perform the following steps to fix the problem:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/database/database-technologies/express-edition/downloads/index.html">Oracle Database Express Edition 11g Release 2</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/developer-tools/apex/downloads/index.html">Oracle Application Express 5.0</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.oracle.com/technetwork/developer-tools/rest-data-services/downloads/index.html">Oracle REST Data Services 3.0</a></li>
+</ul>
+<ol start="2">
+<li> Download and install <a target="_blank" rel="noopener" href="https://git-scm.com/">Git</a> (you may use other Git clients if preferred, e.g. <a target="_blank" rel="noopener" href="https://www.sourcetreeapp.com/">SourceTree</a>)</li>
+<li> Download and install <a target="_blank" rel="noopener" href="https://www.virtualbox.org/">Oracle </a><a target="_blank" rel="noopener" href="https://www.virtualbox.org/">VirtualBox</a> (version 5.0.x)</li>
+<li> Download and install <a target="_blank" rel="noopener" href="https://www.vagrantup.com/">Vagrant</a> (version 1.7.x)</li>
+<li> Start a terminal session or the Command Prompt for the next few steps. <strong>Note</strong>: “vagrant” should have been added to your system path during the installation.</li>
+<li> Clone the <a target="_blank" rel="noopener" href="https://github.com/OraOpenSource/oraclexe-apex">oraclexe</a><a target="_blank" rel="noopener" href="https://github.com/OraOpenSource/oraclexe-apex">-apex</a> project:<br><code>$ git clone https://github.com/OraOpenSource/OXAR.git</code></li>
+<li> Change your working directory to oraclexe-apex<br><code>$ cd OXAR</code></li>
+<li> Copy the installation files into files subdirectory. <img src="/content/id/447/oraclexe-apex-project-dir-structure-112x300.png" class="" title="OXAR project folder structure"></li>
+<li> Update the config.properties. Specify the location and filenames of the installation files. <img src="/content/id/447/oraclexe-apex-project-config-changes-300x74.png" class="" title="OXAR Project Configuration Changes"></li>
+<li> Execute the command:<br><code>$ vagrant up</code></li>
+<li> Done! Wait for the build process to complete and then test your instance using your browser and point to <a target="_blank" rel="noopener" href="http://localhost:50080/ords/">http://localhost:50080/ords/</a>. If you see the APEX login page, then you are good to go!<br>By default, the Vagrant is configured to use the <a target="_blank" rel="noopener" href="http://centos.org/">Centos</a> 7 base box provided by <a target="_blank" rel="noopener" href="https://puppetlabs.com/">Puppet Labs</a>. If <a target="_blank" rel="noopener" href="http://www.ubuntu.com/">Ubuntu</a> is preferred, then try switching the base box <a target="_blank" rel="noopener" href="https://atlas.hashicorp.com/ubuntu/boxes/trusty64">ubuntu/trusty64</a>. To do so, update the vagrantfile and set the desired base box.</li>
+</ol>
+<img src="/content/id/447/oraclexe-apex-project-box-change-300x32.png" class="" title="Change the base box used by the oraclexe-apex project">
+<p>For the trust64 base box provided by Ubuntu, the Oracle REST Data Services (ORDS) application may not run out-of-the-box (pun intended). If the time-zone for the guest OS has not been defined, then that might result in a JDBC connection error (<a target="_blank" rel="noopener" href="http://docs.oracle.com/cd/E11882_01/server.112/e17766/e1500.htm#ORA-01882">ORA-01882</a>). If you encounter a similar issue, please perform the following steps to fix the problem:</p>
 <ol>
-<li>Login to the guest OS using SSH. The username and password are both “vagrant”.<br><code>$ ssh -l vagrant -p 2222 localhost</code></li>
-<li>Execute the command and then use the wizard to set the correct timezone for your system:<br><code>$ sudo dpkg-reconfigure tzdata</code></li>
-<li>Reboot the server:<br><code>$ sudo /sbin/reboot</code></li>
+<li> Login to the guest OS using SSH. The username and password are both “vagrant”.<br><code>$ ssh -l vagrant -p 2222 localhost</code></li>
+<li> Execute the command and then use the wizard to set the correct timezone for your system:<br><code>$ sudo dpkg-reconfigure tzdata</code></li>
+<li> Reboot the server:<br><code>$ sudo /sbin/reboot</code></li>
 </ol>
 
       
@@ -181,7 +183,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/447/" data-id="ckmr4pjk20005x0fd4hlr7yd2" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/447/" data-id="ckmr6zpey0008w4fdfqc38e5g" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -229,7 +231,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

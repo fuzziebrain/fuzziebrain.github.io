@@ -5,12 +5,12 @@
   
   <title>Build Two Walls | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="The Great Wall of China  Authentication is an essential component of any enterprise application. These days though, it isn’t enough to protect your applications with only a username and password. Thes">
+  <meta name="description" content="Authentication is an essential component of any enterprise application. These days though, it isn’t enough to protect your applications with only a username and password. These are easily stolen by">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Build Two Walls">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1718/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="The Great Wall of China  Authentication is an essential component of any enterprise application. These days though, it isn’t enough to protect your applications with only a username and password. Thes">
+<meta property="og:description" content="Authentication is an essential component of any enterprise application. These days though, it isn’t enough to protect your applications with only a username and password. These are easily stolen by">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1718/china-2097075_1280x720.jpg">
 <meta property="article:published_time" content="2018-10-18T07:28:32.000Z">
@@ -139,27 +139,25 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1718/china-2097075_1280x720.jpg" width="1280" height="720" title="The Great Wall of China"><span class="caption">The Great Wall of China</span>
+        <img src="/content/id/1718/china-2097075_1280x720.jpg" class="" width="1280" height="720" title="The Great Wall of China">
 
 <p>Authentication is an essential component of any enterprise application. These days though, it isn’t enough to protect your applications with only a username and password. These are easily stolen by key loggers, sniffing non-encrypted HTTP traffic, phishing, hacked Internet services and the list goes on. To make matters worse, many users have a poor habit of reusing passwords that thieves then use to penetrate other systems. I have had my fair share of that experience.</p>
-<p>The question is, can we implement <a href="https://wikipedia.org/wiki/Multi-factor_authentication" target="_blank" rel="noopener">two-factor authentication</a> (TFA) in <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express</a> (APEX)?</p>
-<a id="more"></a>
+<p>The question is, can we implement <a target="_blank" rel="noopener" href="https://wikipedia.org/wiki/Multi-factor_authentication">two-factor authentication</a> (TFA) in <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX)?</p>
+<span id="more"></span>
 
 <p><strong>Yes we can!</strong></p>
-<h2 id="The-Code"><a href="#The-Code" class="headerlink" title="The Code"></a>The Code</h2><p>Right around the time when I grew interested in implementing the <a href="https://wikipedia.org/wiki/Time-based_One-time_Password_algorithm" target="_blank" rel="noopener">Time-based One-time Password</a> (TOTP) algorithm, I stumbled upon <a href="https://community.oracle.com/thread/3905510" target="_blank" rel="noopener">code</a> written by Rabbit on the Oracle Community Forums, only months earlier. Hurrah! I didn’t have to deal with the mathematical intricacies of implementing the algorithm in PL/SQL code.</p>
-<p>After discussing with <a href="https://twitter.com/martindsouza" target="_blank" rel="noopener">Martin D’Souza</a>, we decided that the best way to share this useful algorithm was through OraOpenSource <a href="https://github.com/OraOpenSource/oos-utils" target="_blank" rel="noopener">oos-utils</a>. All it needed was some additional functionality to make it useful for implementing a custom authentication scheme with TFA support in APEX. We also swapped out the <code>dbms_crypto</code> requirement and used <a href="https://twitter.com/AntonScheffer" target="_blank" rel="noopener">Anton Scheffer’s</a> <code>oos_util_crypto</code> library to perform the <a href="https://wikipedia.org/wiki/HMAC" target="_blank" rel="noopener">HMAC</a> hashing instead. This means, the code should be usable in your workspace on <a href="https://apex.oracle.com" target="_blank" rel="noopener">apex.oracle.com</a>.</p>
+<h2 id="The-Code"><a href="#The-Code" class="headerlink" title="The Code"></a>The Code</h2><p>Right around the time when I grew interested in implementing the <a target="_blank" rel="noopener" href="https://wikipedia.org/wiki/Time-based_One-time_Password_algorithm">Time-based One-time Password</a> (TOTP) algorithm, I stumbled upon <a target="_blank" rel="noopener" href="https://community.oracle.com/thread/3905510">code</a> written by Rabbit on the Oracle Community Forums, only months earlier. Hurrah! I didn’t have to deal with the mathematical intricacies of implementing the algorithm in PL/SQL code.</p>
+<p>After discussing with <a target="_blank" rel="noopener" href="https://twitter.com/martindsouza">Martin D’Souza</a>, we decided that the best way to share this useful algorithm was through OraOpenSource <a target="_blank" rel="noopener" href="https://github.com/OraOpenSource/oos-utils">oos-utils</a>. All it needed was some additional functionality to make it useful for implementing a custom authentication scheme with TFA support in APEX. We also swapped out the <code>dbms_crypto</code> requirement and used <a target="_blank" rel="noopener" href="https://twitter.com/AntonScheffer">Anton Scheffer’s</a> <code>oos_util_crypto</code> library to perform the <a target="_blank" rel="noopener" href="https://wikipedia.org/wiki/HMAC">HMAC</a> hashing instead. This means, the code should be usable in your workspace on <a target="_blank" rel="noopener" href="https://apex.oracle.com/">apex.oracle.com</a>.</p>
 <p>What was missing in the release though, was a demo application to showcase its use, so two years later, here it is!</p>
 <ul>
 <li><i class="fa fa-globe"></i> [Demo application](https://apeks.app/ords/f?p=TFADEMO)</li>
-<li><i class="fa fa-git"></i> [Source code](https://github.com/fuzziebrain/orclapex-tfa-demo)
-
-</li>
+<li><i class="fa fa-git"></i> [Source code](https://github.com/fuzziebrain/orclapex-tfa-demo)</li>
 </ul>
 <h2 id="Highlights"><a href="#Highlights" class="headerlink" title="Highlights"></a>Highlights</h2><p>The following are a few key points about the implementation that I thought might be of interest.</p>
 <h3 id="Registration"><a href="#Registration" class="headerlink" title="Registration"></a>Registration</h3><p>The registration does not automatically “turn on” TFA for new accounts. The new user is expected to login to the system and activate the TFA protection. During registration, a random and unique key was generated for the account. Whenever TFA is activated, a QR code is generated using the function <code>oos_util_totp.format_key_uri</code>, user’s “shared secret” and a suitable, trusted QR code generation JavaScript library. This allows the user to setup the security application and generate one-time passwords (OTP). The user must validate a OTP before the feature is enabled for the account.</p>
 <h3 id="Authentication"><a href="#Authentication" class="headerlink" title="Authentication"></a>Authentication</h3><p>The authentication process will allow users to authenticate with or without OTP validation depending on the user’s preference. The original (default) login page 9999 was modified to support both authentication workflows.</p>
-<p>The <code>Login</code> process typically calls <code>apex_authentication.login</code> that triggers a sequence of events <a href="https://docs.oracle.com/database/apex-18.2/AEAPI/LOGIN-Procedure.htm#AEAPI29157" target="_blank" rel="noopener">listed</a> in the official APEX documentation. The process calls an authentication function that matches usernames and passwords. If the function returns true, then the APEX engine will, in a nutshell, set the username for the session and redirect to the requested resource. This function call was replaced with a procedure, <code>pkg_tfa_apex.p_authenticate_user</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if l_password_hash = f_hash_password(p_password =&gt; p_password) then</span><br><span class="line">  if l_tfa_enabled = 0 then</span><br><span class="line">    apex_authentication.post_login(</span><br><span class="line">      p_username =&gt; p_username</span><br><span class="line">      , p_password =&gt; null</span><br><span class="line">    );</span><br><span class="line">    apex_util.clear_page_cache();</span><br><span class="line">  end if;</span><br><span class="line">else</span><br><span class="line">  raise login_failed;</span><br><span class="line">end if;</span><br></pre></td></tr></table></figure>
+<p>The <code>Login</code> process typically calls <code>apex_authentication.login</code> that triggers a sequence of events <a target="_blank" rel="noopener" href="https://docs.oracle.com/database/apex-18.2/AEAPI/LOGIN-Procedure.htm#AEAPI29157">listed</a> in the official APEX documentation. The process calls an authentication function that matches usernames and passwords. If the function returns true, then the APEX engine will, in a nutshell, set the username for the session and redirect to the requested resource. This function call was replaced with a procedure, <code>pkg_tfa_apex.p_authenticate_user</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if l_password_hash &#x3D; f_hash_password(p_password &#x3D;&gt; p_password) then</span><br><span class="line">  if l_tfa_enabled &#x3D; 0 then</span><br><span class="line">    apex_authentication.post_login(</span><br><span class="line">      p_username &#x3D;&gt; p_username</span><br><span class="line">      , p_password &#x3D;&gt; null</span><br><span class="line">    );</span><br><span class="line">    apex_util.clear_page_cache();</span><br><span class="line">  end if;</span><br><span class="line">else</span><br><span class="line">  raise login_failed;</span><br><span class="line">end if;</span><br></pre></td></tr></table></figure>
 
 <p>If TFA is <strong>not</strong> enabled, then <code>apex_authentication.post_login</code> is called. We have already established that the username and password are correct, so this allows us to bypass the first two steps in a typical authentication sequence.</p>
 <p>Usually, the default login page has a final process that clears the session state for the page, but that was removed. A branch to a second-step login page (10000) was added. It passes the username entered on page 9999 to the the next page for OTP validation. The username is used to retrieve the user’s shared secret that is is required by <code>oos_util_totp.validate_otp</code>. Hence, I opted to call <code>apex_util.clear_page_cache</code> only if TFA was turned off.</p>
@@ -176,7 +174,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1718/" data-id="ckmr4pjl7000ux0fdzssvhicv" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1718/" data-id="ckmr6zpf6000lw4fd20h10xca" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -224,7 +222,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">

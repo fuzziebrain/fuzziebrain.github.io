@@ -5,12 +5,12 @@
   
   <title>Day 4 - 30 Days on the Oracle Cloud | Thinking Anew</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Photo by Oliver Menyhart  After running my Oracle Application Express (APEX) instance (see the previous article on what it takes) for more than a day, I think I have enough to take a first measure of">
+  <meta name="description" content="After running my Oracle Application Express (APEX) instance (see the previous article on what it takes) for more than a day, I think I have enough to take a first measure of costs and fact check the">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Day 4 - 30 Days on the Oracle Cloud">
 <meta property="og:url" content="https://fuzziebrain.com/content/id/1905/index.html">
 <meta property="og:site_name" content="Thinking Anew">
-<meta property="og:description" content="Photo by Oliver Menyhart  After running my Oracle Application Express (APEX) instance (see the previous article on what it takes) for more than a day, I think I have enough to take a first measure of">
+<meta property="og:description" content="After running my Oracle Application Express (APEX) instance (see the previous article on what it takes) for more than a day, I think I have enough to take a first measure of costs and fact check the">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1905/bookkeeper-1016299_1280x720.jpg">
 <meta property="og:image" content="https://fuzziebrain.com/content/id/1905/oci-billing-20190301.png">
@@ -141,12 +141,12 @@ ga('send', 'pageview');
   <div class="article-inner">
     <div class="article-entry" itemprop="articleBody">
       
-        <img src="/content/id/1905/bookkeeper-1016299_1280x720.jpg" title="Photo by Oliver Menyhart"><span class="caption">Photo by Oliver Menyhart</span>
+        <img src="/content/id/1905/bookkeeper-1016299_1280x720.jpg" class="" title="Photo by Oliver Menyhart">
 
-<p>After running my <a href="https://apex.oracle.com" target="_blank" rel="noopener">Oracle Application Express (APEX)</a> instance (see the <a href="/content/id/1904">previous article</a> on what it takes) for more than a day, I think I have enough to take a first measure of costs and fact check the <a href="https://cloud.oracle.com/iaas/pricing" target="_blank" rel="noopener">prices</a> listed by Oracle!</p>
-<a id="more"></a>
+<p>After running my <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express (APEX)</a> instance (see the <a href="/content/id/1904">previous article</a> on what it takes) for more than a day, I think I have enough to take a first measure of costs and fact check the <a target="_blank" rel="noopener" href="https://cloud.oracle.com/iaas/pricing">prices</a> listed by Oracle!</p>
+<span id="more"></span>
 
-<h2 id="Current-Configuration-Recap"><a href="#Current-Configuration-Recap" class="headerlink" title="Current Configuration (Recap)"></a>Current Configuration (Recap)</h2><p>At the moment, I have created the following resources in my <a href="https://cloud.oracle.com/iaas/" target="_blank" rel="noopener">Oracle Cloud Infrastructure (OCI)</a> trial account:</p>
+<h2 id="Current-Configuration-Recap"><a href="#Current-Configuration-Recap" class="headerlink" title="Current Configuration (Recap)"></a>Current Configuration (Recap)</h2><p>At the moment, I have created the following resources in my <a target="_blank" rel="noopener" href="https://cloud.oracle.com/iaas/">Oracle Cloud Infrastructure (OCI)</a> trial account:</p>
 <ul>
 <li>A Virtual Cloud Network (VCN) containing one of each:<ul>
 <li>Public Subnet</li>
@@ -168,10 +168,10 @@ ga('send', 'pageview');
 <p>NOTE: OCI’s OCPU is equivalent to 2 vCPUs, a unit often used by other cloud hosting providers.</p>
 </blockquote>
 <h2 id="Billing-and-Cost-Analysis"><a href="#Billing-and-Cost-Analysis" class="headerlink" title="Billing and Cost Analysis"></a>Billing and Cost Analysis</h2><p>To view the current billing information through the OCI console, click <i class="fa fa-bars"></i> <i class="fa fa-caret-right"></i> Billing <i class="fa fa-caret-right"></i> Cost Analysis.</p>
-<img src="/content/id/1905/oci-billing-20190301.png" title="Cost Analysis for March 01, 2019"><span class="caption">Cost Analysis for March 01, 2019</span>
+<img src="/content/id/1905/oci-billing-20190301.png" class="" title="Cost Analysis for March 01, 2019">
 
-<p>Based on these estimates, I can expect to pay CA$1.06 x 365 days / 12 = <strong>CA$32.24/mth</strong>. Using the <a href="https://cloud.oracle.com/cost-estimator" target="_blank" rel="noopener">pricing calculator</a>, the estimate is pretty accurate at CA$33/mth or US$24/mth. Let’s compare this with similar offerings by other hosting companies.</p>
-<h3 id="DigitalOcean"><a href="#DigitalOcean" class="headerlink" title="DigitalOcean"></a>DigitalOcean</h3><p>DigitalOcean’s pricing information can be found <a href="https://www.digitalocean.com/pricing/?refcode=6f9b549ca569" target="_blank" rel="noopener">here</a>. The product that has specifications closest to OCI’s <em>VM.Standard.E2.1</em> is their new <em>General Purpose Droplets</em>. The lowest priced system comes with the following specifications:</p>
+<p>Based on these estimates, I can expect to pay CA$1.06 x 365 days / 12 = <strong>CA$32.24/mth</strong>. Using the <a target="_blank" rel="noopener" href="https://cloud.oracle.com/cost-estimator">pricing calculator</a>, the estimate is pretty accurate at CA$33/mth or US$24/mth. Let’s compare this with similar offerings by other hosting companies.</p>
+<h3 id="DigitalOcean"><a href="#DigitalOcean" class="headerlink" title="DigitalOcean"></a>DigitalOcean</h3><p>DigitalOcean’s pricing information can be found <a target="_blank" rel="noopener" href="https://www.digitalocean.com/pricing/?refcode=6f9b549ca569">here</a>. The product that has specifications closest to OCI’s <em>VM.Standard.E2.1</em> is their new <em>General Purpose Droplets</em>. The lowest priced system comes with the following specifications:</p>
 <ul>
 <li>2 vCPUs</li>
 <li>8 GB memory</li>
@@ -179,7 +179,7 @@ ga('send', 'pageview');
 <li>4 TB network transfer</li>
 </ul>
 <p>Monthly Fee: <strong>US$60</strong></p>
-<h3 id="Linode"><a href="#Linode" class="headerlink" title="Linode"></a>Linode</h3><p>Linode’s pricing information can be found <a href="https://www.linode.com/pricing/?r=41672b20d515344de465e9ed44c1a75356445597" target="_blank" rel="noopener">here</a>. Their most similar offering has the following specifications:</p>
+<h3 id="Linode"><a href="#Linode" class="headerlink" title="Linode"></a>Linode</h3><p>Linode’s pricing information can be found <a target="_blank" rel="noopener" href="https://www.linode.com/pricing/?r=41672b20d515344de465e9ed44c1a75356445597">here</a>. Their most similar offering has the following specifications:</p>
 <ul>
 <li>2 vCPUs</li>
 <li>4 GB memory <span style="color: red;"><i class="fa fa-arrow-circle-down"></i></span></li>
@@ -187,7 +187,7 @@ ga('send', 'pageview');
 <li>4 TB network transfer</li>
 </ul>
 <p>Monthly Fee: <strong>US$20</strong> (DigitalOcean offers the same package at the same price)</p>
-<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>To run an APEX stack using <a href="https://oracle.com/xe" target="_blank" rel="noopener">Oracle Database 18c Express Edition (18cXE)</a>, the $20/mth package from either DigitalOcean or Linode is more than sufficient. 18cXE limits us to use only 2 GB of memory, 2 CPU threads and store up to 12 GB of user data. Setting up a VM in either of the two hosts are also considerably simpler and more straightforward.</p>
+<h3 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h3><p>To run an APEX stack using <a target="_blank" rel="noopener" href="https://oracle.com/xe">Oracle Database 18c Express Edition (18cXE)</a>, the $20/mth package from either DigitalOcean or Linode is more than sufficient. 18cXE limits us to use only 2 GB of memory, 2 CPU threads and store up to 12 GB of user data. Setting up a VM in either of the two hosts are also considerably simpler and more straightforward.</p>
 <p>For an enterprise though, consider also the other services that are made available by each provider listed in this article.</p>
 <blockquote>
 <p>Please note that the providers update the service offerings all the time. Always check with them for the latest available features.</p>
@@ -277,7 +277,7 @@ ga('send', 'pageview');
 <ol>
 <li>After creating a new compartment (<em>PROD</em>) and VCN, click <i class="fa fa-bars"></i> <i class="fa fa-caret-right"></i> Bare Metal, VM, and Exadata <i class="fa fa-caret-right"></i></li>
 <li>On the DB Systems page, make sure that the new compartment is created, and then click the <em>Launch DB System</em> button.</li>
-<li>Enter the required DB System parameters and then launch the server. If the required fields are empty, the launch button will <strong>not</strong> be enabled. <img src="/content/id/1905/oci-create-dbsystem.png" title="Create DB System dialog"><span class="caption">Create DB System dialog</span>
+<li>Enter the required DB System parameters and then launch the server. If the required fields are empty, the launch button will <strong>not</strong> be enabled. <img src="/content/id/1905/oci-create-dbsystem.png" class="" title="Create DB System dialog">
 <ul>
 <li><strong>DISPLAY NAME</strong>: <em>Give it a unique name</em></li>
 <li><strong>AVAILABILITY DOMAIN</strong>: * Select a suitable AD*</li>
@@ -307,7 +307,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://fuzziebrain.com/content/id/1905/" data-id="ckmr4pjlx0019x0fdcllmgdf9" class="article-share-link">
+      <a data-url="https://fuzziebrain.com/content/id/1905/" data-id="ckmr6zpfm001iw4fdcisw6l2p" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -355,7 +355,7 @@ ga('send', 'pageview');
           
   <div class="sidebar-module sidebar-module-inset">
   <h4>About</h4>
-  <p><strong>Adrian Png</strong> is a Senior <a href="https://apex.oracle.com/" target="_blank" rel="noopener">APEX</a> Consultant at <a href="https://insum.ca/" target="_blank" rel="noopener">Insum Solutions</a>.</p>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://apex.oracle.com/">APEX</a> Consultant at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
 <p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
 
   <img src="/img/O-ACE-rgb.png" class="ace-logo">
