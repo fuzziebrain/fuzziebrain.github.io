@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Making the Move to the Autonomous Database | Thinking Anew</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Packing boxes  In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Applicatio">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Making the Move to the Autonomous Database">
+<meta property="og:url" content="https://fuzziebrain.com/content/id/1920/index.html">
+<meta property="og:site_name" content="Thinking Anew">
+<meta property="og:description" content="Packing boxes  In my previous post, I mentioned that I have created my Oracle Cloud Free Tier account and provisioned an Autonomous Database (ADB). Now, I’m ready to move my existing Oracle Applicatio">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1920/boxes-2719166_1280x720.jpg">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1920/apex_instance_admin_login.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1920/create_schema.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1920/goto-object-storage.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1920/create-bucket.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1920/bucket-details.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1920/generate-auth-token.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/1920/download-wallet.png">
+<meta property="article:published_time" content="2019-09-27T01:29:30.000Z">
+<meta property="article:modified_time" content="2022-10-09T21:38:47.050Z">
+<meta property="article:author" content="Adrian Png">
+<meta property="article:tag" content="orclapex">
+<meta property="article:tag" content="cloud">
+<meta property="article:tag" content="oci">
+<meta property="article:tag" content="oracle">
+<meta property="article:tag" content="autonomous">
+<meta property="article:tag" content="alwaysfree">
+<meta property="article:tag" content="data migration">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fuzziebrain.com/content/id/1920/boxes-2719166_1280x720.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Thinking Anew" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700" rel="stylesheet" type="text/css">
+  <link href="//stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE=" crossorigin="anonymous" />
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-10103110-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/categories/reviews/">Reviews</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <img src="/img/flames.png">
+  <h1 class="blog-title">Thinking Anew</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-making-the-move-to-the-autonomous-database" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Making the Move to the Autonomous Database
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/content/id/1920/" class="article-date"><time datetime="2019-09-27T01:29:30.000Z" itemprop="datePublished">2019-09-26</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/technology/">Technology</a> / <a class="article-category-link" href="/categories/technology/infrastructure/">Infrastructure</a> / <a class="article-category-link" href="/categories/technology/infrastructure/oracle-cloud/">Oracle Cloud</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/content/id/1920/boxes-2719166_1280x720.jpg" class="" title="Packing boxes"><span class="caption">Packing boxes</span>
+
+<p>In my <a href="/content/id/1919">previous post</a>, I mentioned that I have created my <a target="_blank" rel="noopener" href="https://oracle.com/cloud/free/">Oracle Cloud Free Tier</a> account and provisioned an <a target="_blank" rel="noopener" href="https://www.oracle.com/database/what-is-autonomous-database.html">Autonomous Database</a> (ADB). Now, I’m ready to move my existing <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX) to this new environment. Next, I’ll describe the steps I took to move (1) workspace, (2) application and (3) data, from the old to new database.</p>
+<span id="more"></span>
+
+<h2 id="Scope"><a href="#Scope" class="headerlink" title="Scope"></a>Scope</h2><p>To better illustrate the move process, let’s create some fictious information about what I am about to move.</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Source server hostname</td>
+<td>dev.contoso.com</td>
+</tr>
+<tr>
+<td>Source database name</td>
+<td>XE</td>
+</tr>
+<tr>
+<td>Database dump directory on source server</td>
+<td><code>/tmp/cloud-migration</code></td>
+</tr>
+<tr>
+<td>Dumpfile filename</td>
+<td><code>cloud-migration.dmp</code></td>
+</tr>
+<tr>
+<td>Source data pump target directory</td>
+<td><code>CLOUD_MIGRATION_DIR</code></td>
+</tr>
+<tr>
+<td>Target database name</td>
+<td>ATP01</td>
+</tr>
+<tr>
+<td>Oracle Cloud Region</td>
+<td>Ashburn, United States</td>
+</tr>
+<tr>
+<td>Object Storage namespace</td>
+<td>abcdefgh</td>
+</tr>
+<tr>
+<td>Bucket name</td>
+<td>cloud-migration</td>
+</tr>
+<tr>
+<td>Workspace ID</td>
+<td>1234567890</td>
+</tr>
+<tr>
+<td>Workspace name</td>
+<td>CONTOSO_WEB</td>
+</tr>
+<tr>
+<td>Workspace administrator username</td>
+<td>admin</td>
+</tr>
+<tr>
+<td>Workspace schema name</td>
+<td>contoso_apps</td>
+</tr>
+<tr>
+<td>Auxiliary schema names</td>
+<td>logger</td>
+</tr>
+<tr>
+<td>APEX applications</td>
+<td>1000 - Contoso Web; 1400 - Contoso Content Management System</td>
+</tr>
+<tr>
+<td>Working directory on workstation</td>
+<td><code>/home/jdoe/cloud-migration</code></td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Note</strong></p>
+<p>The source server does not expose the database port 1521. Connection to the database from my workspace requires using a SSH tunnel.</p>
+</blockquote>
+<h3 id="Tools-Required"><a href="#Tools-Required" class="headerlink" title="Tools Required"></a>Tools Required</h3><p>Install the following software in the environment that </p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/appdev/sqlcl.html">SQLcl</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/instant-client.html">Oracle Instant Client</a><ul>
+<li>Basic</li>
+<li>Tools (includes the Oracle Data Pump utilities expdp and impdp)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Export-Components-from-Old-Database"><a href="#Export-Components-from-Old-Database" class="headerlink" title="Export Components from Old Database"></a>Export Components from Old Database</h2><h3 id="Export-APEX-Workspace-and-Applications"><a href="#Export-APEX-Workspace-and-Applications" class="headerlink" title="Export APEX Workspace and Applications"></a>Export APEX Workspace and Applications</h3><ol>
+<li><p>Start SQLcl:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql /nolog</span><br></pre></td></tr></table></figure></li>
+<li><p>Create SSH tunnel and local port forwarding:</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sshtunnel oracle<span class="variable">@dev</span>.contoso.com <span class="operator">-</span>L <span class="number">1523</span>:localhost:<span class="number">1521</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Connect to the dataabse as <em>contoso_apps</em>:</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">connect</span> contoso_apps<span class="operator">/</span>secret@<span class="operator">/</span><span class="operator">/</span>localhost:<span class="number">1523</span><span class="operator">/</span>XE</span><br></pre></td></tr></table></figure></li>
+<li><p>Obtained the workspace ID:</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> to_char(workspace_id) <span class="keyword">from</span> apex_workspaces <span class="keyword">where</span> workspace <span class="operator">=</span> <span class="string">&#x27;CONTOSO_WEB&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>Export the workspace:</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apex export <span class="operator">-</span>workspaceid <span class="number">1234567890</span> <span class="operator">-</span>expWorkspace</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>This will produce a file named after the workspace ID, e.g. <code>w1234567890.sql</code></p>
+</blockquote>
+</li>
+<li><p>Export <strong>all</strong> APEX applications in the workspace:</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apex export <span class="operator">-</span>workspaceid <span class="number">1234567890</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Optionally, specify only the applications by id, using the <code>-applicationid</code> parameter. The export process would produce files named after the application ID, e.g. <code>f1000.sql</code> and <code>f1400.sql</code>.</p>
+</blockquote>
+</li>
+<li><p>If there are any REST services to be migrated, then execute the following:</p>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">spool rest_services.sql</span><br><span class="line">rest export</span><br><span class="line">spool off</span><br></pre></td></tr></table></figure></li>
+<li><p>Logout.</p>
+</li>
+<li><p>If REST services were exported, then execute the following:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;/&quot;</span> &gt;&gt; rest_services.sql</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Export-Schemas"><a href="#Export-Schemas" class="headerlink" title="Export Schemas"></a>Export Schemas</h3><p>Login to the source database using SSH as user <em>oracle</em>. The subsequent commands in this section will be executed on the source server.</p>
+<ol>
+<li>Login to the database as <em>SYSDBA</em>: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sqlplus <span class="operator">/</span> <span class="keyword">as</span> sysdba</span><br></pre></td></tr></table></figure></li>
+<li>Create the target data dump directory: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">host mkdir <span class="operator">/</span>tmp<span class="operator">/</span>cloud<span class="operator">-</span>migration</span><br></pre></td></tr></table></figure></li>
+<li>Create the directory object: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> directory CLOUD_MIGRATION_DIR <span class="keyword">as</span> <span class="string">&#x27;/tmp/cloud-migration&#x27;</span>;</span><br></pre></td></tr></table></figure></li>
+<li>Grant the <em>system</em> user <code>READ</code> and <code>WRITE</code> privileges: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grant</span> read, write <span class="keyword">on</span> directory CLOUD_MIGRATION_DIR <span class="keyword">to</span> <span class="keyword">system</span>;</span><br></pre></td></tr></table></figure></li>
+<li>Exit SQL*Plus.    </li>
+<li>Run the export data pump utility (expdp) to export the schema objects: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">expdp system schemas=logger,contoso_apps  \</span><br><span class="line">  directory=CLOUD_MIGRATION_DIR dumpfile=cloud-migration.dmp \</span><br><span class="line">  logfile=exp_cloud-migration.log</span><br></pre></td></tr></table></figure></li>
+<li>Logout from the source server.</li>
+</ol>
+<h3 id="Preparing-for-Import"><a href="#Preparing-for-Import" class="headerlink" title="Preparing for Import"></a>Preparing for Import</h3><ol>
+<li>Grab the dumpfile (and log file if necessary): <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scp -r oracle@dev.contoso.com:/tmp/cloud-migration/* .</span><br></pre></td></tr></table></figure></li>
+<li>The local working directory <code>/home/jdoe/cloud-migration</code> should now contain the following files:<ul>
+<li><code>cloud-migration.dmp</code></li>
+<li><code>exp_cloud-migration.log</code></li>
+<li><code>f1000.sql</code></li>
+<li><code>f1400.sql</code></li>
+<li><code>rest_services.sql</code></li>
+<li><code>w1234567890.sql</code></li>
+</ul>
+</li>
+</ol>
+<h2 id="Import-Components-into-ADB"><a href="#Import-Components-into-ADB" class="headerlink" title="Import Components into ADB"></a>Import Components into ADB</h2><h3 id="Import-the-Workspace"><a href="#Import-the-Workspace" class="headerlink" title="Import the Workspace"></a>Import the Workspace</h3><ol>
+<li>Login to the ADB’s APEX <em>Administration Services</em> as the <em>admin</em> user: <img src="/content/id/1920/apex_instance_admin_login.png" class="" title="Login screen"><span class="caption">Login screen</span></li>
+<li>Use the <em>Manage Workspaces</em> utilities to import the workspace from the file <code>w1234567890.sql</code>.</li>
+<li>During the import process, create the workspace schema. Set the password and space quota as required. <img src="/content/id/1920/create_schema.png" class="" title="Create workspace schema"><span class="caption">Create workspace schema</span></li>
+</ol>
+<h3 id="Prerequisites-for-Using-IMPDP-with-ADB"><a href="#Prerequisites-for-Using-IMPDP-with-ADB" class="headerlink" title="Prerequisites for Using IMPDP with ADB"></a>Prerequisites for Using IMPDP with ADB</h3><p>Data can be imported into an ADB using Oracle Data Pump. However, since we do not access to the database server’s file system, <a target="_blank" rel="noopener" href="https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm">Object Storage</a> must be used to deliver the dumpfile. </p>
+<p>The official instructions to prepare for data pump can be found <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/load-data-data-pump.html#GUID-30DB1EEA-DB45-49EA-9E97-DF49A9968E24">here</a>. The following is a summary account of what I did.</p>
+<h4 id="Object-Storage"><a href="#Object-Storage" class="headerlink" title="Object Storage"></a>Object Storage</h4><ol>
+<li>Access the Oracle Cloud Object Storage. <img src="/content/id/1920/goto-object-storage.png" class="" title="Access Object Storage"><span class="caption">Access Object Storage</span></li>
+<li>Create a bucket and name it <code>cloud-migration</code>. <img src="/content/id/1920/create-bucket.png" class="" title="Create bucket"><span class="caption">Create bucket</span></li>
+<li>Take note of the Object Storage namespace (1) that is required for determining the URI for the dumpfile. <img src="/content/id/1920/bucket-details.png" class="" title="Bucket details"><span class="caption">Bucket details</span></li>
+<li>Upload the dumpfile <code>cloud-migration.dmp</code> to the bucket. </li>
+</ol>
+<h4 id="Set-Cloud-Credentials-for-ADB"><a href="#Set-Cloud-Credentials-for-ADB" class="headerlink" title="Set Cloud Credentials for ADB"></a>Set Cloud Credentials for ADB</h4><ol>
+<li><a target="_blank" rel="noopener" href="https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm#two">Generate an Auth Token</a> for a user in the tenant with the necessary access to the bucket and its contents. <img src="/content/id/1920/generate-auth-token.png" class="" title="Generate an Auth Token"><span class="caption">Generate an Auth Token</span></li>
+<li>Set the Cloud Object Storage credentials: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">begin</span></span><br><span class="line">  dbms_cloud.create_credential(</span><br><span class="line">    credential_name <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;DEF_CRED_NAME&#x27;</span></span><br><span class="line">    , username <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;jdoe&#x27;</span></span><br><span class="line">    , password <span class="operator">=</span><span class="operator">&gt;</span> <span class="string">&#x27;the_generated_auth_token&#x27;</span></span><br><span class="line">  );</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="operator">/</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="Instant-Client-Setup-for-ADB"><a href="#Instant-Client-Setup-for-ADB" class="headerlink" title="Instant Client Setup for ADB"></a>Instant Client Setup for ADB</h4><p>Official instructions for setting up your system to connect to the database using the tools provided by the Oracle Instant Client, including the Oracle Data Pump utilies needed for importing the data, can be found <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/connect-preparing.html#GUID-EFAFA00E-54CC-47C7-8C71-E7868279EF3B">here</a>.</p>
+<p>Here’s a quick overview of what I did:</p>
+<ol>
+<li><p>Download the Cient Credentials (Wallet) from the ADB’s Service Console.</p>
+ <img src="/content/id/1920/download-wallet.png" class="" title="Download wallet"><span class="caption">Download wallet</span></li>
+<li><p>Set the enviroment variable <code>TNS_ADMIN</code>:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> TNS_ADMIN=/home/jdoe/.wallets/atp01</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>The Oracle Wallet, <code>sqlnet.ora</code> and <code>tnsnames.ora</code> files will be stored in this path. The directory contents are required by the Oracle Instant Client tools to resolve the network service names for connecting to the ADB. The environment variable <strong>must</strong> be set prior to running any of these applications. </p>
+</blockquote>
+</li>
+<li><p>Create the wallet directory:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p <span class="variable">$TNS_ADMIN</span></span><br></pre></td></tr></table></figure></li>
+<li><p>Extract the contents of the ZIP file into the wallet directory:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unzip wallet_ATP01.zip -d <span class="variable">$TNS_ADMIN</span></span><br></pre></td></tr></table></figure></li>
+<li><p>The wallet contains a <code>sqlnet.ora</code> file. Replace the path <code>?/network/admin</code>, specified for the parameter <code>DIRECTORY</code>, with the wallet’s path (<code>TNS_ADMIN</code>).</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i .bak <span class="string">&quot;s|?/network/admin|<span class="variable">$TNS_ADMIN</span>|g&quot;</span> <span class="variable">$TNS_ADMIN</span>/sqlnet.ora</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="Create-Auxiliary-Schemas"><a href="#Create-Auxiliary-Schemas" class="headerlink" title="Create Auxiliary Schemas"></a>Create Auxiliary Schemas</h3><ol>
+<li>Launch SQLcl: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql /nolog</span><br></pre></td></tr></table></figure></li>
+<li>Login to the ADB using SQLcl as <em>admin</em>, the administrator account created when the database was provisioned. <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">connect</span> admin<span class="operator">/</span>supersecret<span class="variable">@atp01</span>_high</span><br></pre></td></tr></table></figure></li>
+<li>Create the auxiliary user and grant needed privileges and quota. For example: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Create user and set quota on DATA, the tablespace for users in ADB.</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> logger identified <span class="keyword">by</span> &quot;secret&quot; quota <span class="number">50</span>M <span class="keyword">on</span> data;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Grant privileges required by Logger.</span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">connect</span>, <span class="keyword">create</span> <span class="keyword">view</span>, <span class="keyword">create</span> job, <span class="keyword">create</span> <span class="keyword">table</span>, <span class="keyword">create</span> sequence</span><br><span class="line">  , <span class="keyword">create</span> <span class="keyword">trigger</span>, <span class="keyword">create</span> <span class="keyword">procedure</span>, <span class="keyword">create</span> <span class="keyword">any</span> context <span class="keyword">to</span> logger;</span><br></pre></td></tr></table></figure></li>
+<li>Logout from the database.</li>
+</ol>
+<h3 id="Import-Schema-Objects"><a href="#Import-Schema-Objects" class="headerlink" title="Import Schema Objects"></a>Import Schema Objects</h3><ol>
+<li><p>Run the import data pump utility (impdp), avoiding the recreation of certain objects as specified by the <code>exclude</code> option:</p>
+ <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">impdp admin@atp01_high directory=data_pump_dir credential=def_cred_name \</span><br><span class="line">  dumpfile=https://objectstorage.us-ashburn-1.oraclecloud.com/n/abcdefgh/b/cloud-migration/o/cloud-migration.dmp \</span><br><span class="line">  schemas=logger,contoso_apps parallel=16 transform=segment_attributes:n \</span><br><span class="line">  transform=dwcs_cvt_iots:y transform=constraint_use_default_index:y \</span><br><span class="line">  exclude=cluster,db_link,user,tablespace_quota,default_role</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<ul>
+<li>Details about the DBMS_CLOUD Package File URI format can be found <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/file-uri-formats.html#GUID-5D3E1614-ADF2-4DB5-B2B2-D5613F10E4FA">here</a>. The namespace was noted in an earlier section of this post.</li>
+<li>The exclusions include the creation of a user and modifications of certain properties about the user. The schemas were created in earlier sections of this article. They are redundant and will likely result in errors.</li>
+<li>Take note of the data pump logs. If necessary, <a target="_blank" rel="noopener" href="https://docs.oracle.com/en/cloud/paas/atp-cloud/atpug/load-data-data-pump.html#GUID-CC7F258C-5D58-475B-8361-467C35FB0745">download</a> a copy for further analysis and future reference.</li>
+</ul>
+</blockquote>
+</li>
+</ol>
+<h3 id="Import-Applications"><a href="#Import-Applications" class="headerlink" title="Import Applications"></a>Import Applications</h3><ol>
+<li>Launch SQLcl: <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql /nolog</span><br></pre></td></tr></table></figure></li>
+<li>Login to the ADB as the workspace schema user: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">connect</span> contoso_apps<span class="operator">/</span>secret<span class="variable">@atp01</span>_high</span><br></pre></td></tr></table></figure></li>
+<li>Set the workspace: <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apex_util.set_workspace(<span class="string">&#x27;CONTOSO_WEB&#x27;</span>);</span><br></pre></td></tr></table></figure></li>
+<li>Load and execute each application export file to import the application to the target workspace: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@f1000.sql</span><br><span class="line">@f1400.sql</span><br></pre></td></tr></table></figure></li>
+<li>Import the REST services if any: <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@rest_services.sql</span><br></pre></td></tr></table></figure></li>
+<li>Exit the application.</li>
+</ol>
+<h2 id="Post-Migration-Tasks"><a href="#Post-Migration-Tasks" class="headerlink" title="Post-Migration Tasks"></a>Post-Migration Tasks</h2><p>After migrating the applications and data, here are some recommended tasks:</p>
+<ul>
+<li><i class="fa fa-check-square"></i> Check for missing grants and assign them as necessary.</li>
+<li><i class="fa fa-check-square"></i> Re-create and database links required by the application.</li>
+<li><i class="fa fa-check-square"></i> Search for objects like packages and triggers that did not compile successfully during the import process. Fix any issues and recompile the objects.</li>
+<li><i class="fa fa-check-square"></i> Note the issues highlighted in the <a href="/content/id/1919">previous post</a> concerning workspace developer/administrator access.</li>
+<li><i class="fa fa-check-square"></i> Test all applications.</li>
+</ul>
+<p>Hope I didn’t miss any steps. If you do notice any or mistakes, please let me know in the comments below.</p>
+<p>Thanks for reading!</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://fuzziebrain.com/content/id/1920/" data-id="cl931cxnl002e8r4g1d7a0uam" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/alwaysfree/" rel="tag">alwaysfree</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/autonomous/" rel="tag">autonomous</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cloud/" rel="tag">cloud</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/data-migration/" rel="tag">data migration</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oci/" rel="tag">oci</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oracle/" rel="tag">oracle</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/orclapex/" rel="tag">orclapex</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/content/id/1919/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Autonomous DB - The Developers&#39; Playground</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/content/id/1921/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">OGB Appreciation Day: Challenge Coin Sponsors</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://oracle.com/cloud">Cloud</a> Solutions Architect at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
+<p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
+
+  <img src="/img/O-ACE-rgb.png" class="ace-logo">
+</div>
+
+
+  <div class="sidebar-module">
+  <p class="twitter">
+    <a class="twitter-timeline" data-dnt="true" target="_blank" rel="noopener" href="https://twitter.com/fuzziebrain" data-widget-id="487271531987210241">Tweets by @fuzziebrain</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </p>
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/life/">Life</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/reviews/">Reviews</a><span class="sidebar-module-list-count">5</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/reviews/books/">Books</a><span class="sidebar-module-list-count">5</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/">Technology</a><span class="sidebar-module-list-count">72</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/community/">Community</a><span class="sidebar-module-list-count">4</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/community/java/">Java</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/community/oracle-application-express/">Oracle Application Express</a><span class="sidebar-module-list-count">3</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/conferences/">Conferences</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/devops/">DevOps</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/infrastructure/">Infrastructure</a><span class="sidebar-module-list-count">22</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/infrastructure/oracle-cloud/">Oracle Cloud</a><span class="sidebar-module-list-count">22</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/others/">Others</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/">Programming</a><span class="sidebar-module-list-count">37</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/nodejs/">Nodejs</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/oracle-application-express/">Oracle Application Express</a><span class="sidebar-module-list-count">33</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/tools/">Tools</a><span class="sidebar-module-list-count">3</span></li></ul></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/18cxe/" style="font-size: 12.31px;">18cXE</a> <a href="/tags/2fa/" style="font-size: 10px;">2fa</a> <a href="/tags/apache-poi/" style="font-size: 10px;">Apache POI</a> <a href="/tags/devops/" style="font-size: 10px;">DevOps</a> <a href="/tags/eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/iaas/" style="font-size: 16.15px;">IaaS</a> <a href="/tags/java/" style="font-size: 10px;">Java</a> <a href="/tags/kscope17/" style="font-size: 10px;">Kscope17</a> <a href="/tags/linux/" style="font-size: 10px;">Linux</a> <a href="/tags/microsoft-word/" style="font-size: 10px;">Microsoft Word</a> <a href="/tags/odtug/" style="font-size: 10.77px;">ODTUG</a> <a href="/tags/oxar/" style="font-size: 10px;">OXAR</a> <a href="/tags/oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/oracle-application-express/" style="font-size: 10.77px;">Oracle Application Express</a> <a href="/tags/oracle-bi-publisher/" style="font-size: 10px;">Oracle BI Publisher</a> <a href="/tags/oracle-text/" style="font-size: 10px;">Oracle Text</a> <a href="/tags/pdf/" style="font-size: 10px;">PDF</a> <a href="/tags/san-antonio/" style="font-size: 10px;">San Antonio</a> <a href="/tags/subversion/" style="font-size: 10px;">Subversion</a> <a href="/tags/thanksodc/" style="font-size: 10px;">ThanksODC</a> <a href="/tags/thanksogb/" style="font-size: 10px;">ThanksOGB</a> <a href="/tags/vagrant/" style="font-size: 10px;">Vagrant</a> <a href="/tags/vancouver/" style="font-size: 10.77px;">Vancouver</a> <a href="/tags/virtualbox/" style="font-size: 10px;">VirtualBox</a> <a href="/tags/xpath/" style="font-size: 10px;">XPath</a> <a href="/tags/xsl-fo/" style="font-size: 10px;">XSL-FO</a> <a href="/tags/aarch64/" style="font-size: 10px;">aarch64</a> <a href="/tags/abstract/" style="font-size: 10px;">abstract</a> <a href="/tags/active-directory/" style="font-size: 10px;">active directory</a> <a href="/tags/administrators/" style="font-size: 10px;">administrators</a> <a href="/tags/ai/" style="font-size: 10px;">ai</a> <a href="/tags/always-free/" style="font-size: 10px;">always-free</a> <a href="/tags/alwaysfree/" style="font-size: 11.54px;">alwaysfree</a> <a href="/tags/ampere/" style="font-size: 10px;">ampere</a> <a href="/tags/analytics/" style="font-size: 10px;">analytics</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/applications/" style="font-size: 10px;">applications</a> <a href="/tags/appreciation/" style="font-size: 10px;">appreciation</a> <a href="/tags/architecture/" style="font-size: 10px;">architecture</a> <a href="/tags/arm/" style="font-size: 10px;">arm</a> <a href="/tags/artificial-intelligence/" style="font-size: 12.31px;">artificial intelligence</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/authentication/" style="font-size: 13.08px;">authentication</a> <a href="/tags/autonomous/" style="font-size: 15.38px;">autonomous</a> <a href="/tags/autonomous-database/" style="font-size: 10px;">autonomous database</a> <a href="/tags/award/" style="font-size: 10px;">award</a> <a href="/tags/azure/" style="font-size: 10px;">azure</a> <a href="/tags/barcode/" style="font-size: 10px;">barcode</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/blogging/" style="font-size: 10.77px;">blogging</a> <a href="/tags/book/" style="font-size: 10px;">book</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/bots/" style="font-size: 10px;">bots</a> <a href="/tags/browsing/" style="font-size: 10px;">browsing</a> <a href="/tags/career/" style="font-size: 10.77px;">career</a> <a href="/tags/certificates/" style="font-size: 10px;">certificates</a> <a href="/tags/challenge-coin/" style="font-size: 12.31px;">challenge coin</a> <a href="/tags/change-is-constant/" style="font-size: 10px;">change is constant</a> <a href="/tags/cloud/" style="font-size: 18.46px;">cloud</a> <a href="/tags/communication/" style="font-size: 10px;">communication</a> <a href="/tags/community/" style="font-size: 15.38px;">community</a> <a href="/tags/compliance/" style="font-size: 10px;">compliance</a> <a href="/tags/compute/" style="font-size: 10px;">compute</a> <a href="/tags/computer-science/" style="font-size: 10px;">computer science</a> <a href="/tags/confidential/" style="font-size: 10px;">confidential</a> <a href="/tags/container/" style="font-size: 10px;">container</a> <a href="/tags/coronavirus/" style="font-size: 10px;">coronavirus</a> <a href="/tags/covid-19/" style="font-size: 10px;">covid-19</a> <a href="/tags/crisis/" style="font-size: 10px;">crisis</a> <a href="/tags/customer-service/" style="font-size: 10px;">customer service</a> <a href="/tags/data/" style="font-size: 11.54px;">data</a> <a href="/tags/data-migration/" style="font-size: 10px;">data migration</a> <a href="/tags/database/" style="font-size: 14.62px;">database</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/devops/" style="font-size: 16.92px;">devops</a> <a href="/tags/digital-transformation/" style="font-size: 10px;">digital transformation</a> <a href="/tags/digitalocean/" style="font-size: 10px;">digitalocean</a> <a href="/tags/disney/" style="font-size: 10px;">disney</a> <a href="/tags/docker/" style="font-size: 12.31px;">docker</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/emerging-technology/" style="font-size: 10.77px;">emerging technology</a> <a href="/tags/encryption/" style="font-size: 10px;">encryption</a> <a href="/tags/environment/" style="font-size: 10px;">environment</a> <a href="/tags/face-detection/" style="font-size: 10px;">face detection</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/facet/" style="font-size: 10px;">facet</a> <a href="/tags/faceted-search/" style="font-size: 10px;">faceted search</a> <a href="/tags/features/" style="font-size: 10.77px;">features</a> <a href="/tags/fnproj/" style="font-size: 10px;">fnproj</a> <a href="/tags/free-tier/" style="font-size: 10px;">free-tier</a> <a href="/tags/full-stack/" style="font-size: 10px;">full stack</a> <a href="/tags/functions/" style="font-size: 10px;">functions</a> <a href="/tags/future/" style="font-size: 10px;">future</a> <a href="/tags/generate/" style="font-size: 10px;">generate</a> <a href="/tags/geolocation/" style="font-size: 10px;">geolocation</a> <a href="/tags/getinvolved/" style="font-size: 10px;">getinvolved</a> <a href="/tags/gis/" style="font-size: 10px;">gis</a> <a href="/tags/google/" style="font-size: 11.54px;">google</a> <a href="/tags/gps/" style="font-size: 10.77px;">gps</a> <a href="/tags/graphql/" style="font-size: 10px;">graphql</a> <a href="/tags/gratitude/" style="font-size: 10.77px;">gratitude</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/hosting/" style="font-size: 11.54px;">hosting</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/ide/" style="font-size: 10.77px;">ide</a> <a href="/tags/image-processing/" style="font-size: 10px;">image processing</a> <a href="/tags/infrastructure/" style="font-size: 16.15px;">infrastructure</a> <a href="/tags/insum/" style="font-size: 10px;">insum</a> <a href="/tags/integration/" style="font-size: 10px;">integration</a> <a href="/tags/iphone/" style="font-size: 10px;">iphone</a> <a href="/tags/java/" style="font-size: 11.54px;">java</a> <a href="/tags/javascript/" style="font-size: 10.77px;">javascript</a> <a href="/tags/knowledge-sharing/" style="font-size: 10px;">knowledge sharing</a> <a href="/tags/kscope/" style="font-size: 10px;">kscope</a> <a href="/tags/kscope22/" style="font-size: 10px;">kscope22</a> <a href="/tags/kubernetes/" style="font-size: 10px;">kubernetes</a> <a href="/tags/launch/" style="font-size: 10px;">launch</a> <a href="/tags/lbs/" style="font-size: 10.77px;">lbs</a> <a href="/tags/learning/" style="font-size: 12.31px;">learning</a> <a href="/tags/letsencrypt/" style="font-size: 10px;">letsencrypt</a> <a href="/tags/lifelong-learning/" style="font-size: 10px;">lifelong learning</a> <a href="/tags/limits/" style="font-size: 10px;">limits</a> <a href="/tags/linked-data/" style="font-size: 10px;">linked data</a> <a href="/tags/linode/" style="font-size: 11.54px;">linode</a> <a href="/tags/load-balancer/" style="font-size: 10.77px;">load balancer</a> <a href="/tags/location-based-services/" style="font-size: 10px;">location-based services</a> <a href="/tags/machine-learning/" style="font-size: 12.31px;">machine learning</a> <a href="/tags/mahout/" style="font-size: 10px;">mahout</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/mapreduce/" style="font-size: 10px;">mapreduce</a> <a href="/tags/markdown/" style="font-size: 10.77px;">markdown</a> <a href="/tags/meetup/" style="font-size: 10.77px;">meetup</a> <a href="/tags/memorabilia/" style="font-size: 10.77px;">memorabilia</a> <a href="/tags/mfa/" style="font-size: 10px;">mfa</a> <a href="/tags/microsoft/" style="font-size: 12.31px;">microsoft</a> <a href="/tags/migration/" style="font-size: 10px;">migration</a> <a href="/tags/ml/" style="font-size: 10px;">ml</a> <a href="/tags/monetization/" style="font-size: 10px;">monetization</a> <a href="/tags/monitoring/" style="font-size: 10px;">monitoring</a> <a href="/tags/multi-factor/" style="font-size: 10px;">multi-factor</a> <a href="/tags/multimedia/" style="font-size: 10px;">multimedia</a> <a href="/tags/natural-language-processing/" style="font-size: 10.77px;">natural language processing</a> <a href="/tags/nodejs/" style="font-size: 12.31px;">nodejs</a> <a href="/tags/oauth2/" style="font-size: 12.31px;">oauth2</a> <a href="/tags/oci/" style="font-size: 17.69px;">oci</a> <a href="/tags/ocr/" style="font-size: 10px;">ocr</a> <a href="/tags/odtug/" style="font-size: 13.08px;">odtug</a> <a href="/tags/office-365/" style="font-size: 10px;">office 365</a> <a href="/tags/open-container-initiative/" style="font-size: 10px;">open container initiative</a> <a href="/tags/oracle/" style="font-size: 19.23px;">oracle</a> <a href="/tags/oracle-cloud/" style="font-size: 12.31px;">oracle cloud</a> <a href="/tags/oracle-database/" style="font-size: 11.54px;">oracle database</a> <a href="/tags/oracle-text/" style="font-size: 10px;">oracle text</a> <a href="/tags/oracleiaas/" style="font-size: 10px;">oracleiaas</a> <a href="/tags/orclapex/" style="font-size: 20px;">orclapex</a> <a href="/tags/orclfn/" style="font-size: 10px;">orclfn</a> <a href="/tags/orclords/" style="font-size: 10px;">orclords</a> <a href="/tags/ords/" style="font-size: 11.54px;">ords</a> <a href="/tags/ore/" style="font-size: 10px;">ore</a> <a href="/tags/orlando/" style="font-size: 10px;">orlando</a> <a href="/tags/oxar/" style="font-size: 12.31px;">oxar</a> <a href="/tags/pandemic/" style="font-size: 10px;">pandemic</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pki/" style="font-size: 10.77px;">pki</a> <a href="/tags/platform/" style="font-size: 10px;">platform</a> <a href="/tags/plsql/" style="font-size: 10.77px;">plsql</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/podman/" style="font-size: 10px;">podman</a> <a href="/tags/powershell/" style="font-size: 10px;">powershell</a> <a href="/tags/presentation/" style="font-size: 10px;">presentation</a> <a href="/tags/preview/" style="font-size: 10.77px;">preview</a> <a href="/tags/protection/" style="font-size: 10px;">protection</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/python/" style="font-size: 10.77px;">python</a> <a href="/tags/quality/" style="font-size: 10px;">quality</a> <a href="/tags/r/" style="font-size: 10px;">r</a> <a href="/tags/rdm/" style="font-size: 11.54px;">rdm</a> <a href="/tags/reactjs/" style="font-size: 10px;">reactjs</a> <a href="/tags/redact/" style="font-size: 10px;">redact</a> <a href="/tags/release/" style="font-size: 10px;">release</a> <a href="/tags/renew/" style="font-size: 10px;">renew</a> <a href="/tags/reporting/" style="font-size: 10px;">reporting</a> <a href="/tags/research/" style="font-size: 10.77px;">research</a> <a href="/tags/research-data-management/" style="font-size: 10px;">research data management</a> <a href="/tags/rest/" style="font-size: 13.08px;">rest</a> <a href="/tags/review/" style="font-size: 10px;">review</a> <a href="/tags/rstats/" style="font-size: 10.77px;">rstats</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/scripting/" style="font-size: 10px;">scripting</a> <a href="/tags/search/" style="font-size: 11.54px;">search</a> <a href="/tags/seattle/" style="font-size: 10px;">seattle</a> <a href="/tags/secret/" style="font-size: 10px;">secret</a> <a href="/tags/security/" style="font-size: 13.85px;">security</a> <a href="/tags/semantic-web/" style="font-size: 10px;">semantic web</a> <a href="/tags/serverless/" style="font-size: 10.77px;">serverless</a> <a href="/tags/signature/" style="font-size: 10px;">signature</a> <a href="/tags/single-sign-on/" style="font-size: 10.77px;">single sign on</a> <a href="/tags/single-sign-on/" style="font-size: 10.77px;">single sign-on</a> <a href="/tags/smtp/" style="font-size: 10px;">smtp</a> <a href="/tags/solutions/" style="font-size: 10px;">solutions</a> <a href="/tags/speak/" style="font-size: 10px;">speak</a> <a href="/tags/spf/" style="font-size: 10px;">spf</a> <a href="/tags/spring-framework/" style="font-size: 10.77px;">spring framework</a> <a href="/tags/spring-roo/" style="font-size: 10px;">spring roo</a> <a href="/tags/springsource/" style="font-size: 10.77px;">springsource</a> <a href="/tags/springsource-tool-suite/" style="font-size: 10px;">springsource tool suite</a> <a href="/tags/ssl/" style="font-size: 11.54px;">ssl</a> <a href="/tags/sso/" style="font-size: 12.31px;">sso</a> <a href="/tags/stackscripts/" style="font-size: 10px;">stackscripts</a> <a href="/tags/sts/" style="font-size: 10px;">sts</a> <a href="/tags/subclipse/" style="font-size: 10px;">subclipse</a> <a href="/tags/suez/" style="font-size: 10px;">suez</a> <a href="/tags/support/" style="font-size: 10.77px;">support</a> <a href="/tags/sysadmin/" style="font-size: 10px;">sysadmin</a> <a href="/tags/system-administration/" style="font-size: 10px;">system administration</a> <a href="/tags/tde/" style="font-size: 10px;">tde</a> <a href="/tags/techgivesback/" style="font-size: 10px;">techgivesback</a> <a href="/tags/technology/" style="font-size: 10px;">technology</a> <a href="/tags/text-recognition/" style="font-size: 10px;">text recognition</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/tls/" style="font-size: 10.77px;">tls</a> <a href="/tags/tools/" style="font-size: 10.77px;">tools</a> <a href="/tags/training/" style="font-size: 13.08px;">training</a> <a href="/tags/travel/" style="font-size: 11.54px;">travel</a> <a href="/tags/two-factor/" style="font-size: 10px;">two-factor</a> <a href="/tags/typescript/" style="font-size: 10.77px;">typescript</a> <a href="/tags/user-groups/" style="font-size: 10.77px;">user groups</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/vagrant/" style="font-size: 11.54px;">vagrant</a> <a href="/tags/viewer/" style="font-size: 10px;">viewer</a> <a href="/tags/virtualbox/" style="font-size: 10px;">virtualbox</a> <a href="/tags/vscode/" style="font-size: 10.77px;">vscode</a> <a href="/tags/wasm/" style="font-size: 10px;">wasm</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/workshop/" style="font-size: 10px;">workshop</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2022/10/">October 2022</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/10/">October 2021</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/07/">July 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/05/">May 2021</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/07/">July 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/05/">May 2020</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/10/">October 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/07/">July 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/10/">October 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/09/">September 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/02/">February 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/06/">June 2014</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/05/">May 2013</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/04/">April 2013</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/02/">February 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/12/">December 2010</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/10/">October 2010</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/09/">September 2010</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/content/id/2201/">Speak My Language</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/2014/">Will You Love Me Tomorrow</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/2013/">Secret Agent APEX</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/2012/">Intelligent APEX Applications - Fact or Fiction?</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/2011/">ARM Your APEX Instance</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-sm-6">
+        <div class="me-links">
+          <h4>About Me</h4>
+          <dl>
+            <dd><a href="https://twitter.com/fuzziebrain" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></dd>
+            <dd><a href="https://github.com/fuzziebrain" target="_blank"><i class="fab fa-github"></i> Github</a></dd>
+            <dd><a href="https://www.linkedin.com/in/adrianp" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="col col-sm-6"></div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div id="footer-info" class="inner">
+        &copy; 2022 Adrian Png<br>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script>
+  var disqus_shortname = 'fuzziebrain-blog';
+  
+  var disqus_url = 'https://fuzziebrain.com/content/id/1920/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="//stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>

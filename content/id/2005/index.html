@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Running ORDS Against the Autonomous Database - Part 2 | Thinking Anew</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Old pipes and valves  In my previous post, we looked at installing and configuring Oracle REST Data Services (ORDS) and have it work with Oracle Application Express (APEX) that comes preinstalled with">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Running ORDS Against the Autonomous Database - Part 2">
+<meta property="og:url" content="https://fuzziebrain.com/content/id/2005/index.html">
+<meta property="og:site_name" content="Thinking Anew">
+<meta property="og:description" content="Old pipes and valves  In my previous post, we looked at installing and configuring Oracle REST Data Services (ORDS) and have it work with Oracle Application Express (APEX) that comes preinstalled with">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/pipes-5146458_1280x800.jpg">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/topology.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/screen01.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/screen02.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/screen03.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/screen04.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/screen05.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/screen06.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/screen07.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/screen08.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/screen09.png">
+<meta property="og:image" content="https://fuzziebrain.com/content/id/2005/screen10.png">
+<meta property="article:published_time" content="2020-07-02T03:46:45.000Z">
+<meta property="article:modified_time" content="2022-10-09T21:38:47.187Z">
+<meta property="article:author" content="Adrian Png">
+<meta property="article:tag" content="orclapex">
+<meta property="article:tag" content="autonomous">
+<meta property="article:tag" content="database">
+<meta property="article:tag" content="rest">
+<meta property="article:tag" content="ords">
+<meta property="article:tag" content="load balancer">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fuzziebrain.com/content/id/2005/pipes-5146458_1280x800.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Thinking Anew" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+
+  <link href="//fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Roboto:400,700" rel="stylesheet" type="text/css">
+  <link href="//stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css" integrity="sha256-PF6MatZtiJ8/c9O9HQ8uSUXr++R9KBYu4gbNG5511WE=" crossorigin="anonymous" />
+
+  
+<link rel="stylesheet" href="/css/styles.css">
+
+  
+   
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-10103110-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+  <div class="container">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-menu-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="main-menu-navbar">
+      <ul class="nav navbar-nav">
+        
+          <li><a class=""
+                 href="/index.html">Home</a></li>
+        
+          <li><a class=""
+                 href="/categories/reviews/">Reviews</a></li>
+        
+          <li><a class=""
+                 href="/archives/">Archives</a></li>
+        
+      </ul>
+
+      <!--
+      <ul class="nav navbar-nav navbar-right">
+        
+          <li><a href="/atom.xml" title="RSS Feed"><i class="fa fa-rss"></i></a></li>
+        
+      </ul>
+      -->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container -->
+</nav>
+
+  <div class="container">
+    <div class="blog-header">
+  <img src="/img/flames.png">
+  <h1 class="blog-title">Thinking Anew</h1>
+  
+</div>
+
+    <div class="row">
+        <div class="col-sm-8 blog-main">
+          <article id="post-running-ords-against-the-autonomous-database-part-2" class="article article-type-post" itemscope itemprop="blogPost">
+
+  <header class="article-header">
+    
+  
+    <h1 class="article-title" itemprop="name">
+      Running ORDS Against the Autonomous Database - Part 2
+    </h1>
+  
+
+
+  </header>
+
+  <div class="article-meta">
+    <div class="article-datetime">
+  <a href="/content/id/2005/" class="article-date"><time datetime="2020-07-02T03:46:45.000Z" itemprop="datePublished">2020-07-01</time></a>
+</div>
+
+    
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/technology/">Technology</a> / <a class="article-category-link" href="/categories/technology/infrastructure/">Infrastructure</a> / <a class="article-category-link" href="/categories/technology/infrastructure/oracle-cloud/">Oracle Cloud</a>
+  </div>
+
+
+  </div>
+  <div class="article-inner">
+    <div class="article-entry" itemprop="articleBody">
+      
+        <img src="/content/id/2005/pipes-5146458_1280x800.jpg" class="" title="Old pipes and valves"><span class="caption">Old pipes and valves</span>
+
+<p>In my <a href="/content/id/2004/">previous post</a>, we looked at installing and configuring <a target="_blank" rel="noopener" href="https://www.oracle.com/ca-en/database/technologies/appdev/rest.html">Oracle REST Data Services</a> (ORDS) and have it work with <a target="_blank" rel="noopener" href="https://apex.oracle.com/">Oracle Application Express</a> (APEX) that comes preinstalled with every <a target="_blank" rel="noopener" href="https://www.oracle.com/database/what-is-autonomous-database.html">Oracle Autonomous Database</a> (ADB). Like APEX, ORDS is also included as a feature of the ADB. However, there are certain situations where you might like to manage your own instance of ORDS.</p>
+<span id="more"></span>
+
+<p>Three key reasons stand out for me:</p>
+<ol>
+<li>Using my own domain for my APEX applications.</li>
+<li>Managing the number of database connections consumed by ORDS for my Always Free ADB that comes with a limit of 20 concurrent database sessions.</li>
+<li>Restricting “direct” access to the ADB, for example, to connect to the database using external tools like <a target="_blank" rel="noopener" href="https://www.oracle.com/database/technologies/appdev/sqldeveloper-landing.html">SQL Developer and SQLcl</a>.</li>
+</ol>
+<p>The figure below depicts the topology that I will build for my APEX applications.</p>
+<img src="/content/id/2005/topology.png" class="" title="Planned topology"><span class="caption">Planned topology</span>
+
+<p>Note that I chose a single subnet for the Load Balancer and Compute. The latter may be deployed in a separate subnet for further isolation.</p>
+<h2 id="Load-Balancers"><a href="#Load-Balancers" class="headerlink" title="Load Balancers"></a>Load Balancers</h2><p>Under the <a target="_blank" rel="noopener" href="https://oracle.com/cloud/free">Oracle Cloud Free Tier</a> offering, users are provided with one <em>Always Free</em> load balancer. It has a special bandwidth size called <em>Micro</em> and is limited to a maximum of 10 Mbps.</p>
+<p>Go to the Load Balancers page. You will find it under the Networks menu item. Click on the blue <em>Create Load Balancer</em> button to begin.</p>
+<img src="/content/id/2005/screen01.png" class="" title="Create Load Balancer Wizard"><span class="caption">Create Load Balancer Wizard</span>
+
+<p>In the first step, do the following:</p>
+<ul>
+<li>Provide a suitable name.</li>
+<li>Set the visibility type to <em>Public</em>.</li>
+<li>Set the total bandwidth to <em>Micro</em>. Note that this size is not selectable if you have already created one, or are not in your Oracle Cloud Infrastructure (OCI) home region.</li>
+<li>Select the appropriate Virtual Cloud Network (VCN) and subnet that the load balancer should be placed in. Make sure that it is setup as a public network, an Internet Gateway and network route rules for bidirectional Internet traffic.</li>
+</ul>
+<p>In the next step, leave the default settings. However, on the third and final step, change the listener to listen for HTTP traffic.</p>
+<img src="/content/id/2005/screen02.png" class="" title="Create Load Balancer Wizard - Final Step"><span class="caption">Create Load Balancer Wizard - Final Step</span>
+
+<p>Click on <em>Submit</em> to create the load balancer. A Listener and Backend Set is also created in the process, but we should delete them both once the load balancer is up.</p>
+<p>Once created, the Load Balancer Details page will display the Reserved Public IP address it has been assigned with. Use this to update your DNS records.</p>
+<img src="/content/id/2005/screen03.png" class="" title="Load Balancer Details page"><span class="caption">Load Balancer Details page</span>
+
+<blockquote>
+<p>Remember to delete the listener and backend set created by default.</p>
+</blockquote>
+<h2 id="Backend-Sets"><a href="#Backend-Sets" class="headerlink" title="Backend Sets"></a>Backend Sets</h2><p>Next, create the backend set that includes the Compute instance hosting ORDS. On the left side of the Load Balancer Details page, you will find a list of Resources that can be managed. Click on <em>Backend Sets</em> and then click on the blue <em>Create Backend Set</em> button to launch the wizard.</p>
+<p>Provide a suitable name and then leave the default values for <em>Traffic Distribution Policy</em> and <em>Session Persistence</em>. Under Health Check, set the following:</p>
+<ul>
+<li><strong>Protocol</strong> - HTTP</li>
+<li><strong>Port</strong> - 8080</li>
+<li><strong>URL Path</strong> - /i/19.2.0.00.18/apex_version.txt</li>
+</ul>
+<p>After the backend set is created successfully, click on its name and add backends. You can access the list of backends from the Resources menu on the left of the Backend Set Information page.</p>
+<p>To begin, click the blue <em>Add Backends</em> button and then select the Compute instance that is hosting ORDS. Be sure to change the port number to <code>8080</code>.</p>
+<img src="/content/id/2005/screen04.png" class="" title="Add Backends Modal Dialog"><span class="caption">Add Backends Modal Dialog</span>
+
+<p>For traffic to flow between the load balancer and backends, appropriate ingress and egress security list rules are required. You may do this manually, but for convenience, you can have the wizard perform these tasks automaticallly.</p>
+<p>Click the <em>Add</em> button to complete the process.</p>
+<h2 id="Hostnames"><a href="#Hostnames" class="headerlink" title="Hostnames"></a>Hostnames</h2><p>This is an optional resource but is simple to create. Simply provide a name and the URL that will be associated with the listener.</p>
+<img src="/content/id/2005/screen05.png" class="" title="Add Hostname Modal Dialog"><span class="caption">Add Hostname Modal Dialog</span>
+
+<h2 id="SSL-TLS-Certificates"><a href="#SSL-TLS-Certificates" class="headerlink" title="SSL/TLS Certificates"></a>SSL/TLS Certificates</h2><p>We will want to secure our access to the APEX instance. I will not go into details now on how to obtain a valid SSL/TLS certificate. To create this resource, you should have the following:</p>
+<ol>
+<li>SSL/TLS public certificate</li>
+<li>CA certificate (while optional, I have found issues with REST clients validating with <a target="_blank" rel="noopener" href="https://letsencrypt.org/">Let’s Encrypt</a> certificates)</li>
+<li>Private key</li>
+</ol>
+<img src="/content/id/2005/screen06.png" class="" title="Add Certificate Modal Dialog"><span class="caption">Add Certificate Modal Dialog</span>
+
+<blockquote>
+<p><strong>All</strong> certificates and key must be in the PEM format.</p>
+</blockquote>
+<blockquote>
+<p><em>Update [Sep 14, 2020]</em></p>
+<p>I have made available a <a target="_blank" rel="noopener" href="https://github.com/fuzziebrain/oci-le-cert-manager">project</a> that helps perform some of these tasks. You can read more about it in this follow-up <a href="/content/id/2007">post</a>.</p>
+</blockquote>
+<h2 id="Listeners"><a href="#Listeners" class="headerlink" title="Listeners"></a>Listeners</h2><p>Create two listeners, one each for listening to secure and non-secure traffic.</p>
+<p>The HTTP listener should have the following attributes:</p>
+<ul>
+<li>A suitable name</li>
+<li>An optional hostname</li>
+<li>Listen using the HTTP protocol</li>
+<li>Listen on port 80</li>
+<li>Use SSL unchecked</li>
+<li>The backend defined for the ORDS server selected</li>
+<li>Default timeout of 60 seconds (or leave it blank)</li>
+</ul>
+<img src="/content/id/2005/screen07.png" class="" title="Create Listener Modal Dialog for HTTP Protocol"><span class="caption">Create Listener Modal Dialog for HTTP Protocol</span>
+
+<p>The HTTPS listener should have the following attributes:</p>
+<ul>
+<li>A suitable name</li>
+<li>An optional hostname</li>
+<li>Listen using the <strong>HTTP</strong> protocol</li>
+<li>Listen on port 443</li>
+<li>Use SSL checked</li>
+<li>The associated certificate selected</li>
+<li>Verify peer certificate unchecked</li>
+<li>The backend defined for the ORDS server selected</li>
+<li>Idle timeout set to 1800 seconds</li>
+</ul>
+<img src="/content/id/2005/screen08.png" class="" title="Create Listener Modal Dialog for HTTPS Protocol"><span class="caption">Create Listener Modal Dialog for HTTPS Protocol</span>
+
+<blockquote>
+<p>The idle timeout I have suggested can be tweaked to your requirements. I have found 60 seconds to be too short for a functional APEX application. For example, file operations sometimes require a longer length of time to be completed successfully.</p>
+</blockquote>
+<h2 id="Other-Resources"><a href="#Other-Resources" class="headerlink" title="Other Resources"></a>Other Resources</h2><p>The instructions provided in the blog post gets you a basic setup to support a standard customer-managed ORDS instance. More often than not, you will have other requirements. For example, the <a target="_blank" rel="noopener" href="https://apeks.app/sponsor-a-coin">APEX Challenge Coin</a> website uses a path alias that links to the APEX application for submitting nominations. In web servers, these are usually addressed by creating URL rewrite rules that redirect you to the correct address. For this purpose, you may use a <em>Rule Set</em> and assign it to a listener. Here’s a full list of rule types that you can create:</p>
+<ul>
+<li>Access Control</li>
+<li>Access Method</li>
+<li>URL Redirect</li>
+<li>Request Header</li>
+<li>Response Header</li>
+<li>HTTP Header</li>
+</ul>
+<img src="/content/id/2005/screen09.png" class="" title="Create Rule Set Modal Dialog"><span class="caption">Create Rule Set Modal Dialog</span>
+
+<p>You might also serve other resources hosted on other backend servers. For example, I host some static content on the apeks.app website. For that, I run an Apache Web Server that hosts a single static HTML page. I can create Path Route Sets that will redirect the browser to the appropriate backend server based on the supplied path. Any path that starts with <code>/i</code> or <code>/ords</code>, which is used by APEX and ORDS, hands off to the backend running ORDS. The default, and so every other path, will lead to the other web server.</p>
+<blockquote>
+<p><em>Update [Sep 14, 2020]</em></p>
+<p>Thanks to <a target="_blank" rel="noopener" href="https://disqus.com/by/disqus_RgMBmO0DI7/">Robert Barton</a> for pointing out in the comments. I forgot to mention that once the path route set has been created, assign it to the target listener. In my case, this would be the listener with SSL enabled.</p>
+</blockquote>
+<img src="/content/id/2005/screen10.png" class="" title="Create Path Route Set Modal Dialog"><span class="caption">Create Path Route Set Modal Dialog</span>
+
+<h2 id="Final-Step"><a href="#Final-Step" class="headerlink" title="Final Step"></a>Final Step</h2><p>Login to the server hosting ORDS as the <em>opc</em> user and edit the <em>ORDS Service Script Configuration File</em>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi /etc/ords/ords.conf</span><br></pre></td></tr></table></figure>
+
+<p>Uncomment the line containing:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JAVA_OPTIONS=-Dsecurity.forceHTTPS=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>Restart the ORDS service:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart ords</span><br></pre></td></tr></table></figure>
+
+<p>That’s it!</p>
+
+      
+    </div>
+
+    
+      
+
+    
+
+    <footer class="article-footer">
+      <a data-url="https://fuzziebrain.com/content/id/2005/" data-id="cl931cxnq003r8r4g4pvfeuzk" class="article-share-link">
+        <i class="fa fa-share"></i> Share
+      </a>
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/autonomous/" rel="tag">autonomous</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/database/" rel="tag">database</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/load-balancer/" rel="tag">load balancer</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/orclapex/" rel="tag">orclapex</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ords/" rel="tag">ords</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/rest/" rel="tag">rest</a></li></ul>
+
+
+    </footer>
+  </div>
+  
+    
+<ul id="article-nav" class="nav nav-pills nav-justified">
+  
+  <li role="presentation">
+    <a href="/content/id/2004/" id="article-nav-older" class="article-nav-link-wrap">
+      <i class="fa fa-chevron-left pull-left"></i>
+      <span class="article-nav-link-title">Running ORDS Against the Autonomous Database</span>
+    </a>
+  </li>
+  
+  
+  <li role="presentation">
+    <a href="/content/id/2006/" id="article-nav-newer" class="article-nav-link-wrap">
+      <span class="article-nav-link-title">Keep Your APEX Images Updated</span>
+      <i class="fa fa-chevron-right pull-right"></i>
+    </a>
+  </li>
+  
+</ul>
+
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+
+        </div>
+        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
+          
+  <div class="sidebar-module sidebar-module-inset">
+  <h4>About</h4>
+  <p><strong>Adrian Png</strong> is a Senior <a target="_blank" rel="noopener" href="https://oracle.com/cloud">Cloud</a> Solutions Architect at <a target="_blank" rel="noopener" href="https://insum.ca/">Insum Solutions</a>.</p>
+<p><em>Innovate, optimize and adapt. Creating data management solutions that work!</em></p>
+
+  <img src="/img/O-ACE-rgb.png" class="ace-logo">
+</div>
+
+
+  <div class="sidebar-module">
+  <p class="twitter">
+    <a class="twitter-timeline" data-dnt="true" target="_blank" rel="noopener" href="https://twitter.com/fuzziebrain" data-widget-id="487271531987210241">Tweets by @fuzziebrain</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  </p>
+</div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Categories</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/life/">Life</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/reviews/">Reviews</a><span class="sidebar-module-list-count">5</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/reviews/books/">Books</a><span class="sidebar-module-list-count">5</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/">Technology</a><span class="sidebar-module-list-count">72</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/community/">Community</a><span class="sidebar-module-list-count">4</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/community/java/">Java</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/community/oracle-application-express/">Oracle Application Express</a><span class="sidebar-module-list-count">3</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/conferences/">Conferences</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/devops/">DevOps</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/infrastructure/">Infrastructure</a><span class="sidebar-module-list-count">22</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/infrastructure/oracle-cloud/">Oracle Cloud</a><span class="sidebar-module-list-count">22</span></li></ul></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/others/">Others</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/">Programming</a><span class="sidebar-module-list-count">37</span><ul class="sidebar-module-list-child"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/nodejs/">Nodejs</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/oracle-application-express/">Oracle Application Express</a><span class="sidebar-module-list-count">33</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/categories/technology/programming/tools/">Tools</a><span class="sidebar-module-list-count">3</span></li></ul></li></ul></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Tag Cloud</h4>
+    <p class="tagcloud">
+      <a href="/tags/18cxe/" style="font-size: 12.31px;">18cXE</a> <a href="/tags/2fa/" style="font-size: 10px;">2fa</a> <a href="/tags/apache-poi/" style="font-size: 10px;">Apache POI</a> <a href="/tags/devops/" style="font-size: 10px;">DevOps</a> <a href="/tags/eclipse/" style="font-size: 10px;">Eclipse</a> <a href="/tags/iaas/" style="font-size: 16.15px;">IaaS</a> <a href="/tags/java/" style="font-size: 10px;">Java</a> <a href="/tags/kscope17/" style="font-size: 10px;">Kscope17</a> <a href="/tags/linux/" style="font-size: 10px;">Linux</a> <a href="/tags/microsoft-word/" style="font-size: 10px;">Microsoft Word</a> <a href="/tags/odtug/" style="font-size: 10.77px;">ODTUG</a> <a href="/tags/oxar/" style="font-size: 10px;">OXAR</a> <a href="/tags/oracle/" style="font-size: 10px;">Oracle</a> <a href="/tags/oracle-application-express/" style="font-size: 10.77px;">Oracle Application Express</a> <a href="/tags/oracle-bi-publisher/" style="font-size: 10px;">Oracle BI Publisher</a> <a href="/tags/oracle-text/" style="font-size: 10px;">Oracle Text</a> <a href="/tags/pdf/" style="font-size: 10px;">PDF</a> <a href="/tags/san-antonio/" style="font-size: 10px;">San Antonio</a> <a href="/tags/subversion/" style="font-size: 10px;">Subversion</a> <a href="/tags/thanksodc/" style="font-size: 10px;">ThanksODC</a> <a href="/tags/thanksogb/" style="font-size: 10px;">ThanksOGB</a> <a href="/tags/vagrant/" style="font-size: 10px;">Vagrant</a> <a href="/tags/vancouver/" style="font-size: 10.77px;">Vancouver</a> <a href="/tags/virtualbox/" style="font-size: 10px;">VirtualBox</a> <a href="/tags/xpath/" style="font-size: 10px;">XPath</a> <a href="/tags/xsl-fo/" style="font-size: 10px;">XSL-FO</a> <a href="/tags/aarch64/" style="font-size: 10px;">aarch64</a> <a href="/tags/abstract/" style="font-size: 10px;">abstract</a> <a href="/tags/active-directory/" style="font-size: 10px;">active directory</a> <a href="/tags/administrators/" style="font-size: 10px;">administrators</a> <a href="/tags/ai/" style="font-size: 10px;">ai</a> <a href="/tags/always-free/" style="font-size: 10px;">always-free</a> <a href="/tags/alwaysfree/" style="font-size: 11.54px;">alwaysfree</a> <a href="/tags/ampere/" style="font-size: 10px;">ampere</a> <a href="/tags/analytics/" style="font-size: 10px;">analytics</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/applications/" style="font-size: 10px;">applications</a> <a href="/tags/appreciation/" style="font-size: 10px;">appreciation</a> <a href="/tags/architecture/" style="font-size: 10px;">architecture</a> <a href="/tags/arm/" style="font-size: 10px;">arm</a> <a href="/tags/artificial-intelligence/" style="font-size: 12.31px;">artificial intelligence</a> <a href="/tags/atom/" style="font-size: 10px;">atom</a> <a href="/tags/authentication/" style="font-size: 13.08px;">authentication</a> <a href="/tags/autonomous/" style="font-size: 15.38px;">autonomous</a> <a href="/tags/autonomous-database/" style="font-size: 10px;">autonomous database</a> <a href="/tags/award/" style="font-size: 10px;">award</a> <a href="/tags/azure/" style="font-size: 10px;">azure</a> <a href="/tags/barcode/" style="font-size: 10px;">barcode</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/blog/" style="font-size: 10px;">blog</a> <a href="/tags/blogging/" style="font-size: 10.77px;">blogging</a> <a href="/tags/book/" style="font-size: 10px;">book</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/bots/" style="font-size: 10px;">bots</a> <a href="/tags/browsing/" style="font-size: 10px;">browsing</a> <a href="/tags/career/" style="font-size: 10.77px;">career</a> <a href="/tags/certificates/" style="font-size: 10px;">certificates</a> <a href="/tags/challenge-coin/" style="font-size: 12.31px;">challenge coin</a> <a href="/tags/change-is-constant/" style="font-size: 10px;">change is constant</a> <a href="/tags/cloud/" style="font-size: 18.46px;">cloud</a> <a href="/tags/communication/" style="font-size: 10px;">communication</a> <a href="/tags/community/" style="font-size: 15.38px;">community</a> <a href="/tags/compliance/" style="font-size: 10px;">compliance</a> <a href="/tags/compute/" style="font-size: 10px;">compute</a> <a href="/tags/computer-science/" style="font-size: 10px;">computer science</a> <a href="/tags/confidential/" style="font-size: 10px;">confidential</a> <a href="/tags/container/" style="font-size: 10px;">container</a> <a href="/tags/coronavirus/" style="font-size: 10px;">coronavirus</a> <a href="/tags/covid-19/" style="font-size: 10px;">covid-19</a> <a href="/tags/crisis/" style="font-size: 10px;">crisis</a> <a href="/tags/customer-service/" style="font-size: 10px;">customer service</a> <a href="/tags/data/" style="font-size: 11.54px;">data</a> <a href="/tags/data-migration/" style="font-size: 10px;">data migration</a> <a href="/tags/database/" style="font-size: 14.62px;">database</a> <a href="/tags/demo/" style="font-size: 10px;">demo</a> <a href="/tags/devops/" style="font-size: 16.92px;">devops</a> <a href="/tags/digital-transformation/" style="font-size: 10px;">digital transformation</a> <a href="/tags/digitalocean/" style="font-size: 10px;">digitalocean</a> <a href="/tags/disney/" style="font-size: 10px;">disney</a> <a href="/tags/docker/" style="font-size: 12.31px;">docker</a> <a href="/tags/email/" style="font-size: 10px;">email</a> <a href="/tags/emerging-technology/" style="font-size: 10.77px;">emerging technology</a> <a href="/tags/encryption/" style="font-size: 10px;">encryption</a> <a href="/tags/environment/" style="font-size: 10px;">environment</a> <a href="/tags/face-detection/" style="font-size: 10px;">face detection</a> <a href="/tags/facebook/" style="font-size: 10px;">facebook</a> <a href="/tags/facet/" style="font-size: 10px;">facet</a> <a href="/tags/faceted-search/" style="font-size: 10px;">faceted search</a> <a href="/tags/features/" style="font-size: 10.77px;">features</a> <a href="/tags/fnproj/" style="font-size: 10px;">fnproj</a> <a href="/tags/free-tier/" style="font-size: 10px;">free-tier</a> <a href="/tags/full-stack/" style="font-size: 10px;">full stack</a> <a href="/tags/functions/" style="font-size: 10px;">functions</a> <a href="/tags/future/" style="font-size: 10px;">future</a> <a href="/tags/generate/" style="font-size: 10px;">generate</a> <a href="/tags/geolocation/" style="font-size: 10px;">geolocation</a> <a href="/tags/getinvolved/" style="font-size: 10px;">getinvolved</a> <a href="/tags/gis/" style="font-size: 10px;">gis</a> <a href="/tags/google/" style="font-size: 11.54px;">google</a> <a href="/tags/gps/" style="font-size: 10.77px;">gps</a> <a href="/tags/graphql/" style="font-size: 10px;">graphql</a> <a href="/tags/gratitude/" style="font-size: 10.77px;">gratitude</a> <a href="/tags/hadoop/" style="font-size: 10px;">hadoop</a> <a href="/tags/hosting/" style="font-size: 11.54px;">hosting</a> <a href="/tags/https/" style="font-size: 10px;">https</a> <a href="/tags/ide/" style="font-size: 10.77px;">ide</a> <a href="/tags/image-processing/" style="font-size: 10px;">image processing</a> <a href="/tags/infrastructure/" style="font-size: 16.15px;">infrastructure</a> <a href="/tags/insum/" style="font-size: 10px;">insum</a> <a href="/tags/integration/" style="font-size: 10px;">integration</a> <a href="/tags/iphone/" style="font-size: 10px;">iphone</a> <a href="/tags/java/" style="font-size: 11.54px;">java</a> <a href="/tags/javascript/" style="font-size: 10.77px;">javascript</a> <a href="/tags/knowledge-sharing/" style="font-size: 10px;">knowledge sharing</a> <a href="/tags/kscope/" style="font-size: 10px;">kscope</a> <a href="/tags/kscope22/" style="font-size: 10px;">kscope22</a> <a href="/tags/kubernetes/" style="font-size: 10px;">kubernetes</a> <a href="/tags/launch/" style="font-size: 10px;">launch</a> <a href="/tags/lbs/" style="font-size: 10.77px;">lbs</a> <a href="/tags/learning/" style="font-size: 12.31px;">learning</a> <a href="/tags/letsencrypt/" style="font-size: 10px;">letsencrypt</a> <a href="/tags/lifelong-learning/" style="font-size: 10px;">lifelong learning</a> <a href="/tags/limits/" style="font-size: 10px;">limits</a> <a href="/tags/linked-data/" style="font-size: 10px;">linked data</a> <a href="/tags/linode/" style="font-size: 11.54px;">linode</a> <a href="/tags/load-balancer/" style="font-size: 10.77px;">load balancer</a> <a href="/tags/location-based-services/" style="font-size: 10px;">location-based services</a> <a href="/tags/machine-learning/" style="font-size: 12.31px;">machine learning</a> <a href="/tags/mahout/" style="font-size: 10px;">mahout</a> <a href="/tags/management/" style="font-size: 10px;">management</a> <a href="/tags/mapreduce/" style="font-size: 10px;">mapreduce</a> <a href="/tags/markdown/" style="font-size: 10.77px;">markdown</a> <a href="/tags/meetup/" style="font-size: 10.77px;">meetup</a> <a href="/tags/memorabilia/" style="font-size: 10.77px;">memorabilia</a> <a href="/tags/mfa/" style="font-size: 10px;">mfa</a> <a href="/tags/microsoft/" style="font-size: 12.31px;">microsoft</a> <a href="/tags/migration/" style="font-size: 10px;">migration</a> <a href="/tags/ml/" style="font-size: 10px;">ml</a> <a href="/tags/monetization/" style="font-size: 10px;">monetization</a> <a href="/tags/monitoring/" style="font-size: 10px;">monitoring</a> <a href="/tags/multi-factor/" style="font-size: 10px;">multi-factor</a> <a href="/tags/multimedia/" style="font-size: 10px;">multimedia</a> <a href="/tags/natural-language-processing/" style="font-size: 10.77px;">natural language processing</a> <a href="/tags/nodejs/" style="font-size: 12.31px;">nodejs</a> <a href="/tags/oauth2/" style="font-size: 12.31px;">oauth2</a> <a href="/tags/oci/" style="font-size: 17.69px;">oci</a> <a href="/tags/ocr/" style="font-size: 10px;">ocr</a> <a href="/tags/odtug/" style="font-size: 13.08px;">odtug</a> <a href="/tags/office-365/" style="font-size: 10px;">office 365</a> <a href="/tags/open-container-initiative/" style="font-size: 10px;">open container initiative</a> <a href="/tags/oracle/" style="font-size: 19.23px;">oracle</a> <a href="/tags/oracle-cloud/" style="font-size: 12.31px;">oracle cloud</a> <a href="/tags/oracle-database/" style="font-size: 11.54px;">oracle database</a> <a href="/tags/oracle-text/" style="font-size: 10px;">oracle text</a> <a href="/tags/oracleiaas/" style="font-size: 10px;">oracleiaas</a> <a href="/tags/orclapex/" style="font-size: 20px;">orclapex</a> <a href="/tags/orclfn/" style="font-size: 10px;">orclfn</a> <a href="/tags/orclords/" style="font-size: 10px;">orclords</a> <a href="/tags/ords/" style="font-size: 11.54px;">ords</a> <a href="/tags/ore/" style="font-size: 10px;">ore</a> <a href="/tags/orlando/" style="font-size: 10px;">orlando</a> <a href="/tags/oxar/" style="font-size: 12.31px;">oxar</a> <a href="/tags/pandemic/" style="font-size: 10px;">pandemic</a> <a href="/tags/pdf/" style="font-size: 10px;">pdf</a> <a href="/tags/pki/" style="font-size: 10.77px;">pki</a> <a href="/tags/platform/" style="font-size: 10px;">platform</a> <a href="/tags/plsql/" style="font-size: 10.77px;">plsql</a> <a href="/tags/plugin/" style="font-size: 10px;">plugin</a> <a href="/tags/podman/" style="font-size: 10px;">podman</a> <a href="/tags/powershell/" style="font-size: 10px;">powershell</a> <a href="/tags/presentation/" style="font-size: 10px;">presentation</a> <a href="/tags/preview/" style="font-size: 10.77px;">preview</a> <a href="/tags/protection/" style="font-size: 10px;">protection</a> <a href="/tags/proxy/" style="font-size: 10px;">proxy</a> <a href="/tags/python/" style="font-size: 10.77px;">python</a> <a href="/tags/quality/" style="font-size: 10px;">quality</a> <a href="/tags/r/" style="font-size: 10px;">r</a> <a href="/tags/rdm/" style="font-size: 11.54px;">rdm</a> <a href="/tags/reactjs/" style="font-size: 10px;">reactjs</a> <a href="/tags/redact/" style="font-size: 10px;">redact</a> <a href="/tags/release/" style="font-size: 10px;">release</a> <a href="/tags/renew/" style="font-size: 10px;">renew</a> <a href="/tags/reporting/" style="font-size: 10px;">reporting</a> <a href="/tags/research/" style="font-size: 10.77px;">research</a> <a href="/tags/research-data-management/" style="font-size: 10px;">research data management</a> <a href="/tags/rest/" style="font-size: 13.08px;">rest</a> <a href="/tags/review/" style="font-size: 10px;">review</a> <a href="/tags/rstats/" style="font-size: 10.77px;">rstats</a> <a href="/tags/science/" style="font-size: 10px;">science</a> <a href="/tags/scripting/" style="font-size: 10px;">scripting</a> <a href="/tags/search/" style="font-size: 11.54px;">search</a> <a href="/tags/seattle/" style="font-size: 10px;">seattle</a> <a href="/tags/secret/" style="font-size: 10px;">secret</a> <a href="/tags/security/" style="font-size: 13.85px;">security</a> <a href="/tags/semantic-web/" style="font-size: 10px;">semantic web</a> <a href="/tags/serverless/" style="font-size: 10.77px;">serverless</a> <a href="/tags/signature/" style="font-size: 10px;">signature</a> <a href="/tags/single-sign-on/" style="font-size: 10.77px;">single sign on</a> <a href="/tags/single-sign-on/" style="font-size: 10.77px;">single sign-on</a> <a href="/tags/smtp/" style="font-size: 10px;">smtp</a> <a href="/tags/solutions/" style="font-size: 10px;">solutions</a> <a href="/tags/speak/" style="font-size: 10px;">speak</a> <a href="/tags/spf/" style="font-size: 10px;">spf</a> <a href="/tags/spring-framework/" style="font-size: 10.77px;">spring framework</a> <a href="/tags/spring-roo/" style="font-size: 10px;">spring roo</a> <a href="/tags/springsource/" style="font-size: 10.77px;">springsource</a> <a href="/tags/springsource-tool-suite/" style="font-size: 10px;">springsource tool suite</a> <a href="/tags/ssl/" style="font-size: 11.54px;">ssl</a> <a href="/tags/sso/" style="font-size: 12.31px;">sso</a> <a href="/tags/stackscripts/" style="font-size: 10px;">stackscripts</a> <a href="/tags/sts/" style="font-size: 10px;">sts</a> <a href="/tags/subclipse/" style="font-size: 10px;">subclipse</a> <a href="/tags/suez/" style="font-size: 10px;">suez</a> <a href="/tags/support/" style="font-size: 10.77px;">support</a> <a href="/tags/sysadmin/" style="font-size: 10px;">sysadmin</a> <a href="/tags/system-administration/" style="font-size: 10px;">system administration</a> <a href="/tags/tde/" style="font-size: 10px;">tde</a> <a href="/tags/techgivesback/" style="font-size: 10px;">techgivesback</a> <a href="/tags/technology/" style="font-size: 10px;">technology</a> <a href="/tags/text-recognition/" style="font-size: 10px;">text recognition</a> <a href="/tags/tips/" style="font-size: 10px;">tips</a> <a href="/tags/tls/" style="font-size: 10.77px;">tls</a> <a href="/tags/tools/" style="font-size: 10.77px;">tools</a> <a href="/tags/training/" style="font-size: 13.08px;">training</a> <a href="/tags/travel/" style="font-size: 11.54px;">travel</a> <a href="/tags/two-factor/" style="font-size: 10px;">two-factor</a> <a href="/tags/typescript/" style="font-size: 10.77px;">typescript</a> <a href="/tags/user-groups/" style="font-size: 10.77px;">user groups</a> <a href="/tags/v8/" style="font-size: 10px;">v8</a> <a href="/tags/vagrant/" style="font-size: 11.54px;">vagrant</a> <a href="/tags/viewer/" style="font-size: 10px;">viewer</a> <a href="/tags/virtualbox/" style="font-size: 10px;">virtualbox</a> <a href="/tags/vscode/" style="font-size: 10.77px;">vscode</a> <a href="/tags/wasm/" style="font-size: 10px;">wasm</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/workshop/" style="font-size: 10px;">workshop</a>
+    </p>
+  </div>
+
+
+  
+  <div class="sidebar-module">
+    <h4>Archives</h4>
+    <ul class="sidebar-module-list"><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2022/10/">October 2022</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/10/">October 2021</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/07/">July 2021</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2021/05/">May 2021</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/10/">October 2020</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/09/">September 2020</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/07/">July 2020</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/05/">May 2020</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/03/">March 2020</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2020/01/">January 2020</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/10/">October 2019</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/09/">September 2019</a><span class="sidebar-module-list-count">7</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/07/">July 2019</a><span class="sidebar-module-list-count">5</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/04/">April 2019</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/03/">March 2019</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2019/02/">February 2019</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/11/">November 2018</a><span class="sidebar-module-list-count">4</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/10/">October 2018</a><span class="sidebar-module-list-count">6</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/09/">September 2018</a><span class="sidebar-module-list-count">3</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/07/">July 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/06/">June 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/05/">May 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/02/">February 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2018/01/">January 2018</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/11/">November 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/10/">October 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/09/">September 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/08/">August 2017</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/07/">July 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/06/">June 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2017/03/">March 2017</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2016/03/">March 2016</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/10/">October 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/09/">September 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/06/">June 2015</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2015/02/">February 2015</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2014/06/">June 2014</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/05/">May 2013</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2013/04/">April 2013</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/08/">August 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2011/02/">February 2011</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/12/">December 2010</a><span class="sidebar-module-list-count">2</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/10/">October 2010</a><span class="sidebar-module-list-count">1</span></li><li class="sidebar-module-list-item"><a class="sidebar-module-list-link" href="/archives/2010/09/">September 2010</a><span class="sidebar-module-list-count">1</span></li></ul>
+  </div>
+
+
+
+  
+  <div class="sidebar-module">
+    <h4>Recents</h4>
+    <ul class="sidebar-module-list">
+      
+        <li>
+          <a href="/content/id/2201/">Speak My Language</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/2014/">Will You Love Me Tomorrow</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/2013/">Secret Agent APEX</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/2012/">Intelligent APEX Applications - Fact or Fiction?</a>
+        </li>
+      
+        <li>
+          <a href="/content/id/2011/">ARM Your APEX Instance</a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+
+        </div>
+    </div>
+  </div>
+  <footer class="blog-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col col-sm-6">
+        <div class="me-links">
+          <h4>About Me</h4>
+          <dl>
+            <dd><a href="https://twitter.com/fuzziebrain" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></dd>
+            <dd><a href="https://github.com/fuzziebrain" target="_blank"><i class="fab fa-github"></i> Github</a></dd>
+            <dd><a href="https://www.linkedin.com/in/adrianp" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="col col-sm-6"></div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div id="footer-info" class="inner">
+        &copy; 2022 Adrian Png<br>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+<script>
+  var disqus_shortname = 'fuzziebrain-blog';
+  
+  var disqus_url = 'https://fuzziebrain.com/content/id/2005/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js" integrity="sha384-8gBf6Y4YYq7Jx97PIqmTwLPin4hxIzQw5aDmUg/DDhul9fFpbbLcLh3nTIIDJKhx" crossorigin="anonymous"></script>
+
+<script src="//stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+</body>
+</html>
