@@ -118,8 +118,6 @@
     
     <category term="oracle" scheme="https://fuzziebrain.com/tags/oracle/"/>
     
-    <category term="emerging technology" scheme="https://fuzziebrain.com/tags/emerging-technology/"/>
-    
     <category term="kscope" scheme="https://fuzziebrain.com/tags/kscope/"/>
     
     <category term="kscope22" scheme="https://fuzziebrain.com/tags/kscope22/"/>
@@ -131,6 +129,8 @@
     <category term="speak" scheme="https://fuzziebrain.com/tags/speak/"/>
     
     <category term="presentation" scheme="https://fuzziebrain.com/tags/presentation/"/>
+    
+    <category term="emerging technology" scheme="https://fuzziebrain.com/tags/emerging-technology/"/>
     
     <category term="digital transformation" scheme="https://fuzziebrain.com/tags/digital-transformation/"/>
     
