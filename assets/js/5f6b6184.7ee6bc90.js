@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[50696],{14990:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/odtug/page/2","page":2,"postsPerPage":5,"totalPages":2,"totalCount":7,"previousPage":"/content/tags/odtug","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

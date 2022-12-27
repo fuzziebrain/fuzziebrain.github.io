@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[11931],{99925:e=>{e.exports=JSON.parse('{"label":"hadoop","permalink":"/content/tags/hadoop","allTagsPath":"/content/tags","count":1}')}}]);

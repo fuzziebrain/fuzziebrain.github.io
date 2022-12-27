@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[53416],{84570:e=>{e.exports=JSON.parse('{"label":"kscope","permalink":"/content/tags/kscope","allTagsPath":"/content/tags","count":1}')}}]);

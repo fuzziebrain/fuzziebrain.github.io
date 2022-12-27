@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[29271],{89263:n=>{n.exports=JSON.parse('{"label":"San Antonio","permalink":"/content/tags/san-antonio","allTagsPath":"/content/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[31390],{55161:e=>{e.exports=JSON.parse('{"label":"spf","permalink":"/content/tags/spf","allTagsPath":"/content/tags","count":1}')}}]);

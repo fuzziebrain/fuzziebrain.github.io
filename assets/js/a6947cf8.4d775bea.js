@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[7241],{68441:e=>{e.exports=JSON.parse('{"label":"monetization","permalink":"/content/tags/monetization","allTagsPath":"/content/tags","count":1}')}}]);

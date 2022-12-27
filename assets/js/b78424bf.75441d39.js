@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[60999],{36731:e=>{e.exports=JSON.parse('{"label":"office 365","permalink":"/content/tags/office-365","allTagsPath":"/content/tags","count":1}')}}]);

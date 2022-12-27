@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[46184],{58937:e=>{e.exports=JSON.parse('{"label":"load balancer","permalink":"/content/tags/load-balancer","allTagsPath":"/content/tags","count":2}')}}]);

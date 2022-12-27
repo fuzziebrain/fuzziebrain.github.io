@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[59250],{44218:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/iaa-s/page/2","page":2,"postsPerPage":5,"totalPages":2,"totalCount":10,"previousPage":"/content/tags/iaa-s","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

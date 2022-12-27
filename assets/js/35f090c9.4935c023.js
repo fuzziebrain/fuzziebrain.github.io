@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[34035],{57098:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/oracle/page/3","page":3,"postsPerPage":5,"totalPages":5,"totalCount":22,"previousPage":"/content/tags/oracle/page/2","nextPage":"/content/tags/oracle/page/4","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

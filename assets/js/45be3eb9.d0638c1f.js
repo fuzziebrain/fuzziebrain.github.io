@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[10405],{63611:t=>{t.exports=JSON.parse('{"label":"two-factor","permalink":"/content/tags/two-factor","allTagsPath":"/content/tags","count":1}')}}]);

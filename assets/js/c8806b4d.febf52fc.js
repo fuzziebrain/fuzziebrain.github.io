@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[90672],{5048:e=>{e.exports=JSON.parse('{"label":"oracle text","permalink":"/content/tags/oracle-text","allTagsPath":"/content/tags","count":2}')}}]);

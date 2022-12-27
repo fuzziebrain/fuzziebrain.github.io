@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[76495],{27670:t=>{t.exports=JSON.parse('{"label":"administrators","permalink":"/content/tags/administrators","allTagsPath":"/content/tags","count":1}')}}]);

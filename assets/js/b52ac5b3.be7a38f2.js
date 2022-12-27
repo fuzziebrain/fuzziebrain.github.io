@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[89228],{48488:e=>{e.exports=JSON.parse('{"label":"springsource tool suite","permalink":"/content/tags/springsource-tool-suite","allTagsPath":"/content/tags","count":1}')}}]);

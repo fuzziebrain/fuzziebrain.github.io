@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[9538],{27010:e=>{e.exports=JSON.parse('{"label":"renew","permalink":"/content/tags/renew","allTagsPath":"/content/tags","count":1}')}}]);

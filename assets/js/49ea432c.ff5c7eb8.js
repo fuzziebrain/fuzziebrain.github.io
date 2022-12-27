@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[70197],{71869:e=>{e.exports=JSON.parse('{"label":"orclfn","permalink":"/content/tags/orclfn","allTagsPath":"/content/tags","count":1}')}}]);

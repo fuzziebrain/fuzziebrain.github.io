@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[17390],{23259:e=>{e.exports=JSON.parse('{"label":"always-free","permalink":"/content/tags/always-free","allTagsPath":"/content/tags","count":1}')}}]);

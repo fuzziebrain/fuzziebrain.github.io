@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[27875],{62837:e=>{e.exports=JSON.parse('{"label":"review","permalink":"/content/tags/review","allTagsPath":"/content/tags","count":1}')}}]);

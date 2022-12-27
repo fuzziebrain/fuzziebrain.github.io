@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[36189],{53898:e=>{e.exports=JSON.parse('{"label":"Subversion","permalink":"/content/tags/subversion","allTagsPath":"/content/tags","count":1}')}}]);

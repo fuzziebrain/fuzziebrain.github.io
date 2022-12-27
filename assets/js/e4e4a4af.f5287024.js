@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[22755],{62770:e=>{e.exports=JSON.parse('{"label":"faceted search","permalink":"/content/tags/faceted-search","allTagsPath":"/content/tags","count":1}')}}]);

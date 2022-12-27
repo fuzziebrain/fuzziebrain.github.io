@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[90244],{46693:e=>{e.exports=JSON.parse('{"label":"Oracle BI Publisher","permalink":"/content/tags/oracle-bi-publisher","allTagsPath":"/content/tags","count":1}')}}]);

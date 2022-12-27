@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[74402],{84979:e=>{e.exports=JSON.parse('{"label":"open container initiative","permalink":"/content/tags/open-container-initiative","allTagsPath":"/content/tags","count":1}')}}]);

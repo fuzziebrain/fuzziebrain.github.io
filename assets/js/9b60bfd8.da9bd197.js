@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[57765],{71932:e=>{e.exports=JSON.parse('{"label":"Microsoft Word","permalink":"/content/tags/microsoft-word","allTagsPath":"/content/tags","count":1}')}}]);

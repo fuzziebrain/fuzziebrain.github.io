@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[31867],{40033:e=>{e.exports=JSON.parse('{"label":"wasm","permalink":"/content/tags/wasm","allTagsPath":"/content/tags","count":1}')}}]);
