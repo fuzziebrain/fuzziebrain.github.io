@@ -20,6 +20,7 @@
             <name>Adrian Png</name>
             <uri>https://github.com/fuzziebrain</uri>
         </author>
+        <category label="chatgpt" term="chatgpt"/>
         <category label="oracle cloud" term="oracle cloud"/>
         <category label="artificial intelligence" term="artificial intelligence"/>
         <category label="ai" term="ai"/>
