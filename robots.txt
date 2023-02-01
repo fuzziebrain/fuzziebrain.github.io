@@ -1,3 +1,4 @@
 User-agent: *
-Disallow: /tags/*
+Disallow: /content/tags/*
+Disallow: /tech-tnt/tags/*
 Sitemap: https://fuzziebrain.com/sitemap.xml
