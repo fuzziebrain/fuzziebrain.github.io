@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[60381],{54849:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/orclapex","page":1,"postsPerPage":5,"totalPages":12,"totalCount":58,"nextPage":"/content/tags/orclapex/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
