@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[71733],{41482:e=>{e.exports=JSON.parse('{"label":"technical workflow","permalink":"/content/tags/technical-workflow","allTagsPath":"/content/tags","count":1}')}}]);

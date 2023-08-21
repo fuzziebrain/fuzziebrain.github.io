@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[78862],{8036:a=>{a.exports=JSON.parse('{"label":"ai applications","permalink":"/content/tags/ai-applications","allTagsPath":"/content/tags","count":1}')}}]);

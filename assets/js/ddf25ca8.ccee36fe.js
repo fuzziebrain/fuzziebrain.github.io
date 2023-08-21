@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[15715],{44217:e=>{e.exports=JSON.parse('{"label":"language learning","permalink":"/content/tags/language-learning","allTagsPath":"/content/tags","count":1}')}}]);
