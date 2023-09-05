@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[96599],{94178:e=>{e.exports=JSON.parse('{"label":"oracle ai","permalink":"/content/tags/oracle-ai","allTagsPath":"/content/tags","count":2}')}}]);

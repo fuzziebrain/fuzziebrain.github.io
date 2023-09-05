@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[90245],{94981:e=>{e.exports=JSON.parse('{"label":"oracle apex","permalink":"/content/tags/oracle-apex","allTagsPath":"/content/tags","count":3}')}}]);
