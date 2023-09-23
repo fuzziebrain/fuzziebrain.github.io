@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[10425],{64419:a=>{a.exports=JSON.parse('{"label":"autonomous database","permalink":"/content/tags/autonomous-database","allTagsPath":"/content/tags","count":1}')}}]);
