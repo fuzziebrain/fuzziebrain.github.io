@@ -2,12 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fuzziebrain.com/content</id>
     <title>test</title>
-    <updated>2023-09-23T23:00:00.000Z</updated>
+    <updated>2023-10-11T06:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fuzziebrain.com/content"/>
     <subtitle>Thinking Anew Blog</subtitle>
     <icon>https://fuzziebrain.com/img/favicon.png</icon>
     <rights>Copyright © 2023 Adrian Png.</rights>
+    <entry>
+        <title type="html"><![CDATA[Closing the Era of the APEX Challenge Coin]]></title>
+        <id>/closing-the-era-of-the-apex-challenge-coin</id>
+        <link href="https://fuzziebrain.com/content/closing-the-era-of-the-apex-challenge-coin"/>
+        <updated>2023-10-11T06:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Joel and Friends]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" alt="Joel and Friends" src="/assets/images/joel-and-friends-0b987932dec820c145c9add07d6121f9.jpg" width="1800" height="837" class="img_ev3q"></p><p>I hope Joel doesn't mind that I used this image here to commemorate <a href="https://twitter.com/search?q=%23JoelKallmanDay" target="_blank" rel="noopener noreferrer">#JoelKallmanDay</a>. This picture was <a href="https://twitter.com/joelkallman/status/1192268209291976704" target="_blank" rel="noopener noreferrer">posted</a> by our dear friend, Joel Kallman, in 2019. Shortly after Mike Hichwa was presented with the first coin in the first series of the <a href="/content/id/1727">Oracle APEX Challenge Coin</a>.</p><p>I first approached Joel about this project on Thursday, January 3, 2019, at 3.05 PM Pacific Time. Presented the initial sketch of the coin, and sought his permission to use the Oracle APEX logo on the main face of the coin. Below is the initial sketch of both sides of the coin.</p><p><img loading="lazy" alt="The initial sketch of the Oracle APEX challenge coin in 2019." src="/assets/images/artwork-original-06607c09988316cbefcc82775750ba80.png" width="652" height="270" class="img_ev3q"></p><p>A minute later, I received an out-of-office reply saying:</p><blockquote><p>Thank you for your message.</p><p>I am on vacation until January 7, 2019 and will be unable to respond to email or voicemail during this period.  Happy New Year!</p><p>Joel</p></blockquote><p>At 5.44 PM that day, I unexpectedly received an reply from Joel granting me the needed permission to use the logo and included some suggestions for improvements. These were his exact words, double spaces after the period included.</p><blockquote><p>Please forgive me for offering my opinion where one wasn't solicited, but I have a suggestion about some of the words you have on the coin.  Two words seem to be inconsistent with the 4 others - namely  STANDARDS and ON-TIME.  While the other 4 words seem to describe APEX itself, these other two really don't.  How about RELIABLE or SCALABLE or PROVEN or GLOBAL or something like that?</p></blockquote><p>I finally settled on the six words that you see on the coin today, and they include Joel's suggestions of "RELIABLE" and "PROVEN". And that's what he was. I may be a nobody, but even on while on vacation, he took personal time to think, optimise, suggest, and respond to my email.</p><p><img loading="lazy" alt="The updated sketch before it was sent to the vendor for the final artwork." src="/assets/images/artwork-updated-c1e89f5dc8106f35cd96fad9bf0c49a9.png" width="700" height="292" class="img_ev3q"></p><p>I often remind people with a coin today, that they hold a piece of him. You "make Oracle great again" by adding value to people's lives through the magic you do with Oracle APEX.</p><p>The final two coins were presented to <a href="https://www.linkedin.com/in/paige-hanssen-6a8530109" target="_blank" rel="noopener noreferrer">Paige Hanssen</a> and <a href="https://www.linkedin.com/in/sonnemeyer" target="_blank" rel="noopener noreferrer">Sonja Meyer</a> at the recently concluded <a href="https://www.oracle.com/cloudworld" target="_blank" rel="noopener noreferrer">Oracle CloudWorld 2023</a>. Congratulations to the both of them!</p><p>Like everything, there's an alpha and omega. I hereby proclaim that the Oracle APEX Challenge Coin project has come to a successful close. Our service, however, continues.</p><div data-testid="general-observer" class="mdx-embed"><div style="height:0;width:100%"></div></div>]]></content>
+        <author>
+            <name>Adrian Png</name>
+            <uri>https://github.com/fuzziebrain</uri>
+        </author>
+        <category label="orclapex" term="orclapex"/>
+        <category label="challenge coin" term="challenge coin"/>
+        <category label="gratitude" term="gratitude"/>
+        <category label="joelkallmanday" term="joelkallmanday"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Speaking AI to Your Oracle Database]]></title>
         <id>/speaking-ai-to-your-oracle-database</id>
