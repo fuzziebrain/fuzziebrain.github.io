@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[19146],{46397:e=>{e.exports=JSON.parse('{"label":"data science","permalink":"/content/tags/data-science","allTagsPath":"/content/tags","count":1}')}}]);
