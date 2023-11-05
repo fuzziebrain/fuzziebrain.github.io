@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[56455],{27572:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/data-science","page":1,"postsPerPage":5,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
