@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[63077],{26595:e=>{e.exports=JSON.parse('{"label":"ai-generated art","permalink":"/content/tags/ai-generated-art","allTagsPath":"/content/tags","count":1}')}}]);
