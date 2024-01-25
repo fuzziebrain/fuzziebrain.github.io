@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[5020],{54459:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/oracle-apex/page/2","page":2,"postsPerPage":5,"totalPages":2,"totalCount":9,"previousPage":"/content/tags/oracle-apex","blogDescription":"Blog","blogTitle":"Blog"}')}}]);
