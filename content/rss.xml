@@ -4,11 +4,25 @@
         <title>test</title>
         <link>https://fuzziebrain.com/content</link>
         <description>Thinking Anew Blog</description>
-        <lastBuildDate>Wed, 24 Jan 2024 22:05:00 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 25 Jan 2024 07:50:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
         <copyright>Copyright © 2024 Adrian Png.</copyright>
+        <item>
+            <title><![CDATA[GenAI Made Easy]]></title>
+            <link>https://fuzziebrain.com/content/genai-made-easy/genai-made-easy</link>
+            <guid>/genai-made-easy/genai-made-easy</guid>
+            <pubDate>Thu, 25 Jan 2024 07:50:00 GMT</pubDate>
+            <description><![CDATA[Oracle Generative AI is now generally available. In this blog post, let's look at what it takes to integrate the service in an Oracle APEX application.]]></description>
+            <content:encoded><![CDATA[<p>Page relocated <a href="/content/genai-made-easy">here</a>.</p>]]></content:encoded>
+            <category>machine learning</category>
+            <category>oci</category>
+            <category>oracle apex</category>
+            <category>generative ai</category>
+            <category>large language model</category>
+            <category>llm</category>
+        </item>
         <item>
             <title><![CDATA[GenAI Made Easy]]></title>
             <link>https://fuzziebrain.com/content/genai-made-easy</link>

@@ -2,12 +2,30 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fuzziebrain.com/content</id>
     <title>test</title>
-    <updated>2024-01-24T22:05:00.000Z</updated>
+    <updated>2024-01-25T07:50:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fuzziebrain.com/content"/>
     <subtitle>Thinking Anew Blog</subtitle>
     <icon>https://fuzziebrain.com/img/favicon.png</icon>
     <rights>Copyright © 2024 Adrian Png.</rights>
+    <entry>
+        <title type="html"><![CDATA[GenAI Made Easy]]></title>
+        <id>/genai-made-easy/genai-made-easy</id>
+        <link href="https://fuzziebrain.com/content/genai-made-easy/genai-made-easy"/>
+        <updated>2024-01-25T07:50:00.000Z</updated>
+        <summary type="html"><![CDATA[Oracle Generative AI is now generally available. In this blog post, let's look at what it takes to integrate the service in an Oracle APEX application.]]></summary>
+        <content type="html"><![CDATA[<p>Page relocated <a href="/content/genai-made-easy">here</a>.</p>]]></content>
+        <author>
+            <name>Adrian Png</name>
+            <uri>https://github.com/fuzziebrain</uri>
+        </author>
+        <category label="machine learning" term="machine learning"/>
+        <category label="oci" term="oci"/>
+        <category label="oracle apex" term="oracle apex"/>
+        <category label="generative ai" term="generative ai"/>
+        <category label="large language model" term="large language model"/>
+        <category label="llm" term="llm"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[GenAI Made Easy]]></title>
         <id>/genai-made-easy</id>
