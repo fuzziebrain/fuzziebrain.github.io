@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[28513],{62471:e=>{e.exports=JSON.parse('{"label":"spring roo","permalink":"/content/tags/spring-roo","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

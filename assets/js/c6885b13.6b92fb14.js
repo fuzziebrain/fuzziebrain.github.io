@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[15474],{52827:e=>{e.exports=JSON.parse('{"label":"future","permalink":"/content/tags/future","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

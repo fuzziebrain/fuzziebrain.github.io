@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[78769],{67099:e=>{e.exports=JSON.parse('{"label":"location-based services","permalink":"/content/tags/location-based-services","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

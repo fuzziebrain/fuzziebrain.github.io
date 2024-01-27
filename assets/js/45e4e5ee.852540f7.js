@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[10547],{73894:e=>{e.exports=JSON.parse('{"label":"jupyter","permalink":"/content/tags/jupyter","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

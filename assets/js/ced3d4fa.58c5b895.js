@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[51213],{96870:e=>{e.exports=JSON.parse('{"label":"genai","permalink":"/content/tags/genai","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

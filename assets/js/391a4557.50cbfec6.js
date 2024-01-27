@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[47021],{7796:e=>{e.exports=JSON.parse('{"label":"iphone","permalink":"/content/tags/iphone","allTagsPath":"/content/tags","count":1}')}}]);

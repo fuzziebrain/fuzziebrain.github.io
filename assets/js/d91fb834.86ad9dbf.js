@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[12541],{76718:e=>{e.exports=JSON.parse('{"label":"subclipse","permalink":"/content/tags/subclipse","allTagsPath":"/content/tags","count":1}')}}]);

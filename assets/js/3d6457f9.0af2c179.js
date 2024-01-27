@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[21861],{26196:e=>{e.exports=JSON.parse('{"label":"javascript","permalink":"/content/tags/javascript","allTagsPath":"/content/tags","count":2}')}}]);

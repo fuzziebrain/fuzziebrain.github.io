@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[35781],{79863:e=>{e.exports=JSON.parse('{"label":"techgivesback","permalink":"/content/tags/techgivesback","allTagsPath":"/content/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[11706],{87806:e=>{e.exports=JSON.parse('{"label":"user groups","permalink":"/content/tags/user-groups","allTagsPath":"/content/tags","count":2,"unlisted":false}')}}]);

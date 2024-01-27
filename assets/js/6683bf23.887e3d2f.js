@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[4373],{4101:e=>{e.exports=JSON.parse('{"label":"IaaS","permalink":"/content/tags/iaa-s","allTagsPath":"/content/tags","count":10}')}}]);

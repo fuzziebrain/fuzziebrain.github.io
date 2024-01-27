@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[89978],{23522:e=>{e.exports=JSON.parse('{"label":"proxy","permalink":"/content/tags/proxy","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

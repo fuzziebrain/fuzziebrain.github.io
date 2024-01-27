@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[65397],{27653:t=>{t.exports=JSON.parse('{"label":"dbms_cloud_notification","permalink":"/content/tags/dbms-cloud-notification","allTagsPath":"/content/tags","count":1}')}}]);

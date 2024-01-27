@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[41068],{62945:e=>{e.exports=JSON.parse('{"label":"suez","permalink":"/content/tags/suez","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

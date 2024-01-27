@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[76215],{70731:e=>{e.exports=JSON.parse('{"label":"ThanksODC","permalink":"/content/tags/thanks-odc","allTagsPath":"/content/tags","count":1}')}}]);

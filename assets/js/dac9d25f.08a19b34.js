@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[58460],{23196:e=>{e.exports=JSON.parse('{"label":"meetup","permalink":"/content/tags/meetup","allTagsPath":"/content/tags","count":2,"unlisted":false}')}}]);

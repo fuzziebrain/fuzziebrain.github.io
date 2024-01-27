@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[4082],{9866:e=>{e.exports=JSON.parse('{"label":"face detection","permalink":"/content/tags/face-detection","allTagsPath":"/content/tags","count":1}')}}]);

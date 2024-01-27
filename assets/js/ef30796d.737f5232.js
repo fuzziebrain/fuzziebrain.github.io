@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[90836],{16242:e=>{e.exports=JSON.parse('{"label":"gps","permalink":"/content/tags/gps","allTagsPath":"/content/tags","count":2}')}}]);

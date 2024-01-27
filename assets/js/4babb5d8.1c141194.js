@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[81403],{77301:e=>{e.exports=JSON.parse('{"label":"insum","permalink":"/content/tags/insum","allTagsPath":"/content/tags","count":1}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[54355],{6474:e=>{e.exports=JSON.parse('{"label":"lifelong learning","permalink":"/content/tags/lifelong-learning","allTagsPath":"/content/tags","count":1}')}}]);

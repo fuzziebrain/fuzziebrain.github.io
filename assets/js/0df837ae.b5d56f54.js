@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[34992],{85252:s=>{s.exports=JSON.parse('{"label":"system administration","permalink":"/content/tags/system-administration","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

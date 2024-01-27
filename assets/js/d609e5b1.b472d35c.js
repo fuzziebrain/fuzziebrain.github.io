@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[42841],{78388:t=>{t.exports=JSON.parse('{"label":"digital transformation","permalink":"/content/tags/digital-transformation","allTagsPath":"/content/tags","count":1}')}}]);

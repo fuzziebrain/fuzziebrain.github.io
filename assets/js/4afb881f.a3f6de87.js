@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[24802],{17426:e=>{e.exports=JSON.parse('{"label":"getinvolved","permalink":"/content/tags/getinvolved","allTagsPath":"/content/tags","count":2}')}}]);

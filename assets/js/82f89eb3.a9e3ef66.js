@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[86620],{81306:e=>{e.exports=JSON.parse('{"label":"change is constant","permalink":"/content/tags/change-is-constant","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

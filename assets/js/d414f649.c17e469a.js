@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[55665],{44533:e=>{e.exports=JSON.parse('{"label":"oracle cloud","permalink":"/content/tags/oracle-cloud","allTagsPath":"/content/tags","count":7}')}}]);

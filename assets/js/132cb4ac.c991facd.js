@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[30902],{31037:e=>{e.exports=JSON.parse('{"label":"frontier models","permalink":"/content/tags/frontier-models","allTagsPath":"/content/tags","count":1}')}}]);

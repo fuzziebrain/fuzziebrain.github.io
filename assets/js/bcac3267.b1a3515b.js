@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[54297],{81790:e=>{e.exports=JSON.parse('{"label":"odtug","permalink":"/content/tags/odtug","allTagsPath":"/content/tags","count":7}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[48321],{84509:e=>{e.exports=JSON.parse('{"label":"mfa","permalink":"/content/tags/mfa","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

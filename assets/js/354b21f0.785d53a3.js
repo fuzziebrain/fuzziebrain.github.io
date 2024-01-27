@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[98047],{79897:e=>{e.exports=JSON.parse('{"label":"XSL-FO","permalink":"/content/tags/xsl-fo","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[86955],{71109:e=>{e.exports=JSON.parse('{"label":"generative ai","permalink":"/content/tags/generative-ai","allTagsPath":"/content/tags","count":4,"unlisted":false}')}}]);

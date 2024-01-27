@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[29206],{96670:e=>{e.exports=JSON.parse('{"label":"barcode","permalink":"/content/tags/barcode","allTagsPath":"/content/tags","count":1}')}}]);

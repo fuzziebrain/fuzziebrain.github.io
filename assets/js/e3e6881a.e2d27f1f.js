@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[80406],{23950:e=>{e.exports=JSON.parse('{"label":"emerging technology","permalink":"/content/tags/emerging-technology","allTagsPath":"/content/tags","count":2}')}}]);

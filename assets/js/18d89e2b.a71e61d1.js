@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[74669],{97385:e=>{e.exports=JSON.parse('{"label":"Oracle Application Express","permalink":"/content/tags/oracle-application-express","allTagsPath":"/content/tags","count":2,"unlisted":false}')}}]);

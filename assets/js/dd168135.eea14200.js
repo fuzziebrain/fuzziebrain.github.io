@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[51146],{48537:e=>{e.exports=JSON.parse('{"label":"career","permalink":"/content/tags/career","allTagsPath":"/content/tags","count":2,"unlisted":false}')}}]);

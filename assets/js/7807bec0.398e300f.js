@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[94973],{16581:e=>{e.exports=JSON.parse('{"label":"foundation models","permalink":"/content/tags/foundation-models","allTagsPath":"/content/tags","count":1}')}}]);

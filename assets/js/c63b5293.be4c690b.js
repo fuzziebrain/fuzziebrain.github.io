@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[99752],{23734:e=>{e.exports=JSON.parse('{"label":"nlp","permalink":"/content/tags/nlp","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

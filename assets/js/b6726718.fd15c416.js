@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[20771],{73196:e=>{e.exports=JSON.parse('{"label":"image recognition","permalink":"/content/tags/image-recognition","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

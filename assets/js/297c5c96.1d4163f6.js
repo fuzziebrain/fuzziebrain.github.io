@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[57434],{54207:e=>{e.exports=JSON.parse('{"label":"joelkallmanday","permalink":"/content/tags/joelkallmanday","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

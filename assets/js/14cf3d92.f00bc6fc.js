@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[29431],{43897:e=>{e.exports=JSON.parse('{"label":"2fa","permalink":"/content/tags/2-fa","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

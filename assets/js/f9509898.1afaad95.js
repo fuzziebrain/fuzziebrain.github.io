@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[97770],{91564:e=>{e.exports=JSON.parse('{"label":"knowledge graph","permalink":"/content/tags/knowledge-graph","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

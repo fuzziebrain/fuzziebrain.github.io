@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[82862],{33384:e=>{e.exports=JSON.parse('{"label":"linode","permalink":"/content/tags/linode","allTagsPath":"/content/tags","count":3,"unlisted":false}')}}]);

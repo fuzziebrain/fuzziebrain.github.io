@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[24015],{18810:e=>{e.exports=JSON.parse('{"label":"msteams","permalink":"/content/tags/msteams","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

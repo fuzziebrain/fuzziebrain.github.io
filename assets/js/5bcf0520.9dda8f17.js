@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[46250],{81749:e=>{e.exports=JSON.parse('{"label":"oxar","permalink":"/content/tags/oxar","allTagsPath":"/content/tags","count":5}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[85693],{65687:e=>{e.exports=JSON.parse('{"label":"covid-19","permalink":"/content/tags/covid-19","allTagsPath":"/content/tags","count":1}')}}]);

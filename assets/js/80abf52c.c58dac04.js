@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[20991],{93460:e=>{e.exports=JSON.parse('{"label":"ore","permalink":"/content/tags/ore","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);

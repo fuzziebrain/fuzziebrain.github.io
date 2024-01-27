@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[92393],{16237:e=>{e.exports=JSON.parse('{"label":"18cXE","permalink":"/content/tags/18-c-xe","allTagsPath":"/content/tags","count":4}')}}]);

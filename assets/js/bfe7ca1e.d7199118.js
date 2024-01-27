@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[19562],{2844:e=>{e.exports=JSON.parse('{"label":"mapreduce","permalink":"/content/tags/mapreduce","allTagsPath":"/content/tags","count":1}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[30406],{58893:e=>{e.exports=JSON.parse('{"label":"gis","permalink":"/content/tags/gis","allTagsPath":"/content/tags","count":1,"unlisted":false}')}}]);
