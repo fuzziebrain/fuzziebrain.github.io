@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[6405],{6626:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/devops","page":1,"postsPerPage":15,"totalPages":1,"totalCount":12,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

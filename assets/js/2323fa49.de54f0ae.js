@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[92793],{10682:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/oracle-cloud/page/2","page":2,"postsPerPage":5,"totalPages":2,"totalCount":7,"previousPage":"/content/tags/oracle-cloud","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

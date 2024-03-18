@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[24434],{86992:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/artificial-intelligence","page":1,"postsPerPage":5,"totalPages":2,"totalCount":9,"nextPage":"/content/tags/artificial-intelligence/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[15954],{30160:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/challenge-coin","page":1,"postsPerPage":5,"totalPages":2,"totalCount":6,"nextPage":"/content/tags/challenge-coin/page/2","blogDescription":"Blog","blogTitle":"Blog"}')}}]);

@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[29477],{22105:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/sso","page":1,"postsPerPage":15,"totalPages":1,"totalCount":4,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);

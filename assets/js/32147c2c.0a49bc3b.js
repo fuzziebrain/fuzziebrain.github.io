@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[69175],{60761:e=>{e.exports=JSON.parse('{"permalink":"/content/tags/tls","page":1,"postsPerPage":15,"totalPages":1,"totalCount":2,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
