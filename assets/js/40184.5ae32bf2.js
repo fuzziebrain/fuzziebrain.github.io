@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[40184],{40184:(e,s,c)=>{c.d(s,{createInfoServices:()=>n.v});var n=c(92501);c(21028)}}]);

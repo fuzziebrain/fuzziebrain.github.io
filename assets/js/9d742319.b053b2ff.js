@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunknewsite=self.webpackChunknewsite||[]).push([[88183],{45014:n=>{n.exports=JSON.parse('{"authors":[{"name":"Adrian Png","title":"Director of Innovation, AI and Cloud Solutions @ Insum, a Talan Company","url":"https://linkedin.com/in/adrianp","imageURL":"https://github.com/fuzziebrain.png","key":"fuzziebrain","page":null,"count":99}]}')}}]);
