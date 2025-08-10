@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fuzziebrain.com/content</id>
     <title>Blog feed</title>
-    <updated>2025-08-10T22:00:00.000Z</updated>
+    <updated>2025-08-10T13:45:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fuzziebrain.com/content"/>
     <subtitle>Thinking Anew Blog</subtitle>
@@ -12,7 +12,7 @@
         <title type="html"><![CDATA[Enable MFA for Oracle Databases]]></title>
         <id>https://fuzziebrain.com/content/enable-mfa-for-oracle-databases</id>
         <link href="https://fuzziebrain.com/content/enable-mfa-for-oracle-databases"/>
-        <updated>2025-08-10T22:00:00.000Z</updated>
+        <updated>2025-08-10T13:45:00.000Z</updated>
         <summary type="html"><![CDATA[TBD]]></summary>
         <content type="html"><![CDATA[<p><img decoding="async" loading="lazy" alt="Person looking at their phone while registering their fingerprint." src="https://fuzziebrain.com/assets/images/onur-binay-Uw_8vSroCSc-unsplash_1280x720-c9e71a48aa387346e3de9221d8812dd5.jpg" width="1280" height="720" class="img_ev3q"></p>
 <p>The recent <em>Oracle Database 23ai</em> 23.9 update included a <a href="https://docs.oracle.com/en/database/oracle/oracle-database/23/nfcoa/ru_23_9.html#GUID-104901-1" target="_blank" rel="noopener noreferrer">new feature</a> to further improve the security of Oracle Databases. Database owners can now opt to require users to authenticate with a multi-factor authentication (MFA) device. This can be performed either through push notifications on a compatible authenticator application or certificate-based authentication. The two currently supported authenticator applications are <em>Cisco Duo</em> or <em>Oracle Mobile Authenticator</em> (OMA). And according to this Oracle <a href="https://blogs.oracle.com/database/post/new-mfa-jul2025" target="_blank" rel="noopener noreferrer">blog post</a>, this cool security feature has been backported to 19c.</p>
@@ -139,6 +139,7 @@
         </author>
         <category label="oracle database" term="oracle database"/>
         <category label="23ai" term="23ai"/>
+        <category label="19c" term="19c"/>
         <category label="mfa" term="mfa"/>
         <category label="security" term="security"/>
         <category label="oci" term="oci"/>

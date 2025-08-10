@@ -10,7 +10,7 @@
             "url": "https://fuzziebrain.com/content/enable-mfa-for-oracle-databases",
             "title": "Enable MFA for Oracle Databases",
             "summary": "TBD",
-            "date_modified": "2025-08-10T22:00:00.000Z",
+            "date_modified": "2025-08-10T13:45:00.000Z",
             "author": {
                 "name": "Adrian Png",
                 "url": "https://linkedin.com/in/adrianp"
@@ -18,6 +18,7 @@
             "tags": [
                 "oracle database",
                 "23ai",
+                "19c",
                 "mfa",
                 "security",
                 "oci",

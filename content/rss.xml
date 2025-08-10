@@ -4,7 +4,7 @@
         <title>Blog feed</title>
         <link>https://fuzziebrain.com/content</link>
         <description>Thinking Anew Blog</description>
-        <lastBuildDate>Sun, 10 Aug 2025 22:00:00 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 10 Aug 2025 13:45:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>en</language>
@@ -13,7 +13,7 @@
             <title><![CDATA[Enable MFA for Oracle Databases]]></title>
             <link>https://fuzziebrain.com/content/enable-mfa-for-oracle-databases</link>
             <guid>https://fuzziebrain.com/content/enable-mfa-for-oracle-databases</guid>
-            <pubDate>Sun, 10 Aug 2025 22:00:00 GMT</pubDate>
+            <pubDate>Sun, 10 Aug 2025 13:45:00 GMT</pubDate>
             <description><![CDATA[TBD]]></description>
             <content:encoded><![CDATA[<p><img decoding="async" loading="lazy" alt="Person looking at their phone while registering their fingerprint." src="https://fuzziebrain.com/assets/images/onur-binay-Uw_8vSroCSc-unsplash_1280x720-c9e71a48aa387346e3de9221d8812dd5.jpg" width="1280" height="720" class="img_ev3q"></p>
 <p>The recent <em>Oracle Database 23ai</em> 23.9 update included a <a href="https://docs.oracle.com/en/database/oracle/oracle-database/23/nfcoa/ru_23_9.html#GUID-104901-1" target="_blank" rel="noopener noreferrer">new feature</a> to further improve the security of Oracle Databases. Database owners can now opt to require users to authenticate with a multi-factor authentication (MFA) device. This can be performed either through push notifications on a compatible authenticator application or certificate-based authentication. The two currently supported authenticator applications are <em>Cisco Duo</em> or <em>Oracle Mobile Authenticator</em> (OMA). And according to this Oracle <a href="https://blogs.oracle.com/database/post/new-mfa-jul2025" target="_blank" rel="noopener noreferrer">blog post</a>, this cool security feature has been backported to 19c.</p>
@@ -136,6 +136,7 @@
 </blockquote>]]></content:encoded>
             <category>oracle database</category>
             <category>23ai</category>
+            <category>19c</category>
             <category>mfa</category>
             <category>security</category>
             <category>oci</category>
