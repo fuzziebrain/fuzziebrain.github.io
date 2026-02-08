@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://www.googletagmanager.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-K08RTKFLLX"></script>
 <script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-K08RTKFLLX",{anonymize_ip:!0})</script><link rel="stylesheet" href="/assets/css/styles.81e22598.css">
-<script src="/assets/js/runtime~main.8f1f5ce7.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.9a630ea0.js" defer="defer"></script>
 <script src="/assets/js/main.d2d157a3.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -25,9 +25,9 @@
 <p>During a recent <a href="https://kscope21.odtug.com/" target="_blank" rel="noopener noreferrer">Kscope21</a> session, &quot;<a href="https://kscope21.odtug.com/e/in/eid=42&amp;req=info&amp;s=3444&amp;all=1" target="_blank" rel="noopener noreferrer">Predict Customer Churn Using Oracle Autonomous Database, Machine Learning, and APEX</a>&quot;, I had shared that it has always been my personal desire to create web applications that are not only purposeful, but also have an element of &quot;intelligence&quot;. With new features recently introduced in the <a href="https://www.oracle.com/data-science/machine-learning/" target="_blank" rel="noopener noreferrer">Oracle Machine Learning</a> product offering, it is now relatively easy to introduce ML as a component of your <a href="https://apex.oracle.com" target="_blank" rel="noopener noreferrer">Oracle Application Express</a> (APEX) applications. This is the first of several posts that I am writing as a follow up to the presentations I did at this year&#x27;s (virtual) conference.</p>
 <p>The whys and how we created our first Machine Learning (ML) model using <a href="https://blogs.oracle.com/machinelearning/introducing-oml-automl-user-interface" target="_blank" rel="noopener noreferrer">AutoML UI</a> is detailed in our presentation, so I highly encourage you to review the presentation to get the required background information. There are also several tutorials that Oracle has published to help you get going with the technology. In this blog post, the goal is to provide details on code needed to consume the ML model that we operationalised using OML Services. these are:</p>
 <ul>
-<li><a href="#Authentication">How to authenticate with the REST services</a></li>
-<li><a href="#Inputs-and-Outputs">Identifying the REST service&#x27;s inputs and outputs</a>; and finally</li>
-<li><a href="#using-the-Deployed-Model">Using the Deployed Model</a></li>
+<li><a href="#authentication">How to authenticate with the REST services</a></li>
+<li><a href="#inputs-and-outputs">Identifying the REST service&#x27;s inputs and outputs</a>; and finally</li>
+<li><a href="#using-the-deployed-model">Using the Deployed Model</a></li>
 </ul>
 <p>Also, it would be worthwhile pointing out that AutoML, OML Services, and many of the other Oracle technologies described in this post are only available on the <a href="https://www.oracle.com/autonomous-database/" target="_blank" rel="noopener noreferrer">Oracle Autonomous Database</a> (ADB) at this time, including the two <em>Always Free</em> instances that you get with every Oracle Cloud account.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="authentication">Authentication<a href="#authentication" class="hash-link" aria-label="Direct link to Authentication" title="Direct link to Authentication">​</a></h2>
